@@ -444,8 +444,84 @@
       .footer-note { text-align: center; }
     }
   </style>
+  <style>
+    #pw-gate {
+      position: fixed; inset: 0; z-index: 9999;
+      background: var(--forest);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 1.5rem;
+    }
+    #pw-gate h2 {
+      font-family: 'Playfair Display', serif; font-weight: 900;
+      font-size: 2.5rem; color: var(--warm-white); letter-spacing: -0.02em;
+    }
+    #pw-gate h2 span { color: var(--teal); }
+    #pw-gate p {
+      font-family: 'DM Mono', monospace; font-size: 0.72rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+    #pw-form { display: flex; gap: 0.75rem; align-items: center; }
+    #pw-input {
+      font-family: 'DM Mono', monospace; font-size: 0.85rem;
+      padding: 0.7rem 1.25rem; border-radius: 3px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.05); color: var(--warm-white);
+      outline: none; width: 220px; letter-spacing: 0.05em;
+      transition: border-color 0.2s;
+    }
+    #pw-input:focus { border-color: var(--teal); }
+    #pw-btn {
+      font-family: 'DM Mono', monospace; font-size: 0.72rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 0.7rem 1.5rem; border-radius: 3px;
+      background: var(--teal); color: var(--forest);
+      border: none; cursor: pointer; font-weight: 500;
+      transition: opacity 0.2s;
+    }
+    #pw-btn:hover { opacity: 0.85; }
+    #pw-error {
+      font-family: 'DM Mono', monospace; font-size: 0.68rem;
+      color: var(--rep-light); letter-spacing: 0.08em;
+      opacity: 0; transition: opacity 0.2s;
+    }
+    #pw-error.show { opacity: 1; }
+  </style>
 </head>
 <body>
+
+<!-- PASSWORD GATE -->
+<div id="pw-gate">
+  <h2>MAHA<span>TRACKER</span></h2>
+  <p>Preview access — enter password to continue</p>
+  <div id="pw-form">
+    <input id="pw-input" type="password" placeholder="password" autocomplete="off"/>
+    <button id="pw-btn" onclick="checkPw()">Enter</button>
+  </div>
+  <div id="pw-error">Incorrect password</div>
+</div>
+<script>
+  (function() {
+    if (sessionStorage.getItem('maha-auth') === '1') {
+      document.getElementById('pw-gate').style.display = 'none';
+    }
+  })();
+  function checkPw() {
+    const val = document.getElementById('pw-input').value;
+    // simple hash check — change the hash when you go live (or just remove the gate)
+    if (val === atob('dHJhY2t0aGlzMjAyNg==')) {
+      sessionStorage.setItem('maha-auth', '1');
+      document.getElementById('pw-gate').style.display = 'none';
+    } else {
+      document.getElementById('pw-error').classList.add('show');
+      document.getElementById('pw-input').value = '';
+    }
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') checkPw();
+  });
+</script>
 
 <!-- ╔══════════════════════════════╗ -->
 <!-- ║           NAV               ║ -->
