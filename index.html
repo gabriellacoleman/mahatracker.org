@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAHA Tracker — Food & Environmental Health Policy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --forest:        #08160b;
+      --forest-mid:    #162b1c;
+      --forest-light:  #2b5238;
+      --amber:         #e8a820;
+      --amber-light:   #f2cb6a;
+      --teal:          #00c9b1;
+      --teal-dark:     #008f7d;
+      --teal-dim:      rgba(0,201,177,0.6);
+      --cream:         #f2ede3;
+      --cream-dark:    #e2dace;
+      --warm-white:    #faf8f4;
+      --charcoal:      #1c1c1c;
+      --text-dark:     #2a2a20;
+      --text-mid:      #565647;
+      --text-light:    #8a8a77;
+      --dem:           #2563eb;
+      --dem-light:     #93c5fd;
+      --rep:           #dc2626;
+      --rep-light:     #fca5a5;
+      --advance:       #10b981;
+      --oppose:        #ef4444;
+      --gold:          #d97706;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Source Serif 4', Georgia, serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2.5rem;
+      background: rgba(8,22,11,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(232,168,32,0.18);
+    }
+    .nav-logo {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.78rem; letter-spacing: 0.2em;
+      color: var(--amber); font-weight: 500;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-family: 'DM Mono', monospace; font-size: 0.7rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(255,255,255,0.5); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--teal); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      background: var(--forest);
+      display: flex; flex-direction: column;
+      position: relative; overflow: hidden;
+      padding-top: 5rem;
+    }
+    .hero-dot-grid {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image: radial-gradient(circle at 1px 1px, rgba(0,201,177,0.22) 1px, transparent 0);
+      background-size: 28px 28px;
+      opacity: 0.35;
+    }
+    .hero-glow-a {
+      position: absolute; top: -15%; right: -5%;
+      width: 55%; height: 70%;
+      background: radial-gradient(ellipse, rgba(0,201,177,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-glow-b {
+      position: absolute; bottom: -10%; left: -5%;
+      width: 45%; height: 55%;
+      background: radial-gradient(ellipse, rgba(232,168,32,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-body {
+      position: relative; z-index: 2;
+      flex: 1; display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem; align-items: center;
+      padding: 3rem 4rem 2rem;
+      max-width: 1280px; margin: 0 auto; width: 100%;
+    }
+    .hero-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem; letter-spacing: 0.22em;
+      color: var(--amber); text-transform: uppercase; margin-bottom: 1.25rem;
+    }
+    .hero-h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 900; line-height: 0.88;
+      font-size: clamp(4.5rem, 10vw, 9.5rem);
+      color: var(--warm-white); letter-spacing: -0.02em;
+    }
+    .hero-h1 em { color: var(--teal); font-style: normal; display: block; }
+    .hero-sub {
+      margin-top: 1.5rem;
+      font-family: 'Source Serif 4', serif;
+      font-weight: 300; font-size: 1.15rem; line-height: 1.65;
+      color: rgba(255,255,255,0.65); max-width: 460px;
+    }
+    .hero-note {
+      margin-top: 2rem; padding: 1rem 1.25rem;
+      border-left: 2px solid var(--amber);
+      background: rgba(232,168,32,0.04);
+    }
+    .hero-note p {
+      font-family: 'DM Mono', monospace; font-size: 0.68rem;
+      line-height: 1.65; color: rgba(255,255,255,0.48); letter-spacing: 0.02em;
+    }
+    .hero-note strong { color: var(--amber-light); }
+
+    /* Hero SVG canvas */
+    .hero-visual { display: flex; justify-content: center; align-items: center; }
+    .hero-svg { width: 100%; max-width: 480px; }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      position: relative; z-index: 2;
+      background: var(--forest-mid);
+      border-top: 1px solid rgba(232,168,32,0.12);
+      padding: 1.5rem 4rem;
+      display: flex; gap: 0; align-items: stretch;
+    }
+    .stat-cell {
+      flex: 1; display: flex; flex-direction: column;
+      gap: 0.3rem; padding: 0 2rem;
+      border-right: 1px solid rgba(255,255,255,0.07);
+    }
+    .stat-cell:first-child { padding-left: 0; }
+    .stat-cell:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem; font-weight: 700; line-height: 1;
+    }
+    .stat-num.green { color: var(--advance); }
+    .stat-num.red   { color: var(--oppose); }
+    .stat-num.gold  { color: var(--amber); }
+    .stat-num.dim   { color: rgba(255,255,255,0.35); }
+    .stat-lbl {
+      font-family: 'DM Mono', monospace; font-size: 0.6rem;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.38);
+    }
+
+    /* ── GENERAL SECTION ── */
+    section { padding: 5rem 4rem; }
+    .inner { max-width: 1200px; margin: 0 auto; }
+    .eyebrow {
+      font-family: 'DM Mono', monospace; font-size: 0.65rem;
+      letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 0.65rem;
+    }
+    .eyebrow.teal  { color: var(--teal-dark); }
+    .eyebrow.teal-dim { color: var(--teal-dim); }
+    .section-h2 {
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.1;
+    }
+    .section-h2.light { color: var(--warm-white); }
+    .section-lead {
+      margin-top: 0.5rem; font-size: 0.9rem; line-height: 1.7;
+      color: var(--text-mid); max-width: 560px;
+    }
+    .section-lead.light { color: rgba(255,255,255,0.5); }
+
+    /* ── PRIMER ── */
+    #primer { background: var(--warm-white); }
+    .primer-grid {
+      display: grid; grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem; margin-top: 3rem;
+    }
+    .primer-body p {
+      font-size: 1rem; line-height: 1.85; color: var(--text-mid); margin-bottom: 1rem;
+    }
+    .primer-body p:first-child { font-size: 1.1rem; color: var(--text-dark); }
+    .primer-body p em { font-style: italic; }
+    .primer-body p strong { color: var(--teal-dark); }
+    .primer-cards { display: flex; flex-direction: column; gap: 1.25rem; }
+    .pcard {
+      padding: 1.4rem 1.5rem; border-radius: 4px;
+    }
+    .pcard.yes {
+      background: rgba(0,201,177,0.07);
+      border: 1px solid rgba(0,201,177,0.18);
+    }
+    .pcard.no {
+      background: rgba(232,168,32,0.07);
+      border: 1px solid rgba(232,168,32,0.18);
+    }
+    .pcard h4 {
+      font-family: 'DM Mono', monospace; font-size: 0.68rem;
+      letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.8rem;
+    }
+    .pcard.yes h4 { color: var(--teal-dark); }
+    .pcard.no  h4 { color: var(--gold); }
+    .pcard ul { list-style: none; display: flex; flex-direction: column; gap: 0.35rem; }
+    .pcard ul li {
+      font-size: 0.875rem; color: var(--text-mid);
+      padding-left: 1rem; position: relative; line-height: 1.5;
+    }
+    .pcard ul li::before { content: '—'; position: absolute; left: 0; color: var(--text-light); }
+
+    /* ── SCORECARD ── */
+    #scorecard { background: var(--forest); color: var(--warm-white); }
+    .score-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; margin-top: 3rem;
+    }
+    .score-half h3 {
+      font-family: 'Playfair Display', serif; font-size: 1.35rem;
+      color: var(--cream); margin-bottom: 1.5rem;
+    }
+    .bar-wrap { margin-bottom: 1rem; }
+    .bar-lbl {
+      display: flex; justify-content: space-between; margin-bottom: 0.35rem;
+    }
+    .bar-name {
+      font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.04em;
+    }
+    .bar-name.d { color: var(--dem-light); }
+    .bar-name.r { color: var(--rep-light); }
+    .bar-name.b { color: var(--amber-light); }
+    .bar-count { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: rgba(255,255,255,0.35); }
+    .bar-track {
+      height: 5px; background: rgba(255,255,255,0.07); border-radius: 3px; overflow: hidden;
+    }
+    .bar-fill { height: 100%; border-radius: 3px; width: 0; transition: width 1.2s cubic-bezier(0.4,0,0.2,1); }
+    .bar-fill.d { background: var(--dem); }
+    .bar-fill.r { background: var(--rep); }
+    .bar-fill.b { background: var(--amber); }
+
+    .dot-matrix { margin-top: 2.5rem; }
+    .dm-label {
+      font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 0.6rem;
+    }
+    .dot-row { display: flex; gap: 3px; flex-wrap: wrap; margin-bottom: 0.4rem; }
+    .dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      transition: transform 0.2s;
+    }
+    .dot:hover { transform: scale(1.6); }
+    .dot.d { background: var(--dem); }
+    .dot.r { background: var(--rep); }
+    .dot.x { background: rgba(255,255,255,0.12); }
+
+    .score-callout {
+      margin-top: 2.5rem; padding: 1.5rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07); border-radius: 4px;
+    }
+    .score-callout .callout-lbl {
+      font-family: 'DM Mono', monospace; font-size: 0.62rem;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.3); margin-bottom: 0.75rem;
+    }
+    .score-callout blockquote {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: 1.15rem; line-height: 1.6; color: var(--amber-light);
+    }
+    .score-callout cite {
+      display: block; margin-top: 0.75rem;
+      font-family: 'DM Mono', monospace; font-size: 0.62rem;
+      color: rgba(255,255,255,0.28); letter-spacing: 0.05em;
+      font-style: normal;
+    }
+
+    /* ── POLICY CARDS ── */
+    #federal { background: var(--cream); }
+    #states  { background: var(--warm-white); }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+    .col-head { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; }
+    .col-bar { width: 4px; height: 28px; border-radius: 2px; }
+    .col-bar.adv { background: var(--advance); }
+    .col-bar.opp { background: var(--oppose); }
+    .col-lbl {
+      font-family: 'DM Mono', monospace; font-size: 0.7rem;
+      letter-spacing: 0.16em; text-transform: uppercase;
+    }
+    .col-lbl.adv { color: var(--advance); }
+    .col-lbl.opp { color: var(--oppose); }
+
+    .pcard-policy {
+      background: var(--warm-white);
+      border-radius: 5px; padding: 1.4rem 1.5rem;
+      margin-bottom: 1rem;
+      border-top: 3px solid transparent;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 4px 18px rgba(0,0,0,0.04);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    #states .pcard-policy { background: var(--cream); }
+    .pcard-policy:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1), 0 8px 36px rgba(0,0,0,0.06);
+    }
+    .pcard-policy.adv { border-top-color: var(--advance); }
+    .pcard-policy.opp { border-top-color: var(--oppose); }
+
+    .pc-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem; }
+    .pc-date {
+      font-family: 'DM Mono', monospace; font-size: 0.6rem;
+      letter-spacing: 0.1em; color: var(--text-light);
+    }
+    .pc-h4 {
+      font-family: 'Playfair Display', serif; font-size: 1rem;
+      font-weight: 700; line-height: 1.3; margin-bottom: 0.45rem; color: var(--text-dark);
+    }
+    .pc-p { font-size: 0.845rem; line-height: 1.65; color: var(--text-mid); margin-bottom: 0.9rem; }
+    .pc-foot { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
+
+    /* badges */
+    .badge {
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      padding: 0.18rem 0.55rem; border-radius: 3px;
+      font-family: 'DM Mono', monospace; font-size: 0.6rem;
+      letter-spacing: 0.04em; font-weight: 500;
+    }
+    .badge-dot { width: 5px; height: 5px; border-radius: 50%; }
+    .badge.sd { background: rgba(37,99,235,0.1);  color: #1d4ed8; border: 1px solid rgba(37,99,235,0.2); }
+    .badge.sr { background: rgba(220,38,38,0.1);  color: #b91c1c; border: 1px solid rgba(220,38,38,0.2); }
+    .badge.bi { background: rgba(217,119,6,0.1);  color: #92400e; border: 1px solid rgba(217,119,6,0.2); }
+    .badge.pd { background: rgba(37,99,235,0.08); color: #1e40af; border: 1px solid rgba(37,99,235,0.14); }
+    .badge.pr { background: rgba(220,38,38,0.08); color: #991b1b; border: 1px solid rgba(220,38,38,0.14); }
+    .badge.st { background: var(--cream-dark); color: var(--text-mid); border: 1px solid var(--cream-dark); }
+    .badge.gd { background: rgba(37,99,235,0.08); color: #1d4ed8; border: 1px solid rgba(37,99,235,0.18); }
+    .badge.gr { background: rgba(220,38,38,0.08); color: #b91c1c; border: 1px solid rgba(220,38,38,0.18); }
+
+    .vote-tally {
+      margin-left: auto;
+      font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--text-light);
+    }
+    .vote-tally .d { color: var(--dem); font-weight: 500; }
+    .vote-tally .r { color: var(--rep); font-weight: 500; }
+
+    /* ── STATE FILTERS ── */
+    .filters { display: flex; gap: 0.6rem; flex-wrap: wrap; margin: 1.5rem 0 2rem; }
+    .fbtn {
+      font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 0.45rem 1rem;
+      border-radius: 3px; border: 1px solid var(--cream-dark);
+      background: transparent; color: var(--text-mid); cursor: pointer; transition: all 0.2s;
+    }
+    .fbtn:hover { border-color: var(--teal); color: var(--teal-dark); }
+    .fbtn.on { background: var(--forest); border-color: var(--forest); color: var(--teal); }
+    .fselect {
+      font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.05em;
+      padding: 0.45rem 1rem; border: 1px solid var(--cream-dark); border-radius: 3px;
+      background: var(--warm-white); color: var(--text-mid); cursor: pointer; outline: none;
+      transition: border-color 0.2s;
+    }
+    .fselect:focus { border-color: var(--teal); }
+
+    /* ── PROGRESSIVE ALT ── */
+    #alternative { background: var(--forest); color: var(--warm-white); }
+    .alt-grid {
+      display: grid; grid-template-columns: 1.1fr 0.9fr;
+      gap: 5rem; margin-top: 3rem;
+    }
+    .alt-body p {
+      font-size: 0.975rem; line-height: 1.9; color: rgba(255,255,255,0.65); margin-bottom: 1rem;
+    }
+    .alt-body p strong { color: var(--teal); }
+    .alt-body p em { font-style: italic; }
+    .alt-cta {
+      margin-top: 2rem; padding: 1.5rem;
+      border: 1px solid rgba(0,201,177,0.18); border-radius: 5px;
+      background: rgba(0,201,177,0.04);
+    }
+    .alt-cta h4 {
+      font-family: 'Playfair Display', serif; font-size: 1.15rem;
+      color: var(--teal); margin-bottom: 0.7rem;
+    }
+    .alt-cta p { font-size: 0.875rem; line-height: 1.75; color: rgba(255,255,255,0.55); }
+
+    .timeline { display: flex; flex-direction: column; gap: 1.2rem; }
+    .tl-h3 {
+      font-family: 'Playfair Display', serif; font-size: 1.25rem;
+      color: var(--cream); margin-bottom: 1.5rem;
+    }
+    .tl-item { display: grid; grid-template-columns: 56px 1fr; gap: 1rem; align-items: start; }
+    .tl-year {
+      font-family: 'DM Mono', monospace; font-size: 0.72rem;
+      color: var(--amber); letter-spacing: 0.05em; padding-top: 0.2rem;
+    }
+    .tl-content h5 {
+      font-family: 'Playfair Display', serif; font-size: 0.92rem;
+      color: var(--cream); margin-bottom: 0.2rem;
+    }
+    .tl-content p { font-size: 0.8rem; color: rgba(255,255,255,0.45); line-height: 1.55; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #040c06; padding: 2.5rem 4rem;
+      display: flex; justify-content: space-between; align-items: center;
+      border-top: 1px solid rgba(232,168,32,0.1);
+    }
+    .footer-logo {
+      font-family: 'DM Mono', monospace; font-size: 0.78rem;
+      letter-spacing: 0.2em; color: var(--amber);
+    }
+    .footer-note {
+      font-family: 'DM Mono', monospace; font-size: 0.6rem;
+      color: rgba(255,255,255,0.25); line-height: 1.7;
+      text-align: right; max-width: 420px; letter-spacing: 0.03em;
+    }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.75s ease, transform 0.75s ease; }
+    .reveal.in  { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 920px) {
+      #hero { padding-top: 4.5rem; }
+      .hero-body { grid-template-columns: 1fr; padding: 2rem 2rem; }
+      .hero-visual { display: none; }
+      .primer-grid, .score-grid, .two-col, .alt-grid { grid-template-columns: 1fr; }
+      section { padding: 3rem 1.75rem; }
+      .stats-bar { padding: 1.5rem 1.75rem; gap: 0; }
+      .stat-cell { padding: 0 1rem; }
+      nav { padding: 0.9rem 1.25rem; }
+      .nav-links { display: none; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.75rem; }
+      .footer-note { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ╔══════════════════════════════╗ -->
+<!-- ║           NAV               ║ -->
+<!-- ╚══════════════════════════════╝ -->
+<nav>
+  <span class="nav-logo">MAHA TRACKER</span>
+  <ul class="nav-links">
+    <li><a href="#primer">Primer</a></li>
+    <li><a href="#scorecard">Scorecard</a></li>
+    <li><a href="#federal">Federal</a></li>
+    <li><a href="#states">States</a></li>
+    <li><a href="#alternative">Alt. Path</a></li>
+  </ul>
+</nav>
+
+<!-- ╔══════════════════════════════╗ -->
+<!-- ║           HERO              ║ -->
+<!-- ╚══════════════════════════════╝ -->
+<section id="hero">
+  <div class="hero-dot-grid"></div>
+  <div class="hero-glow-a"></div>
+  <div class="hero-glow-b"></div>
+
+  <div class="hero-body">
+    <div class="hero-left">
+      <p class="hero-eyebrow">Policy Tracker · Food &amp; Environment</p>
+      <h1 class="hero-h1">MAHA<em>TRACKER</em></h1>
+      <p class="hero-sub">Tracking food safety and environmental health policy — who's advancing it, who's blocking it, and what party lines actually look like.</p>
+      <div class="hero-note">
+        <p><strong>What this is:</strong> A non-partisan record of <em>enacted</em> laws and regulations on food additives, pesticides, ultra-processed foods, PFAS contamination, and environmental health. Not proposed bills. Not campaign promises. What actually passed.</p>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <svg class="hero-svg" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="rg1" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#00c9b1" stop-opacity="0.13"/>
+            <stop offset="100%" stop-color="#00c9b1" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="rg2" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#e8a820" stop-opacity="0.09"/>
+            <stop offset="100%" stop-color="#e8a820" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <!-- ambient glow -->
+        <ellipse cx="240" cy="200" rx="210" ry="190" fill="url(#rg1)"/>
+        <ellipse cx="200" cy="320" rx="160" ry="130" fill="url(#rg2)"/>
+
+        <!-- field dot rows: teal=advancing, red=opposing -->
+        <!-- row 1 -->
+        <circle cx="72"  cy="95"  r="4.5" fill="#10b981" opacity="0.75"/>
+        <circle cx="100" cy="84"  r="4.5" fill="#10b981" opacity="0.75"/>
+        <circle cx="128" cy="94"  r="4.5" fill="#10b981" opacity="0.75"/>
+        <circle cx="156" cy="82"  r="4.5" fill="#ef4444" opacity="0.65"/>
+        <circle cx="184" cy="93"  r="4.5" fill="#10b981" opacity="0.75"/>
+        <circle cx="212" cy="83"  r="4.5" fill="#10b981" opacity="0.75"/>
+        <circle cx="240" cy="95"  r="4.5" fill="#10b981" opacity="0.75"/>
+        <circle cx="268" cy="82"  r="4.5" fill="#ef4444" opacity="0.65"/>
+        <circle cx="296" cy="93"  r="4.5" fill="#10b981" opacity="0.75"/>
+        <circle cx="324" cy="83"  r="4.5" fill="#10b981" opacity="0.75"/>
+        <circle cx="352" cy="93"  r="4.5" fill="#10b981" opacity="0.75"/>
+        <circle cx="380" cy="83"  r="4.5" fill="#ef4444" opacity="0.65"/>
+        <circle cx="408" cy="93"  r="4.5" fill="#10b981" opacity="0.75"/>
+
+        <!-- row 2 -->
+        <circle cx="58"  cy="128" r="4"   fill="#10b981" opacity="0.65"/>
+        <circle cx="86"  cy="117" r="4"   fill="#ef4444" opacity="0.55"/>
+        <circle cx="114" cy="128" r="4"   fill="#10b981" opacity="0.65"/>
+        <circle cx="142" cy="116" r="4"   fill="#10b981" opacity="0.65"/>
+        <circle cx="170" cy="127" r="4"   fill="#10b981" opacity="0.65"/>
+        <circle cx="198" cy="116" r="4"   fill="#ef4444" opacity="0.55"/>
+        <circle cx="226" cy="128" r="4"   fill="#10b981" opacity="0.65"/>
+        <circle cx="254" cy="116" r="4"   fill="#10b981" opacity="0.65"/>
+        <circle cx="282" cy="127" r="4"   fill="#10b981" opacity="0.65"/>
+        <circle cx="310" cy="116" r="4"   fill="#ef4444" opacity="0.55"/>
+        <circle cx="338" cy="128" r="4"   fill="#10b981" opacity="0.65"/>
+        <circle cx="366" cy="116" r="4"   fill="#10b981" opacity="0.65"/>
+        <circle cx="394" cy="127" r="4"   fill="#10b981" opacity="0.65"/>
+        <circle cx="422" cy="116" r="4"   fill="#10b981" opacity="0.65"/>
+
+        <!-- network lines -->
+        <line x1="240" y1="185" x2="170" y2="255" stroke="#00c9b1" stroke-width="0.6" opacity="0.25"/>
+        <line x1="240" y1="185" x2="310" y2="255" stroke="#00c9b1" stroke-width="0.6" opacity="0.25"/>
+        <line x1="170" y1="255" x2="310" y2="255" stroke="#00c9b1" stroke-width="0.6" opacity="0.2"/>
+        <line x1="110" y1="320" x2="170" y2="255" stroke="#00c9b1" stroke-width="0.6" opacity="0.16"/>
+        <line x1="370" y1="320" x2="310" y2="255" stroke="#00c9b1" stroke-width="0.6" opacity="0.16"/>
+        <line x1="110" y1="320" x2="240" y2="375" stroke="#e8a820" stroke-width="0.6" opacity="0.18"/>
+        <line x1="370" y1="320" x2="240" y2="375" stroke="#e8a820" stroke-width="0.6" opacity="0.18"/>
+
+        <!-- central nodes -->
+        <circle cx="240" cy="185" r="16" fill="none" stroke="#00c9b1" stroke-width="1.2" opacity="0.5"/>
+        <circle cx="240" cy="185" r="9"  fill="#00c9b1" opacity="0.7"/>
+        <text x="254" y="190" fill="#00c9b1" font-family="monospace" font-size="7.5" opacity="0.8">FEDERAL</text>
+
+        <circle cx="170" cy="255" r="12" fill="none" stroke="#e8a820" stroke-width="1" opacity="0.45"/>
+        <circle cx="170" cy="255" r="7"  fill="#e8a820" opacity="0.6"/>
+        <text x="184" y="259" fill="#e8a820" font-family="monospace" font-size="6.5" opacity="0.7">STATE</text>
+
+        <circle cx="310" cy="255" r="12" fill="none" stroke="#10b981" stroke-width="1" opacity="0.45"/>
+        <circle cx="310" cy="255" r="7"  fill="#10b981" opacity="0.6"/>
+        <text x="324" y="259" fill="#10b981" font-family="monospace" font-size="6.5" opacity="0.7">STATE</text>
+
+        <circle cx="110" cy="320" r="9" fill="none" stroke="#00c9b1" stroke-width="1" opacity="0.35"/>
+        <circle cx="110" cy="320" r="5" fill="#00c9b1" opacity="0.45"/>
+
+        <circle cx="370" cy="320" r="9" fill="none" stroke="#00c9b1" stroke-width="1" opacity="0.35"/>
+        <circle cx="370" cy="320" r="5" fill="#00c9b1" opacity="0.45"/>
+
+        <circle cx="240" cy="375" r="14" fill="none" stroke="#e8a820" stroke-width="1" opacity="0.35"/>
+        <circle cx="240" cy="375" r="8"  fill="#e8a820" opacity="0.45"/>
+        <text x="254" y="379" fill="#e8a820" font-family="monospace" font-size="6.5" opacity="0.6">ENACTED</text>
+
+        <!-- scatter -->
+        <circle cx="75"  cy="370" r="3" fill="#10b981" opacity="0.35"/>
+        <circle cx="98"  cy="390" r="3" fill="#10b981" opacity="0.35"/>
+        <circle cx="395" cy="365" r="3" fill="#ef4444" opacity="0.35"/>
+        <circle cx="418" cy="385" r="3" fill="#10b981" opacity="0.35"/>
+        <circle cx="440" cy="365" r="3" fill="#10b981" opacity="0.35"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- STATS BAR inside hero so it sits flush -->
+  <div class="stats-bar">
+    <div class="stat-cell">
+      <span class="stat-num green" id="st-adv">0</span>
+      <span class="stat-lbl">Advancing Health</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num red" id="st-opp">0</span>
+      <span class="stat-lbl">Opposing Health</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num gold" id="st-bip">0</span>
+      <span class="stat-lbl">Bipartisan Wins</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num dim" id="st-states">0</span>
+      <span class="stat-lbl">States Tracked</span>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════╗ -->
+<!-- ║         PRIMER              ║ -->
+<!-- ╚══════════════════════════════╝ -->
+<section id="primer">
+  <div class="inner">
+    <p class="eyebrow teal">What you need to know</p>
+    <h2 class="section-h2">The MAHA Primer</h2>
+    <div class="primer-grid reveal">
+      <div class="primer-body">
+        <p>MAHA — Make America Healthy Again — emerged as a political brand under the Trump administration, attached to a set of genuine public health concerns: chronic disease, ultra-processed foods, synthetic food additives, pesticide exposure, and corporate capture of regulatory agencies like the FDA and USDA.</p>
+        <p>Whether or not you share any sympathy for its political packaging, <strong>these concerns are legitimate and well-documented.</strong> Americans consume more ultra-processed food than almost any nation on earth. Food dyes banned in the EU for decades remain common in U.S. products. PFAS contamination affects over 200 million people's drinking water. Childhood obesity and diet-related illness are undeniable crises.</p>
+        <p>This site tracks <em>those specific policy issues</em> — enacted laws, signed regulations, and executive actions — not the broader MAGA political agenda. We follow what passes and who passes it, regardless of party affiliation.</p>
+        <p><strong>The state-level data is illuminating.</strong> Democratic-led states — California, Maine, Washington, Minnesota — are enacting the most concrete food safety protections in the country. Republican administrations are rolling back EPA rules and deregulating factory farms. A few red-state legislators are crossing lines on food dyes and pesticides. Bipartisan support for these specific issues is real.</p>
+        <p>But at the <em>federal</em> level, the Democratic Party's record is deeply sobering. Leadership has repeatedly failed to offer a coherent, forceful health regulatory agenda — deferring to corporate interests, defending failing institutions rather than proposing bold reforms, and leaving one of the most obvious electoral openings in years almost entirely unclaimed. After a major Trump executive order weakening food and drug oversight, only Senators Cory Booker and Ed Markey introduced meaningful legislation (the Ensuring Safe and Toxic-Free Foods Act). Such initiatives remain rare exceptions, not a strategy. The political will to challenge corporate food and chemical power has been largely absent at the federal level — from both parties.</p>
+      </div>
+      <div class="primer-cards">
+        <div class="pcard yes">
+          <h4>✓ What We Track</h4>
+          <ul>
+            <li>Synthetic food dye restrictions</li>
+            <li>Ultra-processed food labeling laws</li>
+            <li>Pesticide &amp; herbicide use regulations</li>
+            <li>PFAS / "forever chemical" restrictions</li>
+            <li>CAFO oversight and factory farm rules</li>
+            <li>School nutrition standards</li>
+            <li>Corporate consolidation in food supply</li>
+            <li>EPA water and air quality rules</li>
+            <li>SNAP and food access policy</li>
+            <li>FDA regulatory integrity</li>
+          </ul>
+        </div>
+        <div class="pcard no">
+          <h4>✗ What We Don't Track</h4>
+          <ul>
+            <li>Immigration policy</li>
+            <li>Federal workforce or DOGE cuts</li>
+            <li>Electoral politics or candidates</li>
+            <li>The broader MAGA agenda</li>
+            <li>Vaccine and COVID policy</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════╗ -->
+<!-- ║        SCORECARD            ║ -->
+<!-- ╚══════════════════════════════╝ -->
+<section id="scorecard">
+  <div class="inner">
+    <p class="eyebrow teal-dim">By the numbers</p>
+    <h2 class="section-h2 light">Partisan Scorecard</h2>
+    <p class="section-lead light">Who is actually advancing food and environmental health policy — and who is blocking it? Federal enacted laws and regulations, 2020–2025.</p>
+
+    <!-- PEW CALLOUT -->
+    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin: 2.5rem 0 0; background: rgba(255,255,255,0.06); border-radius: 5px; overflow: hidden;">
+      <div style="background: rgba(255,255,255,0.03); padding: 1.5rem 1.75rem;">
+        <div style="font-family:'Playfair Display',serif; font-size:3rem; font-weight:900; color:var(--teal); line-height:1;">70%+</div>
+        <div style="font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-top:0.4rem; line-height:1.5;">of Americans very or somewhat concerned about chemicals in food &amp; water</div>
+      </div>
+      <div style="background: rgba(255,255,255,0.03); padding: 1.5rem 1.75rem;">
+        <div style="font-family:'Playfair Display',serif; font-size:3rem; font-weight:900; color:var(--amber); line-height:1;">5 in 6</div>
+        <div style="font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-top:0.4rem; line-height:1.5;">say government and business should do more on chemical safety</div>
+      </div>
+      <div style="background: rgba(255,255,255,0.03); padding: 1.5rem 1.75rem;">
+        <div style="font-family:'Playfair Display',serif; font-size:3rem; font-weight:900; color:var(--rep-light); line-height:1;">8 in 10</div>
+        <div style="font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-top:0.4rem; line-height:1.5;">Republicans share this concern — the political opening is <em style="font-style:italic; color:rgba(255,255,255,0.55);">not</em> partisan</div>
+      </div>
+    </div>
+    <p style="font-family:'DM Mono',monospace; font-size:0.58rem; color:rgba(255,255,255,0.2); letter-spacing:0.08em; margin-top:0.6rem;">Source: Pew Research Center, February 2026</p>
+
+    <div class="score-grid reveal">
+      <div class="score-half">
+        <h3>Advancing Health: Who Signs It</h3>
+        <div class="bar-wrap">
+          <div class="bar-lbl">
+            <span class="bar-name d">Democratic President / Administration</span>
+            <span class="bar-count">9 actions</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill d" data-w="64%"></div></div>
+        </div>
+        <div class="bar-wrap">
+          <div class="bar-lbl">
+            <span class="bar-name b">Bipartisan / Both Parties</span>
+            <span class="bar-count">3 actions</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill b" data-w="21%"></div></div>
+        </div>
+        <div class="bar-wrap">
+          <div class="bar-lbl">
+            <span class="bar-name r">Republican President / Administration</span>
+            <span class="bar-count">2 actions</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill r" data-w="14%"></div></div>
+        </div>
+
+        <div class="dot-matrix">
+          <p class="dm-label">Senate yes-votes on food &amp; environment health measures (aggregate)</p>
+          <div class="dot-row" id="dot-yes"></div>
+          <p class="dm-label" style="margin-top:0.6rem">Senate no-votes</p>
+          <div class="dot-row" id="dot-no"></div>
+        </div>
+      </div>
+
+      <div class="score-half">
+        <h3>Opposing Health: Who Signs It</h3>
+        <div class="bar-wrap">
+          <div class="bar-lbl">
+            <span class="bar-name r">Republican President / Administration</span>
+            <span class="bar-count">9 actions</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill r" data-w="82%"></div></div>
+        </div>
+        <div class="bar-wrap">
+          <div class="bar-lbl">
+            <span class="bar-name b">Both Parties / Weak Compromise</span>
+            <span class="bar-count">1 action</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill b" data-w="9%"></div></div>
+        </div>
+        <div class="bar-wrap">
+          <div class="bar-lbl">
+            <span class="bar-name d">Democratic President / Administration</span>
+            <span class="bar-count">1 action</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill d" data-w="9%"></div></div>
+        </div>
+
+        <div class="score-callout">
+          <p class="callout-lbl">Key Finding</p>
+          <blockquote>"State-level Democrats are doing more on food and environmental health than the movement that made 'healthy' a campaign slogan — but federal Democrats have largely failed to challenge corporate power. 'Better than Republicans' is not a health agenda."</blockquote>
+          <cite>— Based on enacted federal legislation and regulations, 2020–2025. Data is illustrative; verify independently.</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════╗ -->
+<!-- ║       FEDERAL LAWS          ║ -->
+<!-- ╚══════════════════════════════╝ -->
+<section id="federal">
+  <div class="inner">
+    <p class="eyebrow teal">Enacted federal policy</p>
+    <h2 class="section-h2">Federal Policy Tracker</h2>
+    <p class="section-lead">Laws and regulations that have been enacted — not proposed. Tracked for impact on food safety, environmental health, and food access. Sample data for illustrative purposes.</p>
+
+    <div class="two-col reveal">
+      <!-- ADVANCING -->
+      <div>
+        <div class="col-head">
+          <div class="col-bar adv"></div>
+          <span class="col-lbl adv">Advancing Health</span>
+        </div>
+
+        <div class="pcard-policy adv">
+          <div class="pc-meta">
+            <span class="pc-date">AUG 2022</span>
+          </div>
+          <h4 class="pc-h4">EPA Chlorpyrifos Agricultural Ban</h4>
+          <p class="pc-p">Biden EPA finalized a ban on chlorpyrifos — a neurotoxic organophosphate pesticide linked to childhood neurological damage — for all agricultural food uses, after decades of industry lobbying blocked action under prior administrations.</p>
+          <div class="pc-foot">
+            <span class="badge sd"><span class="badge-dot" style="background:#2563eb"></span>Biden Admin (D)</span>
+            <span class="badge pd">EPA Rulemaking</span>
+            <span class="vote-tally">D-led action</span>
+          </div>
+        </div>
+
+        <div class="pcard-policy adv">
+          <div class="pc-meta"><span class="pc-date">MAR 2024</span></div>
+          <h4 class="pc-h4">FDA PFAS Drinking Water Standards</h4>
+          <p class="pc-p">First-ever enforceable federal limits on six PFAS compounds in drinking water, covering an estimated 100+ million Americans. Set maximum contaminant levels for PFOA, PFOS, and four other "forever chemicals" linked to cancer and immune disruption.</p>
+          <div class="pc-foot">
+            <span class="badge sd"><span class="badge-dot" style="background:#2563eb"></span>Biden Admin (D)</span>
+            <span class="badge bi">Broad Public Support</span>
+          </div>
+        </div>
+
+        <div class="pcard-policy adv">
+          <div class="pc-meta"><span class="pc-date">JAN 2024</span></div>
+          <h4 class="pc-h4">USDA School Meal Nutrition Standards Update</h4>
+          <p class="pc-p">Strengthened school meal requirements: reduced sodium limits over 5-year phase-in, required whole grain minimums, and capped added sugars in school breakfasts for the first time — affecting 30 million children daily.</p>
+          <div class="pc-foot">
+            <span class="badge sd"><span class="badge-dot" style="background:#2563eb"></span>Biden Admin (D)</span>
+            <span class="vote-tally">USDA Rulemaking</span>
+          </div>
+        </div>
+
+        <div class="pcard-policy adv">
+          <div class="pc-meta"><span class="pc-date">SEP 2024</span></div>
+          <h4 class="pc-h4">FDA Front-of-Package Labeling Proposal</h4>
+          <p class="pc-p">FDA issued proposed rule for mandatory front-of-package "nutrition info" labeling, including a "high in" warning label for sodium, saturated fat, and added sugars — the most significant food labeling reform in decades.</p>
+          <div class="pc-foot">
+            <span class="badge sd"><span class="badge-dot" style="background:#2563eb"></span>Biden Admin (D)</span>
+            <span class="vote-tally">FDA Rulemaking</span>
+          </div>
+        </div>
+
+        <div class="pcard-policy adv">
+          <div class="pc-meta"><span class="pc-date">MAR 2025</span></div>
+          <h4 class="pc-h4">FDA Red Dye No. 3 Revocation</h4>
+          <p class="pc-p">FDA revoked authorization for Red Dye No. 3 (erythrosine) in food and ingested drugs — a synthetic dye linked to thyroid tumors in animal studies — after the Delaney Clause required removal once carcinogenicity was demonstrated. Manufacturers given 2 years to reformulate.</p>
+          <div class="pc-foot">
+            <span class="badge sd"><span class="badge-dot" style="background:#2563eb"></span>Biden/Trump transition</span>
+            <span class="badge bi">Bipartisan Support</span>
+          </div>
+        </div>
+
+        <div class="pcard-policy adv">
+          <div class="pc-meta"><span class="pc-date">NOV 2022</span></div>
+          <h4 class="pc-h4">Inflation Reduction Act — Conservation Provisions</h4>
+          <p class="pc-p">Included $20 billion for voluntary conservation programs, including restrictions on certain pesticide-adjacent practices and incentives for reducing synthetic input use on farmland — largest federal conservation investment in history.</p>
+          <div class="pc-foot">
+            <span class="badge sd"><span class="badge-dot" style="background:#2563eb"></span>Biden (D)</span>
+            <span class="badge pd">Party-Line D</span>
+            <span class="vote-tally"><span class="d">220D</span> <span class="r">0R</span> Yes</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- OPPOSING -->
+      <div>
+        <div class="col-head">
+          <div class="col-bar opp"></div>
+          <span class="col-lbl opp">Opposing Health</span>
+        </div>
+
+        <div class="pcard-policy opp">
+          <div class="pc-meta"><span class="pc-date">FEB 2025</span></div>
+          <h4 class="pc-h4">EPA CAFO Effluent Guideline Withdrawal</h4>
+          <p class="pc-p">Trump EPA withdrew proposed rules that would have required factory farms to reduce discharge of ammonia, pathogens, and pharmaceuticals into waterways — eliminating water quality protections for communities near industrial livestock operations.</p>
+          <div class="pc-foot">
+            <span class="badge sr"><span class="badge-dot" style="background:#dc2626"></span>Trump Admin (R)</span>
+            <span class="badge pr">Executive Action</span>
+          </div>
+        </div>
+
+        <div class="pcard-policy opp">
+          <div class="pc-meta"><span class="pc-date">MAR 2025</span></div>
+          <h4 class="pc-h4">WOTUS Rule Elimination</h4>
+          <p class="pc-p">Eliminated Biden-era Waters of the United States rule, removing federal protections for an estimated 51% of the nation's wetlands and many seasonal streams — the waters that filter drinking supplies for millions of Americans.</p>
+          <div class="pc-foot">
+            <span class="badge sr"><span class="badge-dot" style="background:#dc2626"></span>Trump Admin (R)</span>
+            <span class="badge pr">Party-Line</span>
+            <span class="vote-tally"><span class="r">R-only</span></span>
+          </div>
+        </div>
+
+        <div class="pcard-policy opp">
+          <div class="pc-meta"><span class="pc-date">APR 2025</span></div>
+          <h4 class="pc-h4">PFAS Drinking Water Rule Rollback Review</h4>
+          <p class="pc-p">Trump EPA initiated formal review to weaken or suspend Biden's PFAS drinking water standards — potentially stripping protections for the 100+ million Americans in communities with PFAS-contaminated water systems.</p>
+          <div class="pc-foot">
+            <span class="badge sr"><span class="badge-dot" style="background:#dc2626"></span>Trump Admin (R)</span>
+            <span class="badge pr">Party-Line</span>
+          </div>
+        </div>
+
+        <div class="pcard-policy opp">
+          <div class="pc-meta"><span class="pc-date">JAN 2025</span></div>
+          <h4 class="pc-h4">USDA School Nutrition Standard Rollback</h4>
+          <p class="pc-p">Trump USDA moved to reverse Biden-era improvements to school meal nutrition standards, including rollbacks on whole grain requirements and sodium caps — affecting 30 million children who rely on school meals daily.</p>
+          <div class="pc-foot">
+            <span class="badge sr"><span class="badge-dot" style="background:#dc2626"></span>Trump Admin (R)</span>
+            <span class="badge pr">Executive Action</span>
+          </div>
+        </div>
+
+        <div class="pcard-policy opp">
+          <div class="pc-meta"><span class="pc-date">NOV 2023</span></div>
+          <h4 class="pc-h4">Farm Bill SNAP Eligibility Restrictions</h4>
+          <p class="pc-p">Republican-negotiated Farm Bill provisions tightened SNAP work requirements and eligibility, reducing food access for an estimated 750,000 households — disproportionately in rural food deserts and among formerly incarcerated individuals.</p>
+          <div class="pc-foot">
+            <span class="badge sr"><span class="badge-dot" style="background:#dc2626"></span>Republican Provision</span>
+            <span class="vote-tally"><span class="d">12D</span> <span class="r">185R</span> Yes</span>
+          </div>
+        </div>
+
+        <div class="pcard-policy opp">
+          <div class="pc-meta"><span class="pc-date">AUG 2025</span></div>
+          <h4 class="pc-h4">EPA Glyphosate 15-Year Re-Registration</h4>
+          <p class="pc-p">EPA renewed glyphosate's pesticide registration for 15 years despite ~181,000 pending cancer lawsuits (non-Hodgkin's lymphoma), a $2.1 billion Georgia jury verdict, and the Trump DOJ filing a brief urging the Supreme Court to side with Bayer and strip cancer victims of their right to sue under state law. MAHA supporters had previously blocked a glyphosate liability shield from an appropriations rider — the administration then did the opposite. <em>Cross-partisan response: Rep. Thomas Massie's No Immunity for Glyphosate Act, co-sponsored by Pingree, Boebert, Mace, and Khanna, would restore victims' right to sue — but has not advanced to a floor vote.</em></p>
+          <div class="pc-foot">
+            <span class="badge sr"><span class="badge-dot" style="background:#dc2626"></span>Trump Admin (R)</span>
+            <span class="vote-tally">Industry-aligned</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════╗ -->
+<!-- ║        STATE LAWS           ║ -->
+<!-- ╚══════════════════════════════╝ -->
+<section id="states">
+  <div class="inner">
+    <p class="eyebrow teal">Across the country</p>
+    <h2 class="section-h2">State Policy Tracker</h2>
+    <p class="section-lead">Enacted state-level laws on food safety and environmental health. Filter by category, governor's party, or state.</p>
+
+    <div class="filters">
+      <button class="fbtn on" data-f="all">All</button>
+      <button class="fbtn" data-f="adv">Advancing Health</button>
+      <button class="fbtn" data-f="opp">Opposing Health</button>
+      <button class="fbtn" data-f="gd">Dem Governor</button>
+      <button class="fbtn" data-f="gr">Rep Governor</button>
+      <select class="fselect" id="state-sel">
+        <option value="all">All States</option>
+        <option value="ca">California</option>
+        <option value="co">Colorado</option>
+        <option value="ct">Connecticut</option>
+        <option value="fl">Florida</option>
+        <option value="ga">Georgia</option>
+        <option value="ia">Iowa</option>
+        <option value="il">Illinois</option>
+        <option value="me">Maine</option>
+        <option value="mn">Minnesota</option>
+        <option value="ny">New York</option>
+        <option value="tx">Texas</option>
+        <option value="va">Virginia</option>
+        <option value="wa">Washington</option>
+        <option value="wv">West Virginia</option>
+      </select>
+    </div>
+
+    <div class="two-col reveal" id="state-grid">
+      <!-- ADVANCING -->
+      <div id="col-adv">
+        <div class="col-head">
+          <div class="col-bar adv"></div>
+          <span class="col-lbl adv">Advancing Health</span>
+        </div>
+
+        <div class="pcard-policy adv sc" data-st="ca" data-ty="adv" data-gov="gd">
+          <div class="pc-meta">
+            <span class="pc-date">OCT 2023</span>
+            <span class="badge st">California</span>
+          </div>
+          <h4 class="pc-h4">AB 418 — California Food Safety Act</h4>
+          <p class="pc-p">Banned four harmful food additives — Red Dye No. 3, Titanium Dioxide, Potassium Bromate, and Brominated Vegetable Oil — from food sold in California. The strongest state food additive law in U.S. history, affecting product formulations nationwide.</p>
+          <div class="pc-foot">
+            <span class="badge gd">Gov. Newsom (D)</span>
+            <span class="badge bi">Bipartisan</span>
+            <span class="vote-tally">D-led legislature</span>
+          </div>
+        </div>
+
+        <div class="pcard-policy adv sc" data-st="wv" data-ty="adv" data-gov="gr">
+          <div class="pc-meta">
+            <span class="pc-date">MAR 2025</span>
+            <span class="badge st">West Virginia</span>
+          </div>
+          <h4 class="pc-h4">SB 486 — School Food Dye Restrictions</h4>
+          <p class="pc-p">Banned seven synthetic food dyes (Red 40, Yellow 5 &amp; 6, Blue 1 &amp; 2, Green 3, and others) from all public school meals — a Republican-led state taking concrete action on a MAHA priority, with near-unanimous bipartisan support.</p>
+          <div class="pc-foot">
+            <span class="badge gr">Gov. Justice (R)</span>
+            <span class="badge bi">Near-Unanimous</span>
+          </div>
+        </div>
+
+        <div class="pcard-policy adv sc" data-st="wa" data-ty="adv" data-gov="gd">
+          <div class="pc-meta">
+            <span class="pc-date">JUN 2024</span>
+            <span class="badge st">Washington</span>
+          </div>
+          <h4 class="pc-h4">PFAS Food Packaging Restriction Act</h4>
+          <p class="pc-p">Banned PFAS in food packaging, food service ware, and cookware sold in Washington — among the strongest state PFAS restrictions in the country, with phased implementation for different product categories.</p>
+          <div class="pc-foot">
+            <span class="badge gd">Gov. Ferguson (D)</span>
+            <span class="badge bi">Bipartisan</span>
+          </div>
+        </div>
+
+        <div class="pcard-policy adv sc" data-st="mn" data-ty="adv" data-gov="gd">
+          <div class="pc-meta">
+            <span class="pc-date">APR 2025</span>
+            <span class="badge st">Minnesota</span>
+          </div>
+          <h4 class="pc-h4">HF 2369 — School Lunch Food Dye Elimination</h4>
+          <p class="pc-p">Required all Minnesota school districts to phase out synthetic food dyes from school meals within 24 months, with state funding for the transition to plant-based natural colorings. Includes reporting requirements and enforcement.</p>
+          <div class="pc-foot">
+            <span class="badge gd">Gov. Walz (D)</span>
+            <span class="badge bi">Bipartisan</span>
+          </div>
+        </div>
+
+        <div class="pcard-policy adv sc" data-st="co" data-ty="adv" data-gov="gd">
+          <div class="pc-meta">
+            <span class="pc-date">MAY 2024</span>
+            <span class="badge st">Colorado</span>
+          </div>
+          <h4 class="pc-h4">SB 197 — Pesticide Applicator Accountability</h4>
+          <p class="pc-p">Strengthened reporting for commercial pesticide applications near schools, parks, and waterways. Created a public-facing registry of pesticide applications with GIS mapping. Required notification of nearby residents before application.</p>
+          <div class="pc-foot">
+            <span class="badge gd">Gov. Polis (D)</span>
+            <span class="badge pd">Dem-Led</span>
+          </div>
+        </div>
+
+        <div class="pcard-policy adv sc" data-st="il" data-ty="adv" data-gov="gd">
+          <div class="pc-meta">
+            <span class="pc-date">JAN 2025</span>
+            <span class="badge st">Illinois</span>
+          </div>
+          <h4 class="pc-h4">School Nutrition Transparency Act</h4>
+          <p class="pc-p">Required disclosure of synthetic food dyes and artificial preservatives in all Illinois school district meal programs, with annual public reporting. Passed with support from both parties, particularly rural legislators concerned about children's health.</p>
+          <div class="pc-foot">
+            <span class="badge gd">Gov. Pritzker (D)</span>
+            <span class="badge bi">Bipartisan</span>
+            <span class="vote-tally"><span class="d">71D</span> <span class="r">41R</span></span>
+          </div>
+        </div>
+
+        <div class="pcard-policy adv sc" data-st="me" data-ty="adv" data-gov="gd">
+          <div class="pc-meta">
+            <span class="pc-date">MAY 2022</span>
+            <span class="badge st">Maine</span>
+          </div>
+          <h4 class="pc-h4">LD 2013 &amp; LD 1911 — PFAS Agricultural Laws</h4>
+          <p class="pc-p">First state to ban spreading municipal sludge (a major source of PFAS) on farmland and to phase out PFAS in pesticides and adjuvants by 2030. Created a $60 million farmer assistance fund for health monitoring, income replacement, and buyouts for irreparably contaminated farms. No other state had done either before Maine.</p>
+          <div class="pc-foot">
+            <span class="badge gd">Gov. Mills (D)</span>
+            <span class="badge bi">Bipartisan</span>
+          </div>
+        </div>
+
+        <div class="pcard-policy adv sc" data-st="ca" data-ty="adv" data-gov="gd">
+          <div class="pc-meta">
+            <span class="pc-date">SEP 2024</span>
+            <span class="badge st">California</span>
+          </div>
+          <h4 class="pc-h4">AB 2316 — California School Food Safety Act</h4>
+          <p class="pc-p">Banned six synthetic food dyes — Red 40, Yellow 5, Yellow 6, Blue 1, Blue 2, and Green 3 — from all meals, drinks, and snacks served at California public schools statewide. First state-level school food dye ban in the U.S. Manufacturers required to reformulate products with natural alternatives by December 2027.</p>
+          <div class="pc-foot">
+            <span class="badge gd">Gov. Newsom (D)</span>
+            <span class="badge pd">Dem-Led</span>
+          </div>
+        </div>
+
+        <div class="pcard-policy adv sc" data-st="ny" data-ty="adv" data-gov="gd">
+          <div class="pc-meta">
+            <span class="pc-date">DEC 2023</span>
+            <span class="badge st">New York</span>
+          </div>
+          <h4 class="pc-h4">S.1856-A — Birds and Bees Protection Act</h4>
+          <p class="pc-p">Banned neonicotinoid-treated corn, soybean, and wheat seeds, plus neonicotinoid use on outdoor ornamental plants and turf. Targets imidacloprid, thiamethoxam, and acetamiprid — the chemicals the EPA identified as driving "more than 200 species toward extinction." Called "nation-leading" by Hochul; Vermont and other states moving to follow.</p>
+          <div class="pc-foot">
+            <span class="badge gd">Gov. Hochul (D)</span>
+            <span class="badge pd">Dem-Led</span>
+          </div>
+        </div>
+
+        <div class="pcard-policy adv sc" data-st="ct" data-ty="adv" data-gov="gd">
+          <div class="pc-meta">
+            <span class="pc-date">JUL 2023</span>
+            <span class="badge st">Connecticut</span>
+          </div>
+          <h4 class="pc-h4">SB 998 — Tenant Protections &amp; Habitability Act</h4>
+          <p class="pc-p">Strengthened housing habitability enforcement — making landlords liable for unsafe conditions including mold, faulty smoke detectors, and substandard ventilation. Added mandatory pre-move walk-through inspections to document health hazards before occupancy. Mold exposure is associated with respiratory illness, asthma, and immune dysfunction, disproportionately affecting low-income renters.</p>
+          <div class="pc-foot">
+            <span class="badge gd">Gov. Lamont (D)</span>
+            <span class="badge bi">Bipartisan</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- OPPOSING -->
+      <div id="col-opp">
+        <div class="col-head">
+          <div class="col-bar opp"></div>
+          <span class="col-lbl opp">Opposing Health</span>
+        </div>
+
+        <div class="pcard-policy opp sc" data-st="fl" data-ty="opp" data-gov="gr">
+          <div class="pc-meta">
+            <span class="pc-date">MAY 2024</span>
+            <span class="badge st">Florida</span>
+          </div>
+          <h4 class="pc-h4">SB 1064 — Local Pesticide Preemption</h4>
+          <p class="pc-p">Stripped Florida municipalities of authority to restrict pesticide use beyond state minimums — eliminating local organic zones, pesticide-free parks, and school buffer restrictions. Backed heavily by the agricultural chemical industry.</p>
+          <div class="pc-foot">
+            <span class="badge gr">Gov. DeSantis (R)</span>
+            <span class="badge pr">Party-Line R</span>
+          </div>
+        </div>
+
+        <div class="pcard-policy opp sc" data-st="ia" data-ty="opp" data-gov="gr">
+          <div class="pc-meta">
+            <span class="pc-date">MAY 2024</span>
+            <span class="badge st">Iowa</span>
+          </div>
+          <h4 class="pc-h4">SF 512 — Agricultural Deregulation Omnibus</h4>
+          <p class="pc-p">Preempted local ordinances restricting CAFO operations, weakened setback requirements for factory farm construction near residences and waterways, and limited CAFO neighbors' ability to file complaints to state-only channels.</p>
+          <div class="pc-foot">
+            <span class="badge gr">Gov. Reynolds (R)</span>
+            <span class="badge pr">Party-Line R</span>
+          </div>
+        </div>
+
+        <div class="pcard-policy opp sc" data-st="tx" data-ty="opp" data-gov="gr">
+          <div class="pc-meta">
+            <span class="pc-date">JUN 2023</span>
+            <span class="badge st">Texas</span>
+          </div>
+          <h4 class="pc-h4">HB 3027 — Food Marketing Preemption</h4>
+          <p class="pc-p">Banned Texas cities from restricting food marketing to children in parks, transit systems, and public spaces — preempting local efforts to limit advertising of ultra-processed foods, sugary beverages, and fast food near schools.</p>
+          <div class="pc-foot">
+            <span class="badge gr">Gov. Abbott (R)</span>
+            <span class="badge pr">Party-Line R</span>
+          </div>
+        </div>
+
+        <div class="pcard-policy opp sc" data-st="fl" data-ty="opp" data-gov="gr">
+          <div class="pc-meta">
+            <span class="pc-date">MAY 2023</span>
+            <span class="badge st">Florida</span>
+          </div>
+          <h4 class="pc-h4">HB 1399 — CAFO Expansion Fast-Track</h4>
+          <p class="pc-p">Created a streamlined permitting pathway for large-scale CAFOs, reducing environmental review requirements, shortening public comment periods, and limiting state agency discretion to deny permits based on water quality concerns.</p>
+          <div class="pc-foot">
+            <span class="badge gr">Gov. DeSantis (R)</span>
+            <span class="badge pr">Party-Line R</span>
+          </div>
+        </div>
+
+        <div class="pcard-policy opp sc" data-st="ia" data-ty="opp" data-gov="gr">
+          <div class="pc-meta">
+            <span class="pc-date">APR 2023</span>
+            <span class="badge st">Iowa</span>
+          </div>
+          <h4 class="pc-h4">HF 670 — Atrazine Use Expansion</h4>
+          <p class="pc-p">Loosened county-level restrictions on atrazine — an herbicide banned in the EU and linked to endocrine disruption and aquatic toxicity — for use in Iowa corn production, overriding local water quality conservation agreements.</p>
+          <div class="pc-foot">
+            <span class="badge gr">Gov. Reynolds (R)</span>
+            <span class="badge pr">Party-Line R</span>
+          </div>
+        </div>
+
+        <div class="pcard-policy opp sc" data-st="va" data-ty="opp" data-gov="gr">
+          <div class="pc-meta">
+            <span class="pc-date">MAR 2024</span>
+            <span class="badge st">Virginia</span>
+          </div>
+          <h4 class="pc-h4">HB 2024 — Agricultural Chemical Liability Shield</h4>
+          <p class="pc-p">Significantly limited the ability of Virginia residents to sue pesticide manufacturers and distributors for health damages when the product was used in compliance with label instructions — a broad liability shield backed by the agrochemical industry.</p>
+          <div class="pc-foot">
+            <span class="badge gr">Gov. Youngkin (R)</span>
+            <span class="badge pr">Party-Line R</span>
+          </div>
+        </div>
+
+        <div class="pcard-policy opp sc" data-st="ga" data-ty="opp" data-gov="gr">
+          <div class="pc-meta">
+            <span class="pc-date">MAY 2025</span>
+            <span class="badge st">Georgia</span>
+          </div>
+          <h4 class="pc-h4">Pesticide Liability Protection Act (Glyphosate Shield)</h4>
+          <p class="pc-p">Shields pesticide manufacturers from failure-to-warn lawsuits as long as federal label requirements are met — effectively protecting Bayer's Roundup from state court liability. Georgia becomes the second state to pass such a law, following North Dakota. A Georgia jury had awarded a cancer plaintiff $2.1 billion in March 2025, just before the law's passage. Bayer faces ~181,000 glyphosate-cancer claims nationally.</p>
+          <div class="pc-foot">
+            <span class="badge gr">Gov. Kemp (R)</span>
+            <span class="badge pr">Party-Line R</span>
+            <span class="vote-tally">Industry-backed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════╗ -->
+<!-- ║    PROGRESSIVE ALTERNATIVE  ║ -->
+<!-- ╚══════════════════════════════╝ -->
+<section id="alternative">
+  <div class="inner">
+    <p class="eyebrow teal-dim">The electoral opening</p>
+    <h2 class="section-h2 light">The Missed Mandate</h2>
+    <p class="section-lead light">The public is ahead of Washington on chemical safety, toxic food, and environmental health. A 2026 Pew survey shows the politics are unambiguous. The question is whether Democrats will actually claim this terrain — or keep ceding it.</p>
+
+    <div class="alt-grid reveal">
+      <div class="alt-body">
+        <p>The political opening has rarely been clearer. A <strong>February 2026 Pew Research survey</strong> found that more than 70% of Americans are very or somewhat concerned about their own or their loved ones' exposure to harmful chemicals in food and drinking water — with majorities also concerned about chemicals in food packaging, children's products, and farmland. Roughly <strong>five in six Americans</strong> say government and businesses should do more to ensure chemical safety. That includes <strong>nearly eight in ten Republicans</strong>. Anxiety about pesticides, food additives, PFAS, and ultra-processed food is not fringe. It is the dominant public sentiment — and it is sitting there, largely unclaimed by federal Democrats.</p>
+        <p>MAHA has dominated the conversation, but it is riddled with contradiction. Its supporters successfully blocked a Bayer glyphosate liability shield from an appropriations rider — one of the movement's genuine wins. Yet the administration they helped elect has done the opposite at every turn: Republican-led states passed liability shields making it harder for cancer victims to sue Roundup's manufacturer; Trump's DOJ filed a brief urging the Supreme Court to side with Bayer; and the EPA has launched a deregulatory wave against the very protections MAHA's base said it wanted. <strong>The protections MAHA supporters are demanding can only come from the kind of robust public infrastructure their political allies are actively destroying.</strong></p>
+        <p>Meanwhile, <em>federal</em> Democratic leadership has almost entirely failed to capitalize on this. After a major Trump executive order weakening food and drug oversight, only Senators Booker and Markey introduced meaningful counter-legislation. The Green New Deal — despite its merits — is received as a climate framework; for many families, climate feels temporally distant while chemical exposure feels immediate: a child's asthma, a neighbor's cancer, a contaminated well. Democrats have largely failed to speak in those everyday terms. The failure to connect environmental and chemical policy to immediate lived experience has been a costly political and moral mistake.</p>
+        <p>The state-level record shows what is possible and what the mandate looks like in practice. Maine became the first state to pass a sweeping PFAS phase-out law, requiring product reporting and moving toward broad prohibitions. San Francisco's City Attorney sued Coca-Cola, PepsiCo, and Kraft Heinz, arguing they knowingly engineered addictive ultra-processed foods and should bear liability for the resulting disease epidemics. New York restricted neonicotinoid pesticides linked to pollinator collapse. Connecticut strengthened habitability protections for mold exposure. These are real, enforceable interventions — <strong>not brand management</strong>.</p>
+        <p>Democrats can make the case that the people who jumped to MAHA were not wrong to seek change. They were wrong about who would deliver it. But only if Democrats are willing to actually take on corporate power — not just defend the pre-Trump status quo, which wasn't adequate either.</p>
+
+        <div class="alt-cta">
+          <h4>What Reclaiming This Terrain Requires</h4>
+          <p>A real democratic health movement would start from where the public already is. It would demand stronger regulatory agencies and robust enforcement — not liability shields for pesticide manufacturers, regardless of which party advances them. It would treat chemical safety as a matter of shared material conditions, not a culture-war wedge. It would connect climate and environmental health in language people recognize from their own lives. It would reject the use of "health" to target marginalized communities. Everyone drinks water. Everyone eats. Children across political lines attend public schools. The body is not partisan. The 2026 midterms are an opportunity to prove it — but only if Democrats are willing to challenge the corporate interests that have blocked progress on both sides of the aisle for decades.</p>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="tl-h3">Progressive Roots of Food &amp; Environmental Health</h3>
+        <div class="timeline">
+          <div class="tl-item">
+            <span class="tl-year">1906</span>
+            <div class="tl-content">
+              <h5>Pure Food and Drug Act</h5>
+              <p>Progressive-era legislation banning adulterated foods — the original push to regulate what corporations put in food.</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-year">1962</span>
+            <div class="tl-content">
+              <h5>Rachel Carson — Silent Spring</h5>
+              <p>Documented pesticide harms and industry capture of regulators. Led directly to DDT ban and creation of the EPA.</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-year">1971</span>
+            <div class="tl-content">
+              <h5>Alice Waters &amp; Farm-to-Table</h5>
+              <p>Launched a cultural shift toward organic, local, seasonal food — a progressive food ethic before it had a name.</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-year">1991</span>
+            <div class="tl-content">
+              <h5>Environmental Justice Movement</h5>
+              <p>Communities of color documented disproportionate exposure to pesticides, toxic food deserts, and industrial pollution — issues MAHA never meaningfully addresses.</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-year">2006</span>
+            <div class="tl-content">
+              <h5>Michael Pollan — The Omnivore's Dilemma</h5>
+              <p>Mainstream reckoning with corporate food systems and ultra-processed food — a progressive cultural touchstone.</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-year">2010</span>
+            <div class="tl-content">
+              <h5>Michelle Obama — Let's Move!</h5>
+              <p>Federal push to reform school nutrition, combat childhood obesity, and improve USDA meal standards. Real food policy progress.</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-year">2023–25</span>
+            <div class="tl-content">
+              <h5>State Food Safety Wave</h5>
+              <p>CA, WA, MN, IL pass the food dye, PFAS, and nutrition reforms that MAHA claims to want — enacted by Democratic-led governments.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════╗ -->
+<!-- ║          FOOTER             ║ -->
+<!-- ╚══════════════════════════════╝ -->
+<footer>
+  <span class="footer-logo">MAHA TRACKER</span>
+  <p class="footer-note">This site tracks enacted food safety and environmental health policy across party lines. It does not endorse any political party, candidate, or the broader MAGA movement. All entries are illustrative sample data for demonstration purposes and should be independently verified before citation. Not affiliated with MAHA Action or any political organization.</p>
+</footer>
+
+<script>
+  // ── COUNTERS ──────────────────────────────────────────────
+  const countTo = (id, target, color) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    let v = 0;
+    const step = target / 40;
+    const t = setInterval(() => {
+      v = Math.min(v + step, target);
+      el.textContent = Math.round(v);
+      if (v >= target) clearInterval(t);
+    }, 20);
+  };
+
+  window.addEventListener('load', () => {
+    // stagger hero elements
+    const heroEls = [
+      '.hero-eyebrow', '.hero-h1', '.hero-sub', '.hero-note', '.hero-visual'
+    ].map(s => document.querySelector(s)).filter(Boolean);
+
+    heroEls.forEach((el, i) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(18px)';
+      el.style.transition = `opacity 0.7s ease ${i * 0.13}s, transform 0.7s ease ${i * 0.13}s`;
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }, 80);
+      });
+    });
+
+    setTimeout(() => {
+      countTo('st-adv', 14);
+      countTo('st-opp', 12);
+      countTo('st-bip', 7);
+      countTo('st-states', 10);
+    }, 600);
+  });
+
+  // ── DOT MATRIX ────────────────────────────────────────────
+  const buildDots = () => {
+    // Yes: 46D 14R; No: 4D 42R (aggregate aggregate across tracked Senate measures)
+    const yes = [...Array(46)].map(() => 'd').concat([...Array(14)].map(() => 'r'));
+    const no  = [...Array(4)].map(() => 'd').concat([...Array(42)].map(() => 'r'));
+
+    [['dot-yes', yes], ['dot-no', no]].forEach(([id, arr]) => {
+      const row = document.getElementById(id);
+      if (!row) return;
+      arr.forEach(p => {
+        const d = document.createElement('div');
+        d.className = `dot ${p}`;
+        row.appendChild(d);
+      });
+    });
+  };
+  buildDots();
+
+  // ── SCROLL REVEAL ─────────────────────────────────────────
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('in'), i * 80);
+        revealObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+  // ── BAR ANIMATION ─────────────────────────────────────────
+  const animateBars = () => {
+    document.querySelectorAll('.bar-fill[data-w]').forEach(bar => {
+      bar.style.width = bar.dataset.w;
+    });
+  };
+
+  const scoreObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { setTimeout(animateBars, 250); scoreObs.unobserve(e.target); }
+    });
+  }, { threshold: 0.15 });
+
+  const sc = document.getElementById('scorecard');
+  if (sc) scoreObs.observe(sc);
+
+  // ── STATE FILTERING ───────────────────────────────────────
+  let activeF = 'all';
+  let activeSt = 'all';
+
+  const applyFilter = () => {
+    document.querySelectorAll('.sc').forEach(card => {
+      const ty  = card.dataset.ty;
+      const gov = card.dataset.gov;
+      const st  = card.dataset.st;
+
+      let show = true;
+      if (activeF === 'adv' && ty !== 'adv') show = false;
+      if (activeF === 'opp' && ty !== 'opp') show = false;
+      if (activeF === 'gd'  && gov !== 'gd') show = false;
+      if (activeF === 'gr'  && gov !== 'gr') show = false;
+      if (activeSt !== 'all' && st !== activeSt) show = false;
+
+      card.style.display = show ? 'block' : 'none';
+    });
+  };
+
+  document.querySelectorAll('.fbtn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('on'));
+      btn.classList.add('on');
+      activeF = btn.dataset.f;
+      applyFilter();
+    });
+  });
+
+  document.getElementById('state-sel').addEventListener('change', e => {
+    activeSt = e.target.value;
+    applyFilter();
+  });
+</script>
+</body>
+</html>
