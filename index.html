@@ -186,7 +186,7 @@
     /* ── PRIMER ── */
     #primer { background: var(--warm-white); }
     .primer-grid {
-      display: grid; grid-template-columns: 1.1fr 0.9fr;
+      display: grid; grid-template-columns: 1fr 1.1fr;
       gap: 4rem; margin-top: 3rem;
     }
     .primer-body p {
@@ -219,6 +219,36 @@
       padding-left: 1rem; position: relative; line-height: 1.5;
     }
     .pcard ul li::before { content: '—'; position: absolute; left: 0; color: var(--text-light); }
+
+    .section-nav-card {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      padding: 0.9rem 1rem; border-radius: 4px; text-decoration: none;
+      background: rgba(0,143,125,0.05);
+      border: 1px solid rgba(0,143,125,0.15);
+      transition: border-color 0.2s, background 0.2s;
+      margin-bottom: 0.5rem;
+    }
+    .section-nav-card:last-child { margin-bottom: 0; }
+    .section-nav-card:hover {
+      border-color: rgba(0,143,125,0.4);
+      background: rgba(0,143,125,0.09);
+    }
+    .snc-label {
+      font-family: 'DM Mono', monospace; font-size: 0.65rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--teal-dark); flex-shrink: 0; width: 8.5rem;
+      overflow-wrap: break-word; padding-top: 0.1rem;
+    }
+    .section-nav-card p {
+      font-size: 0.82rem; line-height: 1.55; color: var(--text-mid);
+      margin: 0; flex: 1;
+    }
+    .snc-arrow {
+      font-family: 'DM Mono', monospace; font-size: 0.8rem;
+      color: var(--teal-dark); flex-shrink: 0; padding-top: 0.05rem;
+      transition: transform 0.2s;
+    }
+    .section-nav-card:hover .snc-arrow { transform: translateX(3px); }
 
     /* ── SCORECARD ── */
     #scorecard { background: var(--forest); color: var(--warm-white); }
@@ -391,7 +421,30 @@
       font-family: 'Playfair Display', serif; font-size: 1.15rem;
       color: var(--teal); margin-bottom: 0.7rem;
     }
-    .alt-cta p { font-size: 0.875rem; line-height: 1.75; color: rgba(255,255,255,0.55); }
+    .alt-cta > p { font-size: 0.875rem; line-height: 1.75; color: rgba(255,255,255,0.55); margin-bottom: 1.5rem; }
+    .principle-block {
+      display: flex; gap: 1.25rem; align-items: flex-start;
+      padding: 1.1rem 1.25rem;
+      margin-bottom: 0.75rem;
+      border-radius: 4px;
+      background: rgba(0,201,177,0.05);
+      border: 1px solid rgba(0,201,177,0.14);
+    }
+    .principle-num {
+      font-family: 'DM Mono', monospace; font-size: 0.65rem;
+      letter-spacing: 0.12em; color: var(--teal);
+      padding-top: 0.15rem; flex-shrink: 0; min-width: 1.5rem;
+    }
+    .principle-body strong {
+      display: block;
+      font-family: 'DM Mono', monospace; font-size: 0.68rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--teal); margin-bottom: 0.45rem;
+    }
+    .principle-body p {
+      font-size: 0.865rem !important; line-height: 1.75;
+      color: rgba(255,255,255,0.55) !important; margin: 0 !important;
+    }
 
     .timeline { display: flex; flex-direction: column; gap: 1.2rem; }
     .tl-h3 {
@@ -462,6 +515,104 @@
     #scorecard .src-link:hover { color: var(--teal); }
     .pew-block { display: block; text-decoration: none; color: inherit; }
     .pew-block:hover { opacity: 0.9; }
+
+    /* ── TIMELINE SECTION ── */
+    #timeline { background: var(--warm-white); }
+    .tl-legend {
+      display: flex; gap: 1.5rem; align-items: center;
+      flex-wrap: wrap; margin: 1rem 0 1.5rem;
+    }
+    .tl-legend-item { display: flex; align-items: center; gap: 0.45rem; }
+    .tl-legend-dot { width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0; }
+    .tl-legend-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--text-light);
+    }
+    .tl-filters { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem; }
+    .tl-filter-group { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+    .tl-filter-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--text-light); min-width: 5rem;
+    }
+    .tl-filter-row { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .tl-pill {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.28rem 0.75rem; border: 1px solid var(--cream-dark);
+      background: transparent; color: var(--text-mid);
+      cursor: pointer; border-radius: 2px; transition: all 0.15s;
+    }
+    .tl-pill:hover { border-color: var(--text-mid); color: var(--text-dark); }
+    .tl-pill.active { background: var(--forest); border-color: var(--forest); color: var(--amber); }
+    .tl-count {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem; letter-spacing: 0.1em;
+      color: var(--text-light); text-transform: uppercase; margin-bottom: 1.5rem;
+    }
+    .tl-wrap { position: relative; }
+    .tl-spine {
+      position: absolute; left: 44px; top: 0; bottom: 0;
+      width: 1px; background: var(--cream-dark);
+    }
+    .tl-item { display: flex; margin-bottom: 0.5rem; position: relative; align-items: flex-start; }
+    .tl-node {
+      width: 44px; flex-shrink: 0; display: flex; justify-content: center;
+      padding-top: 1.1rem; position: relative; z-index: 1;
+    }
+    .tl-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+    .tl-card {
+      flex: 1; border-radius: 3px; padding: 1rem 1.25rem; cursor: pointer;
+      transition: box-shadow 0.18s; margin-bottom: 0.4rem; margin-left: 1rem;
+      border-left-width: 3px; border-left-style: solid;
+      border-top: 1px solid rgba(0,0,0,0.05);
+      border-right: 1px solid rgba(0,0,0,0.05);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .tl-card:hover { box-shadow: 0 2px 18px rgba(0,0,0,0.08); }
+    .tl-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+    .tl-card-meta { flex: 1; min-width: 0; }
+    .tl-card-pills { display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.4rem; }
+    .tl-cat-pill, .tl-out-pill {
+      font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 2px 6px; border-radius: 2px;
+      border-width: 1px; border-style: solid;
+    }
+    .tl-card-date {
+      font-family: 'DM Mono', monospace; font-size: 0.62rem; color: var(--text-light);
+      margin-bottom: 0.3rem; letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .tl-card-title {
+      font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700;
+      color: var(--text-dark); line-height: 1.3; margin: 0;
+    }
+    .tl-card-chev {
+      color: var(--text-light); font-size: 0.75rem; flex-shrink: 0;
+      padding-top: 1.45rem; transition: transform 0.18s;
+      user-select: none; line-height: 1; font-family: 'DM Mono', monospace;
+    }
+    .tl-card-chev.open { transform: rotate(180deg); }
+    .tl-card-body { display: none; margin-top: 0.75rem; }
+    .tl-card-body.open { display: block; }
+    .tl-card-body-inner { padding-top: 0.75rem; border-top: 1px solid rgba(0,0,0,0.07); }
+    .tl-card-desc {
+      font-family: 'Source Serif 4', serif; font-size: 0.9rem; line-height: 1.85;
+      color: var(--text-mid); margin: 0 0 0.875rem;
+    }
+    .tl-card-src {
+      display: inline-block; font-family: 'DM Mono', monospace;
+      font-size: 0.62rem; text-decoration: none; padding: 0.3rem 0.75rem;
+      border-radius: 2px; border-width: 1px; border-style: solid;
+      letter-spacing: 0.1em; text-transform: uppercase; transition: opacity 0.15s;
+    }
+    .tl-card-src:hover { opacity: 0.65; }
+    .tl-empty {
+      text-align: center; padding: 4rem 1.5rem; color: var(--text-light);
+      font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.15em;
+      text-transform: uppercase; display: none;
+    }
+    .tl-empty.show { display: block; }
   </style>
   <style>
     #pw-gate {
@@ -553,6 +704,7 @@
     <li><a href="#federal">Federal</a></li>
     <li><a href="#states">States</a></li>
     <li><a href="#alternative">Alt. Path</a></li>
+    <li><a href="#timeline">Timeline</a></li>
   </ul>
 </nav>
 
@@ -692,41 +844,39 @@
 <section id="primer">
   <div class="inner">
     <p class="eyebrow teal">What you need to know</p>
-    <h2 class="section-h2">The MAHA Primer</h2>
+    <h2 class="section-h2">The MAHA Tracker Primer</h2>
     <div class="primer-grid reveal">
       <div class="primer-body">
         <p>MAHA — Make America Healthy Again — emerged as a political brand under the Trump administration, attached to a set of genuine public health concerns: chronic disease, ultra-processed foods, synthetic food additives, pesticide exposure, and corporate capture of regulatory agencies like the FDA and USDA.</p>
         <p>Whether or not you share any sympathy for its political packaging, <strong>these concerns are legitimate and well-documented.</strong> Americans consume more ultra-processed food than almost any nation on earth. Food dyes banned in the EU for decades remain common in U.S. products. PFAS contamination affects over 200 million people's drinking water. Childhood obesity and diet-related illness are undeniable crises.</p>
         <p>This site tracks <em>those specific policy issues</em> — enacted laws, signed regulations, and executive actions — not the broader MAGA political agenda. We follow what passes and who passes it, regardless of party affiliation.</p>
-        <p><strong>The state-level data is illuminating.</strong> Democratic-led states — California, Maine, Washington, Minnesota — are enacting the most concrete food safety protections in the country. Republican administrations are rolling back EPA rules and deregulating factory farms. A few red-state legislators are crossing lines on food dyes and pesticides. Bipartisan support for these specific issues is real.</p>
-        <p>But at the <em>federal</em> level, the Democratic Party's record is deeply sobering. Leadership has repeatedly failed to offer a coherent, forceful health regulatory agenda — deferring to corporate interests, defending failing institutions rather than proposing bold reforms, and leaving one of the most obvious electoral openings in years almost entirely unclaimed. After a major Trump executive order weakening food and drug oversight, only Senators Cory Booker and Ed Markey introduced meaningful legislation (the Ensuring Safe and Toxic-Free Foods Act). Such initiatives remain rare exceptions, not a strategy. The political will to challenge corporate food and chemical power has been largely absent at the federal level — from both parties.</p>
       </div>
       <div class="primer-cards">
-        <div class="pcard yes">
-          <h4>✓ What We Track</h4>
-          <ul>
-            <li>Synthetic food dye restrictions</li>
-            <li>Ultra-processed food labeling laws</li>
-            <li>Pesticide &amp; herbicide use regulations</li>
-            <li>PFAS / "forever chemical" restrictions</li>
-            <li>CAFO oversight and factory farm rules</li>
-            <li>School nutrition standards</li>
-            <li>Corporate consolidation in food supply</li>
-            <li>EPA water and air quality rules</li>
-            <li>SNAP and food access policy</li>
-            <li>FDA regulatory integrity</li>
-          </ul>
-        </div>
-        <div class="pcard no">
-          <h4>✗ What We Don't Track</h4>
-          <ul>
-            <li>Immigration policy</li>
-            <li>Federal workforce or DOGE cuts</li>
-            <li>Electoral politics or candidates</li>
-            <li>The broader MAGA agenda</li>
-            <li>Vaccine and COVID policy</li>
-          </ul>
-        </div>
+        <a class="section-nav-card" href="#scorecard">
+          <span class="snc-label">Scorecard</span>
+          <p>A partisan breakdown of who is actually advancing food and environmental health policy — and who is blocking it — measured across enacted federal laws and regulations.</p>
+          <span class="snc-arrow">&rarr;</span>
+        </a>
+        <a class="section-nav-card" href="#federal">
+          <span class="snc-label">Federal Policy Tracker</span>
+          <p>Enacted federal laws and regulations tracked for impact on food safety, environmental health, and food access — from Biden-era PFAS standards to Trump rollbacks.</p>
+          <span class="snc-arrow">&rarr;</span>
+        </a>
+        <a class="section-nav-card" href="#states">
+          <span class="snc-label">State Policy Tracker</span>
+          <p>Democratic-led states are passing the era's most concrete chemical safety protections; Republican-led states are advancing liability shields for polluters.</p>
+          <span class="snc-arrow">&rarr;</span>
+        </a>
+        <a class="section-nav-card" href="#alternative">
+          <span class="snc-label">Alt. Path</span>
+          <p>MAHA's mandate has been captured by corporate interests — but a bipartisan, policy-centered movement grounded in four clear principles offers a real alternative.</p>
+          <span class="snc-arrow">&rarr;</span>
+        </a>
+        <a class="section-nav-card" href="#timeline">
+          <span class="snc-label">Timeline</span>
+          <p>A chronological record of key events in food and environmental health policy from April 2023 through March 2026.</p>
+          <span class="snc-arrow">&rarr;</span>
+        </a>
       </div>
     </div>
   </div>
@@ -907,6 +1057,16 @@
             <span class="vote-tally"><span class="d">220D</span> <span class="r">0R</span> Yes</span>
           </div>
         </div>
+
+        <div class="pcard-policy adv">
+          <div class="pc-meta"><span class="pc-date">MAR 2026</span></div>
+          <h4 class="pc-h4"><a href="https://www.hhs.gov/press-room/sec-kennedy-sec-mcmahon-celebrate-med-school-commitments-to-increase-nutrition-training-for-future-doctors.html" target="_blank" rel="noopener">53 Medical Schools Commit to Mandatory Nutrition Training</a></h4>
+          <p class="pc-p">HHS and the Dept. of Education convened leaders from 53 top medical schools across 31 states to commit to requiring at least 40 hours of nutrition education for students beginning fall 2026. Secretaries Kennedy and McMahon were joined by the presidents of the AMA, AAMC, and AACOM to celebrate the milestone — a direct response to chronic disease driven by poor diet.</p>
+          <div class="pc-foot">
+            <span class="badge sr"><span class="badge-dot" style="background:#dc2626"></span>Trump Admin (R)</span>
+            <span class="badge bi">Federal Initiative</span>
+          </div>
+        </div>
       </div>
 
       <!-- OPPOSING -->
@@ -1006,6 +1166,16 @@
           <div class="pc-foot">
             <span class="badge sr"><span class="badge-dot" style="background:#dc2626"></span>Trump Admin (R)</span>
             <span class="vote-tally">Industry-aligned</span>
+          </div>
+        </div>
+
+        <div class="pcard-policy opp">
+          <div class="pc-meta"><span class="pc-date">MAR 2026</span></div>
+          <h4 class="pc-h4"><a href="https://blogs.edf.org/health/2026/03/03/heres-how-a-harmful-republican-proposal-to-weaken-the-toxic-substances-control-act-would-make-it-harder-for-epa-to-keep-dangerous-chemicals-out-of-our-lives/" target="_blank" rel="noopener">Senate Republican Proposal to Weaken Toxic Substances Control Act</a></h4>
+          <p class="pc-p">A Senate Republican proposal included in budget reconciliation would gut key provisions of TSCA — the primary federal law governing chemical safety — stripping EPA's ability to evaluate and restrict dangerous chemicals in consumer products, food, and the environment. More than 70% of Americans report concern about toxic chemical exposure, but the proposal would weaken new-chemical review requirements and limit EPA oversight authority.</p>
+          <div class="pc-foot">
+            <span class="badge sr"><span class="badge-dot" style="background:#dc2626"></span>Senate Republicans (R)</span>
+            <span class="badge pr">Proposed Legislation</span>
           </div>
         </div>
       </div>
@@ -1292,82 +1462,163 @@
 </section>
 
 <!-- ╔══════════════════════════════╗ -->
-<!-- ║    PROGRESSIVE ALTERNATIVE  ║ -->
+<!-- ║      THE MISSED MANDATE      ║ -->
 <!-- ╚══════════════════════════════╝ -->
 <section id="alternative">
   <div class="inner">
-    <p class="eyebrow teal-dim">The electoral opening</p>
-    <h2 class="section-h2 light">The Missed Mandate</h2>
-    <p class="section-lead light">The public is ahead of Washington on chemical safety, toxic food, and environmental health. A 2026 Pew survey shows the politics are unambiguous. The question is whether Democrats will actually claim this terrain — or keep ceding it.</p>
+    <p class="eyebrow teal-dim">A bipartisan mandate</p>
+    <h2 class="section-h2 light">Reclaiming Health as a Democratic Cause</h2>
+    <p class="section-lead light">Republican-controlled governments have turned MAHA's rhetoric into cover for deregulation and corporate immunity, while Democratic states have passed the era's most concrete chemical safety protections. Meaningful progress requires a bipartisan, policy-centered movement that holds politicians of any party accountable — built on four principles no genuine health agenda can do without.</p>
 
     <div class="alt-grid reveal">
       <div class="alt-body">
-        <p>The political opening has rarely been clearer. A <strong>February 2026 Pew Research survey</strong> found that more than 70% of Americans are very or somewhat concerned about their own or their loved ones' exposure to harmful chemicals in food and drinking water — with majorities also concerned about chemicals in food packaging, children's products, and farmland. Roughly <strong>five in six Americans</strong> say government and businesses should do more to ensure chemical safety. That includes <strong>nearly eight in ten Republicans</strong>. Anxiety about pesticides, food additives, PFAS, and ultra-processed food is not fringe. It is the dominant public sentiment — and it is sitting there, largely unclaimed by federal Democrats.</p>
-        <p>MAHA has dominated the conversation, but it is riddled with contradiction. Its supporters successfully blocked a Bayer glyphosate liability shield from an appropriations rider — one of the movement's genuine wins. Yet the administration they helped elect has done the opposite at every turn: Republican-led states passed liability shields making it harder for cancer victims to sue Roundup's manufacturer; Trump's DOJ filed a brief urging the Supreme Court to side with Bayer; and the EPA has launched a deregulatory wave against the very protections MAHA's base said it wanted. <strong>The protections MAHA supporters are demanding can only come from the kind of robust public infrastructure their political allies are actively destroying.</strong></p>
-        <p>Meanwhile, <em>federal</em> Democratic leadership has almost entirely failed to capitalize on this. After a major Trump executive order weakening food and drug oversight, only Senators Booker and Markey introduced meaningful counter-legislation. The Green New Deal — despite its merits — is received as a climate framework; for many families, climate feels temporally distant while chemical exposure feels immediate: a child's asthma, a neighbor's cancer, a contaminated well. Democrats have largely failed to speak in those everyday terms. The failure to connect environmental and chemical policy to immediate lived experience has been a costly political and moral mistake.</p>
-        <p>The state-level record shows what is possible and what the mandate looks like in practice. Maine became the first state to pass a sweeping PFAS phase-out law, requiring product reporting and moving toward broad prohibitions. San Francisco's City Attorney sued Coca-Cola, PepsiCo, and Kraft Heinz, arguing they knowingly engineered addictive ultra-processed foods and should bear liability for the resulting disease epidemics. New York restricted neonicotinoid pesticides linked to pollinator collapse. Connecticut strengthened habitability protections for mold exposure. These are real, enforceable interventions — <strong>not brand management</strong>.</p>
-        <p>Democrats can make the case that the people who jumped to MAHA were not wrong to seek change. They were wrong about who would deliver it. But only if Democrats are willing to actually take on corporate power — not just defend the pre-Trump status quo, which wasn't adequate either.</p>
+        <p>The Make America Healthy Again movement deserves credit for cracking open a conversation that has long been overdue. More than 70% of adults are concerned about exposure to harmful chemicals in food and water — anxiety that cuts across party lines. But MAHA has been thoroughly captured by forces hostile to the very goals it claimed to champion. We need a different path.</p>
+
+        <p>The track record on actual, enforceable chemical safety policy tells a clear story. At the state level, the most concrete advances have come overwhelmingly from Democratic-led jurisdictions. <strong>Maine</strong> passed one of the nation's most sweeping laws to phase out PFAS in products and agriculture. <strong>California</strong> became the first state to ban school cafeterias from serving foods containing six artificial dyes tied to health and behavioral problems. <strong>Connecticut</strong> strengthened tenant habitability protections for mold and unsafe housing. <strong>New York</strong> enacted the Birds and Bees Protection Act, restricting neonicotinoids linked to harm to pollinators, wildlife, and human health. At the federal level, Senators Markey and Booker introduced legislation to close the GRAS loophole that lets companies add more than 1,000 chemicals to food without any FDA oversight.</p>
+
+        <p>Republican-led states have moved in the opposite direction. Georgia became the second state — after North Dakota — to shield pesticide manufacturers from lawsuits claiming they failed to warn customers of potential dangers; similar measures have been considered in at least nine other states. At the federal level, the Trump administration has sided with chemical manufacturers at the Supreme Court, advanced farm bill provisions that function as liability shields for pesticide makers, and signed an executive order boosting domestic glyphosate production — even as MAHA supporters rallied for the opposite. The administration is simultaneously pursuing deep cuts to the FDA and EPA, the very agencies with the mandate and power to protect families from chemical harm. <strong>These measures do not protect families from toxins. They protect companies from accountability.</strong></p>
+
+        <p>Democrats have not been blameless. The Biden administration secured real wins, including the first national drinking water standards for PFAS. But Democrats have consistently failed to make chemical safety a visible, central political agenda item and, like Republicans, have proven unwilling to directly curb corporate power. The result is a void: widespread public demand for protection, and no party reliably willing to deliver it.</p>
+
+        <p>Filling that void will require a bipartisan, policy-centered movement — one that holds politicians of any party accountable to concrete, enforceable demands rather than mere slogans. The <strong>No Immunity for Glyphosate Act</strong> drew support from lawmakers as ideologically distant as Lauren Boebert and Ro Khanna, united around a simple premise: companies that profit from potentially harmful products should not be shielded from legal accountability. That kind of coalition is possible. It is the model we need.</p>
 
         <div class="alt-cta">
-          <h4>What Reclaiming This Terrain Requires</h4>
-          <p>A real democratic health movement would start from where the public already is. It would demand stronger regulatory agencies and robust enforcement — not liability shields for pesticide manufacturers, regardless of which party advances them. It would treat chemical safety as a matter of shared material conditions, not a culture-war wedge. It would connect climate and environmental health in language people recognize from their own lives. It would reject the use of "health" to target marginalized communities. Everyone drinks water. Everyone eats. Children across political lines attend public schools. The body is not partisan. The 2026 midterms are an opportunity to prove it — but only if Democrats are willing to challenge the corporate interests that have blocked progress on both sides of the aisle for decades.</p>
+          <h4>Four Principles for a Democratic Health Movement</h4>
+          <p>A genuinely democratic health movement cannot be a vague appeal to wellness or purity. It must rest on four clear principles:</p>
+
+          <div class="principle-block">
+            <div class="principle-num">01</div>
+            <div class="principle-body">
+              <strong>Universality</strong>
+              <p>Health policy must begin from the premise of shared vulnerability. Everyone is exposed to environmental risk, and everyone deserves protection. This rejects any framing that pits the health of one group against another or casts minorities as threats to collective well-being.</p>
+            </div>
+          </div>
+
+          <div class="principle-block">
+            <div class="principle-num">02</div>
+            <div class="principle-body">
+              <strong>Corporate Accountability</strong>
+              <p>Chemical exposure is not an accident of fate — it is structured by production, supply chains, and regulatory design. A democratic health agenda requires robust liability regimes, transparency requirements, and the capacity to sanction firms that externalize harm. Liability shields and deregulation move in the opposite direction.</p>
+            </div>
+          </div>
+
+          <div class="principle-block">
+            <div class="principle-num">03</div>
+            <div class="principle-body">
+              <strong>Public Capacity</strong>
+              <p>Phasing out PFAS, restricting synthetic additives, enforcing housing codes, and regulating pesticides all require well-funded agencies, inspectors, scientists, and courts. Effective regulation is not bureaucratic excess — it is the infrastructure of prevention. The fantasy that health can be restored by shrinking the state misunderstands how environmental protection actually works.</p>
+            </div>
+          </div>
+
+          <div class="principle-block">
+            <div class="principle-num">04</div>
+            <div class="principle-body">
+              <strong>Care Beyond Coercion</strong>
+              <p>Protecting health means investing in the social conditions that prevent illness — safe housing, clean schools, accessible food systems, and community-based care — rather than relying on a perversely incentivized, for-profit healthcare industry as a catch-all for unchecked disease. It requires strengthening, not dismantling, public institutions, including a universal healthcare system, while acknowledging that reactive medical care alone is not nearly enough.</p>
+            </div>
+          </div>
         </div>
       </div>
 
       <div>
-        <h3 class="tl-h3">Progressive Roots of Food &amp; Environmental Health</h3>
+        <h3 class="tl-h3">Health as a Democratic Tradition</h3>
         <div class="timeline">
           <div class="tl-item">
             <span class="tl-year">1906</span>
             <div class="tl-content">
               <h5>Pure Food and Drug Act</h5>
-              <p>Progressive-era legislation banning adulterated foods — the original push to regulate what corporations put in food.</p>
+              <p>Progressive-era legislation banning adulterated foods and patent medicines — the original democratic push to regulate what corporations put in food and medicine.</p>
             </div>
           </div>
           <div class="tl-item">
             <span class="tl-year">1962</span>
             <div class="tl-content">
-              <h5>Rachel Carson — Silent Spring</h5>
-              <p>Documented pesticide harms and industry capture of regulators. Led directly to DDT ban and creation of the EPA.</p>
+              <h5>Rachel Carson — <em>Silent Spring</em></h5>
+              <p>For the first time since Carson made Americans look hard at what they were spraying on their fields, chemical hazards have returned to the political center. Her work led directly to the DDT ban and the creation of the EPA.</p>
             </div>
           </div>
           <div class="tl-item">
-            <span class="tl-year">1971</span>
+            <span class="tl-year">1970</span>
             <div class="tl-content">
-              <h5>Alice Waters &amp; Farm-to-Table</h5>
-              <p>Launched a cultural shift toward organic, local, seasonal food — a progressive food ethic before it had a name.</p>
+              <h5>Founding of the EPA</h5>
+              <p>Nixon signed the executive order creating the Environmental Protection Agency, consolidating federal environmental authority into a single agency with a mandate to set and enforce standards for air, water, and toxic chemicals. A direct institutional legacy of <em>Silent Spring</em> and the democratic demand for chemical accountability.</p>
             </div>
           </div>
           <div class="tl-item">
             <span class="tl-year">1991</span>
             <div class="tl-content">
               <h5>Environmental Justice Movement</h5>
-              <p>Communities of color documented disproportionate exposure to pesticides, toxic food deserts, and industrial pollution — issues MAHA never meaningfully addresses.</p>
+              <p>Communities of color documented disproportionate exposure to pesticides, industrial pollution, and toxic food deserts — establishing that chemical harm is not distributed equally and that race and class determine who bears the burden.</p>
             </div>
           </div>
           <div class="tl-item">
             <span class="tl-year">2006</span>
             <div class="tl-content">
-              <h5>Michael Pollan — The Omnivore's Dilemma</h5>
-              <p>Mainstream reckoning with corporate food systems and ultra-processed food — a progressive cultural touchstone.</p>
+              <h5>Michael Pollan — <em>The Omnivore's Dilemma</em></h5>
+              <p>A mainstream reckoning with corporate food systems and ultra-processed food, making the political economy of American eating legible to a broad public.</p>
             </div>
           </div>
           <div class="tl-item">
-            <span class="tl-year">2010</span>
+            <span class="tl-year">2024</span>
             <div class="tl-content">
-              <h5>Michelle Obama — Let's Move!</h5>
-              <p>Federal push to reform school nutrition, combat childhood obesity, and improve USDA meal standards. Real food policy progress.</p>
+              <h5>Massie Coalition</h5>
+              <p>The No Immunity for Glyphosate Act united Pingree, Boebert, Mace, and Khanna — proof that enforceable chemical accountability can build constituencies that transcend party lines.</p>
             </div>
           </div>
           <div class="tl-item">
             <span class="tl-year">2023–25</span>
             <div class="tl-content">
-              <h5>State Food Safety Wave</h5>
-              <p>CA, WA, MN, IL pass the food dye, PFAS, and nutrition reforms that MAHA claims to want — enacted by Democratic-led governments.</p>
+              <h5>State Enforcement Wave</h5>
+              <p>Maine, California, New York, Connecticut pass PFAS phase-outs, food dye bans, pesticide restrictions, and habitability reforms — the most concrete health-protection record in any jurisdiction during the MAHA era.</p>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════╗ -->
+<!-- ║          TIMELINE           ║ -->
+<!-- ╚══════════════════════════════╝ -->
+<section id="timeline">
+  <div class="inner">
+    <p class="eyebrow teal">April 2023 &ndash; March 2026</p>
+    <h2 class="section-h2">MAHA Timeline</h2>
+    <p class="section-lead">Key events in food &amp; environmental health policy. Click any event to expand.</p>
+
+    <div class="tl-legend">
+      <div class="tl-legend-item">
+        <div class="tl-legend-dot" style="background:#10b981;"></div>
+        <span class="tl-legend-label">Win</span>
+      </div>
+      <div class="tl-legend-item">
+        <div class="tl-legend-dot" style="background:#ef4444;"></div>
+        <span class="tl-legend-label">Loss</span>
+      </div>
+      <div class="tl-legend-item">
+        <div class="tl-legend-dot" style="background:#e8a820;"></div>
+        <span class="tl-legend-label">Event</span>
+      </div>
+    </div>
+
+    <div class="tl-filters">
+      <div class="tl-filter-group">
+        <span class="tl-filter-label">Category</span>
+        <div class="tl-filter-row" id="tl-cat-filters"></div>
+      </div>
+      <div class="tl-filter-group">
+        <span class="tl-filter-label">Outcome</span>
+        <div class="tl-filter-row" id="tl-outcome-filters"></div>
+      </div>
+    </div>
+
+    <div class="tl-count" id="tl-count-bar"></div>
+
+    <div class="tl-wrap">
+      <div class="tl-spine"></div>
+      <div id="tl-list"></div>
+      <div class="tl-empty" id="tl-empty">No events match your filters</div>
     </div>
   </div>
 </section>
@@ -1500,6 +1751,144 @@
     activeSt = e.target.value;
     applyFilter();
   });
+
+  // ── TIMELINE ──────────────────────────────────────────────
+  const TL_CAT = {
+    origin:   { hex: '#008f7d', label: 'Origins'  },
+    politics: { hex: '#e8a820', label: 'Politics' },
+    congress: { hex: '#d97706', label: 'Congress' },
+    policy:   { hex: '#10b981', label: 'Policy'   },
+    states:   { hex: '#2b5238', label: 'States'   },
+    setback:  { hex: '#ef4444', label: 'Setback'  },
+  };
+  const TL_TYPE = {
+    win:     { badge: '#10b981', bg: 'rgba(16,185,129,0.06)',  border: '#10b981', label: 'WIN'   },
+    loss:    { badge: '#ef4444', bg: 'rgba(239,68,68,0.06)',   border: '#ef4444', label: 'LOSS'  },
+    neutral: { badge: '#e8a820', bg: 'rgba(232,168,32,0.06)',  border: '#e8a820', label: 'EVENT' },
+  };
+
+  let tlEvents = [];
+  let tlActiveCat     = 'all';
+  let tlActiveOutcome = 'all';
+
+  async function tlInit() {
+    try {
+      const res = await fetch('events.json');
+      if (!res.ok) throw new Error(res.status);
+      tlEvents = await res.json();
+    } catch (e) {
+      const el = document.getElementById('tl-empty');
+      if (el) { el.textContent = 'Could not load events. Please try refreshing.'; el.classList.add('show'); }
+      return;
+    }
+    tlBuildFilters();
+    tlRender();
+  }
+
+  function tlBuildFilters() {
+    const catWrap = document.getElementById('tl-cat-filters');
+    if (!catWrap) return;
+    catWrap.innerHTML = ['all', ...Object.keys(TL_CAT)].map(c => {
+      const label = c === 'all' ? 'All' : TL_CAT[c].label;
+      return `<button class="tl-pill${c === tlActiveCat ? ' active' : ''}" data-tlgroup="cat" data-tlval="${c}">${label}</button>`;
+    }).join('');
+
+    const outWrap = document.getElementById('tl-outcome-filters');
+    [
+      { val: 'all',     label: 'All'    },
+      { val: 'win',     label: 'Wins'   },
+      { val: 'loss',    label: 'Losses' },
+      { val: 'neutral', label: 'Events' },
+    ].forEach(o => {
+      const btn = document.createElement('button');
+      btn.className = 'tl-pill' + (o.val === tlActiveOutcome ? ' active' : '');
+      btn.dataset.tlgroup = 'outcome';
+      btn.dataset.tlval = o.val;
+      btn.textContent = o.label;
+      outWrap.appendChild(btn);
+    });
+
+    document.querySelectorAll('.tl-pill').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const { tlgroup, tlval } = btn.dataset;
+        if (tlgroup === 'cat') tlActiveCat = tlval;
+        else tlActiveOutcome = tlval;
+        document.querySelectorAll(`[data-tlgroup="${tlgroup}"]`).forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        tlRender();
+      });
+    });
+  }
+
+  function tlRender() {
+    const list  = document.getElementById('tl-list');
+    const empty = document.getElementById('tl-empty');
+    const count = document.getElementById('tl-count-bar');
+    if (!list) return;
+
+    const filtered = tlEvents.filter(ev => {
+      const matchCat = tlActiveCat     === 'all' || ev.category === tlActiveCat;
+      const matchOut = tlActiveOutcome === 'all' || ev.type     === tlActiveOutcome;
+      return matchCat && matchOut;
+    });
+
+    count.textContent = filtered.length === tlEvents.length
+      ? `${tlEvents.length} events`
+      : `${filtered.length} of ${tlEvents.length} events`;
+
+    if (filtered.length === 0) {
+      list.innerHTML = '';
+      empty.classList.add('show');
+      return;
+    }
+    empty.classList.remove('show');
+
+    list.innerHTML = filtered.map((ev, i) => {
+      const ts  = TL_TYPE[ev.type]    || TL_TYPE.neutral;
+      const cat = TL_CAT[ev.category] || { hex: '#8a8a77', label: ev.category };
+      const id  = `tlcard-${i}`;
+      return `
+        <div class="tl-item">
+          <div class="tl-node">
+            <div class="tl-dot" style="background:${ts.badge}; border:2px solid rgba(250,248,244,0.9);"></div>
+          </div>
+          <div class="tl-card"
+               data-tlid="${id}"
+               data-tlaccent="${ts.badge}"
+               style="background:${ts.bg}; border-left-color:${ts.border}; border-top-color:${ts.border}18; border-right-color:${ts.border}18; border-bottom-color:${ts.border}18;"
+               onclick="tlToggle(this)">
+            <div class="tl-card-top">
+              <div class="tl-card-meta">
+                <div class="tl-card-pills">
+                  <span class="tl-cat-pill" style="color:${cat.hex}; background:${cat.hex}15; border-color:${cat.hex}40;">${cat.label}</span>
+                  <span class="tl-out-pill" style="color:${ts.badge}; background:${ts.badge}15; border-color:${ts.badge}40;">${ts.label}</span>
+                </div>
+                <div class="tl-card-date">${ev.date}</div>
+                <h3 class="tl-card-title">${ev.title}</h3>
+              </div>
+              <div class="tl-card-chev" id="tlchev-${id}">&#9662;</div>
+            </div>
+            <div class="tl-card-body" id="tlbody-${id}">
+              <div class="tl-card-body-inner">
+                <p class="tl-card-desc">${ev.description}</p>
+                ${ev.link ? `<a class="tl-card-src" href="${ev.link}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" style="color:${ts.badge}; border-color:${ts.badge}44;">&rarr; View Source</a>` : ''}
+              </div>
+            </div>
+          </div>
+        </div>`;
+    }).join('');
+  }
+
+  function tlToggle(card) {
+    const id   = card.dataset.tlid;
+    const body = document.getElementById(`tlbody-${id}`);
+    const chev = document.getElementById(`tlchev-${id}`);
+    const open = body.classList.toggle('open');
+    chev.classList.toggle('open', open);
+    card.style.boxShadow = open ? `0 4px 28px ${card.dataset.tlaccent}22` : 'none';
+  }
+
+  tlInit();
 </script>
 </body>
 </html>
