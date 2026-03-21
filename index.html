@@ -153,7 +153,7 @@
       font-family: 'Playfair Display', serif;
       font-size: 2.4rem; font-weight: 700; line-height: 1;
     }
-    .stat-num.green { color: var(--advance); }
+    .stat-num.green { color: var(--dem-light); }
     .stat-num.red   { color: var(--oppose); }
     .stat-num.gold  { color: var(--amber); }
     .stat-num.dim   { color: rgba(255,255,255,0.35); }
@@ -260,6 +260,11 @@
       font-family: 'Playfair Display', serif; font-size: 1.35rem;
       color: var(--cream); margin-bottom: 1.5rem;
     }
+    .bar-level-lbl {
+      font-family: 'DM Mono', monospace; font-size: 0.6rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.3); margin-bottom: 0.6rem;
+    }
     .bar-wrap { margin-bottom: 1rem; }
     .bar-lbl {
       display: flex; justify-content: space-between; margin-bottom: 0.35rem;
@@ -275,8 +280,8 @@
       height: 5px; background: rgba(255,255,255,0.07); border-radius: 3px; overflow: hidden;
     }
     .bar-fill { height: 100%; border-radius: 3px; width: 0; transition: width 1.2s cubic-bezier(0.4,0,0.2,1); }
-    .bar-fill.d { background: var(--dem); }
-    .bar-fill.r { background: var(--rep); }
+    .bar-fill.d { background: var(--dem-light); }
+    .bar-fill.r { background: var(--oppose); }
     .bar-fill.b { background: var(--amber); }
 
     .dot-matrix { margin-top: 2.5rem; }
@@ -290,8 +295,8 @@
       transition: transform 0.2s;
     }
     .dot:hover { transform: scale(1.6); }
-    .dot.d { background: var(--dem); }
-    .dot.r { background: var(--rep); }
+    .dot.d { background: var(--dem-light); }
+    .dot.r { background: var(--oppose); }
     .dot.x { background: rgba(255,255,255,0.12); }
 
     .score-callout {
@@ -367,8 +372,8 @@
       letter-spacing: 0.04em; font-weight: 500;
     }
     .badge-dot { width: 5px; height: 5px; border-radius: 50%; }
-    .badge.sd { background: rgba(37,99,235,0.1);  color: #1d4ed8; border: 1px solid rgba(37,99,235,0.2); }
-    .badge.sr { background: rgba(220,38,38,0.1);  color: #b91c1c; border: 1px solid rgba(220,38,38,0.2); }
+    .badge.sd { background: rgba(138,181,222,0.12); color: #8ab5de; border: 1px solid rgba(138,181,222,0.25); }
+    .badge.sr { background: rgba(217,152,152,0.12); color: #d99898; border: 1px solid rgba(217,152,152,0.25); }
     .badge.bi { background: rgba(217,119,6,0.1);  color: #92400e; border: 1px solid rgba(217,119,6,0.2); }
     .badge.pd { background: rgba(37,99,235,0.08); color: #1e40af; border: 1px solid rgba(37,99,235,0.14); }
     .badge.pr { background: rgba(220,38,38,0.08); color: #991b1b; border: 1px solid rgba(220,38,38,0.14); }
@@ -380,8 +385,8 @@
       margin-left: auto;
       font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--text-light);
     }
-    .vote-tally .d { color: var(--dem); font-weight: 500; }
-    .vote-tally .r { color: var(--rep); font-weight: 500; }
+    .vote-tally .d { color: var(--dem-light); font-weight: 500; }
+    .vote-tally .r { color: var(--rep-light); font-weight: 500; }
 
     /* ── STATE FILTERS ── */
     .filters { display: flex; gap: 0.6rem; flex-wrap: wrap; margin: 1.5rem 0 2rem; }
@@ -955,27 +960,7 @@
     <div class="score-grid reveal">
       <div class="score-half">
         <h3>Advancing Health: Who Signs It</h3>
-        <div class="bar-wrap">
-          <div class="bar-lbl">
-            <span class="bar-name d">Democratic President / Administration</span>
-            <span class="bar-count">9 actions</span>
-          </div>
-          <div class="bar-track"><div class="bar-fill d" data-w="64%"></div></div>
-        </div>
-        <div class="bar-wrap">
-          <div class="bar-lbl">
-            <span class="bar-name b">Bipartisan / Both Parties</span>
-            <span class="bar-count">3 actions</span>
-          </div>
-          <div class="bar-track"><div class="bar-fill b" data-w="21%"></div></div>
-        </div>
-        <div class="bar-wrap">
-          <div class="bar-lbl">
-            <span class="bar-name r">Republican President / Administration</span>
-            <span class="bar-count">2 actions</span>
-          </div>
-          <div class="bar-track"><div class="bar-fill r" data-w="14%"></div></div>
-        </div>
+        <div id="bars-adv"></div>
 
         <div class="dot-matrix">
           <p class="dm-label">Senate yes-votes on food &amp; environment health measures (aggregate)</p>
@@ -987,27 +972,7 @@
 
       <div class="score-half">
         <h3>Opposing Health: Who Signs It</h3>
-        <div class="bar-wrap">
-          <div class="bar-lbl">
-            <span class="bar-name r">Republican President / Administration</span>
-            <span class="bar-count">9 actions</span>
-          </div>
-          <div class="bar-track"><div class="bar-fill r" data-w="82%"></div></div>
-        </div>
-        <div class="bar-wrap">
-          <div class="bar-lbl">
-            <span class="bar-name b">Both Parties / Weak Compromise</span>
-            <span class="bar-count">1 action</span>
-          </div>
-          <div class="bar-track"><div class="bar-fill b" data-w="9%"></div></div>
-        </div>
-        <div class="bar-wrap">
-          <div class="bar-lbl">
-            <span class="bar-name d">Democratic President / Administration</span>
-            <span class="bar-count">1 action</span>
-          </div>
-          <div class="bar-track"><div class="bar-fill d" data-w="9%"></div></div>
-        </div>
+        <div id="bars-opp"></div>
 
         <div class="score-callout">
           <p class="callout-lbl">Key Finding</p>
@@ -1041,7 +1006,7 @@
           <h4 class="pc-h4"><a href="https://www.hhs.gov/press-room/sec-kennedy-sec-mcmahon-celebrate-med-school-commitments-to-increase-nutrition-training-for-future-doctors.html" target="_blank" rel="noopener">53 Medical Schools Commit to Mandatory Nutrition Training</a></h4>
           <p class="pc-p">HHS and the Dept. of Education convened leaders from 53 top medical schools across 31 states to commit to requiring at least 40 hours of nutrition education for students beginning fall 2026. Secretaries Kennedy and McMahon were joined by the presidents of the AMA, AAMC, and AACOM. The commitment is a meaningful shift in how the medical profession approaches diet and chronic disease. That said, its impact is limited in scope: it affects future physicians only, carries no enforcement mechanism, and does not address the structural conditions — food deserts, ultra-processed food dominance, agricultural subsidies — that shape what most Americans actually eat. Without accompanying regulatory and financial reforms, better-trained doctors will have limited tools to act on what they know.</p>
           <div class="pc-foot">
-            <span class="badge sr"><span class="badge-dot" style="background:#dc2626"></span>Trump Admin (R)</span>
+            <span class="badge sr"><span class="badge-dot" style="background:#d99898"></span>Trump Admin (R)</span>
             <span class="badge bi">Federal Initiative</span>
           </div>
         </div>
@@ -1051,7 +1016,7 @@
           <h4 class="pc-h4"><a href="https://www.hhs.gov/press-room/hhs-usda-epa-announce-one-billion-investments-plan-accelerate-progress-farm-modernization-long-term-food-supply-security.html" target="_blank" rel="noopener">HHS, USDA &amp; EPA Announce $1B+ Farm Modernization Investment</a></h4>
           <p class="pc-p">Three federal agencies committed over $1 billion to modernize U.S. agriculture and reduce chemical dependence: USDA allocated $840M through conservation programs (EQIP, CSP) to fund regenerative agriculture; EPA launched a $30M grand prize challenge for pesticide alternatives to pre-harvest desiccation; and EPA, USDA, and NIH committed to developing a cumulative chemical exposure research framework for the food supply. Rooted in Executive Order 14212 establishing the MAHA Commission.</p>
           <div class="pc-foot">
-            <span class="badge sr"><span class="badge-dot" style="background:#dc2626"></span>Trump Admin (R)</span>
+            <span class="badge sr"><span class="badge-dot" style="background:#d99898"></span>Trump Admin (R)</span>
             <span class="badge bi">HHS · USDA · EPA</span>
           </div>
         </div>
@@ -1061,7 +1026,7 @@
           <h4 class="pc-h4"><a href="https://www.hhs.gov/press-room/historic-reset-federal-nutrition-policy.html" target="_blank" rel="noopener">Dietary Guidelines for Americans 2025–2030 — "Eat Real Food"</a></h4>
           <p class="pc-p">Kennedy and USDA Secretary Brooke Rollins released the most significant reset of federal nutrition policy in decades. The 10-page guidelines — down from 164 pages in 2020 — explicitly warn against highly processed foods for the first time, introduce an inverted food pyramid prioritizing protein, dairy, and healthy fats, and drop the long-standing low-fat dogma. As the governing standard for the National School Lunch Program, the guidelines directly affect what 30 million children eat daily. Companion site RealFood.gov launched the same day. The guidelines represent a genuine shift in the federal government's official position on diet and chronic disease. However, dietary guidelines are advisory — they carry no regulatory force over what food companies can produce or market, and do not alter the farm subsidies and commodity policies that make ultra-processed food the most affordable option for millions of Americans. Their real-world impact depends heavily on whether they are backed by enforcement mechanisms, school food funding, and changes to agricultural policy that have not yet materialized.</p>
           <div class="pc-foot">
-            <span class="badge sr"><span class="badge-dot" style="background:#dc2626"></span>Trump Admin (R)</span>
+            <span class="badge sr"><span class="badge-dot" style="background:#d99898"></span>Trump Admin (R)</span>
             <span class="badge bi">HHS · USDA</span>
           </div>
         </div>
@@ -1071,7 +1036,7 @@
           <h4 class="pc-h4"><a href="https://www.epa.gov/newsreleases/epa-announces-intent-regulate-dozens-uses-five-phthalate-chemicals-protect-workers-and" target="_blank" rel="noopener">EPA Mandated to Regulate Five Phthalate Chemicals</a></h4>
           <p class="pc-p">EPA Administrator Lee Zeldin announced the agency's intent to develop rules eliminating unreasonable risks from five phthalate chemicals — BBP, DBP, DCHP, DEHP, and DIBP — used in plastics and building materials. DEHP alone faces restrictions on 30 conditions of use. Under TSCA, once the EPA identifies unreasonable risk, rulemaking to eliminate that risk is legally required, making this a binding mandate rather than a voluntary commitment.</p>
           <div class="pc-foot">
-            <span class="badge sr"><span class="badge-dot" style="background:#dc2626"></span>Trump Admin (R)</span>
+            <span class="badge sr"><span class="badge-dot" style="background:#d99898"></span>Trump Admin (R)</span>
             <span class="badge bi">TSCA Mandate</span>
           </div>
         </div>
@@ -1081,7 +1046,7 @@
           <h4 class="pc-h4"><a href="https://www.usda.gov/about-usda/news/press-releases/2025/12/10/usda-launches-new-regenerative-pilot-program-lower-farmer-production-costs-and-advance-maha-agenda" target="_blank" rel="noopener">USDA Launches $700M Regenerative Pilot Program</a></h4>
           <p class="pc-p">Agriculture Secretary Brooke Rollins, alongside RFK Jr. and CMS Administrator Dr. Oz, launched a $700 million Regenerative Pilot Program — $400M through EQIP and $300M through CSP — to help farmers adopt whole-farm conservation practices addressing soil health, water quality, and natural vitality through a single streamlined application. NRCS established a Chief's Regenerative Agriculture Advisory Council to guide implementation. The program provides farmers an "off-ramp" to transition away from synthetic input dependence.</p>
           <div class="pc-foot">
-            <span class="badge sr"><span class="badge-dot" style="background:#dc2626"></span>Trump Admin (R)</span>
+            <span class="badge sr"><span class="badge-dot" style="background:#d99898"></span>Trump Admin (R)</span>
             <span class="badge bi">USDA · NRCS</span>
           </div>
         </div>
@@ -1091,7 +1056,7 @@
           <h4 class="pc-h4"><a href="https://www.fda.gov/food/hfp-constituent-updates/fda-revoke-authorization-use-red-no-3-food-and-ingested-drugs" target="_blank" rel="noopener">FDA Red Dye No. 3 Revocation</a></h4>
           <p class="pc-p">FDA revoked authorization for Red Dye No. 3 (erythrosine) in food and ingested drugs — a synthetic dye linked to thyroid tumors in animal studies — after the Delaney Clause required removal once carcinogenicity was demonstrated. Manufacturers given 2 years to reformulate.</p>
           <div class="pc-foot">
-            <span class="badge sd"><span class="badge-dot" style="background:#4a7fc0"></span>Biden/Trump transition</span>
+            <span class="badge sd"><span class="badge-dot" style="background:#8ab5de"></span>Biden/Trump transition</span>
             <span class="badge bi">Bipartisan Support</span>
           </div>
         </div>
@@ -1101,7 +1066,7 @@
           <h4 class="pc-h4"><a href="https://www.fda.gov/food/hfp-constituent-updates/fda-issues-proposed-rule-front-package-nutrition-labeling" target="_blank" rel="noopener">FDA Front-of-Package Labeling Proposal</a></h4>
           <p class="pc-p">FDA issued proposed rule for mandatory front-of-package "nutrition info" labeling, including a "high in" warning label for sodium, saturated fat, and added sugars — the most significant food labeling reform in decades.</p>
           <div class="pc-foot">
-            <span class="badge sd"><span class="badge-dot" style="background:#4a7fc0"></span>Biden Admin (D)</span>
+            <span class="badge sd"><span class="badge-dot" style="background:#8ab5de"></span>Biden Admin (D)</span>
             <span class="vote-tally">FDA Rulemaking</span>
           </div>
         </div>
@@ -1111,7 +1076,7 @@
           <h4 class="pc-h4"><a href="https://www.epa.gov/sdwa/and-polyfluoroalkyl-substances-pfas" target="_blank" rel="noopener">EPA PFAS Drinking Water Standards</a></h4>
           <p class="pc-p">First-ever enforceable federal limits on six PFAS compounds in drinking water, covering an estimated 100+ million Americans. Set maximum contaminant levels for PFOA, PFOS, and four other "forever chemicals" linked to cancer and immune disruption.</p>
           <div class="pc-foot">
-            <span class="badge sd"><span class="badge-dot" style="background:#4a7fc0"></span>Biden Admin (D)</span>
+            <span class="badge sd"><span class="badge-dot" style="background:#8ab5de"></span>Biden Admin (D)</span>
             <span class="badge bi">Broad Public Support</span>
           </div>
         </div>
@@ -1121,7 +1086,7 @@
           <h4 class="pc-h4"><a href="https://www.fns.usda.gov/cn/school-nutrition-standards-updates" target="_blank" rel="noopener">USDA School Meal Nutrition Standards Update</a></h4>
           <p class="pc-p">Strengthened school meal requirements: reduced sodium limits over 5-year phase-in, required whole grain minimums, and capped added sugars in school breakfasts for the first time — affecting 30 million children daily.</p>
           <div class="pc-foot">
-            <span class="badge sd"><span class="badge-dot" style="background:#4a7fc0"></span>Biden Admin (D)</span>
+            <span class="badge sd"><span class="badge-dot" style="background:#8ab5de"></span>Biden Admin (D)</span>
             <span class="vote-tally">USDA Rulemaking</span>
           </div>
         </div>
@@ -1131,7 +1096,7 @@
           <h4 class="pc-h4"><a href="https://www.usda.gov/topics/farming/inflation-reduction-act" target="_blank" rel="noopener">Inflation Reduction Act — Conservation Provisions</a></h4>
           <p class="pc-p">Included $20 billion for voluntary conservation programs, including restrictions on certain pesticide-adjacent practices and incentives for reducing synthetic input use on farmland — largest federal conservation investment in history.</p>
           <div class="pc-foot">
-            <span class="badge sd"><span class="badge-dot" style="background:#4a7fc0"></span>Biden (D)</span>
+            <span class="badge sd"><span class="badge-dot" style="background:#8ab5de"></span>Biden (D)</span>
             <span class="badge pd">Party-Line D</span>
             <span class="vote-tally"><span class="d">220D</span> <span class="r">0R</span> Yes</span>
           </div>
@@ -1144,7 +1109,7 @@
           <h4 class="pc-h4"><a href="https://www.epa.gov/ingredients-used-pesticide-products/chlorpyrifos" target="_blank" rel="noopener">EPA Chlorpyrifos Agricultural Ban</a></h4>
           <p class="pc-p">Biden EPA finalized a ban on chlorpyrifos — a neurotoxic organophosphate pesticide linked to childhood neurological damage — for all agricultural food uses, after decades of industry lobbying blocked action under prior administrations.</p>
           <div class="pc-foot">
-            <span class="badge sd"><span class="badge-dot" style="background:#4a7fc0"></span>Biden Admin (D)</span>
+            <span class="badge sd"><span class="badge-dot" style="background:#8ab5de"></span>Biden Admin (D)</span>
             <span class="badge pd">EPA Rulemaking</span>
             <span class="vote-tally">D-led action</span>
           </div>
@@ -1163,7 +1128,7 @@
           <h4 class="pc-h4"><a href="https://www.nbcnews.com/science/environment/epa-eases-limits-coal-plant-emissions-mercury-toxins-trump-rcna259955" target="_blank" rel="noopener">Mercury &amp; Air Toxics Standards (MATS) Rollback</a></h4>
           <p class="pc-p">Trump EPA reversed Biden-era tightening of the Mercury and Air Toxics Standards — the rule governing emissions from coal-fired power plants, the largest human source of mercury pollution. Coal plant mercury enters the food chain through fish and other food sources. Mercury is a neurotoxin that impairs brain development in young children and contributes to heart attacks in adults. EPA cited "hundreds of millions in savings" for utility operators. Announced at a coal plant on the Ohio River in Louisville, Kentucky.</p>
           <div class="pc-foot">
-            <span class="badge sr"><span class="badge-dot" style="background:#dc2626"></span>Trump Admin (R)</span>
+            <span class="badge sr"><span class="badge-dot" style="background:#d99898"></span>Trump Admin (R)</span>
             <span class="badge pr">Party-Line</span>
           </div>
         </div>
@@ -1173,7 +1138,7 @@
           <h4 class="pc-h4"><a href="https://biologicaldiversity.org/w/news/press-releases/epa-reapproves-dangerous-drift-prone-pesticide-dicamba-2026-02-06/" target="_blank" rel="noopener">EPA Reapproves Dicamba With Weakened Restrictions</a></h4>
           <p class="pc-p">EPA reapproved dicamba — described by experts as causing "the worst drift of any herbicide in the history of U.S. agriculture" — with fewer protections than previous versions. Eliminated seasonal cutoff dates and temperature-based spray restrictions that had limited its spread. Since 2016, dicamba drift has damaged millions of acres of crops, orchards, vegetable farms, and wildlife refuges. Threatens monarch butterflies and rusty patched bumblebees. Federal courts had struck down two prior EPA approvals (2020, 2024) before this third approval.</p>
           <div class="pc-foot">
-            <span class="badge sr"><span class="badge-dot" style="background:#dc2626"></span>Trump Admin (R)</span>
+            <span class="badge sr"><span class="badge-dot" style="background:#d99898"></span>Trump Admin (R)</span>
             <span class="badge pr">Executive Action</span>
             <span class="vote-tally">Courts struck down twice before</span>
           </div>
@@ -1184,7 +1149,7 @@
           <h4 class="pc-h4"><a href="https://biologicaldiversity.org/w/news/press-releases/trump-epa-approves-its-second-forever-chemical-pesticide-in-two-weeks-2025-11-20/" target="_blank" rel="noopener">EPA Approves Isocycloseram — A PFAS Pesticide</a></h4>
           <p class="pc-p">Trump EPA approved isocycloseram for use on food crops (oranges, tomatoes, almonds, peas, oats), golf courses, and lawns — despite being a PFAS "forever chemical" that breaks down into 40 additional PFAS compounds. Linked to reduced sperm count, smaller testicle size, and liver toxicity. The approval omitted a child-safety buffer despite children's heightened sensitivity. Bees near treated fields may be exposed to 1,500 times the lethal dose. The second PFAS pesticide approved by this EPA within two weeks.</p>
           <div class="pc-foot">
-            <span class="badge sr"><span class="badge-dot" style="background:#dc2626"></span>Trump Admin (R)</span>
+            <span class="badge sr"><span class="badge-dot" style="background:#d99898"></span>Trump Admin (R)</span>
             <span class="badge pr">Executive Action</span>
             <span class="vote-tally">Industry-aligned</span>
           </div>
@@ -1195,7 +1160,7 @@
           <h4 class="pc-h4"><a href="https://www.epa.gov/ingredients-used-pesticide-products/glyphosate" target="_blank" rel="noopener">EPA Glyphosate Registration Review</a></h4>
           <p class="pc-p">EPA renewed glyphosate's pesticide registration for 15 years despite ~181,000 pending cancer lawsuits (non-Hodgkin's lymphoma), a $2.1 billion Georgia jury verdict, and the Trump DOJ filing a brief urging the Supreme Court to side with Bayer and strip cancer victims of their right to sue under state law. MAHA supporters had previously blocked a glyphosate liability shield from an appropriations rider — the administration then did the opposite. <em>Cross-partisan response: Rep. Thomas Massie's No Immunity for Glyphosate Act, co-sponsored by Pingree, Boebert, Mace, and Khanna, would restore victims' right to sue — but has not advanced to a floor vote.</em></p>
           <div class="pc-foot">
-            <span class="badge sr"><span class="badge-dot" style="background:#dc2626"></span>Trump Admin (R)</span>
+            <span class="badge sr"><span class="badge-dot" style="background:#d99898"></span>Trump Admin (R)</span>
             <span class="vote-tally">Industry-aligned</span>
           </div>
         </div>
@@ -1205,7 +1170,7 @@
           <h4 class="pc-h4"><a href="https://www.epa.gov/newsreleases/trump-epa-announces-next-steps-regulatory-pfoa-and-pfos-cleanup-efforts-provides" target="_blank" rel="noopener">PFAS Drinking Water Rule Rollback</a></h4>
           <p class="pc-p">Trump EPA initiated formal review to weaken or suspend Biden's PFAS drinking water standards — potentially stripping protections for the 100+ million Americans in communities with PFAS-contaminated water systems.</p>
           <div class="pc-foot">
-            <span class="badge sr"><span class="badge-dot" style="background:#dc2626"></span>Trump Admin (R)</span>
+            <span class="badge sr"><span class="badge-dot" style="background:#d99898"></span>Trump Admin (R)</span>
             <span class="badge pr">Party-Line</span>
           </div>
         </div>
@@ -1215,7 +1180,7 @@
           <h4 class="pc-h4"><a href="https://www.epa.gov/wotus" target="_blank" rel="noopener">WOTUS Rule Elimination</a></h4>
           <p class="pc-p">Eliminated Biden-era Waters of the United States rule, removing federal protections for an estimated 51% of the nation's wetlands and many seasonal streams — the waters that filter drinking supplies for millions of Americans.</p>
           <div class="pc-foot">
-            <span class="badge sr"><span class="badge-dot" style="background:#dc2626"></span>Trump Admin (R)</span>
+            <span class="badge sr"><span class="badge-dot" style="background:#d99898"></span>Trump Admin (R)</span>
             <span class="badge pr">Party-Line</span>
             <span class="vote-tally"><span class="r">R-only</span></span>
           </div>
@@ -1226,7 +1191,7 @@
           <h4 class="pc-h4"><a href="https://www.epa.gov/npdes/animal-feeding-operations-regulations-guidance-and-studies" target="_blank" rel="noopener">EPA CAFO Effluent Guideline Withdrawal</a></h4>
           <p class="pc-p">Trump EPA withdrew proposed rules that would have required factory farms to reduce discharge of ammonia, pathogens, and pharmaceuticals into waterways — eliminating water quality protections for communities near industrial livestock operations.</p>
           <div class="pc-foot">
-            <span class="badge sr"><span class="badge-dot" style="background:#dc2626"></span>Trump Admin (R)</span>
+            <span class="badge sr"><span class="badge-dot" style="background:#d99898"></span>Trump Admin (R)</span>
             <span class="badge pr">Executive Action</span>
           </div>
         </div>
@@ -1236,7 +1201,7 @@
           <h4 class="pc-h4">USDA School Nutrition Standard Rollback</h4>
           <p class="pc-p">Trump USDA moved to reverse Biden-era improvements to school meal nutrition standards, including rollbacks on whole grain requirements and sodium caps — affecting 30 million children who rely on school meals daily.</p>
           <div class="pc-foot">
-            <span class="badge sr"><span class="badge-dot" style="background:#dc2626"></span>Trump Admin (R)</span>
+            <span class="badge sr"><span class="badge-dot" style="background:#d99898"></span>Trump Admin (R)</span>
             <span class="badge pr">Executive Action</span>
           </div>
         </div>
@@ -1246,7 +1211,7 @@
           <h4 class="pc-h4">FDA Takes No Action on GRAS Loophole Throughout Biden Term</h4>
           <p class="pc-p">Under current FDA rules, food companies can self-certify new food additives as "Generally Recognized as Safe" (GRAS) without notifying or seeking approval from the agency. Thousands of chemicals have entered the U.S. food supply through this pathway without independent government safety review. The Biden FDA acknowledged the problem but took no action to reform the process. At a December 2024 Senate hearing, FDA Commissioner Robert Califf defended inaction, citing legal risk and limited staff. Scientists and legal experts at Harvard characterized the GRAS system as "a laissez-faire approach to monitoring ingredient safety" that poses a direct threat to public health.</p>
           <div class="pc-foot">
-            <span class="badge sd"><span class="badge-dot" style="background:#3b82f6"></span>Biden Administration</span>
+            <span class="badge sd"><span class="badge-dot" style="background:#8ab5de"></span>Biden Administration</span>
           </div>
         </div>
 
@@ -1255,7 +1220,7 @@
           <h4 class="pc-h4">Biden EPA Continued Registering PFAS-Containing Pesticides</h4>
           <p class="pc-p">A 2024 analysis identified 66 active pesticide ingredients registered with the EPA between 1972 and 2021 that meet the OECD definition of PFAS — "forever chemicals" that do not break down in the environment. California agricultural fields alone are sprayed with an average of 2.5 million pounds of PFAS pesticides per year. Many of these ingredients break down into trifluoroacetic acid (TFA), which is increasingly detected in groundwater and linked to liver toxicity. Throughout the Biden term, the EPA continued approving these compounds without assessing cumulative TFA contamination risks or treating PFAS pesticides as a class.</p>
           <div class="pc-foot">
-            <span class="badge sd"><span class="badge-dot" style="background:#3b82f6"></span>Biden Administration</span>
+            <span class="badge sd"><span class="badge-dot" style="background:#8ab5de"></span>Biden Administration</span>
           </div>
         </div>
 
@@ -1264,7 +1229,7 @@
           <h4 class="pc-h4">Farm Bill SNAP Eligibility Restrictions</h4>
           <p class="pc-p">Republican-negotiated Farm Bill provisions tightened SNAP work requirements and eligibility, reducing food access for an estimated 750,000 households — disproportionately in rural food deserts and among formerly incarcerated individuals.</p>
           <div class="pc-foot">
-            <span class="badge sr"><span class="badge-dot" style="background:#dc2626"></span>Republican Provision</span>
+            <span class="badge sr"><span class="badge-dot" style="background:#d99898"></span>Republican Provision</span>
             <span class="vote-tally"><span class="d">12D</span> <span class="r">185R</span> Yes</span>
           </div>
         </div>
@@ -1274,7 +1239,7 @@
           <h4 class="pc-h4">Biden Administration Approves Willow Project Oil Drilling in Alaska's Arctic</h4>
           <p class="pc-p">The Biden administration approved ConocoPhillips' Willow Project — a 30-year, $8 billion oil drilling operation in Alaska's National Petroleum Reserve — despite more than 3 million petition signatures in opposition and Biden's own 2020 pledge to end new drilling on federal lands. The scaled-down approval authorizes three drill pads and up to 150 oil wells, projected to produce 180,000 barrels per day at peak and generate approximately 260 million metric tons of carbon emissions over the project's lifetime. The decision drew immediate legal challenges from environmental groups and illustrated the gap between the administration's climate commitments and its energy policy decisions.</p>
           <div class="pc-foot">
-            <span class="badge sd"><span class="badge-dot" style="background:#3b82f6"></span>Biden Administration</span>
+            <span class="badge sd"><span class="badge-dot" style="background:#8ab5de"></span>Biden Administration</span>
           </div>
         </div>
 
@@ -1283,7 +1248,7 @@
           <h4 class="pc-h4">Biden EPA Delays PFAS Industrial Discharge Limits</h4>
           <p class="pc-p">In January 2023, the Biden EPA announced it would postpone setting Effluent Limitation Guidelines — rules that cap how much PFAS industry can discharge into rivers, lakes, and waterways. The delay left a primary source of PFAS contamination unregulated, with no binding restrictions on industrial discharge. Environmental groups had documented PFAS entering drinking water sources downstream of manufacturing facilities. The guidelines were never finalized during the Biden term, leaving the gap in place when the administration ended.</p>
           <div class="pc-foot">
-            <span class="badge sd"><span class="badge-dot" style="background:#3b82f6"></span>Biden Administration</span>
+            <span class="badge sd"><span class="badge-dot" style="background:#8ab5de"></span>Biden Administration</span>
           </div>
         </div>
       </div>
@@ -1609,7 +1574,7 @@
 
         <p>The track record on actual, enforceable chemical safety policy tells a clear story. At the state level, the most concrete advances have come overwhelmingly from Democratic-led jurisdictions. <strong><a href="https://www.iatp.org/documents/first-nation-forever-chemical-policies-become-law-maine" target="_blank" rel="noopener">Maine</a></strong> passed one of the nation's most sweeping laws to phase out PFAS in products and agriculture. <strong><a href="https://www.nbcnews.com/news/us-news/california-governor-signs-legislation-prohibiting-six-artificial-dyes-rcna173232" target="_blank" rel="noopener">California</a></strong> became the first state to ban school cafeterias from serving foods containing six artificial dyes tied to health and behavioral problems. <strong><a href="https://nlihc.org/resource/new-tenant-protections-go-effect-connecticut-including-limits-late-charges-and-application" target="_blank" rel="noopener">Connecticut</a></strong> strengthened tenant habitability protections for mold and unsafe housing. <strong><a href="https://www.governor.ny.gov/news/governor-hochul-signs-birds-and-bees-act-nation-leading-legislation-protect-new-yorkers-and" target="_blank" rel="noopener">New York</a></strong> enacted the Birds and Bees Protection Act, restricting neonicotinoids linked to harm to pollinators, wildlife, and human health. At the federal level, <a href="https://www.markey.senate.gov/news/press-releases/amid-trump-cuts-to-the-fda-senators-markey-and-booker-introduce-legislation-to-get-dangerous-chemicals-out-of-food" target="_blank" rel="noopener">Senators Markey and Booker introduced legislation</a> to close the GRAS loophole that lets companies add more than 1,000 chemicals to food without any FDA oversight.</p>
 
-        <p>Republican-led states have moved in the opposite direction. <strong><a href="https://www.bostonherald.com/2025/05/12/pesticides-liability-protection-georgia/" target="_blank" rel="noopener">Georgia</a></strong> became the second state — after North Dakota — to shield pesticide manufacturers from lawsuits claiming they failed to warn customers of potential dangers; similar measures have been considered in at least nine other states. At the federal level, the Trump administration has sided with chemical manufacturers at the Supreme Court, advanced farm bill provisions that function as liability shields for pesticide makers, and <a href="https://childrenshealthdefense.org/defender/no-immunity-for-glyphosate-act-bipartisan-bill-block-trump-executive-order/" target="_blank" rel="noopener">signed an executive order boosting domestic glyphosate production</a> — even as MAHA supporters rallied for the opposite. The administration is simultaneously pursuing deep cuts to the FDA and EPA, the very agencies with the mandate and power to protect families from chemical harm. <strong>These measures do not protect families from toxins. They protect companies from accountability.</strong></p>
+        <p>Republican-led states have moved in the opposite direction. <strong><a href="https://www.bostonherald.com/2025/05/12/pesticides-liability-protection-georgia/" target="_blank" rel="noopener">Georgia</a></strong> became the second state — after North Dakota — to shield pesticide manufacturers from lawsuits claiming they failed to warn customers of potential dangers; similar measures have been considered in at least nine other states. At the federal level, the Trump administration has sided with chemical manufacturers at the Supreme Court, advanced farm bill provisions that function as liability shields for pesticide makers, and <a href="https://childrenshealthdefense.org/defender/no-immunity-for-glyphosate-act-bipartisan-bill-block-trump-executive-order/" target="_blank" rel="noopener">signed an executive order boosting domestic glyphosate production</a> — even as MAHA supporters rallied for the opposite. The administration is simultaneously pursuing deep cuts to the FDA and EPA, the very agencies with the mandate and power to protect families from chemical harm. <strong style="color:inherit">These measures do not protect families from toxins. They protect companies from accountability.</strong></p>
 
         <p>Democrats have not been blameless. The Biden administration secured real wins, including <a href="https://www.epa.gov/newsreleases/biden-harris-administration-finalizes-first-ever-national-drinking-water-standard" target="_blank" rel="noopener">the first national drinking water standards for PFAS</a>. But Democrats have consistently failed to make chemical safety a visible, central political agenda item and, like Republicans, have proven unwilling to directly curb corporate power. The result is a void: widespread public demand for protection, and no party reliably willing to deliver it.</p>
 
@@ -1756,6 +1721,75 @@
     }, 20);
   };
 
+  // ── SCORECARD (auto-computed from DOM) ────────────────────
+  const buildScorecard = () => {
+    const fedAdv = [...document.querySelectorAll('.pcard-policy.adv:not(.sc)')];
+    const fedOpp = [...document.querySelectorAll('.pcard-policy.opp:not(.sc)')];
+    const stAdv  = [...document.querySelectorAll('.pcard-policy.adv.sc')];
+    const stOpp  = [...document.querySelectorAll('.pcard-policy.opp.sc')];
+
+    const hasR  = c => !!c.querySelector('.badge.sr');
+    const hasD  = c => !!c.querySelector('.badge.sd');
+    const isBip = c => (hasR(c) && hasD(c)) ||
+      [...c.querySelectorAll('.badge.bi')].some(b => /bipartisan/i.test(b.textContent));
+    const isD = c => hasD(c) && !hasR(c) && !isBip(c);
+    const isR = c => hasR(c) && !hasD(c) && !isBip(c);
+    const isB = c => isBip(c);
+
+    const fAdvD = fedAdv.filter(isD).length;
+    const fAdvR = fedAdv.filter(isR).length;
+    const fAdvB = fedAdv.filter(isB).length;
+    const fOppR = fedOpp.filter(isR).length;
+    const fOppD = fedOpp.filter(isD).length;
+
+    const sAdvD = stAdv.filter(c => c.dataset.gov === 'gd').length;
+    const sAdvR = stAdv.filter(c => c.dataset.gov === 'gr').length;
+    const sOppR = stOpp.filter(c => c.dataset.gov === 'gr').length;
+    const sOppD = stOpp.filter(c => c.dataset.gov === 'gd').length;
+
+    const totalAdv = fedAdv.length + stAdv.length;
+    const totalOpp = fedOpp.length + stOpp.length;
+    const totalBip = [...document.querySelectorAll('.pcard-policy')].filter(isBip).length;
+
+    countTo('st-adv', totalAdv);
+    countTo('st-opp', totalOpp);
+    countTo('st-bip', totalBip);
+
+    const bar = (label, cls, count, total) => {
+      if (!count) return '';
+      const pct = Math.round(count / total * 100);
+      const unit = count === 1 ? 'action' : 'actions';
+      return `<div class="bar-wrap">
+        <div class="bar-lbl">
+          <span class="bar-name ${cls}">${label}</span>
+          <span class="bar-count">${count} ${unit}</span>
+        </div>
+        <div class="bar-track"><div class="bar-fill ${cls}" data-w="${pct}%" style="width:0"></div></div>
+      </div>`;
+    };
+
+    const sep = '<p class="bar-level-lbl" style="margin-top:1.2rem">State</p>';
+
+    document.getElementById('bars-adv').innerHTML =
+      '<p class="bar-level-lbl">Federal</p>' +
+      bar('Democratic Administration', 'd', fAdvD, fedAdv.length) +
+      bar('Republican Administration', 'r', fAdvR, fedAdv.length) +
+      (fAdvB ? bar('Bipartisan / Transition', 'b', fAdvB, fedAdv.length) : '') +
+      sep +
+      bar('Democratic Governor', 'd', sAdvD, stAdv.length) +
+      bar('Republican Governor',  'r', sAdvR, stAdv.length);
+
+    document.getElementById('bars-opp').innerHTML =
+      '<p class="bar-level-lbl">Federal</p>' +
+      bar('Republican Administration', 'r', fOppR, fedOpp.length) +
+      bar('Democratic Administration', 'd', fOppD, fedOpp.length) +
+      sep +
+      bar('Republican Governor', 'r', sOppR, stOpp.length) +
+      (sOppD ? bar('Democratic Governor', 'd', sOppD, stOpp.length) : '');
+
+    requestAnimationFrame(() => animateBars());
+  };
+
   window.addEventListener('load', () => {
     // stagger hero elements
     const heroEls = [
@@ -1774,11 +1808,7 @@
       });
     });
 
-    setTimeout(() => {
-      countTo('st-adv', 23);
-      countTo('st-opp', 20);
-      countTo('st-bip', 16);
-    }, 600);
+    setTimeout(() => buildScorecard(), 600);
   });
 
   // ── DOT MATRIX ────────────────────────────────────────────
