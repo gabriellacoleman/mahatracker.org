@@ -2,7 +2,7 @@
   {
     "date": "April 19, 2023",
     "title": "RFK Jr. Launches Presidential Campaign",
-    "category": "origin",
+    "category": "event",
     "description": "Robert F. Kennedy Jr. formally declares his candidacy for the Democratic presidential nomination at the Park Plaza Hotel in Boston. His campaign centers on ending the 'corrupt merger of state and corporate power,' chronic disease, and food safety — the ideological seeds of MAHA.",
     "link": "https://abcnews.go.com/Politics/robert-kennedy-jr-launches-long-shot-presidential-bid/story?id=98691944",
     "type": "neutral"
@@ -10,7 +10,7 @@
   {
     "date": "October 9, 2023",
     "title": "RFK Jr. Relaunches as Independent Candidate",
-    "category": "origin",
+    "category": "event",
     "description": "Kennedy ends his Democratic primary challenge and re-enters the race as an independent at a rally in Philadelphia. His platform increasingly emphasizes food systems, toxic chemicals, and the chronic disease epidemic — positioning MAHA-style ideas as a cross-partisan cause.",
     "link": "https://www.cnn.com/2023/10/09/politics/kennedy-independent-campaign/index.html",
     "type": "neutral"
@@ -18,7 +18,7 @@
   {
     "date": "July 2024",
     "title": "The MAHA Slogan Is Born",
-    "category": "origin",
+    "category": "event",
     "description": "The phrase \"Make America Healthy Again\" officially enters the political lexicon, championed by Kennedy's campaign. The movement draws from the \"health freedom\" movement that grew during the COVID-19 pandemic, uniting clean food advocates and critics of Big Pharma, Big Agriculture, and corporate capture of federal health agencies.",
     "link": "https://kffhealthnews.org/news/article/maha-midterms-gop-strategy-health-rfk-vaccines-ultraprocessed-food/",
     "type": "win"
@@ -34,7 +34,7 @@
   {
     "date": "September 16, 2024",
     "title": "Sen. Ron Johnson Announces 'A Second Opinion' Roundtable",
-    "category": "congress",
+    "category": "politics",
     "description": "Sen. Ron Johnson (R-WI) issues a media advisory announcing a nonpartisan roundtable titled \"American Health and Nutrition: A Second Opinion,\" to be held September 23 in the Russell Senate Office Building. The event features Dr. Casey Means, Calley Means, Jordan Peterson, Vani Hari (Food Babe), Jillian Michaels, and other MAHA-aligned voices.",
     "link": "https://www.ronjohnson.senate.gov/2024/9/media-advisory-sen-johnson-to-lead-roundtable-discussion-american-health-and-nutrition-a-second-opinion",
     "type": "win"
@@ -42,7 +42,7 @@
   {
     "date": "September 23, 2024",
     "title": "Johnson Roundtable Held — Full Video Released",
-    "category": "congress",
+    "category": "politics",
     "description": "The Senate roundtable \"American Health and Nutrition: A Second Opinion\" takes place in the Kennedy Caucus Room at the Russell Senate Office Building. The full session is livestreamed and later released publicly. It signals growing congressional interest in MAHA ideas ahead of the election.",
     "link": "https://www.ronjohnson.senate.gov/2024/9/video-release-sen-johnson-s-full-roundtable-discussion-american-health-and-nutrition-a-second-opinion",
     "type": "win"
@@ -74,7 +74,7 @@
   {
     "date": "December 19, 2024",
     "title": "Senate MAHA Caucus Launched",
-    "category": "congress",
+    "category": "politics",
     "description": "Sen. Roger Marshall (R-KS) launches the Make America Healthy Again Caucus in the Senate to support the joint mission of Trump and Kennedy. It represents the formal legislative arm of the movement on Capitol Hill.",
     "link": "https://dailynewsen.com/timeline-of-make-america-healthy-again-movement/",
     "type": "win"
@@ -90,7 +90,7 @@
   {
     "date": "January 29–30, 2025",
     "title": "RFK Jr. Confirmation Hearings",
-    "category": "congress",
+    "category": "politics",
     "description": "Kennedy appears before the Senate Finance Committee and the HELP Committee. His views on pharmaceutical regulation and federal health agency reform draw bipartisan scrutiny. Sen. Mitch McConnell is among those voicing concerns. 'MAHA moms' flood Senate phone lines in support.",
     "link": "https://caprockstrategies.com/wp-content/uploads/2025/12/A-Year-of-MAHA_-The-2025-Road-to-Food-Policy-Reform.pdf",
     "type": "neutral"
@@ -106,7 +106,7 @@
   {
     "date": "February–March 2025",
     "title": "DOGE Targets HHS — Mass Layoffs Begin",
-    "category": "setback",
+    "category": "politics",
     "description": "DOGE teams begin reviewing HHS contracts and grants. Approximately 10,000 HHS employees depart through voluntary separation. A second wave of 10,000 layoff notices follows in late March–April, cutting roughly 20–31% of the federal public health workforce across FDA, CDC, and NIH. Critics warn this undercuts MAHA's own stated goals.",
     "link": "https://www.npr.org/sections/shots-health-news/2025/04/01/g-s1-57485/hhs-fda-layoffs-doge-cdc-nih",
     "type": "loss"
@@ -114,7 +114,7 @@
   {
     "date": "March 2025",
     "title": "West Virginia Bans Seven Synthetic Dyes",
-    "category": "states",
+    "category": "policy",
     "description": "West Virginia becomes the first state to ban seven synthetic food dyes under a new law signed by the governor. The bill is sponsored by a Republican legislator motivated by his foster children's health. Around the same time, roughly 75 dye-related bills are introduced across 37 states.",
     "link": "https://kffhealthnews.org/news/article/maha-rfk-kennedy-state-legislatures-dyes-ultraprocessed-foods/",
     "type": "win"
@@ -122,7 +122,7 @@
   {
     "date": "March 25, 2025",
     "title": "HHS Claws Back $11.4 Billion in CDC Grants",
-    "category": "setback",
+    "category": "politics",
     "description": "HHS confirms the clawback of $11.4 billion in COVID-era funds from state and local health departments. Public health clinics are canceled across the country amid a measles outbreak in Texas that kills two children. Critics argue the cuts directly contradict MAHA's child health goals.",
     "link": "https://www.networkforphl.org/news-insights/updates-to-hhs-restructuring-and-funding-cuts-impact-on-state-and-local-public-health/",
     "type": "loss"
@@ -130,7 +130,7 @@
   {
     "date": "April 1, 2025",
     "title": "Mass HHS Layoffs Execute — FDA, CDC, NIH Hit Hard",
-    "category": "setback",
+    "category": "politics",
     "description": "Termination notices go out to thousands of HHS staffers. At the FDA, 3,500 jobs are eliminated, including top regulatory officials. Entire offices — communications, FOIA, infertility research — are shuttered. Former FDA leaders across both parties warn that institutional capacity has been irreparably damaged.",
     "link": "https://www.npr.org/sections/shots-health-news/2025/04/01/g-s1-57485/hhs-fda-layoffs-doge-cdc-nih",
     "type": "loss"
@@ -146,7 +146,7 @@
   {
     "date": "May 2025",
     "title": "MAHA Commission Report Criticized for Fake Citations",
-    "category": "setback",
+    "category": "politics",
     "description": "The Democratic National Committee and independent analysts flag multiple citations in a draft MAHA commission report as nonexistent — evidence of AI-generated sourcing errors. The White House calls them 'formatting issues.' The episode damages the report's credibility and fuels broader criticism of the commission's rigor.",
     "link": "https://en.wikipedia.org/wiki/Make_America_Healthy_Again",
     "type": "loss"
@@ -162,7 +162,7 @@
   {
     "date": "Summer 2025",
     "title": "MAHA-MAGA Rift Opens Over EPA Pesticide Policy",
-    "category": "setback",
+    "category": "politics",
     "description": "EPA Administrator Lee Zeldin moves to continue allowing dicamba, expand PFAS-containing pesticides, and resist pesticide restrictions — directly contradicting MAHA priorities. MAHA activists circulate a petition demanding Trump fire Zeldin. The EPA's posture is widely described as 'misaligned' with HHS and USDA.",
     "link": "https://thehill.com/policy/energy-environment/5459470-maha-maga-gop-trump-rfk-jr-pesticides-chemical-regulations/",
     "type": "loss"
@@ -170,7 +170,7 @@
   {
     "date": "August 2025",
     "title": "House Appropriations Pesticide Rider Ignites MAHA Backlash",
-    "category": "congress",
+    "category": "politics",
     "description": "A House appropriations bill for the EPA includes language that would bar states and courts from penalizing pesticide makers for failing to include health warnings beyond those recognized by the EPA — effectively shielding Roundup/glyphosate maker Bayer from failure-to-warn lawsuits. MAHA groups call it a 'liability shield.'",
     "link": "https://thehill.com/policy/energy-environment/5459470-maha-maga-gop-trump-rfk-jr-pesticides-chemical-regulations/",
     "type": "loss"
@@ -194,7 +194,7 @@
   {
     "date": "November 20, 2025",
     "title": "EPA Approves Second 'Forever Chemical' Pesticide in Two Weeks",
-    "category": "setback",
+    "category": "politics",
     "description": "The Trump EPA approves isocycloseram — a PFAS 'forever chemical' pesticide — for use on golf courses, lawns, and food crops including oranges, tomatoes, almonds, and oats. It is the second PFAS pesticide approved in two weeks, with three more planned. The EPA waives a standard child-safety buffer despite the pesticide's links to reduced sperm count, reduced testicle size, and liver toxicity. The pesticide office is controlled by two former lobbyists for the American Chemistry Council. Critics note the approvals directly contradict MAHA's stated mission to protect children from toxic chemical exposures.",
     "link": "https://biologicaldiversity.org/w/news/press-releases/trump-epa-approves-its-second-forever-chemical-pesticide-in-two-weeks-2025-11-20/",
     "type": "loss"
@@ -218,7 +218,7 @@
   {
     "date": "February 6, 2026",
     "title": "Mike Tyson Joins HHS 'Eat Real Food' Campaign",
-    "category": "policy",
+    "category": "media",
     "description": "Kennedy posts a video to his official HHS social media accounts featuring former heavyweight champion Mike Tyson slapping a donut out of a staffer's hand and declaring, 'What do you think you're doing?! Processed food KILLS.' Tyson, whose sister died at 25 from obesity-related heart failure, tells Fox News he joined willingly: 'I'm one of the most healthiest people on the planet — they should think I will want to be a participant in this.' The clip goes viral, racking up millions of views. The partnership cements Tyson as an unofficial celebrity ambassador for MAHA's 'Eat Real Food' message.",
     "link": "https://www.westernjournal.com/mike-tyson-joins-forces-rfk-jr-battle-processed-foods/",
     "type": "win"
@@ -226,7 +226,7 @@
   {
     "date": "February 9, 2026",
     "title": "Mike Tyson Stars in MAHA Super Bowl Ad",
-    "category": "politics",
+    "category": "media",
     "description": "The MAHA Center — an advocacy group aligned with Kennedy's HHS agenda — airs a 30-second Super Bowl ad starring Mike Tyson. In the spot, Tyson recounts weighing 345 pounds and consuming 'a quart of ice cream every hour,' and shares that his sister died at 25 from a heart attack linked to obesity. The ad ends with Tyson and his son eating apples, directing viewers to RealFood.gov. It is one of the Super Bowl's most counter-programming moments — a federal health message during America's biggest junk food occasion.",
     "link": "https://www.adweek.com/brand-marketing/mike-tyson-maha-super-bowl-rfk/",
     "type": "win"
@@ -234,7 +234,7 @@
   {
     "date": "January 2026",
     "title": "WIN: Pesticide Liability Rider Stripped from EPA Spending Bill",
-    "category": "congress",
+    "category": "politics",
     "description": "After a 'hard fight,' the controversial Bayer-backed pesticide liability provision is removed from the 2026 EPA appropriations bill. Rep. Chellie Pingree (D-ME) credits MAHA-aligned advocates — including Moms Across America founder Zen Honeycutt — with providing critical cross-party pressure on Republican lawmakers. Senate Republicans agree not to revisit it.",
     "link": "https://www.thenewlede.org/2026/01/a-hard-fight/",
     "type": "win"
@@ -242,7 +242,7 @@
   {
     "date": "February 19, 2026",
     "title": "Trump Signs Glyphosate Executive Order — MAHA Outrage",
-    "category": "setback",
+    "category": "politics",
     "description": "President Trump invokes the Defense Production Act to compel domestic production of glyphosate-based herbicides, declaring them critical to national security. MAHA advocates are furious. Zen Honeycutt of Moms Across America calls it 'a love letter to glyphosate.' Food activist Vani Hari says it 'reads like it was drafted in a chemical company boardroom.'",
     "link": "https://www.nytimes.com/2026/02/18/us/politics/trump-boost-weedkiller.html",
     "type": "loss"
@@ -258,7 +258,7 @@
   {
     "date": "February 6, 2026",
     "title": "EPA Reapproves Dicamba Despite Court Rulings and Drift Damage",
-    "category": "setback",
+    "category": "politics",
     "description": "The Trump EPA reapproves dicamba — a drift-prone herbicide sprayed on genetically engineered cotton and soybeans — despite federal courts having ruled such approvals unlawful in both 2020 and 2024. Since its first approval in 2016, dicamba drift has damaged millions of acres of farmland, orchards, vegetable farms, and wildlife refuges. Experts call it the worst herbicide drift damage in U.S. agricultural history. The new approval provides even fewer drift protections than past versions. Lawsuits are filed within weeks.",
     "link": "https://biologicaldiversity.org/w/news/press-releases/epa-reapproves-dangerous-drift-prone-pesticide-dicamba-2026-02-06/",
     "type": "loss"
@@ -266,7 +266,7 @@
   {
     "date": "February 18, 2026",
     "title": "EPA Plans to Loosen Mercury Rules for Coal Plants",
-    "category": "setback",
+    "category": "politics",
     "description": "The New York Times reports that the EPA is moving to roll back mercury emission rules for coal-burning power plants, arguing it would reduce 'unwarranted costs' for utilities. Mercury from coal plants is a major source of fish contamination — the same issue RFK Jr. has long prioritized. The administration has simultaneously ordered eight coal units headed for retirement to stay open. The move draws sharp criticism from MAHA-aligned health advocates as a direct contradiction of Kennedy's anti-mercury agenda.",
     "link": "https://www.nytimes.com/2026/02/18/climate/epa-mercury-coal-plants.html?unlocked_article_code=1.NVA.GI-P.I17QftCQ0eM-&smid=url-share",
     "type": "loss"
@@ -274,7 +274,7 @@
   {
     "date": "February 2026",
     "title": "Trump Administration Backs Bayer at Supreme Court",
-    "category": "setback",
+    "category": "politics",
     "description": "The Trump administration sides with Bayer-Monsanto in a Supreme Court case that could severely limit individuals' ability to sue if they believe they got cancer from glyphosate-based pesticides. MAHA advocates call it a betrayal. 'MAHA moms' warn this could be a breaking point for the movement.",
     "link": "https://www.ewg.org/news-insights/statement/2026/02/ewg-statement-rfk-jr-doubles-down-defense-trump-order-boosting",
     "type": "loss"
@@ -289,16 +289,16 @@
   },
   {
     "date": "February 17–18, 2026",
-    "title": "RFK Jr. & Kid Rock 'Rock Out Workout' Video — Peak MAHA Cringe",
-    "category": "politics",
-    "description": "Kennedy posts a 90-second official HHS video teaming up with Kid Rock to 'GET ACTIVE + EAT REAL FOOD': the pair go shirtless in an infrared sauna, Kennedy cold-plunges in his jeans, they play pickleball, and conclude by drinking whole milk in a grotto pool to Kid Rock's 'Bawitdaba' — with a stuffed bear in a bedazzled fedora watching over them. The clip racks up 11.5 million views. Even MAHA supporters struggle to explain it. (Historical footnote: at the same time, Bad Bunny's Super Bowl halftime show was drawing 128 million viewers. Kid Rock's competing event drew 6 million. The jeans got wet for this.)",
+    "title": "RFK Jr. & Kid Rock Release HHS Health Promotion Video",
+    "category": "media",
+    "description": "Kennedy and musician Kid Rock release a 90-second HHS-produced video promoting physical activity and whole foods as part of the 'Eat Real Food' campaign. The video features the pair exercising, using an infrared sauna, playing pickleball, and drinking whole milk. The clip accumulated 11.5 million views across HHS social media channels.",
     "link": "https://thehill.com/policy/healthcare/5743948-kennedy-kid-rock-healthy-america/",
     "type": "neutral"
   },
   {
     "date": "February 27, 2026",
     "title": "RFK Jr. Action Figure Ad Goes Viral — 'Iron Mike Tyson' Edition",
-    "category": "politics",
+    "category": "media",
     "description": "Kennedy posts an AI-generated retro action figure commercial to his official HHS account that racks up over 2 million views. The spot opens with a fireball and the line: 'With chronic disease running rampant, President Trump is sending one man.' The Kennedy action figure battles a 'Chronic Disease' Godzilla monster, drinks whole milk, flips the new food pyramid, and dives into a river in 'waterproof jeans.' The ad closes with a 'limited edition Iron Mike Tyson' figure sliding into frame — Tyson's robotic voice intoning, 'Eat real food or else.' HHS creative director Ryan Nahill, who produced the spot, posts: 'At HHS, we're breaking the internet with one simple message: EAT REAL FOOD.' The video draws both viral mockery and fervent praise from MAHA supporters.",
     "link": "https://www.newsweek.com/rfk-jr-maha-action-figure-video-food-pyramid-11591990",
     "type": "win"
@@ -322,7 +322,7 @@
   {
     "date": "March 2026",
     "title": "House GOP Farm Bill Revives Pesticide Liability Shield",
-    "category": "congress",
+    "category": "politics",
     "description": "House Republicans include nearly identical pesticide-protection language in the new farm bill — preventing states and courts from penalizing pesticide makers for health warnings beyond EPA recognition. MAHA allies are outraged that the provision stripped from the appropriations bill has resurfaced. The Environmental Working Group calls it a 'betrayal of MAHA.' Republican leadership stands by the measure despite pressure from the movement.",
     "link": "https://subscriber.politicopro.com/article/2026/03/house-republicans-stand-by-pesticide-measure-that-angered-maha-allies-00813833",
     "type": "loss"
@@ -330,9 +330,25 @@
   {
     "date": "March 5, 2026",
     "title": "Trump Proposes Rolling Back Offshore Oil Decommissioning Bonds",
-    "category": "policy",
+    "category": "politics",
     "description": "The Trump Interior Department proposed replacing a Biden-era rule that required oil and gas companies to post $6.9 billion in bonds to cover offshore platform cleanup costs in the event of bankruptcy. The new rule would save the industry $484 million per year in compliance costs. A 2024 GAO report had found taxpayers exposed to billions in risk if offshore operators fail to meet decommissioning obligations — the rollback shifts that liability back to the public.",
     "link": "https://www.reuters.com/business/energy/us-proposes-loosen-bonding-requirements-offshore-oil-gas-companies-2026-03-05/",
     "type": "loss"
+  },
+  {
+    "date": "March 2026",
+    "title": "Senate Republicans Propose Weakening Toxic Substances Control Act",
+    "category": "politics",
+    "description": "A Senate Republican proposal included in budget reconciliation would gut key provisions of TSCA — the primary federal law governing chemical safety — stripping EPA's ability to evaluate and restrict dangerous chemicals in consumer products, food, and the environment. The proposal would weaken new-chemical review requirements and limit EPA oversight authority.",
+    "link": "https://blogs.edf.org/health/2026/03/03/heres-how-a-harmful-republican-proposal-to-weaken-the-toxic-substances-control-act-would-make-it-harder-for-epa-to-keep-dangerous-chemicals-out-of-our-lives/",
+    "type": "loss"
+  },
+  {
+    "date": "March 14, 2026",
+    "title": "SNL 'MAHAspital' Sketch Parodies RFK Jr. and the MAHA Movement",
+    "category": "media",
+    "description": "Saturday Night Live, hosted by Harry Styles, airs a sketch titled 'MAHAspital' — a parody of the medical drama The Pitt reimagined as a hospital run by RFK Jr., played by cast member James Austin Johnson. The sketch marks the MAHA movement's arrival as a subject of mainstream late-night satire.",
+    "link": "https://www.nbc.com/nbc-insider/watch-snl-mahaspital-sketch-the-pitt-rfk-jr-harry-styles",
+    "type": "neutral"
   }
 ]
