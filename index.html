@@ -23,11 +23,11 @@
       --charcoal:      #1c1c1c;
       --text-dark:     #2a2a20;
       --text-mid:      #565647;
-      --text-light:    #8a8a77;
-      --dem:           #2563eb;
-      --dem-light:     #93c5fd;
-      --rep:           #dc2626;
-      --rep-light:     #fca5a5;
+      --text-light:    #e8a0b0;
+      --dem:           #4a7fc0;
+      --dem-light:     #8ab5de;
+      --rep:           #b85454;
+      --rep-light:     #d99898;
       --advance:       #10b981;
       --oppose:        #ef4444;
       --gold:          #d97706;
@@ -192,7 +192,7 @@
     .primer-body p {
       font-size: 1rem; line-height: 1.85; color: var(--text-mid); margin-bottom: 1rem;
     }
-    .primer-body p:first-child { font-size: 1.1rem; color: var(--text-dark); }
+    .primer-body p:first-child { font-size: 1rem; color: var(--text-dark); }
     .primer-body p em { font-style: italic; }
     .primer-body p strong { color: var(--teal-dark); }
     .primer-cards { display: flex; flex-direction: column; gap: 1.25rem; }
@@ -223,20 +223,20 @@
     .section-nav-card {
       display: flex; align-items: flex-start; gap: 0.75rem;
       padding: 0.9rem 1rem; border-radius: 4px; text-decoration: none;
-      background: rgba(0,143,125,0.05);
-      border: 1px solid rgba(0,143,125,0.15);
+      background: rgba(160,128,220,0.05);
+      border: 1px solid rgba(160,128,220,0.18);
       transition: border-color 0.2s, background 0.2s;
       margin-bottom: 0.5rem;
     }
     .section-nav-card:last-child { margin-bottom: 0; }
     .section-nav-card:hover {
-      border-color: rgba(0,143,125,0.4);
-      background: rgba(0,143,125,0.09);
+      border-color: rgba(160,128,220,0.4);
+      background: rgba(160,128,220,0.09);
     }
     .snc-label {
       font-family: 'DM Mono', monospace; font-size: 0.65rem;
       letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--teal-dark); flex-shrink: 0; width: 8.5rem;
+      color: #a07cdc; flex-shrink: 0; width: 8.5rem;
       overflow-wrap: break-word; padding-top: 0.1rem;
     }
     .section-nav-card p {
@@ -245,7 +245,7 @@
     }
     .snc-arrow {
       font-family: 'DM Mono', monospace; font-size: 0.8rem;
-      color: var(--teal-dark); flex-shrink: 0; padding-top: 0.05rem;
+      color: #a07cdc; flex-shrink: 0; padding-top: 0.05rem;
       transition: transform 0.2s;
     }
     .section-nav-card:hover .snc-arrow { transform: translateX(3px); }
@@ -474,7 +474,7 @@
     }
     .footer-note {
       font-family: 'DM Mono', monospace; font-size: 0.6rem;
-      color: rgba(255,255,255,0.25); line-height: 1.7;
+      color: rgba(255,255,255,0.55); line-height: 1.7;
       text-align: right; max-width: 420px; letter-spacing: 0.03em;
     }
 
@@ -529,7 +529,6 @@
       font-size: 0.62rem; letter-spacing: 0.14em;
       text-transform: uppercase; color: var(--text-light);
     }
-    .tl-filters { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem; }
     .tl-filter-group { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
     .tl-filter-label {
       font-family: 'DM Mono', monospace;
@@ -574,11 +573,45 @@
     .tl-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
     .tl-card-meta { flex: 1; min-width: 0; }
     .tl-card-pills { display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.4rem; }
+    /* ── TIMELINE FILTER BUTTONS ── */
+    #tl-cat-filters {
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+      justify-content: flex-start; margin-bottom: 1.4rem;
+    }
+    .tl-filter-btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-family: 'DM Mono', monospace; font-size: 0.63rem; letter-spacing: 0.09em;
+      text-transform: uppercase; padding: 5px 13px 5px 9px; border-radius: 3px;
+      border: 1px solid transparent; background: transparent;
+      color: var(--text-light); cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+    .tl-filter-btn::before {
+      content: ''; display: inline-block; flex-shrink: 0;
+      width: 8px; height: 8px; border-radius: 1px;
+      transition: transform 0.2s ease;
+    }
+    /* Small colored box per category */
+    .tl-filter-btn[data-tlval="all"]::before      { background: rgba(250,248,244,0.35); }
+    .tl-filter-btn[data-tlval="event"]::before    { background: #e8a0b0; }
+    .tl-filter-btn[data-tlval="politics"]::before { background: #e8a820; }
+    .tl-filter-btn[data-tlval="policy"]::before   { background: #00c9b1; }
+    .tl-filter-btn[data-tlval="media"]::before    { background: #c084fc; }
+    /* Hover */
+    .tl-filter-btn:hover { color: var(--text-dark); border-color: rgba(250,248,244,0.18); }
+    /* Active — full colored line */
+    .tl-filter-btn.active::before { transform: scaleX(1.5) scaleY(1.25); }
+    .tl-filter-btn[data-tlval="all"].active      { background: rgba(250,248,244,0.09); border-color: rgba(250,248,244,0.4); color: var(--text-dark); }
+    .tl-filter-btn[data-tlval="event"].active    { background: #e8a0b020; border-color: #e8a0b0; color: #b8b8a8; }
+    .tl-filter-btn[data-tlval="politics"].active { background: #e8a82020; border-color: #e8a820; color: #e8a820; }
+    .tl-filter-btn[data-tlval="policy"].active   { background: #00c9b120; border-color: #00c9b1; color: #00c9b1; }
+    .tl-filter-btn[data-tlval="media"].active    { background: #c084fc20; border-color: #c084fc; color: #c084fc; }
     .tl-cat-pill, .tl-out-pill {
       font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.1em;
       text-transform: uppercase; padding: 2px 6px; border-radius: 2px;
       border-width: 1px; border-style: solid;
     }
+    .tl-cat-pill:hover { opacity: 0.75; }
     .tl-card-date {
       font-family: 'DM Mono', monospace; font-size: 0.62rem; color: var(--text-light);
       margin-bottom: 0.3rem; letter-spacing: 0.08em; text-transform: uppercase;
@@ -843,7 +876,7 @@
     <h2 class="section-h2">The MAHA Tracker Primer</h2>
     <div class="primer-grid reveal">
       <div class="primer-body">
-        <p>MAHA — Make America Healthy Again — emerged as a political brand under the Trump administration, attached to a set of genuine public health concerns: chronic disease, ultra-processed foods, synthetic food additives, pesticide exposure, and corporate capture of regulatory agencies like the FDA and USDA.</p>
+        <p>Make America Healthy Again coalesced as a political brand alongside the Trump administration — hitching a populist wellness agenda to a populist presidency. At its core sit a set of legitimate public health concerns: the epidemic of chronic disease, the dominance of ultra-processed foods in the American diet, the proliferation of synthetic additives, widespread pesticide exposure, and the long-documented capture of regulatory bodies like the FDA and USDA by the very industries they are meant to oversee.</p>
         <p>Whether or not you share any sympathy for its political packaging, <strong>these concerns are legitimate and well-documented.</strong> Americans consume more ultra-processed food than almost any nation on earth. Food dyes banned in the EU for decades remain common in U.S. products. PFAS contamination affects over 200 million people's drinking water. Childhood obesity and diet-related illness are undeniable crises.</p>
         <p>This site tracks <em>those specific policy issues</em> — enacted laws, signed regulations, and executive actions — not the broader MAGA political agenda. We follow what passes and who passes it, regardless of party affiliation.</p>
       </div>
@@ -980,7 +1013,7 @@
   <div class="inner">
     <p class="eyebrow teal">Enacted federal policy</p>
     <h2 class="section-h2">Federal Policy Tracker</h2>
-    <p class="section-lead">Laws and regulations that have been enacted — not proposed. Tracked for impact on food safety, environmental health, and food access.</p>
+    <p class="section-lead">Laws, regulations, and committed funding — not proposals. Tracked for impact on food safety, environmental health, and food access.</p>
 
     <div class="two-col reveal">
       <!-- ADVANCING -->
@@ -1045,7 +1078,7 @@
           <h4 class="pc-h4"><a href="https://www.fda.gov/food/hfp-constituent-updates/fda-revoke-authorization-use-red-no-3-food-and-ingested-drugs" target="_blank" rel="noopener">FDA Red Dye No. 3 Revocation</a></h4>
           <p class="pc-p">FDA revoked authorization for Red Dye No. 3 (erythrosine) in food and ingested drugs — a synthetic dye linked to thyroid tumors in animal studies — after the Delaney Clause required removal once carcinogenicity was demonstrated. Manufacturers given 2 years to reformulate.</p>
           <div class="pc-foot">
-            <span class="badge sd"><span class="badge-dot" style="background:#2563eb"></span>Biden/Trump transition</span>
+            <span class="badge sd"><span class="badge-dot" style="background:#4a7fc0"></span>Biden/Trump transition</span>
             <span class="badge bi">Bipartisan Support</span>
           </div>
         </div>
@@ -1055,7 +1088,7 @@
           <h4 class="pc-h4"><a href="https://www.fda.gov/food/hfp-constituent-updates/fda-issues-proposed-rule-front-package-nutrition-labeling" target="_blank" rel="noopener">FDA Front-of-Package Labeling Proposal</a></h4>
           <p class="pc-p">FDA issued proposed rule for mandatory front-of-package "nutrition info" labeling, including a "high in" warning label for sodium, saturated fat, and added sugars — the most significant food labeling reform in decades.</p>
           <div class="pc-foot">
-            <span class="badge sd"><span class="badge-dot" style="background:#2563eb"></span>Biden Admin (D)</span>
+            <span class="badge sd"><span class="badge-dot" style="background:#4a7fc0"></span>Biden Admin (D)</span>
             <span class="vote-tally">FDA Rulemaking</span>
           </div>
         </div>
@@ -1065,7 +1098,7 @@
           <h4 class="pc-h4"><a href="https://www.epa.gov/sdwa/and-polyfluoroalkyl-substances-pfas" target="_blank" rel="noopener">EPA PFAS Drinking Water Standards</a></h4>
           <p class="pc-p">First-ever enforceable federal limits on six PFAS compounds in drinking water, covering an estimated 100+ million Americans. Set maximum contaminant levels for PFOA, PFOS, and four other "forever chemicals" linked to cancer and immune disruption.</p>
           <div class="pc-foot">
-            <span class="badge sd"><span class="badge-dot" style="background:#2563eb"></span>Biden Admin (D)</span>
+            <span class="badge sd"><span class="badge-dot" style="background:#4a7fc0"></span>Biden Admin (D)</span>
             <span class="badge bi">Broad Public Support</span>
           </div>
         </div>
@@ -1075,7 +1108,7 @@
           <h4 class="pc-h4"><a href="https://www.fns.usda.gov/cn/school-nutrition-standards-updates" target="_blank" rel="noopener">USDA School Meal Nutrition Standards Update</a></h4>
           <p class="pc-p">Strengthened school meal requirements: reduced sodium limits over 5-year phase-in, required whole grain minimums, and capped added sugars in school breakfasts for the first time — affecting 30 million children daily.</p>
           <div class="pc-foot">
-            <span class="badge sd"><span class="badge-dot" style="background:#2563eb"></span>Biden Admin (D)</span>
+            <span class="badge sd"><span class="badge-dot" style="background:#4a7fc0"></span>Biden Admin (D)</span>
             <span class="vote-tally">USDA Rulemaking</span>
           </div>
         </div>
@@ -1085,7 +1118,7 @@
           <h4 class="pc-h4"><a href="https://www.usda.gov/topics/farming/inflation-reduction-act" target="_blank" rel="noopener">Inflation Reduction Act — Conservation Provisions</a></h4>
           <p class="pc-p">Included $20 billion for voluntary conservation programs, including restrictions on certain pesticide-adjacent practices and incentives for reducing synthetic input use on farmland — largest federal conservation investment in history.</p>
           <div class="pc-foot">
-            <span class="badge sd"><span class="badge-dot" style="background:#2563eb"></span>Biden (D)</span>
+            <span class="badge sd"><span class="badge-dot" style="background:#4a7fc0"></span>Biden (D)</span>
             <span class="badge pd">Party-Line D</span>
             <span class="vote-tally"><span class="d">220D</span> <span class="r">0R</span> Yes</span>
           </div>
@@ -1098,7 +1131,7 @@
           <h4 class="pc-h4"><a href="https://www.epa.gov/ingredients-used-pesticide-products/chlorpyrifos" target="_blank" rel="noopener">EPA Chlorpyrifos Agricultural Ban</a></h4>
           <p class="pc-p">Biden EPA finalized a ban on chlorpyrifos — a neurotoxic organophosphate pesticide linked to childhood neurological damage — for all agricultural food uses, after decades of industry lobbying blocked action under prior administrations.</p>
           <div class="pc-foot">
-            <span class="badge sd"><span class="badge-dot" style="background:#2563eb"></span>Biden Admin (D)</span>
+            <span class="badge sd"><span class="badge-dot" style="background:#4a7fc0"></span>Biden Admin (D)</span>
             <span class="badge pd">EPA Rulemaking</span>
             <span class="vote-tally">D-led action</span>
           </div>
@@ -1614,6 +1647,8 @@
     <p class="section-lead">Key events in food &amp; environmental health policy. Click any event to expand.</p>
 
 
+    <div id="tl-cat-filters" class="tl-filters"></div>
+
     <div class="tl-count" id="tl-count-bar"></div>
 
     <div class="tl-wrap">
@@ -1630,7 +1665,7 @@
 <footer>
   <span class="footer-logo">MAHA TRACKER</span>
   <p class="footer-note">This site tracks enacted food safety and environmental health policy across party lines. It does not endorse any political party, candidate, or the broader MAGA movement. Not affiliated with MAHA Action or any political organization.</p>
-  <p class="footer-note" style="margin-top:0.6rem; opacity:0.6;">This site is under active development and is regularly updated with new data. It is not yet complete.</p>
+  <p class="footer-note" style="margin-top:0.6rem;">This site is under active development and is regularly updated with new data. It is not yet complete.</p>
 </footer>
 
 <script>
@@ -1755,7 +1790,7 @@
 
   // ── TIMELINE ──────────────────────────────────────────────
   const TL_CAT = {
-    event:    { hex: '#8a8a77', label: 'Event'    },
+    event:    { hex: '#e8a0b0', label: 'Event'    },
     politics: { hex: '#e8a820', label: 'Politics' },
     policy:   { hex: '#00c9b1', label: 'Policy'   },
     media:    { hex: '#c084fc', label: 'Media'    },
@@ -1780,6 +1815,7 @@
       if (el) { el.textContent = 'Could not load events. Please try refreshing.'; el.classList.add('show'); }
       return;
     }
+    tlBuildFilters();
     tlRender();
   }
 
@@ -1788,34 +1824,28 @@
     if (!catWrap) return;
     catWrap.innerHTML = ['all', ...Object.keys(TL_CAT)].map(c => {
       const label = c === 'all' ? 'All' : TL_CAT[c].label;
-      return `<button class="tl-pill${c === tlActiveCat ? ' active' : ''}" data-tlgroup="cat" data-tlval="${c}">${label}</button>`;
+      const hex   = c === 'all' ? null : TL_CAT[c].hex;
+      const style = hex ? ` style="--pill-hex:${hex}"` : '';
+      return `<button class="tl-filter-btn${c === tlActiveCat ? ' active' : ''}" data-tlval="${c}"${style}>${label}</button>`;
     }).join('');
 
-    const outWrap = document.getElementById('tl-outcome-filters');
-    [
-      { val: 'all',     label: 'All'    },
-      { val: 'win',     label: 'Wins'   },
-      { val: 'loss',    label: 'Losses' },
-      { val: 'neutral', label: 'Events' },
-    ].forEach(o => {
-      const btn = document.createElement('button');
-      btn.className = 'tl-pill' + (o.val === tlActiveOutcome ? ' active' : '');
-      btn.dataset.tlgroup = 'outcome';
-      btn.dataset.tlval = o.val;
-      btn.textContent = o.label;
-      outWrap.appendChild(btn);
-    });
-
-    document.querySelectorAll('.tl-pill').forEach(btn => {
+    catWrap.querySelectorAll('.tl-filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        const { tlgroup, tlval } = btn.dataset;
-        if (tlgroup === 'cat') tlActiveCat = tlval;
-        else tlActiveOutcome = tlval;
-        document.querySelectorAll(`[data-tlgroup="${tlgroup}"]`).forEach(b => b.classList.remove('active'));
+        tlActiveCat = btn.dataset.tlval;
+        catWrap.querySelectorAll('.tl-filter-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         tlRender();
       });
     });
+  }
+
+  function tlSetCat(cat) {
+    tlActiveCat = cat;
+    document.querySelectorAll('#tl-cat-filters .tl-filter-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.tlval === cat);
+    });
+    tlRender();
+    document.getElementById('timeline').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   function tlRender() {
@@ -1824,28 +1854,42 @@
     const count = document.getElementById('tl-count-bar');
     if (!list) return;
 
-    const filtered = tlEvents;
+    // Normalise category to always be an array
+    const tlCats = ev => Array.isArray(ev.category) ? ev.category : [ev.category];
+    const tlMatch = ev => tlActiveCat === 'all' || tlCats(ev).includes(tlActiveCat);
 
-    count.textContent = `${filtered.length} events`;
+    // Filter by category; when a category is active show oldest→newest (chronological)
+    let filtered = tlActiveCat === 'all'
+      ? tlEvents
+      : tlEvents.filter(tlMatch).reverse();
+
+    count.textContent = tlActiveCat === 'all'
+      ? `${filtered.length} events`
+      : `${filtered.length} ${TL_CAT[tlActiveCat]?.label || tlActiveCat} events`;
 
     empty.classList.remove('show');
 
     list.innerHTML = filtered.map((ev, i) => {
-      const cat = TL_CAT[ev.category] || { hex: '#8a8a77', label: ev.category };
+      const cats = tlCats(ev);
+      const primaryCat = TL_CAT[cats[0]] || { hex: '#e8a0b0' };
+      const pillsHtml = cats.map(c => {
+        const info = TL_CAT[c] || { hex: '#e8a0b0', label: c };
+        return `<span class="tl-cat-pill" style="color:${info.hex}; background:${info.hex}15; border-color:${info.hex}40; cursor:pointer;" onclick="event.stopPropagation(); tlSetCat('${c}')">${info.label}</span>`;
+      }).join('');
       const id = `tlcard-${i}`;
       return `
         <div class="tl-item">
           <div class="tl-node">
-            <div class="tl-dot" style="background:#e8a820; border:2px solid rgba(250,248,244,0.9);"></div>
+            <div class="tl-dot" style="background:${primaryCat.hex}; border:2px solid rgba(250,248,244,0.9);"></div>
           </div>
           <div class="tl-card"
                data-tlid="${id}"
-               data-tlaccent="#e8a820"
+               data-tlaccent="${primaryCat.hex}"
                onclick="tlToggle(this)">
             <div class="tl-card-top">
               <div class="tl-card-meta">
                 <div class="tl-card-pills">
-                  <span class="tl-cat-pill" style="color:${cat.hex}; background:${cat.hex}15; border-color:${cat.hex}40;">${cat.label}</span>
+                  ${pillsHtml}
                 </div>
                 <div class="tl-card-date">${ev.date}</div>
                 <h3 class="tl-card-title">${ev.title}</h3>
