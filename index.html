@@ -410,8 +410,21 @@
     .alt-body p {
       font-size: 0.975rem; line-height: 1.9; color: rgba(255,255,255,0.65); margin-bottom: 1rem;
     }
-    .alt-body p strong { color: var(--teal); }
+    .alt-body p strong { color: var(--amber); }
     .alt-body p em { font-style: italic; }
+    .alt-body p a {
+      color: var(--teal);
+      text-decoration: underline;
+      text-decoration-color: rgba(0,201,177,0.3);
+      text-underline-offset: 3px;
+      transition: color 0.15s ease, text-decoration-color 0.15s ease;
+    }
+    .alt-body p a:hover {
+      color: rgba(0,201,177,0.85);
+      text-decoration-color: rgba(0,201,177,0.6);
+    }
+    .alt-body p strong a { color: var(--teal); }
+    .alt-body p a strong { color: var(--teal); }
     .alt-cta {
       margin-top: 2rem; padding: 1.5rem;
       border: 1px solid rgba(0,201,177,0.18); border-radius: 5px;
@@ -419,7 +432,7 @@
     }
     .alt-cta h4 {
       font-family: 'Playfair Display', serif; font-size: 1.15rem;
-      color: var(--teal); margin-bottom: 0.7rem;
+      color: var(--amber); margin-bottom: 0.7rem;
     }
     .alt-cta > p { font-size: 0.875rem; line-height: 1.75; color: rgba(255,255,255,0.55); margin-bottom: 1.5rem; }
     .principle-block {
@@ -439,7 +452,7 @@
       display: block;
       font-family: 'DM Mono', monospace; font-size: 0.68rem;
       letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--teal); margin-bottom: 0.45rem;
+      color: var(--amber); margin-bottom: 0.45rem;
     }
     .principle-body p {
       font-size: 0.865rem !important; line-height: 1.75;
@@ -1589,7 +1602,6 @@
   <div class="inner">
     <p class="eyebrow teal-dim">A bipartisan mandate</p>
     <h2 class="section-h2 light">Reclaiming Health as a Democratic Cause</h2>
-    <p class="section-lead light">Republican-controlled governments have turned MAHA's rhetoric into cover for deregulation and corporate immunity, while Democratic states have passed the era's most concrete chemical safety protections. Meaningful progress requires a bipartisan, policy-centered movement that holds politicians of any party accountable — built on four principles no genuine health agenda can do without.</p>
 
     <div class="alt-grid reveal">
       <div class="alt-body">
@@ -1597,7 +1609,7 @@
 
         <p>The track record on actual, enforceable chemical safety policy tells a clear story. At the state level, the most concrete advances have come overwhelmingly from Democratic-led jurisdictions. <strong><a href="https://www.iatp.org/documents/first-nation-forever-chemical-policies-become-law-maine" target="_blank" rel="noopener">Maine</a></strong> passed one of the nation's most sweeping laws to phase out PFAS in products and agriculture. <strong><a href="https://www.nbcnews.com/news/us-news/california-governor-signs-legislation-prohibiting-six-artificial-dyes-rcna173232" target="_blank" rel="noopener">California</a></strong> became the first state to ban school cafeterias from serving foods containing six artificial dyes tied to health and behavioral problems. <strong><a href="https://nlihc.org/resource/new-tenant-protections-go-effect-connecticut-including-limits-late-charges-and-application" target="_blank" rel="noopener">Connecticut</a></strong> strengthened tenant habitability protections for mold and unsafe housing. <strong><a href="https://www.governor.ny.gov/news/governor-hochul-signs-birds-and-bees-act-nation-leading-legislation-protect-new-yorkers-and" target="_blank" rel="noopener">New York</a></strong> enacted the Birds and Bees Protection Act, restricting neonicotinoids linked to harm to pollinators, wildlife, and human health. At the federal level, <a href="https://www.markey.senate.gov/news/press-releases/amid-trump-cuts-to-the-fda-senators-markey-and-booker-introduce-legislation-to-get-dangerous-chemicals-out-of-food" target="_blank" rel="noopener">Senators Markey and Booker introduced legislation</a> to close the GRAS loophole that lets companies add more than 1,000 chemicals to food without any FDA oversight.</p>
 
-        <p>Republican-led states have moved in the opposite direction. <a href="https://www.bostonherald.com/2025/05/12/pesticides-liability-protection-georgia/" target="_blank" rel="noopener">Georgia became the second state — after North Dakota — to shield pesticide manufacturers from lawsuits</a> claiming they failed to warn customers of potential dangers; similar measures have been considered in at least nine other states. At the federal level, the Trump administration has sided with chemical manufacturers at the Supreme Court, advanced farm bill provisions that function as liability shields for pesticide makers, and <a href="https://childrenshealthdefense.org/defender/no-immunity-for-glyphosate-act-bipartisan-bill-block-trump-executive-order/" target="_blank" rel="noopener">signed an executive order boosting domestic glyphosate production</a> — even as MAHA supporters rallied for the opposite. The administration is simultaneously pursuing deep cuts to the FDA and EPA, the very agencies with the mandate and power to protect families from chemical harm. <strong>These measures do not protect families from toxins. They protect companies from accountability.</strong></p>
+        <p>Republican-led states have moved in the opposite direction. <strong><a href="https://www.bostonherald.com/2025/05/12/pesticides-liability-protection-georgia/" target="_blank" rel="noopener">Georgia</a></strong> became the second state — after North Dakota — to shield pesticide manufacturers from lawsuits claiming they failed to warn customers of potential dangers; similar measures have been considered in at least nine other states. At the federal level, the Trump administration has sided with chemical manufacturers at the Supreme Court, advanced farm bill provisions that function as liability shields for pesticide makers, and <a href="https://childrenshealthdefense.org/defender/no-immunity-for-glyphosate-act-bipartisan-bill-block-trump-executive-order/" target="_blank" rel="noopener">signed an executive order boosting domestic glyphosate production</a> — even as MAHA supporters rallied for the opposite. The administration is simultaneously pursuing deep cuts to the FDA and EPA, the very agencies with the mandate and power to protect families from chemical harm. <strong>These measures do not protect families from toxins. They protect companies from accountability.</strong></p>
 
         <p>Democrats have not been blameless. The Biden administration secured real wins, including <a href="https://www.epa.gov/newsreleases/biden-harris-administration-finalizes-first-ever-national-drinking-water-standard" target="_blank" rel="noopener">the first national drinking water standards for PFAS</a>. But Democrats have consistently failed to make chemical safety a visible, central political agenda item and, like Republicans, have proven unwilling to directly curb corporate power. The result is a void: widespread public demand for protection, and no party reliably willing to deliver it.</p>
 
@@ -1763,9 +1775,9 @@
     });
 
     setTimeout(() => {
-      countTo('st-adv', 21);
-      countTo('st-opp', 17);
-      countTo('st-bip', 14);
+      countTo('st-adv', 23);
+      countTo('st-opp', 20);
+      countTo('st-bip', 16);
     }, 600);
   });
 
