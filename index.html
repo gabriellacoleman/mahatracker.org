@@ -401,10 +401,10 @@
     .fselect {
       font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.05em;
       padding: 0.45rem 1rem; border: 1px solid var(--cream-dark); border-radius: 3px;
-      background: var(--warm-white); color: var(--text-mid); cursor: pointer; outline: none;
+      background: var(--warm-white); color: var(--text-mid); cursor: pointer;
       transition: border-color 0.2s;
     }
-    .fselect:focus { border-color: var(--teal); }
+    .fselect:focus { border-color: var(--teal); outline: 2px solid var(--teal); outline-offset: 2px; }
 
     /* ── PROGRESSIVE ALT ── */
     #alternative { background: var(--forest); color: var(--warm-white); }
@@ -503,16 +503,24 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 920px) {
       #hero { padding-top: 4.5rem; }
-      .hero-body { grid-template-columns: 1fr; padding: 2rem 2rem; }
+      .hero-body { grid-template-columns: 1fr; padding: 2rem 1.5rem; }
       .hero-visual { display: none; }
       .primer-grid, .score-grid, .two-col, .alt-grid { grid-template-columns: 1fr; }
-      section { padding: 3rem 1.75rem; }
-      .stats-bar { padding: 1.5rem 1.75rem; gap: 0; }
-      .stat-cell { padding: 0 1rem; }
+      section { padding: 3rem 1.25rem; }
+      .stats-bar { padding: 1.5rem 1.25rem; gap: 0; }
+      .stat-cell { padding: 0 0.75rem; }
       nav { padding: 0.9rem 1.25rem; }
       .nav-links { display: none; }
-      footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.75rem; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.25rem; }
       .footer-note { text-align: center; }
+      /* Mobile: increase small font sizes for readability */
+      .eyebrow, .stat-lbl, .snc-label, .bar-level-lbl,
+      .tl-legend-label, .pc-date, .badge, .col-lbl { font-size: 0.75rem; }
+      /* Mobile: increase touch targets */
+      .fbtn { padding: 0.65rem 1.1rem; font-size: 0.72rem; min-height: 44px; }
+      .fselect { padding: 0.65rem 1rem; font-size: 0.72rem; min-height: 44px; }
+      .tl-filter-btn { padding: 10px 16px; min-height: 44px; }
+      .tl-pill { padding: 0.5rem 1rem; }
     }
     /* source links on cards */
     .pc-h4 a {
@@ -689,10 +697,10 @@
       padding: 0.7rem 1.25rem; border-radius: 3px;
       border: 1px solid rgba(255,255,255,0.15);
       background: rgba(255,255,255,0.05); color: var(--warm-white);
-      outline: none; width: 220px; letter-spacing: 0.05em;
+      width: 220px; letter-spacing: 0.05em;
       transition: border-color 0.2s;
     }
-    #pw-input:focus { border-color: var(--teal); }
+    #pw-input:focus { border-color: var(--teal); outline: 2px solid var(--teal); outline-offset: 2px; }
     #pw-btn {
       font-family: 'DM Mono', monospace; font-size: 0.72rem;
       letter-spacing: 0.12em; text-transform: uppercase;
@@ -708,16 +716,35 @@
       opacity: 0; transition: opacity 0.2s;
     }
     #pw-error.show { opacity: 1; }
+    /* ── SCREEN READER ONLY ── */
+    .sr-only {
+      position: absolute; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+    /* ── SKIP LINK (accessibility) ── */
+    .skip-link {
+      position: absolute; top: -100%; left: 1rem;
+      background: var(--teal); color: var(--forest);
+      padding: 0.6rem 1.2rem; border-radius: 3px;
+      font-family: 'DM Mono', monospace; font-size: 0.75rem;
+      font-weight: 500; text-decoration: none; z-index: 9999;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 1rem; }
   </style>
 </head>
 <body>
+
+<a href="#hero" class="skip-link">Skip to main content</a>
 
 <!-- PASSWORD GATE -->
 <div id="pw-gate">
   <h2>MAHA<span>TRACKER</span></h2>
   <p>Preview access — enter password to continue</p>
   <div id="pw-form">
-    <input id="pw-input" type="password" placeholder="password" autocomplete="off"/>
+    <label for="pw-input" class="sr-only">Password</label>
+    <input id="pw-input" type="password" placeholder="password" autocomplete="off" aria-label="Preview password"/>
     <button id="pw-btn" onclick="checkPw()">Enter</button>
   </div>
   <div id="pw-error">Incorrect password</div>
@@ -778,7 +805,7 @@
     </div>
 
     <div class="hero-visual">
-      <svg class="hero-svg" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg">
+      <svg class="hero-svg" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
         <defs>
           <radialGradient id="rg1" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stop-color="#00c9b1" stop-opacity="0.13"/>
@@ -900,30 +927,30 @@
         <p>The <a href="#timeline">timeline</a>, <a href="#scorecard">scorecard</a>, and <a href="#federal">policy trackers</a> document that record. But this site also advances an argument: MAHA has done something real by pulling long-marginalized concerns — chemical exposure, ultra-processed food, regulatory capture — into mainstream political conversation. Taking those concerns seriously, however, requires more than a slogan. It requires an <a href="#alternative">alternative democratic health vision</a> grounded in a robust public infrastructure, sustained federal investment, and protections that are universal, enforceable, and inclusive of all Americans — not contingent on who holds power or which industries have the ear of the administration.</p>
       </div>
       <div class="primer-cards">
-        <a class="section-nav-card" href="#scorecard">
+        <a class="section-nav-card" href="#scorecard" aria-label="Go to Partisan Scorecard">
           <span class="snc-label">Scorecard</span>
           <p>A partisan breakdown of who is actually advancing food and environmental health policy — and who is blocking it — measured across enacted federal laws and regulations.</p>
-          <span class="snc-arrow">&rarr;</span>
+          <span class="snc-arrow" aria-hidden="true">&rarr;</span>
         </a>
-        <a class="section-nav-card" href="#federal">
+        <a class="section-nav-card" href="#federal" aria-label="Go to Federal Policy Tracker">
           <span class="snc-label">Federal Policy Tracker</span>
           <p>Enacted federal laws and regulations tracked for impact on food safety, environmental health, and food access — from Biden-era PFAS standards to Trump rollbacks.</p>
-          <span class="snc-arrow">&rarr;</span>
+          <span class="snc-arrow" aria-hidden="true">&rarr;</span>
         </a>
-        <a class="section-nav-card" href="#states">
+        <a class="section-nav-card" href="#states" aria-label="Go to State Policy Tracker">
           <span class="snc-label">State Policy Tracker</span>
           <p>Democratic-led states are passing the era's most concrete chemical safety protections; Republican-led states are advancing liability shields for polluters.</p>
-          <span class="snc-arrow">&rarr;</span>
+          <span class="snc-arrow" aria-hidden="true">&rarr;</span>
         </a>
-        <a class="section-nav-card" href="#alternative">
+        <a class="section-nav-card" href="#alternative" aria-label="Go to Alternative Path section">
           <span class="snc-label">Alt. Path</span>
           <p>MAHA's mandate has been captured by corporate interests — but a bipartisan, policy-centered movement grounded in four clear principles offers a real alternative.</p>
-          <span class="snc-arrow">&rarr;</span>
+          <span class="snc-arrow" aria-hidden="true">&rarr;</span>
         </a>
-        <a class="section-nav-card" href="#timeline">
+        <a class="section-nav-card" href="#timeline" aria-label="Go to Timeline">
           <span class="snc-label">Timeline</span>
           <p>A chronological record of key events in food and environmental health policy from April 2023 through March 2026.</p>
-          <span class="snc-arrow">&rarr;</span>
+          <span class="snc-arrow" aria-hidden="true">&rarr;</span>
         </a>
       </div>
     </div>
@@ -1272,7 +1299,8 @@
       <button class="fbtn" data-f="opp">Opposing Health</button>
       <button class="fbtn" data-f="gd">Dem Governor</button>
       <button class="fbtn" data-f="gr">Rep Governor</button>
-      <select class="fselect" id="state-sel">
+      <label for="state-sel" class="sr-only">Filter by state</label>
+      <select class="fselect" id="state-sel" aria-label="Filter by state">
         <option value="all">All States</option>
         <option value="ca">California</option>
         <option value="co">Colorado</option>
@@ -1880,9 +1908,11 @@
   };
 
   document.querySelectorAll('.fbtn').forEach(btn => {
+    btn.setAttribute('aria-pressed', btn.classList.contains('on') ? 'true' : 'false');
     btn.addEventListener('click', () => {
-      document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('on'));
+      document.querySelectorAll('.fbtn').forEach(b => { b.classList.remove('on'); b.setAttribute('aria-pressed', 'false'); });
       btn.classList.add('on');
+      btn.setAttribute('aria-pressed', 'true');
       activeF = btn.dataset.f;
       applyFilter();
     });
@@ -1935,10 +1965,12 @@
     }).join('');
 
     catWrap.querySelectorAll('.tl-filter-btn').forEach(btn => {
+      btn.setAttribute('aria-pressed', btn.classList.contains('active') ? 'true' : 'false');
       btn.addEventListener('click', () => {
         tlActiveCat = btn.dataset.tlval;
-        catWrap.querySelectorAll('.tl-filter-btn').forEach(b => b.classList.remove('active'));
+        catWrap.querySelectorAll('.tl-filter-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
         btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
         tlRender();
       });
     });
