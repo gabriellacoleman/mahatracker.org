@@ -399,5 +399,13 @@
     "description": "Kennedy told a podcast ('The Bossticks') that aired Monday that the GRAS loophole had already been closed: 'We've changed the GRAS loophole so that we've closed it. So the new ingredients have to show safety studies.' HHS spokesman Richard Danker quickly walked it back, clarifying Kennedy 'was referring to our proposed GRAS rule making and its potential application if finalized.' The rule is still awaiting White House clearance before it can even be published as a proposed rule. Food industry trade groups — bakers, tree nut processors, chemical distributors, and dietary supplement makers — have preemptively lobbied the White House against the measure, warning it would exceed FDA's statutory authority and trigger litigation. 'If F.D.A. would come in and say, You have to file it with us — it's not what the law says,' said food industry lawyer Todd Harrison. 'I think F.D.A. loses that case.' State-level bans in West Virginia and Texas are already facing industry lawsuits. EWG's Melanie Benesh noted: 'At the federal level, we just have not yet seen that kind of lasting, enforceable regulatory action.'",
     "link": "https://www.nytimes.com/2026/03/27/health/rfk-food-ingredients-fda.html",
     "type": "loss"
+  },
+  {
+    "date": "March 29, 2026",
+    "title": "EWG Analysis: PFAS Residues Found on 37% of Conventional California Produce",
+    "category": "policy",
+    "description": "A first-of-its-kind Environmental Working Group analysis of California Department of Pesticide Regulation testing records found PFAS pesticide residues on 37% of conventional California produce. About 90% of peaches, plums, and nectarines tested positive for PFAS, as did 80% of strawberries and grapes. EWG's Bernadette Del Chiaro flagged particular concern for children, who commonly eat these fruits and face greater risk from PFAS's toxic effects. The analysis coincided with the introduction of California legislation that would ban PFAS as active ingredients in pesticides by 2035 and require warning labels in the interim. The findings add pressure to the EPA, which has continued approving new PFAS-based pesticides under the Trump administration despite MAHA's stated mission to reduce children's chemical exposures.",
+    "link": "https://www.theguardian.com/environment/2026/mar/29/pfas-residue-california-produce-analysis",
+    "type": "neutral"
   }
 ]
