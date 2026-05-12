@@ -571,5 +571,16 @@
     "description": "The Trump EPA moved to strike down 2024 regulations on ethylene oxide (EtO), a carcinogenic gas used to sterilize 20 billion medical devices annually and linked to leukemia. Recent research found EtO is 60 times more carcinogenic than 2006 estimates; the Biden rule required a 90% emissions cut across 89 facilities. Repealing it would leave 2.3 million people, disproportionately in working-class and low-income communities, breathing nearly 8 tons of the gas each year, while saving industry $47 million annually. No accounting for the resulting cancer burden has been produced. The deeper legal problem: the administration is arguing the Clean Air Act does not authorize discretionary risk reviews beyond the first mandatory one, permanently curtailing the EPA's ability to update protections as new science emerges. \"This sends up a signal flare to everyone that we've got a real threat, and that the administration plans to gut cancer protections,\" said Erik Olson of the NRDC. A Harvard analysis confirms the move is \"part of a broader pattern of authority-limiting interpretations by the EPA\" under this administration.",
     "link": "https://www.theguardian.com/us-news/2026/may/12/trump-rollback-eto-pollution-epa",
     "type": "loss"
+  },
+  {
+    "date": "May 10, 2026",
+    "title": "Trump Administration Shelves Black Lung Silica Rule as Miners Get Sick and Die",
+    "category": [
+      "policy",
+      "politics"
+    ],
+    "description": "The Trump administration has shelved a 2024 MSHA rule that would have brought silica dust limits in coal mines down from 100 to 50 micrograms per cubic meter; the compliance window was due to open in April 2025. Unlike coal dust, silica particles embed in lung tissue and trigger irreversible scarring with no treatment. The condition now hits 1 in 10 miners with 25 or more years underground and is reaching workers in their 30s and 40s. MSHA's workforce has simultaneously contracted, with 90 newly hired inspectors losing their positions. This comes as the administration signed an executive order naming coal a national security priority. \"If the Trump administration actually cared about protecting coal miners from black lung, we'd have a strong silica rule in place right now,\" said Rebecca Shelton of the Appalachian Citizens' Law Center. \"Instead, they are hiding behind a ridiculous legal process to delay action while miners get sick and die.\"",
+    "link": "https://www.motherjones.com/politics/2026/05/black-lung-resurgence-appalachia-coal-country-silica-trump-administration-delayed-regulations-miners-worker-protections/",
+    "type": "loss"
   }
 ]
