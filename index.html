@@ -1023,7 +1023,7 @@
   <div class="inner">
     <p class="eyebrow teal-dim">By the numbers</p>
     <h2 class="section-h2 light">Partisan Scorecard</h2>
-    <p class="section-lead light">Who is actually advancing food and environmental health policy, and who is blocking it? Federal enacted laws and regulations, 2020–2025.</p>
+    <p class="section-lead light">Who is actually advancing food and environmental health policy, and who is blocking it? Federal enacted laws and regulations, 2020–2026.</p>
 
     <!-- PEW CALLOUT -->
     <a class="pew-block" href="https://www.pew.org/en/research-and-analysis/articles/2026/02/26/americans-are-concerned-about-harmful-chemicals-in-food-water-and-everyday-products" target="_blank" rel="noopener">
@@ -1049,12 +1049,6 @@
         <h3>Advancing Health: Who Signs It</h3>
         <div id="bars-adv"></div>
 
-        <div class="dot-matrix">
-          <p class="dm-label">Senate yes-votes on food &amp; environment health measures (aggregate)</p>
-          <div class="dot-row" id="dot-yes"></div>
-          <p class="dm-label" style="margin-top:0.6rem">Senate no-votes</p>
-          <div class="dot-row" id="dot-no"></div>
-        </div>
       </div>
 
       <div class="score-half">
@@ -1064,7 +1058,7 @@
         <div class="score-callout">
           <p class="callout-lbl">Key Finding</p>
           <blockquote>"State-level Democrats are doing more on food and environmental health than the movement that made 'healthy' a campaign slogan — but federal Democrats have largely failed to challenge corporate power. 'Better than Republicans' is not a health agenda."</blockquote>
-          <cite>— Based on enacted federal legislation and regulations, 2020–2025.</cite>
+          <cite>— Based on enacted federal legislation and regulations, 2020–2026.</cite>
         </div>
       </div>
     </div>
@@ -1836,23 +1830,6 @@
     setTimeout(() => buildScorecard(), 600);
   });
 
-  // ── DOT MATRIX ────────────────────────────────────────────
-  const buildDots = () => {
-    // Yes: 46D 14R; No: 4D 42R (aggregate aggregate across tracked Senate measures)
-    const yes = [...Array(46)].map(() => 'd').concat([...Array(14)].map(() => 'r'));
-    const no  = [...Array(4)].map(() => 'd').concat([...Array(42)].map(() => 'r'));
-
-    [['dot-yes', yes], ['dot-no', no]].forEach(([id, arr]) => {
-      const row = document.getElementById(id);
-      if (!row) return;
-      arr.forEach(p => {
-        const d = document.createElement('div');
-        d.className = `dot ${p}`;
-        row.appendChild(d);
-      });
-    });
-  };
-  buildDots();
 
   // ── SCROLL REVEAL ─────────────────────────────────────────
   const revealObs = new IntersectionObserver((entries) => {
