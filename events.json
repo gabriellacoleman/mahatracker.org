@@ -554,6 +554,17 @@
     "type": "win"
   },
   {
+    "date": "May 1, 2026",
+    "title": "Nebraska Becomes First State to Implement Medicaid Work Requirements, Putting Tens of Thousands at Risk",
+    "category": ["policy", "politics"],
+    "description": "Nebraska became the first state to implement Medicaid work requirements under the One Big Beautiful Bill Act on May 1, eight months before the federal deadline. The rule requires adults 19 to 64 in Medicaid expansion to document 80 hours per month of work, training, or community service. The Center on Budget and Policy Priorities estimates between 28,000 and 41,000 Nebraskans face potential coverage loss, mostly from paperwork barriers rather than failure to meet requirements. Georgetown's Center for Children and Families found that even with Nebraska's lenient self-declaration approach, roughly 28,000 people will lose coverage from bureaucratic burden alone. Governor Jim Pillen described the requirement as \"a hand up, not a handout,\" but Sara Maresh of Nebraska Appleseed was direct: \"A vast majority of Nebraskans are working or would meet an exemption. It is the red tape that's what causes the problems.\"",
+    "link": [
+      {"label": "Georgetown CCF", "url": "https://ccf.georgetown.edu/2026/05/11/the-new-medicaid-work-reporting-requirements-are-here-dont-let-the-nebraska-soft-start-fool-you/"},
+      {"label": "CBPP", "url": "https://www.cbpp.org/blog/nebraska-launching-punitive-medicaid-work-requirements-early-even-as-states-lack-information"}
+    ],
+    "type": "loss"
+  },
+  {
     "date": "May 5, 2026",
     "title": "FDA Approves First Fruit-Flavored Vapes for Adults 21+ — After Trump Pressed Commissioner Makary",
     "category": "policy",

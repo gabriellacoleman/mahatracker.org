@@ -2007,7 +2007,14 @@
             <div class="tl-card-body" id="tlbody-${id}">
               <div class="tl-card-body-inner">
                 <p class="tl-card-desc">${ev.description}</p>
-                ${ev.link ? `<a class="tl-card-src" href="${ev.link}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" style="color:#e8a820; border-color:#e8a82044;">&rarr; View Source</a>` : ''}
+                ${ev.link ? (() => {
+                  const links = Array.isArray(ev.link) ? ev.link : [ev.link];
+                  return links.map((s, i) => {
+                    const url = typeof s === 'string' ? s : s.url;
+                    const label = typeof s === 'string' ? (links.length > 1 ? `Source ${i+1}` : 'View Source') : s.label;
+                    return `<a class="tl-card-src" href="${url}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" style="color:#e8a820; border-color:#e8a82044;">&rarr; ${label}</a>`;
+                  }).join('');
+                })() : ''}
               </div>
             </div>
           </div>
