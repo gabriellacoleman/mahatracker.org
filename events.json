@@ -652,5 +652,16 @@
       { "label": "Helena Bottemiller Evich", "url": "https://x.com/hbottemiller/status/2054951180472557775" }
     ],
     "type": "neutral"
+  },
+  {
+    "date": "May 14, 2026",
+    "title": "Washington Post: The Long-Ignored Science of SSRI Withdrawal, Now Caught in Kennedy's Political War",
+    "category": ["media", "policy"],
+    "description": "Reporter Ariana Eunjung Cha offers something the May 2026 SSRI debate has mostly lacked: a piece that takes seriously both the value these medications have for millions of people (Cha notes that SSRIs help millions \"regain stability\") and the patient experience of discontinuation that the medical establishment spent years minimizing. The science shows that experiences coming off them vary widely. Cha's piece centers on those for whom stopping proved far harder than they were ever told it would be, and on how that difficulty was explained away rather than studied. Drug companies for years characterized discontinuation symptoms as typically mild and brief, and rebranded the phenomenon as something other than withdrawal, what researcher Mark Horowitz calls \"industry euphemisms.\" The clinical reality for some patients was quite different, and it went largely undocumented because nobody was looking. Horowitz turned to the research after his own experience stopping SSRIs in his early 20s: \"my life kind of exploded,\" he told the Post. \"I was trapped on the drug.\" What he found was a pharmacological explanation for why some patients struggle most at the very end of a taper, when clinicians and patients alike assume the worst is behind them. His 2019 paper in Lancet Psychiatry on this dose-response dynamic drove a revision of UK clinical guidelines; US guidance has barely moved. Yale psychiatrist Gerard Sanacora identifies a separate systemic failure: the medical system has almost no mechanism for reassessing whether someone still needs a prescription. Stable patients get automatic renewals, and the therapy alternatives that might make medication unnecessary are costlier and harder to access. \"It's really not so much an issue of overuse,\" Sanacora told Cha. \"It's an issue of appropriate and inappropriate use.\" Patient Michael Bosco, 36, on antidepressants since age 8, tried twice to stop under standard medical advice before finding Horowitz's slower protocol. \"I don't think people understand you don't have a life if you do it the wrong way,\" he said. Awais Aftab of Case Western Reserve names the trap Kennedy has now sprung: \"the gap in scientific knowledge has allowed a kind of polarized discourse. Some people dismiss them, and others try to exaggerate them, turning them into a panic.\" The piece does not say Kennedy is wrong that discontinuation deserves more attention. It implies, without quite stating it, that his arrival has turned a real but manageable clinical gap into a political flashpoint, which is the last thing patients navigating a difficult taper actually need.",
+    "link": [
+      {"label": "Washington Post", "url": "https://www.washingtonpost.com/health/2026/05/14/why-everyones-suddenly-talking-about-quitting-antidepressants/"},
+      {"label": "Archived", "url": "https://archive.is/YbNVi"}
+    ],
+    "type": "neutral"
   }
 ]
