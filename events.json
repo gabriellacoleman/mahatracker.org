@@ -663,5 +663,17 @@
       {"label": "Archived", "url": "https://archive.is/YbNVi"}
     ],
     "type": "neutral"
+  },
+  {
+    "date": "May 18, 2026",
+    "title": "EPA Moves to Repeal Biden PFAS Drinking Water Limits, Drawing Criticism from MAHA Allies",
+    "category": ["policy", "politics"],
+    "description": "The EPA formally proposed repealing drinking water limits for four PFAS compounds and giving utilities more time to comply with limits on two others, unraveling the first new national drinking water standard the agency had successfully set since 1996. The Biden rules, finalized in 2024, were estimated to reduce PFAS exposure for roughly 100 million people. All 50 states have recorded PFAS levels above those standards. The administration's rationale is procedural: EPA Administrator Lee Zeldin argued the Biden EPA had rushed the four compounds through without following proper process, leaving the rules legally vulnerable. The two most studied compounds, PFOS and PFOA, will retain their limits, though utilities can apply for a two-year compliance extension. \"The science on these two chemicals is some of the strongest on any drinking water contaminant we regulate,\" Zeldin said. \"Those levels are staying.\" Environmental groups are skeptical even of that concession. The Environmental Working Group and the NRDC argue the rollback likely violates the Safe Drinking Water Act's anti-backsliding provision, which bars the agency from weakening standards once set, and that the extended compliance timeline for PFOS and PFOA may itself run afoul of the law's five-year implementation requirement. The move drew open criticism from within the MAHA coalition, a notable fracture. Conservative wellness influencer and MAHA ally Alex Clark said: \"I am tired of making excuses for dangerous chemicals to continue flooding our environment and harming our kids.\" David Andrews, chief science officer at the Environmental Working Group, was direct: \"I don't see how you put a positive light on this. Ultimately, I see this as a betrayal of public health and the mission of making America healthier.\" Kennedy, who appeared alongside Zeldin at the announcement, highlighted HHS research efforts on PFAS destruction technology but did not defend the rollback directly. When pressed at a congressional hearing in April about EPA actions that appeared to contradict MAHA, he said it was not his department.",
+    "link": [
+      {"label": "Washington Post", "url": "https://www.washingtonpost.com/climate-environment/2026/05/18/epa-wants-repeal-limits-forever-chemicals-drinking-water/"},
+      {"label": "Archived", "url": "https://archive.is/TcCkt"},
+      {"label": "EPA Proposed Rule", "url": "https://www.epa.gov/sdwa/proposed-pfas-rescission-rule"}
+    ],
+    "type": "loss"
   }
 ]
