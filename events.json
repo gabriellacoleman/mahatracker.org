@@ -782,5 +782,13 @@
       }
     ],
     "type": "loss"
+  },
+  {
+    "date": "May 19, 2026",
+    "title": "Vermont Becomes First State to Ban Paraquat, a Herbicide Linked to Parkinson's Disease",
+    "category": "policy",
+    "description": "Vermont's legislature passed H. 739, making it the first U.S. state to ban paraquat, an herbicide that more than 70 countries — including every EU member and China — have already prohibited. Exposure to paraquat roughly doubles the risk of Parkinson's disease compared to other pesticides. The bill awaits Gov. Phil Scott's signature and phases in a full statewide ban by December 2030, giving farmers transition time and encouraging adoption of safer alternatives. The Michael J. Fox Foundation applauded the vote and called on other states and the federal government to follow. Dan Feehan of the Foundation said: \"The evidence linking paraquat exposure to increased Parkinson's risk is strong and has been building for decades.\" Similar bills are pending in a dozen states including New York, Pennsylvania, and Minnesota.",
+    "link": "https://parkinsonsnewstoday.com/news/vermont-first-state-pass-ban-parkinsons-linked-herbicide-paraquat/",
+    "type": "win"
   }
 ]
