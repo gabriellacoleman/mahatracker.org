@@ -793,6 +793,23 @@
   },
   {
     "date": "May 19, 2026",
+    "title": "Vermont's Paraquat Ban and the Decades of Corporate Suppression Behind It",
+    "category": "media",
+    "description": "The New Lede — which collaborated with The Guardian in 2022–23 to publish internal Syngenta documents showing the company spent decades suppressing independent research and manipulating regulatory processes around paraquat — covered Vermont's passage of H. 739 with that backstory foregrounded. Paraquat has been used in the U.S. since 1964 and remains among the country's most widely used herbicides despite being banned in the EU and dozens of other nations. NIH studies link it to substantially elevated Parkinson's risk; research also connects it to non-Hodgkin lymphoma and childhood leukemia. Parkinson's cases have doubled globally in 25 years. In March 2026, Syngenta announced it would cease production, though generic versions remain available. Rep. Michelle Bos-Lun, a bill sponsor, said: \"We have to do something to phase this out. Our job is to support farmers.\"",
+    "link": [
+      {
+        "label": "The New Lede",
+        "url": "https://www.thenewlede.org/2026/05/vermont-bans-paraquat-linked-to-parkinsons/"
+      },
+      {
+        "label": "Vermont H. 739",
+        "url": "https://legislature.vermont.gov/bill/status/2026/H.739"
+      }
+    ],
+    "type": "win"
+  },
+  {
+    "date": "May 19, 2026",
     "title": "Fish and Wildlife Service Clears Atrazine, Splitting MAHA from the Administration It Helped Elect",
     "category": [
       "policy",
