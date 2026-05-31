@@ -760,14 +760,6 @@
     "type": "neutral"
   },
   {
-    "date": "May 21, 2026",
-    "title": "The Psychiatry Debate Sharpens: Ten Ironies That Are Hard to Ignore",
-    "category": "media",
-    "description": "The ongoing debate between establishment psychiatrists, reform-minded clinicians, patient advocates, and critical psychiatry figures has been generating a lot of heat and not always a lot of light. But the positions are sharpening. A widely shared thread by @samhall404 — written from a perspective that is critical of psychiatry yet acknowledges its benefits — captures some of the most precise formulations yet. A few of the ironies it identifies: the voices long dismissed as fringe extremists were mostly patients bearing the brunt of iatrogenic harm; the genuinely extreme position is now held by those defending reflexive \"safe and effective\" certainty, which the thread calls \"anti-patient.\" Meanwhile, clinicians who spent years minimizing withdrawal and pathologizing patient testimony are now positioning themselves as pioneers of deprescribing — \"the very architects and defenders of the problem rebranding themselves as its enlightened reformers.\" Perhaps the sharpest irony: a profession that deploys \"insight\" and \"denial\" as diagnostic categories displays, institutionally, what the thread describes as \"profound institutional denial regarding the scale of iatrogenic harm and the limitations of its core disease model.\"",
-    "link": "https://x.com/samhall404/status/2060740980496536044",
-    "type": "neutral"
-  },
-  {
     "date": "May 18, 2026",
     "title": "EPA Moves to Repeal Biden PFAS Drinking Water Limits, Drawing Criticism from MAHA Allies",
     "category": [
@@ -842,5 +834,13 @@
     "description": "In 12 states with available data, more than 700,000 children have lost SNAP food assistance since H.R. 1 passed in July 2025. Nutrition is the foundation of the health outcomes MAHA says it wants: SNAP is linked to better birth outcomes, lower childhood disease rates, and higher adult earnings — CBPP estimates every dollar invested returns $62 in lifetime value. The law shifts benefit costs to states based on their payment error rate, incentivizing paperwork barriers over fixes. Arizona lost 200,000 child participants; 81 percent of calls to Massachusetts SNAP caseworkers were disconnected by March. Children who fall off SNAP also lose access to WIC and free school meals. The movement cannot credibly claim to put children's health first while the administration it helped elect strips away the food assistance that makes that health possible.",
     "link": "https://www.cbpp.org/blog/sharp-drop-in-number-of-children-receiving-snap-food-assistance-under-new-federal-law",
     "type": "loss"
+  },
+  {
+    "date": "May 30, 2026",
+    "title": "The Psychiatry Debate Sharpens: Ten Ironies That Are Hard to Ignore",
+    "category": "media",
+    "description": "The back-and-forth between establishment psychiatrists, moderately critical clinicians (who often remain dismissive of patient advocates), and patient advocates and reform-oriented psychiatrists has been generating a lot of noise. But the positions are getting sharper. A widely-circulated thread by @samhall404, written from a reform perspective that accepts psychiatry's legitimate benefits, identifies ten ironies in the field that, once seen, are difficult to unsee. Three stand out. First, on who counts as extreme: the voices once labeled fringe anti-psychiatry were, the thread argues, \"mostly patients bearing the brunt of iatrogenic harm\" with lived experience and mounting evidence behind them — while those reflexively defending an outdated \"safe and effective\" paradigm have become the genuine ideological extremists, and are \"anti-patient.\" Second, on the deprescribing turn: the clinicians who spent years dismissing withdrawal and pathologizing patients who reported it are now rebranding as pioneers of deprescribing — \"the very architects and defenders of the problem rebranding themselves as its enlightened reformers.\" Third, on institutional self-awareness: a field that uses \"insight\" and \"denial\" as diagnostic categories displays, the thread observes, \"profound institutional denial regarding the scale of iatrogenic harm and the limitations of its core disease model.\"",
+    "link": "https://x.com/samhall404/status/2060740980496536044",
+    "type": "neutral"
   }
 ]
