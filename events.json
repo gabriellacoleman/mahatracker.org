@@ -1,5 +1,114 @@
 [
   {
+    "date": "1906",
+    "title": "Pure Food and Drug Act",
+    "category": "history",
+    "description": "Progressive-era legislation banning adulterated foods and patent medicines, the original democratic push to regulate what corporations put in food and medicine.",
+    "type": "neutral",
+    "source_section": "democratic-tradition"
+  },
+  {
+    "date": "1962",
+    "title": "Rachel Carson — Silent Spring",
+    "category": "history",
+    "description": "For the first time since Carson made Americans look hard at what they were spraying on their fields, chemical hazards have returned to the political center. Her work led directly to the DDT ban and the creation of the EPA.",
+    "type": "neutral",
+    "source_section": "democratic-tradition"
+  },
+  {
+    "date": "1970",
+    "title": "Founding of the EPA",
+    "category": "history",
+    "description": "Nixon signed the executive order creating the Environmental Protection Agency, consolidating federal environmental authority into a single agency with a mandate to set and enforce standards for air, water, and toxic chemicals. A direct institutional legacy of Silent Spring and the democratic demand for chemical accountability.",
+    "type": "neutral",
+    "source_section": "democratic-tradition"
+  },
+  {
+    "date": "1991",
+    "title": "Environmental Justice Movement",
+    "category": "history",
+    "description": "Communities of color documented disproportionate exposure to pesticides, industrial pollution, and toxic food deserts, establishing that chemical harm is not distributed equally and that race and class determine who bears the burden.",
+    "type": "neutral",
+    "source_section": "democratic-tradition"
+  },
+  {
+    "date": "2006",
+    "title": "Michael Pollan — The Omnivore's Dilemma",
+    "category": "history",
+    "description": "A mainstream reckoning with corporate food systems and ultra-processed food, making the political economy of American eating legible to a broad public.",
+    "type": "neutral",
+    "source_section": "democratic-tradition"
+  },
+  {
+    "date": "May 2022",
+    "title": "LD 2013 & LD 1911 — PFAS Agricultural Laws",
+    "category": "policy",
+    "description": "First state to ban spreading municipal sludge (a major source of PFAS) on farmland and to phase out PFAS in pesticides and adjuvants by 2030. Created a $60 million farmer assistance fund for health monitoring, income replacement, and buyouts for irreparably contaminated farms. No other state had done either before Maine.",
+    "link": "https://www.iatp.org/documents/first-nation-forever-chemical-policies-become-law-maine",
+    "type": "win",
+    "level": "state",
+    "state": "Maine",
+    "governor": "Gov. Mills (D)",
+    "alignment": "Bipartisan",
+    "source_section": "state-tracker"
+  },
+  {
+    "date": "August 2022",
+    "title": "EPA Chlorpyrifos Agricultural Ban",
+    "category": "policy",
+    "description": "Biden EPA finalized a ban on chlorpyrifos, a neurotoxic organophosphate pesticide linked to childhood neurological damage, for all agricultural food uses, after decades of industry lobbying blocked action under prior administrations.",
+    "link": "https://www.epa.gov/ingredients-used-pesticide-products/chlorpyrifos",
+    "type": "win",
+    "level": "federal",
+    "administration": "Biden Admin (D)",
+    "alignment": "EPA Rulemaking",
+    "note": "D-led action",
+    "source_section": "federal-tracker"
+  },
+  {
+    "date": "November 2022",
+    "title": "Inflation Reduction Act — Conservation Provisions",
+    "category": "policy",
+    "description": "Included $20 billion for voluntary conservation programs, including restrictions on certain pesticide-adjacent practices and incentives for reducing synthetic input use on farmland, the largest federal conservation investment in history.",
+    "link": "https://www.usda.gov/topics/farming/inflation-reduction-act",
+    "type": "win",
+    "level": "federal",
+    "administration": "Biden (D)",
+    "alignment": "Party-Line D",
+    "note": "220D 0R Yes",
+    "source_section": "federal-tracker"
+  },
+  {
+    "date": "2023–25",
+    "title": "State Enforcement Wave",
+    "category": "history",
+    "description": "Maine, California, New York, Connecticut pass PFAS phase-outs, food dye bans, pesticide restrictions, and habitability reforms, the most concrete health-protection record in any jurisdiction during the MAHA era.",
+    "type": "neutral",
+    "source_section": "democratic-tradition"
+  },
+  {
+    "date": "January 2023",
+    "title": "Biden EPA Delays PFAS Industrial Discharge Limits",
+    "category": "policy",
+    "description": "In January 2023, the Biden EPA announced it would postpone setting Effluent Limitation Guidelines, rules that cap how much PFAS industry can discharge into rivers, lakes, and waterways. The delay left a primary source of PFAS contamination unregulated, with no binding restrictions on industrial discharge. Environmental groups had documented PFAS entering drinking water sources downstream of manufacturing facilities. The guidelines were never finalized during the Biden term, leaving the gap in place when the administration ended.",
+    "link": "https://www.dlapiper.com/en-us/insights/publications/2023/01/epa-delays-setting-pfas-effluent-limitations-asks-states-to-fill-the-temporary-gap",
+    "type": "loss",
+    "level": "federal",
+    "administration": "Biden Administration",
+    "source_section": "federal-tracker"
+  },
+  {
+    "date": "March 2023",
+    "title": "Biden Administration Approves Willow Project Oil Drilling in Alaska's Arctic",
+    "category": "policy",
+    "description": "The Biden administration approved ConocoPhillips' Willow Project, a 30-year, $8 billion oil drilling operation in Alaska's National Petroleum Reserve, despite more than 3 million petition signatures in opposition and Biden's own 2020 pledge to end new drilling on federal lands. The scaled-down approval authorizes three drill pads and up to 150 oil wells, projected to produce 180,000 barrels per day at peak and generate approximately 260 million metric tons of carbon emissions over the project's lifetime. The decision drew immediate legal challenges from environmental groups and illustrated the gap between the administration's climate commitments and its energy policy decisions.",
+    "link": "https://www.npr.org/2023/03/13/1163075377/willow-drilling-project-alaska-approved-biden",
+    "type": "loss",
+    "level": "federal",
+    "administration": "Biden Administration",
+    "source_section": "federal-tracker"
+  },
+  {
     "date": "April 19, 2023",
     "title": "RFK Jr. Launches Presidential Campaign",
     "category": "event",
@@ -8,12 +117,146 @@
     "type": "neutral"
   },
   {
+    "date": "July 2023",
+    "title": "SB 998 — Tenant Protections & Habitability Act",
+    "category": "policy",
+    "description": "Strengthened housing habitability enforcement, making landlords liable for unsafe conditions including mold, faulty smoke detectors, and substandard ventilation. Added mandatory pre-move walk-through inspections to document health hazards before occupancy. Mold exposure is associated with respiratory illness, asthma, and immune dysfunction, disproportionately affecting low-income renters.",
+    "link": "https://nlihc.org/resource/new-tenant-protections-go-effect-connecticut-including-limits-late-charges-and-application",
+    "type": "win",
+    "level": "state",
+    "state": "Connecticut",
+    "governor": "Gov. Lamont (D)",
+    "alignment": "Bipartisan",
+    "source_section": "state-tracker"
+  },
+  {
     "date": "October 9, 2023",
     "title": "RFK Jr. Relaunches as Independent Candidate",
     "category": "event",
     "description": "Kennedy ends his Democratic primary challenge and re-enters the race as an independent at a rally in Philadelphia. His platform increasingly emphasizes food systems, toxic chemicals, and the chronic disease epidemic, positioning MAHA-style ideas as a cross-partisan cause.",
     "link": "https://www.cnn.com/2023/10/09/politics/kennedy-independent-campaign/index.html",
     "type": "neutral"
+  },
+  {
+    "date": "October 2023",
+    "title": "AB 418 — California Food Safety Act",
+    "category": "policy",
+    "description": "Banned four harmful food additives (Red Dye No. 3, Titanium Dioxide, Potassium Bromate, and Brominated Vegetable Oil) from food sold in California. The strongest state food additive law in U.S. history, affecting product formulations nationwide.",
+    "link": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB418",
+    "type": "win",
+    "level": "state",
+    "state": "California",
+    "governor": "Gov. Newsom (D)",
+    "alignment": "Bipartisan",
+    "note": "D-led legislature",
+    "source_section": "state-tracker"
+  },
+  {
+    "date": "November 2023",
+    "title": "Farm Bill SNAP Eligibility Restrictions",
+    "category": "policy",
+    "description": "Republican-negotiated Farm Bill provisions tightened SNAP work requirements and eligibility, reducing food access for an estimated 750,000 households, disproportionately in rural food deserts and among formerly incarcerated individuals.",
+    "link": "https://www.npr.org/2023/07/11/1185499996/congress-tackles-food-stamp-changes-in-the-farm-bill",
+    "type": "loss",
+    "level": "federal",
+    "administration": "Republican Provision",
+    "note": "12D 185R Yes",
+    "source_section": "federal-tracker"
+  },
+  {
+    "date": "December 2023",
+    "title": "S.1856-A — Birds and Bees Protection Act",
+    "category": "policy",
+    "description": "Banned neonicotinoid-treated corn, soybean, and wheat seeds, plus neonicotinoid use on outdoor ornamental plants and turf. Targets imidacloprid, thiamethoxam, and acetamiprid, the chemicals the EPA identified as driving \"more than 200 species toward extinction.\" Called \"nation-leading\" by Hochul; Vermont and other states moving to follow.",
+    "link": "https://www.governor.ny.gov/news/governor-hochul-signs-birds-and-bees-act-nation-leading-legislation-protect-new-yorkers-and",
+    "type": "win",
+    "level": "state",
+    "state": "New York",
+    "governor": "Gov. Hochul (D)",
+    "alignment": "Dem-Led",
+    "source_section": "state-tracker"
+  },
+  {
+    "date": "2024",
+    "title": "Biden EPA Continued Registering PFAS-Containing Pesticides",
+    "category": "policy",
+    "description": "A 2024 analysis identified 66 active pesticide ingredients registered with the EPA between 1972 and 2021 that meet the OECD definition of PFAS, \"forever chemicals\" that do not break down in the environment. California agricultural fields alone are sprayed with an average of 2.5 million pounds of PFAS pesticides per year. Many of these ingredients break down into trifluoroacetic acid (TFA), which is increasingly detected in groundwater and linked to liver toxicity. Throughout the Biden term, the EPA continued approving these compounds without assessing cumulative TFA contamination risks or treating PFAS pesticides as a class.",
+    "link": "https://time.com/7336883/epa-pfas-pesticides-health-risks/",
+    "type": "loss",
+    "level": "federal",
+    "administration": "Biden Administration",
+    "source_section": "federal-tracker"
+  },
+  {
+    "date": "2024",
+    "title": "Massie Coalition",
+    "category": "history",
+    "description": "The No Immunity for Glyphosate Act united Pingree, Boebert, Mace, and Khanna, proof that enforceable chemical accountability can build constituencies that transcend party lines.",
+    "type": "neutral",
+    "source_section": "democratic-tradition"
+  },
+  {
+    "date": "January 2024",
+    "title": "USDA School Meal Nutrition Standards Update",
+    "category": "policy",
+    "description": "Strengthened school meal requirements: reduced sodium limits over 5-year phase-in, required whole grain minimums, and capped added sugars in school breakfasts for the first time, affecting 30 million children daily.",
+    "link": "https://www.fns.usda.gov/cn/school-nutrition-standards-updates",
+    "type": "win",
+    "level": "federal",
+    "administration": "Biden Admin (D)",
+    "note": "USDA Rulemaking",
+    "source_section": "federal-tracker"
+  },
+  {
+    "date": "March 2024",
+    "title": "EPA PFAS Drinking Water Standards",
+    "category": "policy",
+    "description": "First-ever enforceable federal limits on six PFAS compounds in drinking water, covering an estimated 100+ million Americans. Set maximum contaminant levels for PFOA, PFOS, and four other \"forever chemicals\" linked to cancer and immune disruption.",
+    "link": "https://www.epa.gov/sdwa/and-polyfluoroalkyl-substances-pfas",
+    "type": "win",
+    "level": "federal",
+    "administration": "Biden Admin (D)",
+    "alignment": "Broad Public Support",
+    "source_section": "federal-tracker"
+  },
+  {
+    "date": "May 2024",
+    "title": "SB 1084 — Pesticide Preemption Provision",
+    "category": "policy",
+    "description": "Included provisions preempting local government authority to restrict pesticide use beyond state minimums, eliminating local organic zones, pesticide-free parks, and school buffer restrictions. Backed heavily by the agricultural chemical industry.",
+    "link": "https://www.flsenate.gov/Session/Bill/2024/1084",
+    "type": "loss",
+    "level": "state",
+    "state": "Florida",
+    "governor": "Gov. DeSantis (R)",
+    "alignment": "Party-Line R",
+    "source_section": "state-tracker"
+  },
+  {
+    "date": "May 2024",
+    "title": "SF 2370 — CAFO Rulemaking Preemption",
+    "category": "policy",
+    "description": "Codified Gov. Reynolds' executive order prohibiting the Iowa DNR from strengthening CAFO regulations, permanently blocking tighter rules on factory farm siting, particularly in environmentally sensitive karst terrain where contamination of groundwater is most severe. Passed 91-3 in the House.",
+    "link": "https://www.legis.iowa.gov/legislation/BillBook?ga=90&ba=SF2370",
+    "type": "loss",
+    "level": "state",
+    "state": "Iowa",
+    "governor": "Gov. Reynolds (R)",
+    "alignment": "Party-Line R",
+    "source_section": "state-tracker"
+  },
+  {
+    "date": "June 2024",
+    "title": "PFAS Food Packaging Restriction Act",
+    "category": "policy",
+    "description": "Banned PFAS in food packaging, food service ware, and cookware sold in Washington, among the strongest state PFAS restrictions in the country, with phased implementation for different product categories.",
+    "link": "https://ecology.wa.gov/waste-toxics/reducing-toxic-chemicals/washingtons-toxics-in-products-laws/pfas-in-food-packaging",
+    "type": "win",
+    "level": "state",
+    "state": "Washington",
+    "governor": "Gov. Ferguson (D)",
+    "alignment": "Bipartisan",
+    "source_section": "state-tracker"
   },
   {
     "date": "July 2024",
@@ -30,6 +273,31 @@
     "description": "Kennedy suspends his independent presidential bid at a press conference in Phoenix and endorses Donald Trump, uniting the MAHA coalition with MAGA and marrying health freedom politics with conservative electoral power. Kennedy delivers a bloc of voters focused on food safety, chronic disease, and reform of federal health agencies.",
     "link": "https://www.aljazeera.com/news/2024/8/23/third-party-candidate-robert-f-kennedy-jr-suspends-us-presidential-bid",
     "type": "neutral"
+  },
+  {
+    "date": "September 2024",
+    "title": "FDA Front-of-Package Labeling Proposal",
+    "category": "policy",
+    "description": "FDA issued proposed rule for mandatory front-of-package \"nutrition info\" labeling, including a \"high in\" warning label for sodium, saturated fat, and added sugars, representing the most significant food labeling reform in decades.",
+    "link": "https://www.fda.gov/food/hfp-constituent-updates/fda-issues-proposed-rule-front-package-nutrition-labeling",
+    "type": "win",
+    "level": "federal",
+    "administration": "Biden Admin (D)",
+    "note": "FDA Rulemaking",
+    "source_section": "federal-tracker"
+  },
+  {
+    "date": "September 2024",
+    "title": "AB 2316 — California School Food Safety Act",
+    "category": "policy",
+    "description": "Banned six synthetic food dyes (Red 40, Yellow 5, Yellow 6, Blue 1, Blue 2, and Green 3) from all meals, drinks, and snacks served at California public schools statewide. First state-level school food dye ban in the U.S. Manufacturers required to reformulate products with natural alternatives by December 2027.",
+    "link": "https://www.nbcnews.com/news/us-news/california-governor-signs-legislation-prohibiting-six-artificial-dyes-rcna173232",
+    "type": "win",
+    "level": "state",
+    "state": "California",
+    "governor": "Gov. Newsom (D)",
+    "alignment": "Dem-Led",
+    "source_section": "state-tracker"
   },
   {
     "date": "September 16, 2024",
@@ -81,6 +349,17 @@
     "type": "neutral"
   },
   {
+    "date": "December 2024",
+    "title": "FDA Takes No Action on GRAS Loophole Throughout Biden Term",
+    "category": "policy",
+    "description": "Under current FDA rules, food companies can self-certify new food additives as \"Generally Recognized as Safe\" (GRAS) without notifying or seeking approval from the agency. Thousands of chemicals have entered the U.S. food supply through this pathway without independent government safety review. The Biden FDA acknowledged the problem but took no action to reform the process. At a December 2024 Senate hearing, FDA Commissioner Robert Califf defended inaction, citing legal risk and limited staff. Scientists and legal experts at Harvard characterized the GRAS system as \"a laissez-faire approach to monitoring ingredient safety\" that poses a direct threat to public health.",
+    "link": "https://www.nyu.edu/about/news-publications/news/2024/august/legal-loophole-unsafe-ingredients.html",
+    "type": "loss",
+    "level": "federal",
+    "administration": "Biden Administration",
+    "source_section": "federal-tracker"
+  },
+  {
     "date": "December 19, 2024",
     "title": "Senate MAHA Caucus Launched",
     "category": "politics",
@@ -92,9 +371,22 @@
     "date": "January 15, 2025",
     "title": "FDA Bans Red Dye No. 3",
     "category": "policy",
-    "description": "In the final days of the Biden administration, the FDA revokes authorization for Red Dye No. 3 (FD&C Red No. 3), one of the first concrete regulatory actions aligned with MAHA's emphasis on food ingredient safety. Food manufacturers have until January 2027 to comply.",
-    "link": "https://www.scientificamerican.com/article/what-we-know-about-artificial-food-dyes-and-health-as-rfk-jr-declares-a-u-s/",
-    "type": "win"
+    "description": "In the final days of the Biden administration, the FDA revokes authorization for Red Dye No. 3 (FD&C Red No. 3), one of the first concrete regulatory actions aligned with MAHA's emphasis on food ingredient safety. Food manufacturers have until January 2027 to comply. The revocation followed the Delaney Clause, which requires removal of any additive once carcinogenicity is demonstrated; Red No. 3 (erythrosine) had been linked to thyroid tumors in animal studies.",
+    "link": [
+      {
+        "label": "Scientific American",
+        "url": "https://www.scientificamerican.com/article/what-we-know-about-artificial-food-dyes-and-health-as-rfk-jr-declares-a-u-s/"
+      },
+      {
+        "label": "FDA Constituent Update",
+        "url": "https://www.fda.gov/food/hfp-constituent-updates/fda-revoke-authorization-use-red-no-3-food-and-ingested-drugs"
+      }
+    ],
+    "type": "win",
+    "level": "federal",
+    "administration": "Biden/Trump transition",
+    "alignment": "Bipartisan Support",
+    "source_section": "federal-tracker"
   },
   {
     "date": "January 29–30, 2025",
@@ -121,12 +413,51 @@
     "type": "loss"
   },
   {
+    "date": "February 2025",
+    "title": "EPA CAFO Effluent Guideline Withdrawal",
+    "category": "policy",
+    "description": "Trump EPA withdrew proposed rules that would have required factory farms to reduce discharge of ammonia, pathogens, and pharmaceuticals into waterways, eliminating water quality protections for communities near industrial livestock operations.",
+    "link": "https://www.epa.gov/npdes/animal-feeding-operations-regulations-guidance-and-studies",
+    "type": "loss",
+    "level": "federal",
+    "administration": "Trump Admin (R)",
+    "alignment": "Executive Action",
+    "source_section": "federal-tracker"
+  },
+  {
     "date": "March 2025",
     "title": "West Virginia Bans Seven Synthetic Dyes",
     "category": "policy",
-    "description": "West Virginia becomes the first state to ban seven synthetic food dyes under a new law signed by the governor. The bill is sponsored by a Republican legislator motivated by his foster children's health. Around the same time, roughly 75 dye-related bills are introduced across 37 states.",
-    "link": "https://kffhealthnews.org/news/article/maha-rfk-kennedy-state-legislatures-dyes-ultraprocessed-foods/",
-    "type": "win"
+    "description": "West Virginia becomes the first state to ban seven synthetic food dyes under a new law signed by the governor. The bill is sponsored by a Republican legislator motivated by his foster children's health. Around the same time, roughly 75 dye-related bills are introduced across 37 states. The law bars synthetic dyes including Red 40, Yellow 5 and 6, and Blue 1 and 2 from all West Virginia public school meals beginning August 2025.",
+    "link": [
+      {
+        "label": "KFF Health News",
+        "url": "https://kffhealthnews.org/news/article/maha-rfk-kennedy-state-legislatures-dyes-ultraprocessed-foods/"
+      },
+      {
+        "label": "WV Governor's Office",
+        "url": "https://governor.wv.gov/article/governor-patrick-morrisey-signs-food-dye-legislation-law"
+      }
+    ],
+    "type": "win",
+    "level": "state",
+    "state": "West Virginia",
+    "governor": "Gov. Morrisey (R)",
+    "alignment": "Near-Unanimous",
+    "source_section": "state-tracker"
+  },
+  {
+    "date": "March 2025",
+    "title": "WOTUS Rule Elimination",
+    "category": "policy",
+    "description": "Eliminated Biden-era Waters of the United States rule, removing federal protections for an estimated 51% of the nation's wetlands and many seasonal streams, the waters that filter drinking supplies for millions of Americans.",
+    "link": "https://www.epa.gov/wotus",
+    "type": "loss",
+    "level": "federal",
+    "administration": "Trump Admin (R)",
+    "alignment": "Party-Line",
+    "note": "R-only",
+    "source_section": "federal-tracker"
   },
   {
     "date": "March 25, 2025",
@@ -143,6 +474,18 @@
     "description": "Termination notices go out to thousands of HHS staffers. At the FDA, 3,500 jobs are eliminated, including top regulatory officials. Entire offices (communications, FOIA, infertility research) are shuttered. Former FDA leaders across both parties warn that institutional capacity has been irreparably damaged.",
     "link": "https://www.npr.org/sections/shots-health-news/2025/04/01/g-s1-57485/hhs-fda-layoffs-doge-cdc-nih",
     "type": "loss"
+  },
+  {
+    "date": "April 2025",
+    "title": "PFAS Drinking Water Rule Rollback",
+    "category": "policy",
+    "description": "Trump EPA initiated formal review to weaken or suspend Biden's PFAS drinking water standards, potentially stripping protections for the 100+ million Americans in communities with PFAS-contaminated water systems.",
+    "link": "https://www.epa.gov/newsreleases/trump-epa-announces-next-steps-regulatory-pfoa-and-pfos-cleanup-efforts-provides",
+    "type": "loss",
+    "level": "federal",
+    "administration": "Trump Admin (R)",
+    "alignment": "Party-Line",
+    "source_section": "federal-tracker"
   },
   {
     "date": "April 22, 2025",
@@ -172,6 +515,46 @@
     "type": "win"
   },
   {
+    "date": "May 2025",
+    "title": "SB 314 — School Food Ban & First-in-Nation Additive Warning Labels",
+    "category": "policy",
+    "description": "Signed by Gov. Greg Abbott (R), SB 314 bans 17 food additives from school lunches starting the 2026–27 school year and establishes a statewide Nutrition Advisory Committee. A companion labeling law, the first of its kind in the U.S., requires warning labels on any food product sold in Texas that contains ingredients banned or restricted in Australia, Canada, the EU, or the UK. Companies must either add the warning, reformulate, or stop selling affected products in Texas. The labeling requirement is expected to create national pressure on manufacturers to reformulate.",
+    "link": "https://www.usnews.com/news/health-news/articles/2025-06-24/new-texas-law-could-change-how-food-additives-are-labeled-nationwide",
+    "type": "win",
+    "level": "state",
+    "state": "Texas",
+    "governor": "Gov. Abbott (R)",
+    "alignment": "MAHA-aligned",
+    "source_section": "state-tracker"
+  },
+  {
+    "date": "May 2025",
+    "title": "Pesticide Liability Protection Act (Glyphosate Shield)",
+    "category": "policy",
+    "description": "Shields pesticide manufacturers from failure-to-warn lawsuits as long as federal label requirements are met, effectively protecting Bayer's Roundup from state court liability. Georgia becomes the second state to pass such a law, following North Dakota. A Georgia jury had awarded a cancer plaintiff $2.1 billion in March 2025, just before the law's passage. Bayer faces ~181,000 glyphosate-cancer claims nationally.",
+    "link": "https://www.bostonherald.com/2025/05/12/pesticides-liability-protection-georgia/",
+    "type": "loss",
+    "level": "state",
+    "state": "Georgia",
+    "governor": "Gov. Kemp (R)",
+    "alignment": "Party-Line R",
+    "note": "Industry-backed",
+    "source_section": "state-tracker"
+  },
+  {
+    "date": "June 2025",
+    "title": "SB 14 / Act 463 — School Food Additive Ban & Labeling",
+    "category": "policy",
+    "description": "Signed by Gov. Jeff Landry (R), SB 14 bans 15 food additives, including synthetic dyes and preservatives, from school meals starting the 2028–29 school year. The law also requires physicians and nurse practitioners to complete continuing education in nutrition and metabolic health, and mandates that food manufacturers attach a QR code to products containing any of 44 listed ingredients, giving consumers direct access to ingredient safety information at the point of purchase.",
+    "link": "https://nationalaglawcenter.org/maha-movement-new-texas-and-louisiana-laws/",
+    "type": "win",
+    "level": "state",
+    "state": "Louisiana",
+    "governor": "Gov. Landry (R)",
+    "alignment": "MAHA-aligned",
+    "source_section": "state-tracker"
+  },
+  {
     "date": "Summer 2025",
     "title": "MAHA-MAGA Rift Opens Over EPA Pesticide Policy",
     "category": "politics",
@@ -186,6 +569,18 @@
     "description": "A House appropriations bill for the EPA includes language that would bar states and courts from penalizing pesticide makers for failing to include health warnings beyond those recognized by the EPA, effectively shielding Roundup/glyphosate maker Bayer from failure-to-warn lawsuits. MAHA groups call it a 'liability shield.'",
     "link": "https://thehill.com/policy/energy-environment/5459470-maha-maga-gop-trump-rfk-jr-pesticides-chemical-regulations/",
     "type": "loss"
+  },
+  {
+    "date": "August 2025",
+    "title": "EPA Glyphosate Registration Review",
+    "category": "policy",
+    "description": "EPA renewed glyphosate's pesticide registration for 15 years despite ~181,000 pending cancer lawsuits (non-Hodgkin's lymphoma), a $2.1 billion Georgia jury verdict, and the Trump DOJ filing a brief urging the Supreme Court to side with Bayer and strip cancer victims of their right to sue under state law. MAHA supporters had previously blocked a glyphosate liability shield from an appropriations rider; the administration then did the opposite. Cross-partisan response: Rep. Thomas Massie's No Immunity for Glyphosate Act, co-sponsored by Pingree, Boebert, Mace, and Khanna, would restore victims' right to sue, but has not advanced to a floor vote.",
+    "link": "https://www.epa.gov/ingredients-used-pesticide-products/glyphosate",
+    "type": "loss",
+    "level": "federal",
+    "administration": "Trump Admin (R)",
+    "note": "Industry-aligned",
+    "source_section": "federal-tracker"
   },
   {
     "date": "September 9, 2025",
@@ -212,7 +607,36 @@
     "category": "politics",
     "description": "The Trump EPA approves isocycloseram, a PFAS 'forever chemical' pesticide, for use on golf courses, lawns, and food crops including oranges, tomatoes, almonds, and oats. It is the second PFAS pesticide approved in two weeks, with three more planned. The EPA waives a standard child-safety buffer despite the pesticide's links to reduced sperm count, reduced testicle size, and liver toxicity. The pesticide office is controlled by two former lobbyists for the American Chemistry Council. Critics note the approvals directly contradict MAHA's stated mission to protect children from toxic chemical exposures.",
     "link": "https://biologicaldiversity.org/w/news/press-releases/trump-epa-approves-its-second-forever-chemical-pesticide-in-two-weeks-2025-11-20/",
-    "type": "loss"
+    "type": "loss",
+    "level": "federal",
+    "administration": "Trump Admin (R)",
+    "alignment": "Executive Action",
+    "note": "Industry-aligned",
+    "source_section": "federal-tracker"
+  },
+  {
+    "date": "December 2025",
+    "title": "EPA Mandated to Regulate Five Phthalate Chemicals",
+    "category": "policy",
+    "description": "EPA Administrator Lee Zeldin announced the agency's intent to develop rules eliminating unreasonable risks from five phthalate chemicals (BBP, DBP, DCHP, DEHP, and DIBP) used in plastics and building materials. DEHP alone faces restrictions on 30 conditions of use. Under TSCA, once the EPA identifies unreasonable risk, rulemaking to eliminate that risk is legally required, making this a binding mandate rather than a voluntary commitment.",
+    "link": "https://www.epa.gov/newsreleases/epa-announces-intent-regulate-dozens-uses-five-phthalate-chemicals-protect-workers-and",
+    "type": "win",
+    "level": "federal",
+    "administration": "Trump Admin (R)",
+    "alignment": "TSCA Mandate",
+    "source_section": "federal-tracker"
+  },
+  {
+    "date": "December 2025",
+    "title": "USDA Launches $700M Regenerative Pilot Program",
+    "category": "policy",
+    "description": "Agriculture Secretary Brooke Rollins, alongside RFK Jr. and CMS Administrator Dr. Oz, launched a $700 million Regenerative Pilot Program ($400M through EQIP and $300M through CSP) to help farmers adopt whole-farm conservation practices addressing soil health, water quality, and natural vitality through a single streamlined application. NRCS established a Chief's Regenerative Agriculture Advisory Council to guide implementation. The program provides farmers an \"off-ramp\" to transition away from synthetic input dependence.",
+    "link": "https://www.usda.gov/about-usda/news/press-releases/2025/12/10/usda-launches-new-regenerative-pilot-program-lower-farmer-production-costs-and-advance-maha-agenda",
+    "type": "win",
+    "level": "federal",
+    "administration": "Trump Admin (R)",
+    "alignment": "USDA · NRCS",
+    "source_section": "federal-tracker"
   },
   {
     "date": "January 7, 2026",
@@ -220,7 +644,11 @@
     "category": "policy",
     "description": "Kennedy and Agriculture Secretary Brooke Rollins unveil the Dietary Guidelines for Americans 2025–2030 at a White House briefing, with Kennedy declaring it 'the most significant reset of federal nutrition policy in history.' The new guidelines introduce a redesigned, inverted food pyramid placing protein, dairy, and healthy fats at the top. For the first time, federal dietary guidance explicitly warns Americans to avoid highly processed foods. The message is distilled to three words: 'Eat real food.' A companion website, RealFood.gov, goes live to reach the public directly.",
     "link": "https://www.hhs.gov/press-room/historic-reset-federal-nutrition-policy.html",
-    "type": "win"
+    "type": "win",
+    "level": "federal",
+    "administration": "Trump Admin (R)",
+    "alignment": "HHS · USDA",
+    "source_section": "federal-tracker"
   },
   {
     "date": "January 21, 2026",
@@ -285,15 +713,33 @@
     "category": "politics",
     "description": "The Trump EPA reapproves dicamba, a drift-prone herbicide sprayed on genetically engineered cotton and soybeans, despite federal courts having ruled such approvals unlawful in both 2020 and 2024. Since its first approval in 2016, dicamba drift has damaged millions of acres of farmland, orchards, vegetable farms, and wildlife refuges. Experts call it the worst herbicide drift damage in U.S. agricultural history. The new approval provides even fewer drift protections than past versions. Lawsuits are filed within weeks.",
     "link": "https://biologicaldiversity.org/w/news/press-releases/epa-reapproves-dangerous-drift-prone-pesticide-dicamba-2026-02-06/",
-    "type": "loss"
+    "type": "loss",
+    "level": "federal",
+    "administration": "Trump Admin (R)",
+    "alignment": "Executive Action",
+    "note": "Courts struck down twice before",
+    "source_section": "federal-tracker"
   },
   {
     "date": "February 18, 2026",
     "title": "EPA Plans to Loosen Mercury Rules for Coal Plants",
     "category": "politics",
-    "description": "The New York Times reports that the EPA is moving to roll back mercury emission rules for coal-burning power plants, arguing it would reduce 'unwarranted costs' for utilities. Mercury from coal plants is a major source of fish contamination, the same issue RFK Jr. has long prioritized. The administration has simultaneously ordered eight coal units headed for retirement to stay open. The move draws sharp criticism from MAHA-aligned health advocates as a direct contradiction of Kennedy's anti-mercury agenda.",
-    "link": "https://www.nytimes.com/2026/02/18/climate/epa-mercury-coal-plants.html?unlocked_article_code=1.NVA.GI-P.I17QftCQ0eM-&smid=url-share",
-    "type": "loss"
+    "description": "The New York Times reports that the EPA is moving to roll back mercury emission rules for coal-burning power plants, arguing it would reduce 'unwarranted costs' for utilities. Mercury from coal plants is a major source of fish contamination, the same issue RFK Jr. has long prioritized. The administration has simultaneously ordered eight coal units headed for retirement to stay open. The move draws sharp criticism from MAHA-aligned health advocates as a direct contradiction of Kennedy's anti-mercury agenda. Coal-fired power plants are the largest human source of mercury pollution, which enters the food chain through fish; mercury is a neurotoxin that impairs brain development in young children and contributes to heart attacks in adults. The EPA cited \"hundreds of millions in savings\" for utility operators and announced the rollback at a coal plant on the Ohio River in Louisville, Kentucky.",
+    "link": [
+      {
+        "label": "New York Times",
+        "url": "https://www.nytimes.com/2026/02/18/climate/epa-mercury-coal-plants.html?unlocked_article_code=1.NVA.GI-P.I17QftCQ0eM-&smid=url-share"
+      },
+      {
+        "label": "NBC News",
+        "url": "https://www.nbcnews.com/science/environment/epa-eases-limits-coal-plant-emissions-mercury-toxins-trump-rcna259955"
+      }
+    ],
+    "type": "loss",
+    "level": "federal",
+    "administration": "Trump Admin (R)",
+    "alignment": "Party-Line",
+    "source_section": "federal-tracker"
   },
   {
     "date": "February 2026",
@@ -310,6 +756,18 @@
     "description": "MAHA Action President Tony Lyons sends a formal strategy memo to RNC, NRSC, and NRCC chairmen (cc'd to Senate Majority Leader John Thune and Speaker Mike Johnson), arguing that MAHA is 'a once in a generation political gift to the GOP,' comparable to MAGA in 2016. New polling from Fabrizio, Lee and Associates identifies two key voter blocs the GOP must activate: the 'MAHA Winnable Middle' (14% of voters, persuadable Democrats and independents who chose a MAHA-framed Republican over a generic Democrat by nearly 2:1) and 'MAHA Rentals' (10%, soft Republicans who back the generic GOP but may stay home if the party ignores MAHA). The memo warns that without embracing MAHA, Republicans risk suppressing friendly turnout, and argues the movement can flip a 5-point generic ballot Democratic lead into a Republican advantage. Top persuasion issues: hospital price transparency, removing petroleum-based food dyes, testing baby formula for heavy metals, and restricting misleading marketing targeting children.",
     "link": "https://www.politico.com/f/?id=0000019c-4f0d-d0f8-adde-ff5f2e9d0003",
     "type": "neutral"
+  },
+  {
+    "date": "February 2026",
+    "title": "HHS, USDA & EPA Announce $1B+ Farm Modernization Investment",
+    "category": "policy",
+    "description": "Three federal agencies committed over $1 billion to modernize U.S. agriculture and reduce chemical dependence: USDA allocated $840M through conservation programs (EQIP, CSP) to fund regenerative agriculture; EPA launched a $30M grand prize challenge for pesticide alternatives to pre-harvest desiccation; and EPA, USDA, and NIH committed to developing a cumulative chemical exposure research framework for the food supply. Rooted in Executive Order 14212 establishing the MAHA Commission.",
+    "link": "https://www.hhs.gov/press-room/hhs-usda-epa-announce-one-billion-investments-plan-accelerate-progress-farm-modernization-long-term-food-supply-security.html",
+    "type": "win",
+    "level": "federal",
+    "administration": "Trump Admin (R)",
+    "alignment": "HHS · USDA · EPA",
+    "source_section": "federal-tracker"
   },
   {
     "date": "February 17–18, 2026",
@@ -385,6 +843,18 @@
     "type": "neutral"
   },
   {
+    "date": "March 2026",
+    "title": "53 Medical Schools Commit to Mandatory Nutrition Training",
+    "category": "policy",
+    "description": "HHS and the Dept. of Education convened leaders from 53 top medical schools across 31 states to commit to requiring at least 40 hours of nutrition education for students beginning fall 2026. Secretaries Kennedy and McMahon were joined by the presidents of the AMA, AAMC, and AACOM. The commitment is a meaningful shift in how the medical profession approaches diet and chronic disease. That said, its impact is limited in scope: it affects future physicians only, carries no enforcement mechanism, and does not address the structural conditions (food deserts, ultra-processed food dominance, agricultural subsidies) that shape what most Americans actually eat. Without accompanying regulatory and financial reforms, better-trained doctors will have limited tools to act on what they know.",
+    "link": "https://www.hhs.gov/press-room/sec-kennedy-sec-mcmahon-celebrate-med-school-commitments-to-increase-nutrition-training-for-future-doctors.html",
+    "type": "win",
+    "level": "federal",
+    "administration": "Trump Admin (R)",
+    "alignment": "Federal Initiative",
+    "source_section": "federal-tracker"
+  },
+  {
     "date": "March 20, 2026",
     "title": "More Perfect Union: MAHA Supporters Confront the Administration's Ties to Big Ag and the Chemical Industry",
     "category": "media",
@@ -437,6 +907,18 @@
     "description": "On April 9, with MAHA activists increasingly angry at the Trump administration, the White House convened a private meeting with three prominent movement influencers, a bid to shore up a coalition the GOP had hoped would deliver women and independent voters in November. Among the attendees was activist Courtney Swan, who declared herself disillusioned last month: 'It's starting to feel like both sides are in on it, and we're being scammed.' The outreach came at a low point for HHS Secretary Robert F. Kennedy Jr., whose authority inside the administration has visibly narrowed since Trump's executive order boosting domestic production of the weedkiller glyphosate, a move that triggered some of the most intense backlash MAHA has mounted against the White House to date. In a West Wing round-table running more than an hour, the influencers pressed senior officials on glyphosate and the sluggish pace of food-policy reform. Listening on the administration's side were Kennedy, Chief of Staff Susie Wiles, Deputy Chief of Staff Stephen Miller, and other senior aides, who responded by highlighting achievements such as the redesigned federal food pyramid. Trump then brought the group into the Oval Office for more than 20 minutes, praising Kennedy's performance and (after a joke about Diet Coke clashing with a healthy image) pressing the red button on the Resolute Desk, which summoned a staffer bearing a glass bottle. The attendees departed with Trump challenge coins in gold and their choice of MAGA merchandise; Turning Point USA podcaster Alex Clark took a 'Trump 2028' hat, she said, 'to troll the libs.' Also at the table was Dr. Casey Means, Trump's stalled surgeon general nominee. Clark told officials Means was 'trustworthy to the MAHA base' and argued her confirmation would help the administration reach the movement. Clark described leaving the meeting feeling 'hopeful, and grateful for an opportunity to have a face-to-face conversation and be heard by all of President Trump's top advisers.' Swan, who walked in skeptical, said afterward: 'They were asking questions with curiosity. To me as someone who was fighting his fight for so long, I was blown away.' White House spokesman Kush Desai said the administration 'regularly meets with the MAHA community to hear their concerns and advice.' The charm offensive came less than two weeks after a POLITICO poll found 41% of Trump's own 2024 voters believe his administration has not done enough on MAHA priorities. Additional coverage: <a href='https://www.wsj.com/politics/policy/white-house-woos-maha-influencers-amid-rocky-patch-fea40167' target='_blank' rel='noopener'>WSJ</a> · <a href='https://www.politico.com/newsletters/politico-pulse/2026/04/10/white-house-extends-olive-branch-to-maha-00866013' target='_blank' rel='noopener'>Politico Pulse</a> · <a href='https://subscriber.politicopro.com/article/2026/04/the-white-house-makes-amends-with-maha-00866476' target='_blank' rel='noopener'>Politico Pro</a>.",
     "link": "https://www.nytimes.com/2026/04/09/us/politics/trump-kennedy-maha-moms.html",
     "type": "neutral"
+  },
+  {
+    "date": "April 2026",
+    "title": "2026 Farm Bill Leaves $187B in SNAP Cuts Intact",
+    "category": "policy",
+    "description": "The 2026 farm bill, which passed the House 224–200 on April 30, declined to reverse the roughly $187 billion in SNAP cuts enacted through the prior year's tax-and-spending reconciliation package (the \"One Big Beautiful Bill\"). SNAP is the federal nutrition program through which more than 40 million low-income Americans purchase food; cuts of this scale directly undermine MAHA's stated mission of expanding access to healthier food, especially for children. Anti-hunger groups criticized the farm bill for failing to undo the cuts. The bill's separate Luna Amendment win on pesticide liability does not offset its silence on food access for the lowest-income Americans, and the new SNAP candy/soda restrictions rolling out across 22 states (covered separately on this site's timeline) further narrow what shrunken SNAP benefits can buy.",
+    "link": "https://www.msn.com/en-us/politics/government/us-house-passes-farm-bill-after-scrapping-pesticide-language-opposed-by-maha/ar-AA227lcZ",
+    "type": "loss",
+    "level": "federal",
+    "administration": "Trump-Era Reconciliation",
+    "alignment": "Maintained by Farm Bill",
+    "source_section": "federal-tracker"
   },
   {
     "date": "April 16, 2026",
@@ -529,7 +1011,11 @@
     "category": "politics",
     "description": "On the morning of April 30, the House passed an amendment 280–142 to strip pesticide-labeling language from the 2026 farm bill, a MAHA-priority outcome that hinged on overwhelming Democratic support. The party breakdowns tell the story. Among Democrats: 207 voted yes, only 6 voted no, near-unanimous support for stripping the liability shield. Among Republicans, the picture flipped: 73 voted yes (the MAHA-aligned faction) and 136 voted no, meaning the MAHA wing was outvoted nearly two-to-one inside its own caucus. The amendment cleared the chamber only because the Democratic 'yes' bloc more than tripled the size of the Republican 'yes' bloc. Without that essential Democratic support, the MAHA-led effort would have failed. The six Democratic defectors who voted to preserve the shield were Sanford Bishop (Ga.), Henry Cuellar (Texas), Don Davis (N.C.), Vicente Gonzalez (Texas), Adam Gray (Calif.), and Hank Johnson (Ga.). The amendment was sponsored by Rep. Anna Paulina Luna (R-FL), who had warned colleagues she would 'BLOW UP the farm bill' over the issue. Luna said during debate that her own party had pushed back hard against her (including a Republican who, the night before, had called her a 'damn liar') and added on the floor: 'I never thought I'd have to be debating liability protections for pesticide companies. Yet here I am today.' House Agriculture Chair G.T. Thompson (R-PA) led the opposing effort and defended the original language to Politico: 'It would prevent frivolous lawsuits if it's in compliance with the science that the EPA has put forward. I think this is a tool that's really important for food affordability, because these are tools are important for yield, to be able to feed the nation, feed the world.' Rep. Chellie Pingree (D-ME), who has resisted similar provisions in past appropriations and farm bills, joined Luna and told the chamber: 'This amendment is not extreme. It would not ban pesticides or require any additional regulatory burden on the manufacturers. Quite literally it would preserve the status quo and allow the Supreme Court to examine this issue separately and the complicated legal issues at its core.' The stripped provisions would have shielded pesticide manufacturers (including Bayer, the maker of Roundup) from state-law failure-to-warn lawsuits, the same legal mechanism at issue in Monsanto v. Durnell, the case the Supreme Court heard three days earlier. This marks the second time in 2026 that this Bayer-backed liability language has been killed by a MAHA-Democrat coalition; the first came in January, when it was stripped from the 2026 EPA appropriations bill before House Republicans revived it in the farm-bill markup in March.",
     "link": "https://www.politico.com/live-updates/2026/04/30/congress/house-strikes-pesticide-language-from-farm-bill-00899851",
-    "type": "win"
+    "type": "win",
+    "level": "federal",
+    "alignment": "Bipartisan (MAHA + Dem)",
+    "note": "207D + 73R Yes",
+    "source_section": "federal-tracker"
   },
   {
     "date": "April 30, 2026",
@@ -618,7 +1104,11 @@
     "category": "policy",
     "description": "On May 5, the FDA authorized the first-ever fruit-flavored e-cigarettes for adults 21 and over, mango, blueberry, and two menthol varieties from the Los Angeles brand Glas. The Wall Street Journal reported hours before the announcement that President Trump had personally pressed FDA Commissioner Marty Makary to approve flavored vapes, fulfilling a 2024 campaign pledge made after Trump met privately with a leading vaping lobbyist. On Truth Social during the campaign, Trump wrote that he 'saved Flavored Vaping in 2019' and would 'save Vaping again.' The decision reverses years of FDA work to restrict flavored e-cigarettes: the agency had previously turned away more than 1 million fruit, candy, and dessert flavors on youth-protection grounds, and the Supreme Court unanimously backed those rejections in April 2025. The FDA's release cited new 'device access restriction' technology, which requires users to verify their identity with government-issued ID and pair the device with a smartphone via Bluetooth, as a youth-protection mitigation. Bret Koplow, acting director of FDA's Center for Tobacco Products, called the technology 'a potential game changer.' The Campaign for Tobacco-Free Kids panned the decision. CEO Yolonda C. Richardson said it 'puts at risk the progress our nation has made in reducing youth e-cigarette use' and 'conflicts with overwhelming scientific evidence and the FDA's own repeated conclusions that flavors pose a substantial risk to young people.' Flavored vapes have long been documented as a primary driver of youth nicotine uptake. The move directly contradicts MAHA's stated mission of reducing chronic disease in children and curbing the targeting of young people by addictive industries, a particularly sharp contradiction given Kennedy's signature framing of corporate capture of federal health agencies.",
     "link": "https://www.washingtonpost.com/health/2026/05/05/fda-approves-flavored-vapes/",
-    "type": "loss"
+    "type": "loss",
+    "level": "federal",
+    "administration": "Trump Admin (R)",
+    "alignment": "FDA Reversal",
+    "source_section": "federal-tracker"
   },
   {
     "date": "May 7, 2026",
@@ -787,9 +1277,27 @@
     "date": "May 19, 2026",
     "title": "Vermont Becomes First State to Ban Paraquat, a Herbicide Linked to Parkinson's Disease",
     "category": "policy",
-    "description": "Vermont's legislature passed H. 739, making it the first U.S. state to ban paraquat, an herbicide that more than 70 countries — including every EU member and China — have already prohibited. Exposure to paraquat roughly doubles the risk of Parkinson's disease compared to other pesticides. The bill awaits Gov. Phil Scott's signature and phases in a full statewide ban by December 2030, giving farmers transition time and encouraging adoption of safer alternatives. The Michael J. Fox Foundation applauded the vote and called on other states and the federal government to follow. Dan Feehan of the Foundation said: \"The evidence linking paraquat exposure to increased Parkinson's risk is strong and has been building for decades.\" Similar bills are pending in a dozen states including New York, Pennsylvania, and Minnesota.",
-    "link": "https://parkinsonsnewstoday.com/news/vermont-first-state-pass-ban-parkinsons-linked-herbicide-paraquat/",
-    "type": "win"
+    "description": "Vermont's legislature passed H. 739, making it the first U.S. state to ban paraquat, an herbicide that more than 70 countries — including every EU member and China — have already prohibited. Exposure to paraquat roughly doubles the risk of Parkinson's disease compared to other pesticides. The bill awaits Gov. Phil Scott's signature and phases in a full statewide ban by December 2030, giving farmers transition time and encouraging adoption of safer alternatives. The Michael J. Fox Foundation applauded the vote and called on other states and the federal government to follow. Dan Feehan of the Foundation said: \"The evidence linking paraquat exposure to increased Parkinson's risk is strong and has been building for decades.\" Similar bills are pending in a dozen states including New York, Pennsylvania, and Minnesota. Research also links paraquat to non-Hodgkin lymphoma and childhood leukemia. Syngenta, the primary manufacturer, announced it would cease production in March 2026.",
+    "link": [
+      {
+        "label": "Parkinson's News Today",
+        "url": "https://parkinsonsnewstoday.com/news/vermont-first-state-pass-ban-parkinsons-linked-herbicide-paraquat/"
+      },
+      {
+        "label": "Vermont Legislature (H. 739)",
+        "url": "https://legislature.vermont.gov/bill/status/2026/H.739"
+      },
+      {
+        "label": "The New Lede",
+        "url": "https://www.thenewlede.org/2026/05/vermont-bans-paraquat-linked-to-parkinsons/"
+      }
+    ],
+    "type": "win",
+    "level": "state",
+    "state": "Vermont",
+    "governor": "Gov. Scott (R)",
+    "alignment": "Bipartisan / Awaiting Signature",
+    "source_section": "state-tracker"
   },
   {
     "date": "May 19, 2026",

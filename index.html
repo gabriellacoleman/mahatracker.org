@@ -1914,6 +1914,7 @@
     politics: { hex: '#e8a820', label: 'Politics' },
     policy:   { hex: '#00c9b1', label: 'Policy'   },
     media:    { hex: '#c084fc', label: 'Media'    },
+    history:  { hex: '#9ca3af', label: 'History'  },
   };
   const TL_TYPE = {
     win:     { badge: '#10b981', bg: 'rgba(16,185,129,0.06)',  border: '#10b981', label: 'WIN'   },
@@ -1982,7 +1983,7 @@
 
     // Filter by category; when a category is active show oldest→newest (chronological)
     let filtered = tlActiveCat === 'all'
-      ? tlEvents
+      ? tlEvents.filter(ev => !tlCats(ev).includes('history'))
       : tlEvents.filter(tlMatch).reverse();
 
     count.textContent = tlActiveCat === 'all'
