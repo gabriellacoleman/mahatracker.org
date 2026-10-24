@@ -842,5 +842,458 @@
     "description": "The back-and-forth between establishment psychiatrists, moderately critical clinicians (who often remain dismissive of patient advocates), and patient advocates and reform-oriented psychiatrists has been generating a lot of noise. But the positions are getting sharper. A widely-circulated thread by @samhall404, written from a reform perspective that accepts psychiatry's legitimate benefits, identifies ten ironies in the field that, once seen, are difficult to unsee. Three stand out. First, on who counts as extreme: the voices once labeled fringe anti-psychiatry were, the thread argues, \"mostly patients bearing the brunt of iatrogenic harm\" with lived experience and mounting evidence behind them — while those reflexively defending an outdated \"safe and effective\" paradigm have become the ideological extremists, and are \"anti-patient.\" Second, on the deprescribing turn: the clinicians who spent years dismissing withdrawal and pathologizing patients who reported it are now rebranding as pioneers of deprescribing — \"the very architects and defenders of the problem rebranding themselves as its enlightened reformers.\" Third, on institutional self-awareness: a field that uses \"insight\" and \"denial\" as diagnostic categories displays, the thread observes, \"profound institutional denial regarding the scale of iatrogenic harm and the limitations of its core disease model.\"",
     "link": "https://x.com/samhall404/status/2060740980496536044",
     "type": "neutral"
+  },
+  {
+    "date": "June 25, 2026",
+    "title": "Supreme Court Rules for Monsanto in Roundup Case, Blocking State Cancer-Warning Claims",
+    "category": [
+      "policy",
+      "politics"
+    ],
+    "description": "In Monsanto v. Durnell, the Court held 7-2 that federal pesticide law (FIFRA) preempts state failure-to-warn lawsuits claiming Roundup needed a cancer warning. Justice Kavanaugh wrote for the majority, and Justices Jackson and Gorsuch dissented. The decision wiped out a $1.25 million Missouri verdict for John Durnell, who blamed the herbicide for his non-Hodgkin lymphoma. The Trump administration had sided with Bayer, Monsanto's parent company, in the case, and Bayer's stock jumped nearly 19% on the news, its best day since 2003. The ruling is a major blow to the MAHA movement's glyphosate campaign and a sign of how little the administration's pesticide policy has matched its rhetoric.",
+    "link": [
+      {
+        "label": "Supreme Court Opinion",
+        "url": "https://www.supremecourt.gov/opinions/25pdf/24-1068_n7ip.pdf"
+      },
+      {
+        "label": "The Hill",
+        "url": "https://thehill.com/policy/energy-environment/5940264-supreme-pesticides-roundup-bayer-maha/"
+      },
+      {
+        "label": "Bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-06-25/supreme-court-shields-bayer-from-roundup-cancer-warning-suits"
+      },
+      {
+        "label": "Insurance Journal (Bloomberg)",
+        "url": "https://www.insurancejournal.com/news/national/2026/06/29/875573.htm"
+      }
+    ],
+    "type": "loss"
+  },
+  {
+    "date": "June 25–29, 2026",
+    "title": "MAHA Activists Call the Roundup Ruling a Betrayal",
+    "category": "politics",
+    "description": "Prominent MAHA voices, including Kelly Ryerson (the \"Glyphosate Girl\"), argued within days that the Roundup decision had cost the administration the movement's trust. Much of the blame landed on EPA Administrator Lee Zeldin. The reaction showed how central glyphosate has become to the movement's loyalty to Trump heading into the midterms.",
+    "link": [
+      {
+        "label": "NBC News",
+        "url": "https://www.nbcnews.com/health/health-news/supreme-court-ruling-roundup-weedkiller-maha-betrayed-rcna351796"
+      },
+      {
+        "label": "NOTUS",
+        "url": "https://www.notus.org/courts/supreme-court-monsanto-maha-loss-pesticides"
+      },
+      {
+        "label": "The Hill",
+        "url": "https://thehill.com/policy/healthcare/5943361-activists-maha-supreme-court-monsanto/"
+      },
+      {
+        "label": "Daily Signal",
+        "url": "https://www.dailysignal.com/2026/06/29/monsanto-scotus-maha-revolt-glyphosate/"
+      }
+    ],
+    "type": "loss"
+  },
+  {
+    "date": "Late June 2026",
+    "title": "Booker and Luna Move to Override the Roundup Ruling in Congress",
+    "category": [
+      "policy",
+      "politics"
+    ],
+    "description": "Sen. Cory Booker (D-NJ) pledged to lead an amendment stripping the preemptive authority the Court relied on, while Rep. Anna Paulina Luna (R-FL) said she would introduce a bill removing liability protections for pesticide makers. Activist Vani Hari called the ruling a landmark moment for corporate accountability. The effort extends the bipartisan alliance that passed the Luna Amendment in the House in April.",
+    "link": [
+      {
+        "label": "Jersey Vindicator",
+        "url": "https://jerseyvindicator.org/2026/06/25/booker-vows-legislative-action-after-u-s-supreme-court-sides-with-monsanto"
+      },
+      {
+        "label": "The New Lede",
+        "url": "https://www.thenewlede.org/2026/06/congress-members-move-to-override-supreme-court-ruling-on-pesticide-protections/"
+      }
+    ],
+    "type": "neutral"
+  },
+  {
+    "date": "June 30, 2026",
+    "title": "EPA Announces Paraquat Roundtable and Orders Volatility Study",
+    "category": "policy",
+    "description": "EPA said it would convene scientists, farmworker advocates, and other stakeholders this summer to discuss paraquat, an herbicide linked to Parkinson's disease, and it required manufacturers to carry out a real-world field study of how much the chemical vaporizes. The agency cited new evidence that inhalation exposure may be a bigger risk than previously assumed. The sources reviewed for this update do not confirm that the roundtable has taken place. Separately, Syngenta had announced in March that it would stop selling paraquat products by the end of June.",
+    "link": [
+      {
+        "label": "EPA",
+        "url": "https://www.epa.gov/newsreleases/epa-host-roundtable-paraquat-summer"
+      },
+      {
+        "label": "The New Lede",
+        "url": "https://www.thenewlede.org/2026/06/epa-to-hold-roundtable-on-paraquat/"
+      }
+    ],
+    "type": "neutral"
+  },
+  {
+    "date": "Early July 2026",
+    "title": "Administration Promotes Regenerative Agriculture Pilot as a Gesture to MAHA",
+    "category": [
+      "policy",
+      "politics"
+    ],
+    "description": "In the week after the Roundup ruling, the administration highlighted its regenerative agriculture pilot program as an olive branch to MAHA supporters, though it did not add funding. Critics, including nutrition scholar Marion Nestle, pointed out that the program's definition still permits glyphosate use.",
+    "link": "https://www.washingtonexaminer.com/?p=4648894",
+    "type": "neutral"
+  },
+  {
+    "date": "July 2, 2026",
+    "title": "CDC Study Puts Alpha-Gal, the Tick-Borne Red Meat Allergy, on the MAHA Agenda",
+    "category": [
+      "policy",
+      "media"
+    ],
+    "description": "A CDC study found that nearly a quarter of adults in states with heavy lone star tick populations carry alpha-gal antibodies, a sign of past exposure rather than a confirmed allergy. By July 22, Kennedy was telling reporters he takes the rise in alpha-gal cases seriously, although Roll Call noted that he has overstated the scale of the problem in the past. The issue later surfaced in a September executive order on ticks and mosquitoes.",
+    "link": [
+      {
+        "label": "NBC News",
+        "url": "https://www.nbcnews.com/health/health-news/people-may-risk-red-meat-allergy-caused-ticks-thought-rcna352712"
+      },
+      {
+        "label": "Roll Call",
+        "url": "https://rollcall.com/2026/07/22/tick-bites-snag-congress-attention-as-red-meat-allergies-rise/"
+      }
+    ],
+    "type": "neutral"
+  },
+  {
+    "date": "July 9, 2026",
+    "title": "Bayer's $7.25 Billion Settlement Becomes the Center of Roundup Litigation",
+    "category": "policy",
+    "description": "With failure-to-warn claims now barred, Bayer's proposed $7.25 billion class settlement became the main path for resolving the remaining Roundup cases. The Supreme Court ruling is expected to end most other litigation over the herbicide.",
+    "link": [
+      {
+        "label": "Lawsuit Information Center",
+        "url": "https://www.lawsuit-information-center.com/roundup-lawsuit.html"
+      },
+      {
+        "label": "Wikipedia: Monsanto v. Durnell",
+        "url": "https://en.wikipedia.org/wiki/Monsanto_Co._v._Durnell"
+      }
+    ],
+    "type": "loss"
+  },
+  {
+    "date": "Early August 2026",
+    "title": "Kennedy Takes MAHA Record on a Midterm Campaign Tour",
+    "category": "politics",
+    "description": "In a single week Kennedy campaigned in Danville (VA), Goldsboro (NC), Nashville, Lexington (KY), and Atlanta, promoting the administration's MAHA record to voters. Some MAHA supporters remain frustrated over glyphosate and childhood vaccines, and the MAHA PAC has raised far less than the $100 million it had promised.",
+    "link": [
+      {
+        "label": "Daily Signal",
+        "url": "https://www.dailysignal.com/2026/08/09/rfk-jr-midterms-role-maha/"
+      },
+      {
+        "label": "Washington Examiner",
+        "url": "https://www.washingtonexaminer.com/?p=4708688"
+      }
+    ],
+    "type": "neutral"
+  },
+  {
+    "date": "August 6, 2026",
+    "title": "Senate Agriculture Committee Rejects Booker's Amendment to Undo the Roundup Ruling",
+    "category": [
+      "policy",
+      "politics"
+    ],
+    "description": "Republicans on the committee voted down Booker's farm bill amendment along party lines, and Chairman John Boozman then recessed the committee indefinitely. Booker said the Supreme Court decision erased tens of thousands of active court cases and argued that his amendment would have restored cancer victims' ability to sue. The vote shows that the bipartisan House coalition behind the Luna Amendment has not carried over to the Senate.",
+    "link": [
+      {
+        "label": "The New Lede",
+        "url": "https://www.thenewlede.org/2026/08/farm-bill-booker-pesticide-amendment-monsanto/"
+      },
+      {
+        "label": "Organic Authority",
+        "url": "https://www.organicauthority.com/buzz-news/farm-bill-amendment"
+      }
+    ],
+    "type": "loss"
+  },
+  {
+    "date": "August 6–10, 2026",
+    "title": "California Begins Phasing Out Paraquat",
+    "category": "policy",
+    "description": "The last manufacturer cancelled its California paraquat registration on August 6, and the Department of Pesticide Regulation announced a statewide phase-out on August 10. Manufacturers withdrew rather than provide the safety data DPR had required by June 5, after the agency's review flagged risks including thyroid harm, birth defects, and danger to birds. This is a phase-out rather than an outright ban: existing stock can be sold and used for up to two years. California uses more paraquat than any other state, and the move follows Vermont's ban in May.",
+    "link": [
+      {
+        "label": "California DPR",
+        "url": "https://www.cdpr.ca.gov/?p=19240"
+      },
+      {
+        "label": "Western Growers",
+        "url": "https://www.wga.com/?p=35482"
+      },
+      {
+        "label": "Rep. Laura Friedman",
+        "url": "https://friedman.house.gov/media/press-releases/release-rep-friedman-celebrates-official-phase-out-paraquat-after-leading"
+      },
+      {
+        "label": "The New Lede (via SEJ)",
+        "url": "https://www.em.sej.org/headlines/california-phasing-out-herbicide-linked-parkinson-s-disease"
+      }
+    ],
+    "type": "win"
+  },
+  {
+    "date": "September 14, 2026",
+    "title": "Judge Hears Objections to Bayer's $7.25 Billion Roundup Settlement",
+    "category": "policy",
+    "description": "A Missouri judge held the fairness hearing on Bayer's proposed class settlement and did not rule from the bench. Monsanto's attorney told the court that no alternative deal exists, and the company maintains the settlement is fair and merits final approval. As of early October, no decision had been issued.",
+    "link": [
+      {
+        "label": "Reuters via Investing.com",
+        "url": "https://www.investing.com/news/stock-market-news/bayers-monsanto-unit-urges-missouri-judge-to-approve-725-billion-roundup-settlement-4900218"
+      },
+      {
+        "label": "Yahoo Finance",
+        "url": "https://finance.yahoo.com/healthcare/articles/bayer-roundup-7-25-billion-140317759.html"
+      },
+      {
+        "label": "Global Agriculture",
+        "url": "https://www.global-agriculture.com/crop-protection/bayer-faces-new-missouri-roundup-trial-while-7-25-billion-settlement-awaits-judges-ruling/"
+      }
+    ],
+    "type": "neutral"
+  },
+  {
+    "date": "Mid-September 2026",
+    "title": "Bloomberg: MAHA Summit Sponsors Were Offered Paid Access to Kennedy and Oz",
+    "category": "politics",
+    "description": "Bloomberg reported that MAHA Center, run by Kennedy's longtime publisher Tony Lyons, offered sponsorship packages of up to $300,000 for the upcoming summit. The top tier included a speaking slot and a private dinner with Kennedy and Mehmet Oz. HHS said its officials had no role in planning the summit and were unaware of the arrangements.",
+    "link": [
+      {
+        "label": "Bloomberg Law",
+        "url": "https://news.bloomberglaw.com/health-law-and-business/rfk-jr-linked-group-offered-access-to-us-officials-for-payment"
+      },
+      {
+        "label": "MS NOW",
+        "url": "https://www.ms.now/news/maha-summit-rfk-jr-selling-out"
+      }
+    ],
+    "type": "loss"
+  },
+  {
+    "date": "September 17–25, 2026",
+    "title": "CDC Vaccine Recommendations Stall Under Kennedy",
+    "category": "policy",
+    "description": "CNN reported that the CDC had issued no Covid-19 vaccine recommendations this season because its advisory panel has been in disarray since March, when a judge blocked HHS's overhaul of the vaccine schedule. The AP added that the agency kept last year's flu vaccine endorsements, citing legal uncertainty and pending inquiries.",
+    "link": [
+      {
+        "label": "CNN",
+        "url": "https://www.cnn.com/2026/09/17/health/covid-vaccines-delayed-children"
+      },
+      {
+        "label": "AP via KSAT",
+        "url": "https://www.ksat.com/health/2026/09/25/cdc-vaccine-policy-recommendations-grind-to-a-halt-under-health-secretary-kennedy/"
+      }
+    ],
+    "type": "neutral"
+  },
+  {
+    "date": "September 22, 2026",
+    "title": "EPA and HHS Sign Agreement to Expand Glyphosate Research",
+    "category": "policy",
+    "description": "The two agencies agreed to share data and expand research on glyphosate's health effects, while EPA retains sole authority over pesticide registration. Zeldin described the effort as part of reexamining pesticides against current science. EPA has promised a draft risk assessment by the end of the year, so the agreement signals attention to the issue but changes nothing about the chemical's legal status.",
+    "link": [
+      {
+        "label": "DTN",
+        "url": "https://www.dtnpf.com/agriculture/web/ag/crops/article/2026/09/23/epa-hhs-reach-agreement-expand-risks"
+      },
+      {
+        "label": "The MAHA Report",
+        "url": "https://www.themahareport.com/p/hhs-and-epa-will-partner-to-strengthen"
+      }
+    ],
+    "type": "neutral"
+  },
+  {
+    "date": "September 23, 2026",
+    "title": "NYT: Kennedy Received $4 Million in Book Advances and Gifts From MAHA Allies",
+    "category": "politics",
+    "description": "The New York Times reported that Kennedy's financial disclosure listed $4 million in book advances from Skyhorse Publishing, owned by Tony Lyons, plus more than $270,000 in gifts. His wife, Cheryl Hines, was paid $210,000 in consulting fees by MAHA Action. Ethics experts said the arrangements may violate federal rules, while HHS maintains that Kennedy complies with all of them.",
+    "link": [
+      {
+        "label": "New York Times (via Philadelphia Inquirer)",
+        "url": "https://www.inquirer.com/news/nation-world/kennedy-maha-book-advances-ethics-20260923.html"
+      },
+      {
+        "label": "The Guardian (via inkl)",
+        "url": "https://www.inkl.com/news/rfk-jr-received-4m-in-book-advances-from-maha-allies-over-past-year"
+      },
+      {
+        "label": "Genetic Literacy Project",
+        "url": "https://geneticliteracyproject.org/2026/09/29/rfk-jr-likely-violated-federal-ethics-guidelines-in-accepting-more-than-4275000-in-gifts-and-book-advances-from-maha-allies/"
+      }
+    ],
+    "type": "loss"
+  },
+  {
+    "date": "September 29, 2026",
+    "title": "Second MAHA Summit Draws Vance, Kennedy, and Corporate Sponsors",
+    "category": [
+      "event",
+      "politics"
+    ],
+    "description": "Vice President JD Vance and Kennedy headlined the second MAHA Summit at the Waldorf Astoria. Sponsors included Walmart, Hims & Hers, Noom, OpenAI, and Anthropic. Kennedy said AI would free Americans from what he called medical tyranny, while MAHA activists such as Robert Malone and Mary Talley Bowden criticized the corporate sponsorship of a movement that built its identity on distrust of industry.",
+    "link": [
+      {
+        "label": "The Hill",
+        "url": "https://thehill.com/homenews/administration/6116342-vance-kennedy-maha-summit/"
+      },
+      {
+        "label": "Yahoo News",
+        "url": "https://www.yahoo.com/news/politics/articles/vance-rfk-jr-headline-maha-022341654.html"
+      },
+      {
+        "label": "Washington Examiner",
+        "url": "https://www.washingtonexaminer.com/news/white-house/4746986/vance-rfk-ai-maha-summit/"
+      },
+      {
+        "label": "MS NOW",
+        "url": "https://www.ms.now/news/maha-summit-rfk-jr-selling-out"
+      }
+    ],
+    "type": "neutral"
+  },
+  {
+    "date": "September 29, 2026",
+    "title": "Trump Signs Executive Order Targeting Ticks and Mosquitoes",
+    "category": "policy",
+    "description": "The order sets a goal of cutting invasive mosquitoes in Washington, D.C. by 90% and ticks by 50% by 2028 using non-chemical and technology-enabled methods. It directs EPA to draft a framework for releasing organisms that must consider safe genetic modification, and it names alpha-gal syndrome as a topic for an HHS research agenda.",
+    "link": [
+      {
+        "label": "White House Fact Sheet",
+        "url": "https://www.whitehouse.gov/fact-sheets/2026/09/fact-sheet-president-donald-j-trump-eliminates-disease-carrying-pests-and-restores-enjoyment-of-the-great-outdoors/"
+      },
+      {
+        "label": "Federal Register",
+        "url": "https://www.federalregister.gov/documents/2026/10/02/2026-20320/eliminating-disease-carrying-pests-and-restoring-enjoyment-of-the-great-outdoors"
+      }
+    ],
+    "type": "neutral"
+  },
+  {
+    "date": "September 29, 2026",
+    "title": "First Roundup Trial Since the Supreme Court Ruling Begins",
+    "category": "policy",
+    "description": "Three women with non-Hodgkin lymphoma who are outside the Bayer settlement are suing on design-defect and inadequate-testing theories, claims the Supreme Court did not directly resolve. Their lawyer told jurors that EPA approval does not prove a product is safe. The case is an early test of which Roundup claims survive Durnell.",
+    "link": [
+      {
+        "label": "Claims Journal (Reuters)",
+        "url": "https://www.claimsjournal.com/news/national/2026/09/30/340468.htm"
+      },
+      {
+        "label": "Global Agriculture",
+        "url": "https://www.global-agriculture.com/crop-protection/bayer-faces-new-missouri-roundup-trial-while-7-25-billion-settlement-awaits-judges-ruling/"
+      }
+    ],
+    "type": "neutral"
+  },
+  {
+    "date": "October 6, 2026",
+    "title": "Kennedy's Embrace of AI Divides MAHA Allies",
+    "category": [
+      "politics",
+      "media"
+    ],
+    "description": "The AP reported that Kennedy's enthusiasm for artificial intelligence at the summit unsettled parts of his base and drew criticism from medical experts. Robert Malone called the event pay-to-play and said corporations had displaced the movement's \"MAHA moms.\"",
+    "link": [
+      {
+        "label": "AP (via U.S. News)",
+        "url": "https://www.usnews.com/news/business/articles/2026-10-06/rfk-jr-s-embrace-of-ai-confounds-some-maha-allies-and-medical-experts"
+      },
+      {
+        "label": "Fast Company",
+        "url": "https://www.fastcompany.com/91619796/rfk-jr-embracing-ai-confusing-maha-allies-medical-experts"
+      }
+    ],
+    "type": "neutral"
+  },
+  {
+    "date": "October 7, 2026",
+    "title": "Democrats Court the MAHA Voter",
+    "category": "politics",
+    "description": "STAT reported that Democratic leaders are meeting with MAHA activists and rolling out food and environmental agendas aimed at winning over a new constituency before the midterms. Their version of the agenda differs from Kennedy's, emphasizing pesticide and chemical regulation over the administration's priorities.",
+    "link": "https://www.statnews.com/2026/10/07/democrats-focus-on-food-toxins-win-maha-voters-midterm-elections/",
+    "type": "neutral"
+  },
+  {
+    "date": "October 9, 2026",
+    "title": "California Moves to List Atrazine as a Carcinogen Under Prop 65",
+    "category": "policy",
+    "description": "California's Office of Environmental Health Hazard Assessment announced its intent to add atrazine to the Proposition 65 cancer list, relying on the IARC's classification of the herbicide as probably carcinogenic (Group 2A). Listing requires warnings rather than banning the chemical, and atrazine has been on the reproductive toxicant list since 2016. Public comment is open until November 9, 2026. The move contrasts with the federal government: the Fish and Wildlife Service cleared atrazine in May, and EPA dismissed the IARC classification last year.",
+    "link": [
+      {
+        "label": "OEHHA Notice",
+        "url": "https://oehha.ca.gov/proposition-65/crnr/notice-intent-list-chemicals-labor-code-mechanism-atrazine"
+      },
+      {
+        "label": "OEHHA Notice (PDF)",
+        "url": "https://oehha.ca.gov/sites/default/files/media/2026-10/NOIL_LCAtrazine100926.pdf"
+      },
+      {
+        "label": "The New Lede",
+        "url": "https://www.thenewlede.org/2026/10/as-epa-shrugs-california-designates-atrazine-weed-killer-as-cancer-risk/"
+      }
+    ],
+    "type": "win"
+  },
+  {
+    "date": "October 12, 2026",
+    "title": "Tony Lyons Urges MAHA Unity Before the Midterms",
+    "category": "politics",
+    "description": "Responding to the summit sponsorship stories, Lyons argued that disagreement within the movement is legitimate but should not fracture the coalition before November, and called for evidence and transparency. Note that Lyons is also Kennedy's longtime publisher, whose company paid the advances reported by the New York Times.",
+    "link": "https://foodaway.org/IFMA/Resources/News/2026/October-12-The-latest-on-MAHA-and-related-developments.aspx",
+    "type": "neutral"
+  },
+  {
+    "date": "October 13, 2026",
+    "title": "Over 200 MAHA Activists Warn Glyphosate Could Cost Republicans the House",
+    "category": "politics",
+    "description": "ABC News reported that more than 200 MAHA activists sent Trump an open letter warning that his glyphosate stance could cost Republicans their House majority. Democrats, including Michigan Senate nominee Abdul El-Sayed, are courting disaffected MAHA voters.",
+    "link": "https://www.abc.net.au/news/2026-10-13/make-america-healthy-again-trump-midterms/107244228",
+    "type": "neutral"
+  },
+  {
+    "date": "October 22, 2026",
+    "title": "Calley Means, Top MAHA Adviser to Kennedy, Resigns From the Administration",
+    "category": "politics",
+    "description": "Calley Means, a senior adviser to Health Secretary Kennedy and one of the architects of the MAHA agenda, resigned on October 22, less than two weeks before the midterms. He thanked Trump and Kennedy and said the movement is just getting started, without giving a reason. Reporting by NBC News and Politico cited sources saying he had grown frustrated at the lack of progress on his priorities. NBC's source named the administration's failure to release a federal definition of ultra-processed foods, which was teased in August, as the final straw, and also pointed to Trump's executive order boosting glyphosate supply and EPA actions that clashed with Kennedy's agenda. Bloomberg noted that big food companies had fought his push for the definition, and the departure may be a relief to them. His exit follows the earlier departures of FDA Commissioner Marty Makary and vaccine regulator Vinay Prasad, and it deepens the rift between grassroots MAHA activists and the White House.",
+    "link": [
+      {
+        "label": "NBC News",
+        "url": "https://www.nbcnews.com/health/health-news/kennedy-top-advisor-calley-means-resigns-trump-administration-maha-rcna605056"
+      },
+      {
+        "label": "Politico (via Yahoo)",
+        "url": "https://www.yahoo.com/news/politics/articles/calley-means-top-maha-ally-170334274.html"
+      },
+      {
+        "label": "Bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-10-22/top-rfk-jr-adviser-calley-means-resigns-in-blow-to-maha-agenda"
+      },
+      {
+        "label": "The Hill",
+        "url": "https://thehill.com/homenews/administration/6166195-calley-means-resigns-hhs-maha-trump-administration/"
+      },
+      {
+        "label": "AP (via ABC News)",
+        "url": "https://abcnews.com/US/wireStory/calley-means-key-maha-advocate-resigns-top-rfk-137492720"
+      },
+      {
+        "label": "MS NOW",
+        "url": "https://www.ms.now/news/calley-means-rfk-jr-aide-maha-resigns"
+      }
+    ],
+    "type": "loss"
   }
 ]
