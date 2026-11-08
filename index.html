@@ -785,7 +785,11 @@
 
     /* ---- filter rail ---- */
     .ix-rail { position: sticky; top: 76px; max-height: calc(100vh - 96px);
-      overflow-y: auto; overscroll-behavior: contain; padding-right: 4px; }
+      overflow-y: auto; overscroll-behavior: contain; padding-right: 6px;
+      scrollbar-width: thin; scrollbar-color: #c9c9bb transparent; }
+    .ix-rail::-webkit-scrollbar { width: 8px; }
+    .ix-rail::-webkit-scrollbar-track { background: transparent; }
+    .ix-rail::-webkit-scrollbar-thumb { background: #c9c9bb; border-radius: 4px; }
     .ix-railbox { background: #fff; border: 1px solid var(--cream-dark); border-radius: 4px; padding: 20px 18px; }
     .ix-search { width: 100%; box-sizing: border-box; font-family: 'Source Serif 4', serif; font-size: .98rem;
       padding: 11px 13px; border: 1px solid var(--cream-dark); border-radius: 3px; background: var(--warm-white);
@@ -793,7 +797,7 @@
     .ix-search:focus-visible { outline: 3px solid var(--teal-dark); outline-offset: 1px; background: #fff; }
     .ix-search::placeholder { color: #8b8b7d; }
 
-    .ix-group { margin-bottom: 20px; }
+    .ix-group { margin-bottom: 16px; }
     .ix-group:last-child { margin-bottom: 0; }
     .ix-glabel { font-family: 'DM Mono', monospace; font-size: .66rem; letter-spacing: .13em; text-transform: uppercase;
       color: var(--text-mid); margin: 0 0 9px; font-weight: 500; }
@@ -828,6 +832,10 @@
     .ix-count { font-family: 'DM Mono', monospace; font-size: .76rem; letter-spacing: .06em; color: var(--text-dark); }
     .ix-count b { color: var(--forest); }
     .ix-spacer { flex: 1 1 auto; }
+    .ix-barsel { font-family: 'DM Mono', monospace; font-size: .7rem; letter-spacing: .06em;
+      padding: 7px 9px; border: 1px solid var(--cream-dark); border-radius: 3px; background: #fff;
+      color: var(--text-mid); cursor: pointer; max-width: 170px; }
+    .ix-barsel:focus-visible { outline: 3px solid var(--teal-dark); outline-offset: 1px; }
     .ix-views { display: flex; border: 1px solid var(--cream-dark); border-radius: 3px; overflow: hidden; background: #fff; }
     .ix-view { font-family: 'DM Mono', monospace; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase;
       padding: 7px 13px; border: 0; background: none; cursor: pointer; color: var(--text-mid); }
@@ -876,7 +884,7 @@
     .ix-tag.stance.neutral   { background: #e8e8df; color: #4e4e42; }
     .ix-tag.lvl { border-color: #b9c9bd; color: var(--forest-light); }
     .ix-tag.theme { border-color: #cdc6b6; color: #6b6450; background: #fbf9f4; }
-    .ix-opts-scroll { max-height: 232px; overflow-y: auto; padding-right: 4px; }
+    .ix-opts-scroll { max-height: 160px; overflow-y: auto; padding-right: 4px; }
 
     .ix-chev { position: absolute; right: 10px; top: 17px; color: #9a9a8c; font-size: .8rem; transition: transform .18s; }
     .ix-rec[open] .ix-chev { transform: rotate(90deg); }
@@ -1242,7 +1250,7 @@
   <div class="inner">
     <p class="eyebrow teal">One record set, many views</p>
     <h2 class="section-h2">The Index</h2>
-    <p class="section-lead">Every tracked item in one place: federal and state policy alongside the movement's political and media record. Search it, filter it, group it, or read it as a timeline. Each record is marked <strong>advancing</strong>, <strong>opposing</strong>, or <strong>neutral</strong> on health, and links to its source.</p>
+    <p class="section-lead">Every tracked item in one place: enacted federal and state policy alongside the movement’s political and media record. Search it, filter it, group it, or switch to <strong>Timeline</strong> to read the movement record on its own, without the policy. A position on health — <strong>advancing</strong>, <strong>opposing</strong> or <strong>neutral</strong> — is given only to enacted policy; a rally or an investigation is recorded, not scored. Every record links to its sources.</p>
 
     <div class="ix-layout">
       <!-- FILTER RAIL -->
@@ -1271,22 +1279,6 @@
             <p class="ix-glabel" id="ix-lbl-themes">Theme</p>
             <div class="ix-opts ix-opts-scroll" role="group" aria-labelledby="ix-lbl-themes" data-facet="themes"></div>
           </div>
-
-          <div class="ix-group">
-            <label class="ix-glabel" for="ix-state">State</label>
-            <select id="ix-state" class="ix-sel"><option value="">All states</option></select>
-          </div>
-
-          <div class="ix-group">
-            <label class="ix-glabel" for="ix-groupby">Group by</label>
-            <select id="ix-groupby" class="ix-sel">
-              <option value="year">Year</option>
-              <option value="stance">Position on health</option>
-              <option value="level">Arena</option>
-              <option value="category">Record type</option>
-              <option value="none">Nothing — flat list</option>
-            </select>
-          </div>
         </div>
       </div>
 
@@ -1295,6 +1287,16 @@
         <div class="ix-bar">
           <p class="ix-count" id="ix-count" role="status" aria-live="polite"></p>
           <span class="ix-spacer"></span>
+          <label class="sr-only" for="ix-state">State</label>
+          <select id="ix-state" class="ix-barsel"><option value="">All states</option></select>
+          <label class="sr-only" for="ix-groupby">Group by</label>
+          <select id="ix-groupby" class="ix-barsel">
+            <option value="year">Group: year</option>
+            <option value="stance">Group: position</option>
+            <option value="level">Group: arena</option>
+            <option value="category">Group: record type</option>
+            <option value="none">No grouping</option>
+          </select>
           <div class="ix-views" role="group" aria-label="View style">
             <button class="ix-view" data-view="list" aria-pressed="true">List</button>
             <button class="ix-view" data-view="timeline" aria-pressed="false">Timeline</button>
