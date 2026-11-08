@@ -775,8 +775,8 @@
     .ix-layout { display: grid; grid-template-columns: 258px 1fr; gap: 44px; align-items: start; margin-top: 34px; }
 
     /* ---- top-level views: the Index gets a screen of its own ---- */
-    [data-view] { display: none; }
-    [data-view].view-on { display: block; }
+    [data-screen] { display: none; }
+    [data-screen].view-on { display: block; }
     .nav-links a.active { color: var(--teal); }
 
     /* ---- filter rail ---- */
@@ -981,8 +981,8 @@
      Hash-driven, so existing links and bookmarks still land where they did. */
   var VIEW_OF = { primer: 'overview', scorecard: 'overview', alternative: 'overview', index: 'records' };
   function setView(view, scrollTo) {
-    document.querySelectorAll('[data-view]').forEach(function (s) {
-      s.classList.toggle('view-on', s.getAttribute('data-view') === view);
+    document.querySelectorAll('[data-screen]').forEach(function (s) {
+      s.classList.toggle('view-on', s.getAttribute('data-screen') === view);
     });
     document.querySelectorAll('#nav-links a').forEach(function (a) {
       a.classList.toggle('active', view === 'records' && a.getAttribute('href') === '#index');
@@ -1024,7 +1024,7 @@
 <!-- ╔══════════════════════════════╗ -->
 <!-- ║           HERO              ║ -->
 <!-- ╚══════════════════════════════╝ -->
-<section id="hero" data-view="overview" class="view-on">
+<section id="hero" data-screen="overview" class="view-on">
   <div class="hero-dot-grid"></div>
   <div class="hero-glow-a"></div>
   <div class="hero-glow-b"></div>
@@ -1150,7 +1150,7 @@
 <!-- ╔══════════════════════════════╗ -->
 <!-- ║         PRIMER              ║ -->
 <!-- ╚══════════════════════════════╝ -->
-<section id="primer" data-view="overview" class="view-on">
+<section id="primer" data-screen="overview" class="view-on">
   <div class="inner">
     <p class="eyebrow teal">What you need to know</p>
     <h2 class="section-h2">The MAHA Tracker Primer</h2>
@@ -1185,7 +1185,7 @@
 <!-- ╔══════════════════════════════╗ -->
 <!-- ║        SCORECARD            ║ -->
 <!-- ╚══════════════════════════════╝ -->
-<section id="scorecard" data-view="overview" class="view-on">
+<section id="scorecard" data-screen="overview" class="view-on">
   <div class="inner">
     <p class="eyebrow teal-dim">By the numbers</p>
     <h2 class="section-h2 light">Partisan Scorecard</h2>
@@ -1234,7 +1234,7 @@
 <!-- ╔══════════════════════════════╗ -->
 <!-- ║          THE INDEX          ║ -->
 <!-- ╚══════════════════════════════╝ -->
-<section id="index" data-view="records">
+<section id="index" data-screen="records">
   <div class="inner">
     <p class="eyebrow teal">One record set, many views</p>
     <h2 class="section-h2">The Index</h2>
@@ -1306,7 +1306,7 @@
 <!-- ╔══════════════════════════════╗ -->
 <!-- ║      THE MISSED MANDATE      ║ -->
 <!-- ╚══════════════════════════════╝ -->
-<section id="alternative" data-view="overview" class="view-on">
+<section id="alternative" data-screen="overview" class="view-on">
   <div class="inner">
     <p class="eyebrow teal-dim">A bipartisan mandate</p>
     <h2 class="section-h2 light">Reclaiming Health as a Democratic Cause</h2>
