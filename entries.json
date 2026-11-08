@@ -993,25 +993,6 @@
       "title" : "Iowa Signs HF 2676, Limiting SNAP to 'Healthy Foods' and Allowing OTC Ivermectin"
    },
    {
-      "category" : "policy",
-      "date" : "2026-05-19",
-      "dateLabel" : "May 19, 2026",
-      "description" : "Vermont's legislature passed H. 739, making it the first U.S. state to ban paraquat, an herbicide that more than 70 countries — including every EU member and China — have already prohibited. Exposure to paraquat roughly doubles the risk of Parkinson's disease compared to other pesticides. The bill awaits Gov. Phil Scott's signature and phases in a full statewide ban by December 2030, giving farmers transition time and encouraging adoption of safer alternatives. The Michael J. Fox Foundation applauded the vote and called on other states and the federal government to follow. Dan Feehan of the Foundation said: \"The evidence linking paraquat exposure to increased Parkinson's risk is strong and has been building for decades.\" Similar bills are pending in a dozen states including New York, Pennsylvania, and Minnesota.",
-      "govParty" : "",
-      "id" : "e029",
-      "level" : "movement",
-      "link" : "https://parkinsonsnewstoday.com/news/vermont-first-state-pass-ban-parkinsons-linked-herbicide-paraquat/",
-      "stance" : "",
-      "state" : "",
-      "stateCode" : "",
-      "tags" : [],
-      "themes" : [
-         "pesticides",
-         "illness"
-      ],
-      "title" : "Vermont Becomes First State to Ban Paraquat, a Herbicide Linked to Parkinson's Disease"
-   },
-   {
       "category" : "media",
       "date" : "2026-05-19",
       "dateLabel" : "May 19, 2026",
@@ -1090,6 +1071,42 @@
          "healthcare"
       ],
       "title" : "Montana SNAP Restriction Waiver Approved"
+   },
+   {
+      "actorD" : false,
+      "actorR" : false,
+      "bipartisan" : true,
+      "category" : "policy",
+      "date" : "2026-05-19",
+      "dateLabel" : "May 19, 2026",
+      "description" : "Vermont's legislature passed H. 739, making it the first U.S. state to ban paraquat, an herbicide that more than 70 countries — including every EU member and China — have already prohibited. Exposure to paraquat roughly doubles the risk of Parkinson's disease compared to other pesticides. The bill awaits Gov. Phil Scott's signature and phases in a full statewide ban by December 2030, giving farmers transition time and encouraging adoption of safer alternatives. The Michael J. Fox Foundation applauded the vote and called on other states and the federal government to follow. Dan Feehan of the Foundation said: \"The evidence linking paraquat exposure to increased Parkinson's risk is strong and has been building for decades.\" Similar bills are pending in a dozen states including New York, Pennsylvania, and Minnesota.",
+      "enacted" : true,
+      "govParty" : "R",
+      "id" : "e052",
+      "level" : "state",
+      "link" : "https://legislature.vermont.gov/bill/status/2026/H.739",
+      "sources" : [
+         {
+            "label" : "Vermont Legislature (H. 739)",
+            "url" : "https://legislature.vermont.gov/bill/status/2026/H.739"
+         },
+         {
+            "label" : "Parkinson's News Today",
+            "url" : "https://parkinsonsnewstoday.com/news/vermont-first-state-pass-ban-parkinsons-linked-herbicide-paraquat/"
+         }
+      ],
+      "stance" : "advancing",
+      "state" : "Vermont",
+      "stateCode" : "vt",
+      "tags" : [
+         "Gov. Scott (R)",
+         "Bipartisan / Awaiting Signature"
+      ],
+      "themes" : [
+         "illness",
+         "pesticides"
+      ],
+      "title" : "H. 739 — First U.S. Ban on Paraquat"
    },
    {
       "category" : "media",
@@ -1313,18 +1330,31 @@
       "title" : "CNN: MAHA-MAGA Rift Widens as Trump Replaces Kennedy's Surgeon General Pick — One Adviser Calls MAHA 'a Paper Tiger'"
    },
    {
+      "actorD" : false,
+      "actorR" : true,
+      "bipartisan" : false,
       "category" : "policy",
       "date" : "2026-05-05",
       "dateLabel" : "May 5, 2026",
       "description" : "On May 5, the FDA authorized the first-ever fruit-flavored e-cigarettes for adults 21 and over, mango, blueberry, and two menthol varieties from the Los Angeles brand Glas. The Wall Street Journal reported hours before the announcement that President Trump had personally pressed FDA Commissioner Marty Makary to approve flavored vapes, fulfilling a 2024 campaign pledge made after Trump met privately with a leading vaping lobbyist. On Truth Social during the campaign, Trump wrote that he 'saved Flavored Vaping in 2019' and would 'save Vaping again.' The decision reverses years of FDA work to restrict flavored e-cigarettes: the agency had previously turned away more than 1 million fruit, candy, and dessert flavors on youth-protection grounds, and the Supreme Court unanimously backed those rejections in April 2025. The FDA's release cited new 'device access restriction' technology, which requires users to verify their identity with government-issued ID and pair the device with a smartphone via Bluetooth, as a youth-protection mitigation. Bret Koplow, acting director of FDA's Center for Tobacco Products, called the technology 'a potential game changer.' The Campaign for Tobacco-Free Kids panned the decision. CEO Yolonda C. Richardson said it 'puts at risk the progress our nation has made in reducing youth e-cigarette use' and 'conflicts with overwhelming scientific evidence and the FDA's own repeated conclusions that flavors pose a substantial risk to young people.' Flavored vapes have long been documented as a primary driver of youth nicotine uptake. The move directly contradicts MAHA's stated mission of reducing chronic disease in children and curbing the targeting of young people by addictive industries, a particularly sharp contradiction given Kennedy's signature framing of corporate capture of federal health agencies.",
+      "enacted" : true,
       "govParty" : "",
-      "id" : "e046",
-      "level" : "movement",
+      "id" : "e051",
+      "level" : "federal",
       "link" : "https://www.washingtonpost.com/health/2026/05/05/fda-approves-flavored-vapes/",
-      "stance" : "",
+      "sources" : [
+         {
+            "label" : "Washington Post",
+            "url" : "https://www.washingtonpost.com/health/2026/05/05/fda-approves-flavored-vapes/"
+         }
+      ],
+      "stance" : "opposing",
       "state" : "",
       "stateCode" : "",
-      "tags" : [],
+      "tags" : [
+         "Trump Admin (R)",
+         "FDA Reversal"
+      ],
       "themes" : [
          "illness"
       ],
@@ -1405,57 +1435,6 @@
          "illness"
       ],
       "title" : "Mother Jones Investigation: Record Glyphosate Spraying on California Forests, Built on Safety Science Monsanto 'Poisoned'"
-   },
-   {
-      "actorD" : false,
-      "actorR" : true,
-      "bipartisan" : false,
-      "category" : "policy",
-      "date" : "2026-05",
-      "dateLabel" : "MAY 2026",
-      "description" : "On May 5, the FDA authorized the first-ever fruit-flavored e-cigarettes (mango, blueberry, and two menthol varieties from Los Angeles brand Glas) for adults 21 and over. The Wall Street Journal reported hours before the announcement that Trump had personally pressed FDA Commissioner Marty Makary to approve flavored vapes, fulfilling a 2024 campaign pledge made after Trump met privately with a vaping lobbyist; on Truth Social during the campaign, Trump wrote that he 'saved Flavored Vaping in 2019' and would 'save Vaping again.' The decision reverses years of FDA work to restrict flavored e-cigarettes: the agency had previously turned away more than 1 million fruit, candy, and dessert flavors on youth-protection grounds, and the Supreme Court unanimously backed those rejections in April 2025. The FDA's release cited new 'device access restriction' technology (Bluetooth pairing and government-ID verification) as the youth-protection mitigation. The Campaign for Tobacco-Free Kids called the move a backward step; its CEO Yolonda C. Richardson said it 'puts at risk the progress our nation has made in reducing youth e-cigarette use' and 'conflicts with overwhelming scientific evidence and the FDA's own repeated conclusions that flavors pose a substantial risk to young people.' Flavored vapes are documented as a primary driver of youth nicotine addiction, directly contradicting MAHA's stated mission of reducing chronic disease in children and curbing the targeting of young people by addictive industries.",
-      "enacted" : true,
-      "govParty" : "",
-      "id" : "e051",
-      "level" : "federal",
-      "link" : "https://www.washingtonpost.com/health/2026/05/05/fda-approves-flavored-vapes/",
-      "stance" : "opposing",
-      "state" : "",
-      "stateCode" : "",
-      "tags" : [
-         "Trump Admin (R)",
-         "FDA Reversal"
-      ],
-      "themes" : [
-         "illness"
-      ],
-      "title" : "FDA Approves First Fruit-Flavored Vapes After Trump Pressed Commissioner Makary"
-   },
-   {
-      "actorD" : false,
-      "actorR" : false,
-      "bipartisan" : true,
-      "category" : "policy",
-      "date" : "2026-05",
-      "dateLabel" : "MAY 2026",
-      "description" : "Vermont's Democratic-controlled legislature passed H. 739, becoming the first U.S. state to ban paraquat, an herbicide that more than 70 countries — including the EU and China — have already prohibited. Exposure to paraquat doubles the risk of Parkinson's disease compared to other pesticides; research also links it to non-Hodgkin lymphoma and childhood leukemia. Syngenta, the primary manufacturer, announced it would cease production in March 2026. The bill awaits signature from Republican Gov. Phil Scott and phases in a full ban by December 2030. The New Lede covered the passage with background on Syngenta's decades-long effort to suppress independent research on the herbicide's harms.",
-      "enacted" : true,
-      "govParty" : "R",
-      "id" : "e052",
-      "level" : "state",
-      "link" : "https://legislature.vermont.gov/bill/status/2026/H.739",
-      "stance" : "advancing",
-      "state" : "Vermont",
-      "stateCode" : "vt",
-      "tags" : [
-         "Gov. Scott (R)",
-         "Bipartisan / Awaiting Signature"
-      ],
-      "themes" : [
-         "pesticides",
-         "illness"
-      ],
-      "title" : "H. 739 — First U.S. Ban on Paraquat"
    },
    {
       "category" : "policy",
@@ -2307,36 +2286,24 @@
       "title" : "'Take Back Your Health' / 'Eat Real Food' Tour Kicks Off in Pennsylvania"
    },
    {
-      "category" : "policy",
-      "date" : "2026-01-07",
-      "dateLabel" : "January 7, 2026",
-      "description" : "Kennedy and Agriculture Secretary Brooke Rollins unveil the Dietary Guidelines for Americans 2025–2030 at a White House briefing, with Kennedy declaring it 'the most significant reset of federal nutrition policy in history.' The new guidelines introduce a redesigned, inverted food pyramid placing protein, dairy, and healthy fats at the top. For the first time, federal dietary guidance explicitly warns Americans to avoid highly processed foods. The message is distilled to three words: 'Eat real food.' A companion website, RealFood.gov, goes live to reach the public directly.",
-      "govParty" : "",
-      "id" : "e093",
-      "level" : "movement",
-      "link" : "https://www.hhs.gov/press-room/historic-reset-federal-nutrition-policy.html",
-      "stance" : "",
-      "state" : "",
-      "stateCode" : "",
-      "tags" : [],
-      "themes" : [
-         "food"
-      ],
-      "title" : "'Eat Real Food' Campaign Launches with New Dietary Guidelines"
-   },
-   {
       "actorD" : false,
       "actorR" : true,
       "bipartisan" : false,
       "category" : "policy",
-      "date" : "2026-01",
-      "dateLabel" : "JAN 2026",
+      "date" : "2026-01-07",
+      "dateLabel" : "January 7, 2026",
       "description" : "Kennedy and USDA Secretary Brooke Rollins released the most significant reset of federal nutrition policy in decades. The 10-page guidelines, down from 164 pages in 2020, explicitly warn against highly processed foods for the first time, introduce an inverted food pyramid prioritizing protein, dairy, and healthy fats, and drop the long-standing low-fat dogma. As the governing standard for the National School Lunch Program, the guidelines directly affect what 30 million children eat daily. Companion site RealFood.gov launched the same day. The guidelines represent a genuine shift in the federal government's official position on diet and chronic disease. However, dietary guidelines are advisory; they carry no regulatory force over what food companies can produce or market, and do not alter the farm subsidies and commodity policies that make ultra-processed food the most affordable option for millions of Americans. Their real-world impact depends heavily on whether they are backed by enforcement mechanisms, school food funding, and changes to agricultural policy that have not yet materialized.",
       "enacted" : true,
       "govParty" : "",
       "id" : "e094",
       "level" : "federal",
       "link" : "https://www.hhs.gov/press-room/historic-reset-federal-nutrition-policy.html",
+      "sources" : [
+         {
+            "label" : "HHS",
+            "url" : "https://www.hhs.gov/press-room/historic-reset-federal-nutrition-policy.html"
+         }
+      ],
       "stance" : "advancing",
       "state" : "",
       "stateCode" : "",
@@ -2804,32 +2771,6 @@
       "title" : "HHS Claws Back $11.4 Billion in CDC Grants"
    },
    {
-      "actorD" : true,
-      "actorR" : false,
-      "bipartisan" : true,
-      "category" : "policy",
-      "date" : "2025-03",
-      "dateLabel" : "MAR 2025",
-      "description" : "FDA revoked authorization for Red Dye No. 3 (erythrosine) in food and ingested drugs, a synthetic dye linked to thyroid tumors in animal studies, after the Delaney Clause required removal once carcinogenicity was demonstrated. Manufacturers given 2 years to reformulate.",
-      "enacted" : true,
-      "govParty" : "",
-      "id" : "e116",
-      "level" : "federal",
-      "link" : "https://www.fda.gov/food/hfp-constituent-updates/fda-revoke-authorization-use-red-no-3-food-and-ingested-drugs",
-      "stance" : "advancing",
-      "state" : "",
-      "stateCode" : "",
-      "tags" : [
-         "Biden/Trump transition",
-         "Bipartisan Support"
-      ],
-      "themes" : [
-         "food",
-         "illness"
-      ],
-      "title" : "FDA Red Dye No. 3 Revocation"
-   },
-   {
       "actorD" : false,
       "actorR" : true,
       "bipartisan" : false,
@@ -2860,13 +2801,23 @@
       "bipartisan" : false,
       "category" : "policy",
       "date" : "2025-03",
-      "dateLabel" : "MAR 2025",
-      "description" : "Banned synthetic food dyes including Red 40, Yellow 5 & 6, Blue 1 & 2 from all West Virginia public school meals starting August 2025, a Republican-led state taking concrete action on a MAHA priority, with near-unanimous bipartisan support.",
+      "dateLabel" : "March 2025",
+      "description" : "West Virginia becomes the first state to ban seven synthetic food dyes under a new law signed by the governor. The bill is sponsored by a Republican legislator motivated by his foster children's health. Around the same time, roughly 75 dye-related bills are introduced across 37 states.",
       "enacted" : true,
       "govParty" : "R",
       "id" : "e118",
       "level" : "state",
       "link" : "https://governor.wv.gov/article/governor-patrick-morrisey-signs-food-dye-legislation-law",
+      "sources" : [
+         {
+            "label" : "WV Governor's Office",
+            "url" : "https://governor.wv.gov/article/governor-patrick-morrisey-signs-food-dye-legislation-law"
+         },
+         {
+            "label" : "KFF Health News",
+            "url" : "https://kffhealthnews.org/news/article/maha-rfk-kennedy-state-legislatures-dyes-ultraprocessed-foods/"
+         }
+      ],
       "stance" : "advancing",
       "state" : "West Virginia",
       "stateCode" : "wv",
@@ -2879,24 +2830,6 @@
          "foodaccess"
       ],
       "title" : "HB 2354 — School Food Dye Restrictions"
-   },
-   {
-      "category" : "policy",
-      "date" : "2025-03",
-      "dateLabel" : "March 2025",
-      "description" : "West Virginia becomes the first state to ban seven synthetic food dyes under a new law signed by the governor. The bill is sponsored by a Republican legislator motivated by his foster children's health. Around the same time, roughly 75 dye-related bills are introduced across 37 states.",
-      "govParty" : "",
-      "id" : "e119",
-      "level" : "movement",
-      "link" : "https://kffhealthnews.org/news/article/maha-rfk-kennedy-state-legislatures-dyes-ultraprocessed-foods/",
-      "stance" : "",
-      "state" : "",
-      "stateCode" : "",
-      "tags" : [],
-      "themes" : [
-         "food"
-      ],
-      "title" : "West Virginia Bans Seven Synthetic Dyes"
    },
    {
       "category" : "politics",
@@ -2977,20 +2910,38 @@
       "title" : "RFK Jr. Confirmation Hearings"
    },
    {
+      "actorD" : true,
+      "actorR" : false,
+      "bipartisan" : true,
       "category" : "policy",
       "date" : "2025-01-15",
       "dateLabel" : "January 15, 2025",
-      "description" : "In the final days of the Biden administration, the FDA revokes authorization for Red Dye No. 3 (FD&C Red No. 3), one of the first concrete regulatory actions aligned with MAHA's emphasis on food ingredient safety. Food manufacturers have until January 2027 to comply.",
+      "description" : "FDA revoked authorization for Red Dye No. 3 (erythrosine) in food and ingested drugs, a synthetic dye linked to thyroid tumors in animal studies, after the Delaney Clause required removal once carcinogenicity was demonstrated. Manufacturers given 2 years to reformulate.",
+      "enacted" : true,
       "govParty" : "",
-      "id" : "e124",
-      "level" : "movement",
-      "link" : "https://www.scientificamerican.com/article/what-we-know-about-artificial-food-dyes-and-health-as-rfk-jr-declares-a-u-s/",
-      "stance" : "",
+      "id" : "e116",
+      "level" : "federal",
+      "link" : "https://www.fda.gov/food/hfp-constituent-updates/fda-revoke-authorization-use-red-no-3-food-and-ingested-drugs",
+      "sources" : [
+         {
+            "label" : "FDA",
+            "url" : "https://www.fda.gov/food/hfp-constituent-updates/fda-revoke-authorization-use-red-no-3-food-and-ingested-drugs"
+         },
+         {
+            "label" : "Scientific American",
+            "url" : "https://www.scientificamerican.com/article/what-we-know-about-artificial-food-dyes-and-health-as-rfk-jr-declares-a-u-s/"
+         }
+      ],
+      "stance" : "advancing",
       "state" : "",
       "stateCode" : "",
-      "tags" : [],
+      "tags" : [
+         "Biden/Trump transition",
+         "Bipartisan Support"
+      ],
       "themes" : [
-         "food"
+         "food",
+         "illness"
       ],
       "title" : "FDA Bans Red Dye No. 3"
    },
