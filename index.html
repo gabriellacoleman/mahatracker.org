@@ -901,7 +901,6 @@
     .ix-tag.stance.neutral   { background: #e8e8df; color: #4e4e42; }
     .ix-tag.lvl { border-color: #b9c9bd; color: var(--forest-light); }
     .ix-tag.theme { border-color: #cdc6b6; color: #6b6450; background: #fbf9f4; }
-    .ix-opts-scroll { max-height: 160px; overflow-y: auto; padding-right: 4px; }
 
     .ix-chev { position: absolute; right: 10px; top: 17px; color: #9a9a8c; font-size: .8rem; transition: transform .18s; }
     .ix-rec[open] .ix-chev { transform: rotate(90deg); }
@@ -1278,6 +1277,11 @@
           <input type="search" id="ix-search" class="ix-search" placeholder="Search records…" autocomplete="off">
 
           <details class="ix-group ix-fgroup">
+            <summary class="ix-glabel" id="ix-lbl-themes">Theme<span class="ix-fcount" data-count-for="themes"></span></summary>
+            <div class="ix-opts" role="group" aria-labelledby="ix-lbl-themes" data-facet="themes"></div>
+          </details>
+
+          <details class="ix-group ix-fgroup">
             <summary class="ix-glabel" id="ix-lbl-stance">Position on health<span class="ix-fcount" data-count-for="stance"></span></summary>
             <div class="ix-opts" role="group" aria-labelledby="ix-lbl-stance" data-facet="stance"></div>
           </details>
@@ -1290,11 +1294,6 @@
           <details class="ix-group ix-fgroup">
             <summary class="ix-glabel" id="ix-lbl-category">Record type<span class="ix-fcount" data-count-for="category"></span></summary>
             <div class="ix-opts" role="group" aria-labelledby="ix-lbl-category" data-facet="category"></div>
-          </details>
-
-          <details class="ix-group ix-fgroup">
-            <summary class="ix-glabel" id="ix-lbl-themes">Theme<span class="ix-fcount" data-count-for="themes"></span></summary>
-            <div class="ix-opts ix-opts-scroll" role="group" aria-labelledby="ix-lbl-themes" data-facet="themes"></div>
           </details>
         </div>
       </div>
