@@ -1,6 +1,31 @@
 [
    {
       "category" : "politics",
+      "date" : "2026-11-08",
+      "dateLabel" : "November 8, 2026",
+      "description" : "A day after accusing Wiles and James Blair of harassing him, Means published a preservation demand on X. He writes that the two have signalled they may sue over the Rogan interview, and asks them, the lobbying firm Ballard Partners, Continental Strategy and other parties to retain anything bearing on his claims. The list is specific, and it maps onto much of what this timeline already records: communications between Wiles, Ballard Partners and their representatives about lobbying access, meetings, policy decisions and corporate clients; exchanges between Bayer, Monsanto, Ballard Partners and White House officials on glyphosate, the national security executive order and the administration's position in the Supreme Court case; records of sugar-industry contributions and fundraising commitments set against federal nutrition policy; correspondence involving pollster Tony Fabrizio and food-industry representatives on MAHA initiatives, school nutrition standards and the federal definition of ultra-processed foods that was never released; drafts and meeting notes from Walker Barrett, Heidi Overton and others on the glyphosate order and the Bayer litigation, including Kennedy's part in it; and lobbying agreements, invoices, payment records, calendars and visitor logs, Continental Strategy's among them. He names encrypted and disappearing messages — Signal, WhatsApp — alongside email and drafts, and closes by saying he welcomes \"a full and transparent examination of the facts.\" Two of the firms tie back to records already here: Brian Ballard's firm appears in the May 2026 account of tobacco money and the vaping reversal, and Continental Strategy is the lobbying shop where reporting on the podcast placed Wiles's daughter as a partner. No reporting has confirmed that Wiles or Blair have in fact threatened to sue; that is Means's characterisation, and the demand is his alone, with no court or counsel behind it.",
+      "govParty" : "",
+      "id" : "e164",
+      "level" : "movement",
+      "link" : "https://x.com/calleymeans/status/2119417912264200504",
+      "sources" : [
+         {
+            "label" : "Calley Means on X",
+            "url" : "https://x.com/calleymeans/status/2119417912264200504"
+         }
+      ],
+      "stance" : "",
+      "state" : "",
+      "stateCode" : "",
+      "tags" : [],
+      "themes" : [
+         "pesticides",
+         "food"
+      ],
+      "title" : "Calley Means Demands Wiles, Ballard Partners and Continental Strategy Preserve Records"
+   },
+   {
+      "category" : "politics",
       "date" : "2026-11-06",
       "dateApprox" : true,
       "dateLabel" : "November 6–7, 2026",
