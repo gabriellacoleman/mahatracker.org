@@ -1289,14 +1289,8 @@
           <span class="ix-spacer"></span>
           <label class="sr-only" for="ix-state">State</label>
           <select id="ix-state" class="ix-barsel"><option value="">All states</option></select>
-          <label class="sr-only" for="ix-groupby">Group by</label>
-          <select id="ix-groupby" class="ix-barsel">
-            <option value="year">Group: year</option>
-            <option value="stance">Group: position</option>
-            <option value="level">Group: arena</option>
-            <option value="category">Group: record type</option>
-            <option value="none">No grouping</option>
-          </select>
+          <label class="sr-only" for="ix-year">Year</label>
+          <select id="ix-year" class="ix-barsel"><option value="">All years</option></select>
           <div class="ix-views" role="group" aria-label="View style">
             <button class="ix-view" data-view="list" aria-pressed="true">List</button>
             <button class="ix-view" data-view="timeline" aria-pressed="false">Timeline</button>
@@ -1592,7 +1586,11 @@
                'vaccines', 'vectors', 'illness']
   };
 
-  var all = [], view = 'list', groupBy = 'year', query = '', stateFilter = '';
+  var all = [], view = 'list', query = '', stateFilter = '', yearFilter = '';
+  /* Grouping is fixed: the other keys duplicated the sidebar facets, which
+     filter the same fields more usefully. Year is the one cut the rail has no
+     control for, so the bar offers it as a filter instead. */
+  var groupBy = 'year';
   var active = { stance: [], level: [], category: [], themes: [] };
 
   var $ = function (s) { return document.querySelector(s); };
@@ -1624,6 +1622,7 @@
       } else if (active[f].indexOf(v) === -1) return false;
     }
     if (stateFilter && e.state !== stateFilter) return false;
+    if (yearFilter && (e.date || '').slice(0, 4) !== yearFilter) return false;
     if (query) {
       var hay = (e.title + ' ' + e.description + ' ' + (e.state || '') + ' ' +
                  (e.tags || []).join(' ') + ' ' + e.dateLabel).toLowerCase();
@@ -1742,6 +1741,10 @@
       chips.push('<span class="ix-chip">' + esc(stateFilter) +
         '<button type="button" data-rm-state="1" aria-label="Remove state filter">×</button></span>');
     }
+    if (yearFilter) {
+      chips.push('<span class="ix-chip">' + esc(yearFilter) +
+        '<button type="button" data-rm-year="1" aria-label="Remove year filter">×</button></span>');
+    }
     if (query) {
       chips.push('<span class="ix-chip">“' + esc(query) + '”' +
         '<button type="button" data-rm-q="1" aria-label="Clear search">×</button></span>');
@@ -1791,6 +1794,15 @@
       o.value = s; o.textContent = s + ' (' + states[s] + ')';
       sel.appendChild(o);
     });
+
+    var years = {};
+    all.forEach(function (e) { var y = (e.date || '').slice(0, 4); if (y) years[y] = (years[y] || 0) + 1; });
+    var ysel = $('#ix-year');
+    Object.keys(years).sort().reverse().forEach(function (y) {
+      var o = document.createElement('option');
+      o.value = y; o.textContent = y + ' (' + years[y] + ')';
+      ysel.appendChild(o);
+    });
   }
 
   /* ---------- events ---------- */
@@ -1826,11 +1838,12 @@
         return render();
       }
       if (ev.target.closest('[data-rm-state]')) { stateFilter = ''; $('#ix-state').value = ''; return render(); }
+      if (ev.target.closest('[data-rm-year]'))  { yearFilter = '';  $('#ix-year').value  = ''; return render(); }
       if (ev.target.closest('[data-rm-q]'))     { query = ''; $('#ix-search').value = '';   return render(); }
       if (ev.target.closest('#ix-clearall')) {
         active = { stance: [], level: [], category: [], themes: [] };
-        query = ''; stateFilter = '';
-        $('#ix-search').value = ''; $('#ix-state').value = '';
+        query = ''; stateFilter = ''; yearFilter = '';
+        $('#ix-search').value = ''; $('#ix-state').value = ''; $('#ix-year').value = '';
         syncOpts();
         return render();
       }
@@ -1848,7 +1861,7 @@
       t = setTimeout(function () { query = val.trim(); render(); }, 160);
     });
     $('#ix-state').addEventListener('change', function (e) { stateFilter = e.target.value; render(); });
-    $('#ix-groupby').addEventListener('change', function (e) { groupBy = e.target.value; render(); });
+    $('#ix-year').addEventListener('change', function (e) { yearFilter = e.target.value; render(); });
   }
 
   function syncOpts() {
