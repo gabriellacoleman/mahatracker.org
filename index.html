@@ -774,8 +774,14 @@
 
     .ix-layout { display: grid; grid-template-columns: 258px 1fr; gap: 44px; align-items: start; margin-top: 34px; }
 
+    /* ---- top-level views: the Index gets a screen of its own ---- */
+    [data-view] { display: none; }
+    [data-view].view-on { display: block; }
+    .nav-links a.active { color: var(--teal); }
+
     /* ---- filter rail ---- */
-    .ix-rail { position: sticky; top: 76px; }
+    .ix-rail { position: sticky; top: 76px; max-height: calc(100vh - 96px);
+      overflow-y: auto; overscroll-behavior: contain; padding-right: 4px; }
     .ix-railbox { background: #fff; border: 1px solid var(--cream-dark); border-radius: 4px; padding: 20px 18px; }
     .ix-search { width: 100%; box-sizing: border-box; font-family: 'Source Serif 4', serif; font-size: .98rem;
       padding: 11px 13px; border: 1px solid var(--cream-dark); border-radius: 3px; background: var(--warm-white);
@@ -970,6 +976,30 @@
   </ul>
 </nav>
 <script>
+  /* The Index is a view, not a section you scroll past: the filter rail needs the
+     full height of the window, which it cannot have with the scorecard above it.
+     Hash-driven, so existing links and bookmarks still land where they did. */
+  var VIEW_OF = { primer: 'overview', scorecard: 'overview', alternative: 'overview', index: 'records' };
+  function setView(view, scrollTo) {
+    document.querySelectorAll('[data-view]').forEach(function (s) {
+      s.classList.toggle('view-on', s.getAttribute('data-view') === view);
+    });
+    document.querySelectorAll('#nav-links a').forEach(function (a) {
+      a.classList.toggle('active', view === 'records' && a.getAttribute('href') === '#index');
+    });
+    if (scrollTo) {
+      var el = document.getElementById(scrollTo);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else { window.scrollTo(0, 0); }
+  }
+  function viewFromHash() {
+    var h = (location.hash || '').slice(1);
+    var v = VIEW_OF[h] || 'overview';
+    setView(v, (h && v === 'overview') ? h : null);
+  }
+  window.addEventListener('hashchange', viewFromHash);
+  document.addEventListener('DOMContentLoaded', viewFromHash);
+
   function toggleNav(btn) {
     const links = document.getElementById('nav-links');
     const isOpen = btn.classList.toggle('open');
@@ -994,7 +1024,7 @@
 <!-- ╔══════════════════════════════╗ -->
 <!-- ║           HERO              ║ -->
 <!-- ╚══════════════════════════════╝ -->
-<section id="hero">
+<section id="hero" data-view="overview" class="view-on">
   <div class="hero-dot-grid"></div>
   <div class="hero-glow-a"></div>
   <div class="hero-glow-b"></div>
@@ -1120,7 +1150,7 @@
 <!-- ╔══════════════════════════════╗ -->
 <!-- ║         PRIMER              ║ -->
 <!-- ╚══════════════════════════════╝ -->
-<section id="primer">
+<section id="primer" data-view="overview" class="view-on">
   <div class="inner">
     <p class="eyebrow teal">What you need to know</p>
     <h2 class="section-h2">The MAHA Tracker Primer</h2>
@@ -1155,7 +1185,7 @@
 <!-- ╔══════════════════════════════╗ -->
 <!-- ║        SCORECARD            ║ -->
 <!-- ╚══════════════════════════════╝ -->
-<section id="scorecard">
+<section id="scorecard" data-view="overview" class="view-on">
   <div class="inner">
     <p class="eyebrow teal-dim">By the numbers</p>
     <h2 class="section-h2 light">Partisan Scorecard</h2>
@@ -1204,7 +1234,7 @@
 <!-- ╔══════════════════════════════╗ -->
 <!-- ║          THE INDEX          ║ -->
 <!-- ╚══════════════════════════════╝ -->
-<section id="index">
+<section id="index" data-view="records">
   <div class="inner">
     <p class="eyebrow teal">One record set, many views</p>
     <h2 class="section-h2">The Index</h2>
@@ -1276,7 +1306,7 @@
 <!-- ╔══════════════════════════════╗ -->
 <!-- ║      THE MISSED MANDATE      ║ -->
 <!-- ╚══════════════════════════════╝ -->
-<section id="alternative">
+<section id="alternative" data-view="overview" class="view-on">
   <div class="inner">
     <p class="eyebrow teal-dim">A bipartisan mandate</p>
     <h2 class="section-h2 light">Reclaiming Health as a Democratic Cause</h2>
