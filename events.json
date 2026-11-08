@@ -696,7 +696,16 @@
     "title": "Trump Signs Glyphosate Executive Order — MAHA Outrage",
     "category": "politics",
     "description": "President Trump invokes the Defense Production Act to compel domestic production of glyphosate-based herbicides, declaring them critical to national security. MAHA advocates are furious. Zen Honeycutt of Moms Across America calls it 'a love letter to glyphosate.' Food activist Vani Hari says it 'reads like it was drafted in a chemical company boardroom.'",
-    "link": "https://www.nytimes.com/2026/02/18/us/politics/trump-boost-weedkiller.html",
+    "link": [
+      {
+        "label": "Executive Order (White House)",
+        "url": "https://www.whitehouse.gov/presidential-actions/2026/02/promoting-the-national-defense-by-ensuring-an-adequate-supply-of-elemental-phosphorus-and-glyphosate-based-herbicides/"
+      },
+      {
+        "label": "New York Times",
+        "url": "https://www.nytimes.com/2026/02/18/us/politics/trump-boost-weedkiller.html"
+      }
+    ],
     "type": "loss"
   },
   {
@@ -1911,7 +1920,7 @@
       "politics",
       "media"
     ],
-    "description": "Two weeks after resigning as Kennedy's senior adviser, Calley Means sat down with Joe Rogan for episode #2578 and argued that the people Trump pledged to run out of Washington now staff his own White House. He named chief of staff Susie Wiles as the chokepoint, describing a \"stranglehold\" on policy decisions and saying she had blocked an HHS food initiative out of concern it would cost the party sugar-industry donations. Handed the executive order boosting glyphosate production to review, he says he told them it was a \"political disaster,\" and that Kennedy was cut out of several glyphosate decisions altogether. He also faulted political adviser James Blair and pollster Tony Fabrizio for running a midterm operation \"obsessed with redistricting.\" Then he addressed the president directly — \"Mr. President, you have suffered. You've been shot to drive significant change\" — and offered a prescription: \"I would recommend that he clear his house, and I think he's getting there,\" by \"combating special interests, combating the swamp.\" Hours after the episode posted, Trump announced Wiles was out, replaced by Stephen Miller; no reporting has tied the two events together, and Kennedy thanked her for her \"calm and inspiring leadership and wisdom.\" The following day Means said on X that Wiles and Blair were harassing him by text and phone and asked them to stop. Blair denied it, said he had called and got no answer, and dismissed the rest: Means's \"poor me act is tiring and embarrassing for a grown man who launched a smear campaign.\" The White House held its line, spokeswoman Allison Schuster saying \"the MAHA coalition has found a champion in President Trump.\" Blair was blunter about the movement's electoral weight: MAHA \"wasn't a top issue to the vast majority of voters. That's not my opinion, that's what voters say in the research.\" Quotes from the episode are drawn from an unofficial transcript.",
+    "description": "Two weeks after resigning as Kennedy's senior adviser, Calley Means sat down with Joe Rogan for episode #2578 and argued that the people Trump pledged to run out of Washington now staff his own White House. He named chief of staff Susie Wiles as the chokepoint, describing a \"stranglehold\" on policy decisions and saying she had blocked an HHS food initiative out of concern it would cost the party sugar-industry donations. Handed the executive order boosting glyphosate production to review, he says he told them it was a \"political disaster,\" and that Kennedy was cut out of several glyphosate decisions altogether. The New York Times added two further examples from his account: that Wiles's team pushed for more flavored e-cigarette authorizations, a priority for the tobacco companies that gave Republicans at least $20 million during the 2026 cycle, and that the White House bent to a kratom lobbying campaign and softened proposed limits on the products sometimes sold as \"gas station heroin.\" He also faulted political adviser James Blair and pollster Tony Fabrizio for running a midterm operation \"obsessed with redistricting.\" Then he addressed the president directly — \"Mr. President, you have suffered. You've been shot to drive significant change\" — and offered a prescription: \"I would recommend that he clear his house, and I think he's getting there,\" by \"combating special interests, combating the swamp.\" Hours after the episode posted, Trump announced Wiles was out, replaced by Stephen Miller; no reporting has tied the two events together, and Kennedy thanked her for her \"calm and inspiring leadership and wisdom.\" The following day Means said on X that Wiles and Blair were harassing him by text and phone and asked them to stop. Blair denied it, said he had called and got no answer, and dismissed the rest: Means's \"poor me act is tiring and embarrassing for a grown man who launched a smear campaign.\" The White House held its line, spokeswoman Allison Schuster saying \"the MAHA coalition has found a champion in President Trump.\" Blair was blunter about the movement's electoral weight: MAHA \"wasn't a top issue to the vast majority of voters. That's not my opinion, that's what voters say in the research.\" Quotes from the episode are drawn from an unofficial transcript.",
     "link": [
       {
         "label": "Washington Post",
@@ -1928,6 +1937,10 @@
       {
         "label": "Raw Story",
         "url": "https://www.rawstory.com/calley-means-susie-wiles/"
+      },
+      {
+        "label": "New York Times",
+        "url": "https://www.nytimes.com/2026/11/06/us/politics/susie-wiles-calley-means-joe-rogan.html"
       }
     ],
     "type": "neutral"
