@@ -1651,6 +1651,34 @@
     "type": "loss"
   },
   {
+    "date": "September 2026",
+    "title": "House Democrats Put \"Reclaiming MAHA\" in Writing",
+    "category": [
+      "politics",
+      "policy"
+    ],
+    "description": "A working group Hakeem Jeffries convened in June sent the House Democratic leader an 84-page health agenda dated September 1, assembled from 93 meetings with 139 members and 145 outside organisations and co-led by Alexandria Ocasio-Cortez and Terri Sewell. Its seventh section is titled \"Reclaiming MAHA and Protecting American Families,\" an open bid for the food and chemical politics the movement has had to itself. First among the bills it would move in the opening hundred hours is the No Immunity for Glyphosate Act, carried by Thomas Massie and Chellie Pingree, which would strip funding from Trump's glyphosate executive order and keep state-law claims against Bayer and Monsanto alive; alongside it sits Rosa DeLauro's infant formula bill, requiring pathogen testing of both plants and finished product. Within a hundred days it would take up Frank Pallone's GRAS Act, ending the self-certification that lets manufacturers rule their own additives safe, which the memo calls the largest gap in American food safety law. Further out are Jim McGovern's bill banning paraquat, organophosphates and neonicotinoids, limits on PFAS in food packaging, and a ban on synthetic dyes in federal school meals. The wider agenda also presses to keep vaccine advice clear of political interference and to release withheld NIH money. Ocasio-Cortez has spent months in meetings with MAHA grassroots leaders, where pesticides and PFAS are common ground and vaccines are not. The movement's own leadership was unimpressed: Tony Lyons, who runs its political committee, said in September that \"She is not our ally,\" though he later allowed it should work with anyone sharing its goals. Politico first obtained the document, reporting it on September 25.",
+    "link": [
+      {
+        "label": "The memo (PDF)",
+        "url": "https://www.marlerblog.com/files/2026/10/house-democrats-health-care-working-group-agenda-2026.pdf"
+      },
+      {
+        "label": "Marler Blog analysis of the food chapter",
+        "url": "https://www.marlerblog.com/case-news/house-democrats-put-their-health-care-agenda-on-paper-food-gets-a-chapter-and-sixteen-bills-and-exactly-one-of-them-deals-with-a-pathogen-here-is-all-of-it-the-one-that-made-the-cut-and/"
+      },
+      {
+        "label": "STAT",
+        "url": "https://www.statnews.com/2026/11/05/end-of-maha-2026-midterms-losses-democrats-aoc-cory-booker/"
+      },
+      {
+        "label": "The Hill (Lyons)",
+        "url": "https://thehill.com/policy/healthcare/6202648-maha-leader-willing-work-democrats/"
+      }
+    ],
+    "type": "neutral"
+  },
+  {
     "date": "September 17–25, 2026",
     "title": "CDC Vaccine Recommendations Stall Under Kennedy",
     "category": "policy",
@@ -1884,6 +1912,26 @@
       }
     ],
     "type": "loss"
+  },
+  {
+    "date": "October 23, 2026",
+    "title": "Center for American Progress Publishes a Rival Agenda to MAHA",
+    "category": [
+      "policy",
+      "politics"
+    ],
+    "description": "The Center for American Progress put out \"You Are What You Eat: An Alternative to MAHA for Healthy Food and Fewer Chemicals,\" arguing that progressives should take back the lead on food and chemical safety from a movement whose promises it says have gone unkept. Written by CAP president Neera Tanden with Topher Spiro, Anne Knapke, Jill Rosenthal and Kierra B. Jones, it would stand up an independent Preventive Health Science Commission, charged with vaccine recommendations, preventive service recommendations and dietary guidelines, weighing the evidence on chemical safety, revisit pesticides that peer countries have already banned, and decide what food warning labels say. It would also build a National Institute of Nutrition inside the NIH to fund research on food and health that industry does not pay for; ban outright the chemicals in food and household products where the evidence of harm is already overwhelming; and invert the burden of proof, demanding fast-track reviews that affirmatively establish the safety of chemicals in food, supplements and cosmetics rather than presuming it, with parallel reviews of pesticide residue and a restored margin for children's exposure. On the consumption side it calls for front-of-pack warnings covering ultra-processed foods, fruit and vegetables for every elementary school pupil, a national healthy food incentive scheme, and parity between fruit and vegetable subsidies and those paid on other crops. Spiro's framing of the administration was blunt: it had pledged to make the country healthier and then spent two years siding with industry.",
+    "link": [
+      {
+        "label": "Center for American Progress",
+        "url": "https://www.americanprogress.org/article/you-are-what-you-eat-an-alternative-to-maha-for-healthy-food-and-fewer-chemicals/"
+      },
+      {
+        "label": "CAP press release",
+        "url": "https://www.americanprogress.org/press/release-cap-unveils-bold-new-agenda-to-make-food-safer-and-healthier-and-to-ban-harmful-chemicals/"
+      }
+    ],
+    "type": "neutral"
   },
   {
     "date": "November 1, 2026",
