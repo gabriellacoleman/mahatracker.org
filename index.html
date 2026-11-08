@@ -765,6 +765,154 @@
       transition: top 0.2s;
     }
     .skip-link:focus { top: 1rem; }
+
+    /* ═══════════════════════════════════════════════
+       THE INDEX — unified record database
+       ═══════════════════════════════════════════════ */
+    #index { background: var(--warm-white); padding: 90px 0 110px; }
+    #index .inner { max-width: 1180px; }
+
+    .ix-layout { display: grid; grid-template-columns: 258px 1fr; gap: 44px; align-items: start; margin-top: 34px; }
+
+    /* ---- filter rail ---- */
+    .ix-rail { position: sticky; top: 76px; }
+    .ix-railbox { background: #fff; border: 1px solid var(--cream-dark); border-radius: 4px; padding: 20px 18px; }
+    .ix-search { width: 100%; box-sizing: border-box; font-family: 'Source Serif 4', serif; font-size: .98rem;
+      padding: 11px 13px; border: 1px solid var(--cream-dark); border-radius: 3px; background: var(--warm-white);
+      color: var(--text-dark); margin-bottom: 20px; }
+    .ix-search:focus-visible { outline: 3px solid var(--teal-dark); outline-offset: 1px; background: #fff; }
+    .ix-search::placeholder { color: #8b8b7d; }
+
+    .ix-group { margin-bottom: 20px; }
+    .ix-group:last-child { margin-bottom: 0; }
+    .ix-glabel { font-family: 'DM Mono', monospace; font-size: .66rem; letter-spacing: .13em; text-transform: uppercase;
+      color: var(--text-mid); margin: 0 0 9px; font-weight: 500; }
+    .ix-opts { display: flex; flex-direction: column; gap: 2px; }
+
+    .ix-opt { display: flex; align-items: center; gap: 9px; width: 100%; text-align: left; cursor: pointer;
+      font-family: 'Source Serif 4', serif; font-size: .9rem; color: var(--text-dark); background: none;
+      border: 0; border-radius: 3px; padding: 6px 8px; line-height: 1.3; transition: background .13s; }
+    .ix-opt:hover { background: var(--cream); }
+    .ix-opt:focus-visible { outline: 3px solid var(--teal-dark); outline-offset: -1px; }
+    .ix-box { flex: 0 0 15px; width: 15px; height: 15px; border: 1.5px solid #a8a89a; border-radius: 2.5px;
+      display: grid; place-items: center; background: #fff; }
+    .ix-box::after { content: ''; width: 8px; height: 8px; border-radius: 1px; background: transparent; }
+    .ix-opt[aria-pressed="true"] { font-weight: 600; }
+    .ix-opt[aria-pressed="true"] .ix-box { border-color: var(--forest-light); background: var(--forest-light); }
+    .ix-opt[aria-pressed="true"] .ix-box::after { background: #fff; }
+    .ix-n { margin-left: auto; font-family: 'DM Mono', monospace; font-size: .72rem; color: var(--text-mid); }
+
+    /* stance swatches — colour PLUS shape, never colour alone */
+    .ix-mark { flex: 0 0 auto; font-size: .7rem; line-height: 1; width: 11px; text-align: center; }
+    .ix-mark.advancing { color: #0b7a55; }
+    .ix-mark.opposing  { color: #c0392b; }
+    .ix-mark.neutral   { color: #6b6b5c; }
+
+    .ix-sel { width: 100%; box-sizing: border-box; font-family: 'Source Serif 4', serif; font-size: .88rem;
+      padding: 8px 10px; border: 1px solid var(--cream-dark); border-radius: 3px; background: #fff; color: var(--text-dark); }
+    .ix-sel:focus-visible { outline: 3px solid var(--teal-dark); outline-offset: 1px; }
+
+    /* ---- results column ---- */
+    .ix-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding-bottom: 14px;
+      border-bottom: 2px solid var(--forest); margin-bottom: 4px; }
+    .ix-count { font-family: 'DM Mono', monospace; font-size: .76rem; letter-spacing: .06em; color: var(--text-dark); }
+    .ix-count b { color: var(--forest); }
+    .ix-spacer { flex: 1 1 auto; }
+    .ix-views { display: flex; border: 1px solid var(--cream-dark); border-radius: 3px; overflow: hidden; background: #fff; }
+    .ix-view { font-family: 'DM Mono', monospace; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase;
+      padding: 7px 13px; border: 0; background: none; cursor: pointer; color: var(--text-mid); }
+    .ix-view[aria-pressed="true"] { background: var(--forest); color: var(--cream); }
+    .ix-view:focus-visible { outline: 3px solid var(--teal-dark); outline-offset: -3px; }
+
+    .ix-chips { display: flex; flex-wrap: wrap; gap: 7px; margin: 14px 0 0; min-height: 1px; }
+    .ix-chip { display: inline-flex; align-items: center; gap: 7px; font-family: 'DM Mono', monospace; font-size: .7rem;
+      background: var(--cream); border: 1px solid var(--cream-dark); border-radius: 100px; padding: 5px 11px; color: var(--text-dark); }
+    .ix-chip button { background: none; border: 0; cursor: pointer; color: var(--text-mid); font-size: .95rem; line-height: 1; padding: 0 1px; }
+    .ix-chip button:hover { color: #c0392b; }
+    .ix-chip button:focus-visible { outline: 2px solid var(--teal-dark); outline-offset: 2px; }
+    .ix-clear { font-family: 'DM Mono', monospace; font-size: .7rem; text-transform: uppercase; letter-spacing: .08em;
+      background: none; border: 0; border-bottom: 1px solid currentColor; cursor: pointer; color: var(--text-mid); padding: 0 0 1px; }
+    .ix-clear:hover { color: #c0392b; }
+
+    /* ---- group headings ---- */
+    .ix-gh { display: flex; align-items: baseline; gap: 13px; margin: 34px 0 2px; padding-bottom: 7px;
+      border-bottom: 1px solid var(--cream-dark); }
+    .ix-gh:first-child { margin-top: 22px; }
+    .ix-gh h3 { font-family: 'Playfair Display', serif; font-size: 1.32rem; margin: 0; color: var(--forest); font-weight: 700; }
+    .ix-gh .ix-gn { font-family: 'DM Mono', monospace; font-size: .72rem; color: var(--text-mid); }
+
+    /* ---- record ---- */
+    .ix-rec { border-bottom: 1px solid var(--cream-dark); }
+    .ix-rec > summary { list-style: none; cursor: pointer; display: grid;
+      grid-template-columns: 4px 92px 1fr; gap: 0 16px; align-items: start; padding: 15px 10px 15px 0; position: relative; }
+    .ix-rec > summary::-webkit-details-marker { display: none; }
+    .ix-rec > summary:hover { background: #fff; }
+    .ix-rec > summary:focus-visible { outline: 3px solid var(--teal-dark); outline-offset: -2px; }
+    .ix-rail-bar { width: 4px; align-self: stretch; border-radius: 2px; background: #c9c9bb; }
+    .ix-rec[data-stance="advancing"] .ix-rail-bar { background: #10b981; }
+    .ix-rec[data-stance="opposing"]  .ix-rail-bar { background: #ef4444; }
+
+    .ix-date { font-family: 'DM Mono', monospace; font-size: .72rem; color: var(--text-mid); padding-top: 3px; letter-spacing: .02em; }
+    .ix-main { min-width: 0; }
+    .ix-title, .ix-meta, .ix-date, .ix-main { display: block; }
+    .ix-title { font-family: 'Source Serif 4', serif; font-size: 1.04rem; font-weight: 600; color: var(--text-dark);
+      margin: 0 0 7px; line-height: 1.38; }
+    .ix-meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+    .ix-tag { font-family: 'DM Mono', monospace; font-size: .64rem; letter-spacing: .07em; text-transform: uppercase;
+      padding: 3px 8px; border-radius: 2px; border: 1px solid var(--cream-dark); color: var(--text-mid); background: #fff; }
+    .ix-tag.stance { border: 0; font-weight: 500; }
+    .ix-tag.stance.advancing { background: #d9f2e6; color: #0a5c40; }
+    .ix-tag.stance.opposing  { background: #fae0de; color: #9c2c20; }
+    .ix-tag.stance.neutral   { background: #e8e8df; color: #4e4e42; }
+    .ix-tag.lvl { border-color: #b9c9bd; color: var(--forest-light); }
+    .ix-tag.theme { border-color: #cdc6b6; color: #6b6450; background: #fbf9f4; }
+    .ix-opts-scroll { max-height: 232px; overflow-y: auto; padding-right: 4px; }
+
+    .ix-chev { position: absolute; right: 10px; top: 17px; color: #9a9a8c; font-size: .8rem; transition: transform .18s; }
+    .ix-rec[open] .ix-chev { transform: rotate(90deg); }
+    .ix-body { padding: 0 44px 20px 112px; }
+    .ix-body p { font-family: 'Source Serif 4', serif; font-size: .95rem; line-height: 1.68; color: var(--text-dark); margin: 0 0 12px; }
+    .ix-src { font-family: 'DM Mono', monospace; font-size: .72rem; color: var(--teal-dark); text-decoration: none;
+      border-bottom: 1px solid currentColor; }
+    .ix-src:hover { color: var(--forest); }
+    .ix-src:focus-visible { outline: 3px solid var(--teal-dark); outline-offset: 2px; }
+
+    .ix-sources { font-family: 'DM Mono', monospace; font-size: .7rem; line-height: 1.6; color: var(--text-mid); margin: 10px 0 0; }
+    .ix-sources span { text-transform: uppercase; letter-spacing: .1em; font-size: .64rem; color: var(--forest-light); margin-right: 6px; }
+
+    .ix-empty { text-align: center; padding: 66px 20px; color: var(--text-mid); font-family: 'Source Serif 4', serif; }
+    .ix-empty strong { display: block; font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--forest); margin-bottom: 8px; }
+
+    /* ---- timeline view ---- */
+    .ix-tl .ix-gh { border-bottom: 0; margin-bottom: 0; }
+    .ix-tl .ix-recs { position: relative; padding-left: 26px; }
+    .ix-tl .ix-recs::before { content: ''; position: absolute; left: 4px; top: 0; bottom: 0; width: 2px; background: var(--cream-dark); }
+    .ix-tl .ix-rec > summary { grid-template-columns: 4px 92px 1fr; }
+    .ix-tl .ix-rec::before { content: ''; position: absolute; left: -26px; margin-top: 23px; width: 11px; height: 11px;
+      border-radius: 50%; background: #fff; border: 2px solid #c9c9bb; z-index: 1; }
+    .ix-tl .ix-rec { position: relative; }
+    .ix-tl .ix-rec[data-stance="advancing"]::before { border-color: #10b981; }
+    .ix-tl .ix-rec[data-stance="opposing"]::before  { border-color: #ef4444; }
+
+    /* ---- mobile filter disclosure ---- */
+    .ix-filtoggle { display: none; width: 100%; font-family: 'DM Mono', monospace; font-size: .76rem; letter-spacing: .08em;
+      text-transform: uppercase; padding: 12px; background: var(--forest); color: var(--cream); border: 0; border-radius: 3px; cursor: pointer; }
+
+    @media (max-width: 900px) {
+      .ix-layout { grid-template-columns: 1fr; gap: 18px; }
+      .ix-rail { position: static; }
+      .ix-filtoggle { display: block; }
+      .ix-railbox { display: none; margin-top: 10px; }
+      .ix-railbox.open { display: block; }
+      .ix-rec > summary { grid-template-columns: 4px 1fr; gap: 0 12px; }
+      .ix-date { grid-column: 2; padding-top: 0; margin-bottom: 5px; }
+      .ix-main { grid-column: 2; }
+      .ix-body { padding: 0 10px 18px 16px; }
+      .ix-chev { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .ix-chev, .ix-opt { transition: none; }
+    }
   </style>
 </head>
 <body>
@@ -817,10 +965,8 @@
   <ul class="nav-links" id="nav-links">
     <li><a href="#primer">Primer</a></li>
     <li><a href="#scorecard">Scorecard</a></li>
-    <li><a href="#federal">Federal</a></li>
-    <li><a href="#states">States</a></li>
+    <li><a href="#index">The Index</a></li>
     <li><a href="#alternative">Alt. Path</a></li>
-    <li><a href="#timeline">Timeline</a></li>
   </ul>
 </nav>
 <script>
@@ -983,7 +1129,7 @@
         <p>Make America Healthy Again coalesced as a political brand alongside the Trump administration, hitching a populist wellness agenda to a populist presidency. The movement blends real diagnoses with unreliable prescriptions, and a serious response requires separating the two. Some of its animating concerns are legitimate and long-overdue for mainstream attention: the epidemic of chronic disease, the dominance of ultra-processed foods in the American diet, and the long-documented capture of regulatory bodies like the FDA and USDA by the very industries they are meant to oversee. Other strands of the movement drift from evidence into speculation, or fold questions into conspiratorial framings that obscure more than they reveal. This site takes the legitimate concerns seriously, engages the harder questions on their merits, holds the administration accountable to the standard its own rhetoric invites, and points toward an <a href="#alternative">alternative democratic health vision</a> that can actually deliver on them.</p>
         <p>MAHA has pulled some long-marginalized issues into mainstream political conversation, and the advocates and supporters who arrived here, many of them parents, patients, and independent researchers with no simple partisan allegiance, deserve to be engaged, not dismissed. But engaging them seriously means following the evidence. And the record documented on this site is unambiguous: the current administration is not delivering even on the goals worth pursuing. Pesticide approvals have expanded. New PFAS-based chemicals have been greenlit for use on food crops. The agencies needed to enforce food safety standards have been staffed with former industry lobbyists and stripped of thousands of experienced personnel. The concerns are real; the vehicle is not.</p>
         <p>Whether or not you share sympathy for MAHA's political packaging, some underlying problems are well-documented and predate any administration. Americans consume more ultra-processed food than almost any nation on earth. Food dyes banned in the EU for decades remain common in U.S. products. PFAS contamination affects over 200 million people's drinking water. Childhood obesity and diet-related illness are undeniable crises.</p>
-        <p>This site tracks <em>those specific policy issues</em> (enacted laws, signed regulations, and executive actions), not the broader MAGA political agenda. We follow what passes and who passes it, regardless of party affiliation. The <a href="#timeline">timeline</a>, <a href="#scorecard">scorecard</a>, and <a href="#federal">policy trackers</a> document that record. They also point toward a conclusion: taking these concerns seriously requires an <a href="#alternative">alternative democratic health vision</a> grounded in robust public infrastructure, sustained federal investment, scientific rigor, and protections that are universal, enforceable, and inclusive of all Americans, not contingent on who holds power or which industries have the ear of the administration.</p>
+        <p>This site tracks <em>those specific policy issues</em> (enacted laws, signed regulations, and executive actions), not the broader MAGA political agenda. We follow what passes and who passes it, regardless of party affiliation. The <a href="#index">index</a> and <a href="#scorecard">scorecard</a> document that record. They also point toward a conclusion: taking these concerns seriously requires an <a href="#alternative">alternative democratic health vision</a> grounded in robust public infrastructure, sustained federal investment, scientific rigor, and protections that are universal, enforceable, and inclusive of all Americans, not contingent on who holds power or which industries have the ear of the administration.</p>
       </div>
       <div class="primer-cards">
         <a class="section-nav-card" href="#scorecard" aria-label="Go to Partisan Scorecard">
@@ -991,24 +1137,14 @@
           <p>A partisan breakdown of who is actually advancing food and environmental health policy, and who is blocking it, measured across enacted federal laws and regulations.</p>
           <span class="snc-arrow" aria-hidden="true">&rarr;</span>
         </a>
-        <a class="section-nav-card" href="#federal" aria-label="Go to Federal Policy Tracker">
-          <span class="snc-label">Federal Policy Tracker</span>
-          <p>Enacted federal laws and regulations tracked for impact on food safety, environmental health, and food access, from Biden-era PFAS standards to Trump rollbacks.</p>
-          <span class="snc-arrow" aria-hidden="true">&rarr;</span>
-        </a>
-        <a class="section-nav-card" href="#states" aria-label="Go to State Policy Tracker">
-          <span class="snc-label">State Policy Tracker</span>
-          <p>Democratic-led states are passing the era's most concrete chemical safety protections; Republican-led states are advancing liability shields for polluters.</p>
+        <a class="section-nav-card" href="#index" aria-label="Go to The Index">
+          <span class="snc-label">The Index</span>
+          <p>Every tracked record in one searchable place: federal and state policy beside the movement's political and media record. Filter by position on health, arena, or state; read it as a list or a timeline.</p>
           <span class="snc-arrow" aria-hidden="true">&rarr;</span>
         </a>
         <a class="section-nav-card" href="#alternative" aria-label="Go to Alternative Path section">
           <span class="snc-label">Alt. Path</span>
           <p>MAHA's mandate has been captured by corporate interests, but a bipartisan, policy-centered movement grounded in four clear principles offers a real alternative.</p>
-          <span class="snc-arrow" aria-hidden="true">&rarr;</span>
-        </a>
-        <a class="section-nav-card" href="#timeline" aria-label="Go to Timeline">
-          <span class="snc-label">Timeline</span>
-          <p>A chronological record of key events in food and environmental health policy from May 2022 through November 2026.</p>
           <span class="snc-arrow" aria-hidden="true">&rarr;</span>
         </a>
       </div>
@@ -1066,526 +1202,72 @@
 </section>
 
 <!-- ╔══════════════════════════════╗ -->
-<!-- ║       FEDERAL LAWS          ║ -->
+<!-- ║          THE INDEX          ║ -->
 <!-- ╚══════════════════════════════╝ -->
-<section id="federal">
+<section id="index">
   <div class="inner">
-    <p class="eyebrow teal">Enacted federal policy</p>
-    <h2 class="section-h2">Federal Policy Tracker</h2>
-    <p class="section-lead">Laws, regulations, and committed funding, not proposals. Tracked for impact on food safety, environmental health, and food access.</p>
+    <p class="eyebrow teal">One record set, many views</p>
+    <h2 class="section-h2">The Index</h2>
+    <p class="section-lead">Every tracked item in one place: federal and state policy alongside the movement's political and media record. Search it, filter it, group it, or read it as a timeline. Each record is marked <strong>advancing</strong>, <strong>opposing</strong>, or <strong>neutral</strong> on health, and links to its source.</p>
 
-    <div class="two-col reveal">
-      <!-- ADVANCING -->
-      <div>
-        <div class="col-head">
-          <div class="col-bar adv"></div>
-          <span class="col-lbl adv">Advancing Health</span>
-        </div>
+    <div class="ix-layout">
+      <!-- FILTER RAIL -->
+      <div class="ix-rail">
+        <button class="ix-filtoggle" id="ix-filtoggle" aria-expanded="false" aria-controls="ix-railbox">Filters &amp; search</button>
+        <div class="ix-railbox" id="ix-railbox">
+          <label class="sr-only" for="ix-search">Search records</label>
+          <input type="search" id="ix-search" class="ix-search" placeholder="Search records…" autocomplete="off">
 
-        <div class="pcard-policy adv">
-          <div class="pc-meta"><span class="pc-date">APR 2026</span></div>
-          <h4 class="pc-h4"><a href="https://www.politico.com/live-updates/2026/04/30/congress/house-strikes-pesticide-language-from-farm-bill-00899851" target="_blank" rel="noopener">House Strips Pesticide Liability Shield from Farm Bill (Luna Amendment, 280–142)</a></h4>
-          <p class="pc-p">On April 30, the House voted 280–142 to remove Section 10205 from the 2026 farm bill: language that would have reaffirmed the EPA as the sole authority on pesticide labeling, effectively shielding Bayer/Monsanto and other manufacturers from state-law failure-to-warn lawsuits like the one heard at the Supreme Court three days earlier in <em>Monsanto v. Durnell</em>. The Luna Amendment, sponsored by Rep. Anna Paulina Luna (R-FL), passed only because of overwhelming Democratic support. Among Democrats: 207 yes, 6 no, near-unanimous. Among Republicans: 73 yes (the MAHA-aligned wing) and 136 no, meaning the MAHA faction was outvoted nearly two-to-one inside its own caucus. Without the Democratic bloc, the MAHA-led effort would have failed. The broader farm bill passed the House 224–200 the same morning; the amendment must still survive Senate negotiations and reconciliation before becoming law.</p>
-          <div class="pc-foot">
-            <span class="badge bi">Bipartisan (MAHA + Dem)</span>
-            <span class="vote-tally"><span class="d">207D</span> + <span class="r">73R</span> Yes</span>
+          <div class="ix-group">
+            <p class="ix-glabel" id="ix-lbl-stance">Position on health</p>
+            <div class="ix-opts" role="group" aria-labelledby="ix-lbl-stance" data-facet="stance"></div>
           </div>
-        </div>
 
-        <div class="pcard-policy adv">
-          <div class="pc-meta"><span class="pc-date">MAR 2026</span></div>
-          <h4 class="pc-h4"><a href="https://www.hhs.gov/press-room/sec-kennedy-sec-mcmahon-celebrate-med-school-commitments-to-increase-nutrition-training-for-future-doctors.html" target="_blank" rel="noopener">53 Medical Schools Commit to Mandatory Nutrition Training</a></h4>
-          <p class="pc-p">HHS and the Dept. of Education convened leaders from 53 top medical schools across 31 states to commit to requiring at least 40 hours of nutrition education for students beginning fall 2026. Secretaries Kennedy and McMahon were joined by the presidents of the AMA, AAMC, and AACOM. The commitment is a meaningful shift in how the medical profession approaches diet and chronic disease. That said, its impact is limited in scope: it affects future physicians only, carries no enforcement mechanism, and does not address the structural conditions (food deserts, ultra-processed food dominance, agricultural subsidies) that shape what most Americans actually eat. Without accompanying regulatory and financial reforms, better-trained doctors will have limited tools to act on what they know.</p>
-          <div class="pc-foot">
-            <span class="badge sr"><span class="badge-dot" style="background:#d99898"></span>Trump Admin (R)</span>
-            <span class="badge bi">Federal Initiative</span>
+          <div class="ix-group">
+            <p class="ix-glabel" id="ix-lbl-level">Arena</p>
+            <div class="ix-opts" role="group" aria-labelledby="ix-lbl-level" data-facet="level"></div>
           </div>
-        </div>
 
-        <div class="pcard-policy adv">
-          <div class="pc-meta"><span class="pc-date">FEB 2026</span></div>
-          <h4 class="pc-h4"><a href="https://www.hhs.gov/press-room/hhs-usda-epa-announce-one-billion-investments-plan-accelerate-progress-farm-modernization-long-term-food-supply-security.html" target="_blank" rel="noopener">HHS, USDA &amp; EPA Announce $1B+ Farm Modernization Investment</a></h4>
-          <p class="pc-p">Three federal agencies committed over $1 billion to modernize U.S. agriculture and reduce chemical dependence: USDA allocated $840M through conservation programs (EQIP, CSP) to fund regenerative agriculture; EPA launched a $30M grand prize challenge for pesticide alternatives to pre-harvest desiccation; and EPA, USDA, and NIH committed to developing a cumulative chemical exposure research framework for the food supply. Rooted in Executive Order 14212 establishing the MAHA Commission.</p>
-          <div class="pc-foot">
-            <span class="badge sr"><span class="badge-dot" style="background:#d99898"></span>Trump Admin (R)</span>
-            <span class="badge bi">HHS · USDA · EPA</span>
+          <div class="ix-group">
+            <p class="ix-glabel" id="ix-lbl-category">Record type</p>
+            <div class="ix-opts" role="group" aria-labelledby="ix-lbl-category" data-facet="category"></div>
           </div>
-        </div>
 
-        <div class="pcard-policy adv">
-          <div class="pc-meta"><span class="pc-date">JAN 2026</span></div>
-          <h4 class="pc-h4"><a href="https://www.hhs.gov/press-room/historic-reset-federal-nutrition-policy.html" target="_blank" rel="noopener">Dietary Guidelines for Americans 2025–2030 — "Eat Real Food"</a></h4>
-          <p class="pc-p">Kennedy and USDA Secretary Brooke Rollins released the most significant reset of federal nutrition policy in decades. The 10-page guidelines, down from 164 pages in 2020, explicitly warn against highly processed foods for the first time, introduce an inverted food pyramid prioritizing protein, dairy, and healthy fats, and drop the long-standing low-fat dogma. As the governing standard for the National School Lunch Program, the guidelines directly affect what 30 million children eat daily. Companion site RealFood.gov launched the same day. The guidelines represent a genuine shift in the federal government's official position on diet and chronic disease. However, dietary guidelines are advisory; they carry no regulatory force over what food companies can produce or market, and do not alter the farm subsidies and commodity policies that make ultra-processed food the most affordable option for millions of Americans. Their real-world impact depends heavily on whether they are backed by enforcement mechanisms, school food funding, and changes to agricultural policy that have not yet materialized.</p>
-          <div class="pc-foot">
-            <span class="badge sr"><span class="badge-dot" style="background:#d99898"></span>Trump Admin (R)</span>
-            <span class="badge bi">HHS · USDA</span>
+          <div class="ix-group">
+            <p class="ix-glabel" id="ix-lbl-themes">Theme</p>
+            <div class="ix-opts ix-opts-scroll" role="group" aria-labelledby="ix-lbl-themes" data-facet="themes"></div>
           </div>
-        </div>
 
-        <div class="pcard-policy adv">
-          <div class="pc-meta"><span class="pc-date">DEC 2025</span></div>
-          <h4 class="pc-h4"><a href="https://www.epa.gov/newsreleases/epa-announces-intent-regulate-dozens-uses-five-phthalate-chemicals-protect-workers-and" target="_blank" rel="noopener">EPA Mandated to Regulate Five Phthalate Chemicals</a></h4>
-          <p class="pc-p">EPA Administrator Lee Zeldin announced the agency's intent to develop rules eliminating unreasonable risks from five phthalate chemicals (BBP, DBP, DCHP, DEHP, and DIBP) used in plastics and building materials. DEHP alone faces restrictions on 30 conditions of use. Under TSCA, once the EPA identifies unreasonable risk, rulemaking to eliminate that risk is legally required, making this a binding mandate rather than a voluntary commitment.</p>
-          <div class="pc-foot">
-            <span class="badge sr"><span class="badge-dot" style="background:#d99898"></span>Trump Admin (R)</span>
-            <span class="badge bi">TSCA Mandate</span>
+          <div class="ix-group">
+            <label class="ix-glabel" for="ix-state">State</label>
+            <select id="ix-state" class="ix-sel"><option value="">All states</option></select>
           </div>
-        </div>
 
-        <div class="pcard-policy adv">
-          <div class="pc-meta"><span class="pc-date">DEC 2025</span></div>
-          <h4 class="pc-h4"><a href="https://www.usda.gov/about-usda/news/press-releases/2025/12/10/usda-launches-new-regenerative-pilot-program-lower-farmer-production-costs-and-advance-maha-agenda" target="_blank" rel="noopener">USDA Launches $700M Regenerative Pilot Program</a></h4>
-          <p class="pc-p">Agriculture Secretary Brooke Rollins, alongside RFK Jr. and CMS Administrator Dr. Oz, launched a $700 million Regenerative Pilot Program ($400M through EQIP and $300M through CSP) to help farmers adopt whole-farm conservation practices addressing soil health, water quality, and natural vitality through a single streamlined application. NRCS established a Chief's Regenerative Agriculture Advisory Council to guide implementation. The program provides farmers an "off-ramp" to transition away from synthetic input dependence.</p>
-          <div class="pc-foot">
-            <span class="badge sr"><span class="badge-dot" style="background:#d99898"></span>Trump Admin (R)</span>
-            <span class="badge bi">USDA · NRCS</span>
-          </div>
-        </div>
-
-        <div class="pcard-policy adv">
-          <div class="pc-meta"><span class="pc-date">MAR 2025</span></div>
-          <h4 class="pc-h4"><a href="https://www.fda.gov/food/hfp-constituent-updates/fda-revoke-authorization-use-red-no-3-food-and-ingested-drugs" target="_blank" rel="noopener">FDA Red Dye No. 3 Revocation</a></h4>
-          <p class="pc-p">FDA revoked authorization for Red Dye No. 3 (erythrosine) in food and ingested drugs, a synthetic dye linked to thyroid tumors in animal studies, after the Delaney Clause required removal once carcinogenicity was demonstrated. Manufacturers given 2 years to reformulate.</p>
-          <div class="pc-foot">
-            <span class="badge sd"><span class="badge-dot" style="background:#8ab5de"></span>Biden/Trump transition</span>
-            <span class="badge bi">Bipartisan Support</span>
-          </div>
-        </div>
-
-        <div class="pcard-policy adv">
-          <div class="pc-meta"><span class="pc-date">SEP 2024</span></div>
-          <h4 class="pc-h4"><a href="https://www.fda.gov/food/hfp-constituent-updates/fda-issues-proposed-rule-front-package-nutrition-labeling" target="_blank" rel="noopener">FDA Front-of-Package Labeling Proposal</a></h4>
-          <p class="pc-p">FDA issued proposed rule for mandatory front-of-package "nutrition info" labeling, including a "high in" warning label for sodium, saturated fat, and added sugars, representing the most significant food labeling reform in decades.</p>
-          <div class="pc-foot">
-            <span class="badge sd"><span class="badge-dot" style="background:#8ab5de"></span>Biden Admin (D)</span>
-            <span class="vote-tally">FDA Rulemaking</span>
-          </div>
-        </div>
-
-        <div class="pcard-policy adv">
-          <div class="pc-meta"><span class="pc-date">MAR 2024</span></div>
-          <h4 class="pc-h4"><a href="https://www.epa.gov/sdwa/and-polyfluoroalkyl-substances-pfas" target="_blank" rel="noopener">EPA PFAS Drinking Water Standards</a></h4>
-          <p class="pc-p">First-ever enforceable federal limits on six PFAS compounds in drinking water, covering an estimated 100+ million Americans. Set maximum contaminant levels for PFOA, PFOS, and four other "forever chemicals" linked to cancer and immune disruption.</p>
-          <div class="pc-foot">
-            <span class="badge sd"><span class="badge-dot" style="background:#8ab5de"></span>Biden Admin (D)</span>
-            <span class="badge bi">Broad Public Support</span>
-          </div>
-        </div>
-
-        <div class="pcard-policy adv">
-          <div class="pc-meta"><span class="pc-date">JAN 2024</span></div>
-          <h4 class="pc-h4"><a href="https://www.fns.usda.gov/cn/school-nutrition-standards-updates" target="_blank" rel="noopener">USDA School Meal Nutrition Standards Update</a></h4>
-          <p class="pc-p">Strengthened school meal requirements: reduced sodium limits over 5-year phase-in, required whole grain minimums, and capped added sugars in school breakfasts for the first time, affecting 30 million children daily.</p>
-          <div class="pc-foot">
-            <span class="badge sd"><span class="badge-dot" style="background:#8ab5de"></span>Biden Admin (D)</span>
-            <span class="vote-tally">USDA Rulemaking</span>
-          </div>
-        </div>
-
-        <div class="pcard-policy adv">
-          <div class="pc-meta"><span class="pc-date">NOV 2022</span></div>
-          <h4 class="pc-h4"><a href="https://www.usda.gov/topics/farming/inflation-reduction-act" target="_blank" rel="noopener">Inflation Reduction Act — Conservation Provisions</a></h4>
-          <p class="pc-p">Included $20 billion for voluntary conservation programs, including restrictions on certain pesticide-adjacent practices and incentives for reducing synthetic input use on farmland, the largest federal conservation investment in history.</p>
-          <div class="pc-foot">
-            <span class="badge sd"><span class="badge-dot" style="background:#8ab5de"></span>Biden (D)</span>
-            <span class="badge pd">Party-Line D</span>
-            <span class="vote-tally"><span class="d">220D</span> <span class="r">0R</span> Yes</span>
-          </div>
-        </div>
-
-        <div class="pcard-policy adv">
-          <div class="pc-meta">
-            <span class="pc-date">AUG 2022</span>
-          </div>
-          <h4 class="pc-h4"><a href="https://www.epa.gov/ingredients-used-pesticide-products/chlorpyrifos" target="_blank" rel="noopener">EPA Chlorpyrifos Agricultural Ban</a></h4>
-          <p class="pc-p">Biden EPA finalized a ban on chlorpyrifos, a neurotoxic organophosphate pesticide linked to childhood neurological damage, for all agricultural food uses, after decades of industry lobbying blocked action under prior administrations.</p>
-          <div class="pc-foot">
-            <span class="badge sd"><span class="badge-dot" style="background:#8ab5de"></span>Biden Admin (D)</span>
-            <span class="badge pd">EPA Rulemaking</span>
-            <span class="vote-tally">D-led action</span>
+          <div class="ix-group">
+            <label class="ix-glabel" for="ix-groupby">Group by</label>
+            <select id="ix-groupby" class="ix-sel">
+              <option value="year">Year</option>
+              <option value="stance">Position on health</option>
+              <option value="level">Arena</option>
+              <option value="category">Record type</option>
+              <option value="none">Nothing — flat list</option>
+            </select>
           </div>
         </div>
       </div>
 
-      <!-- OPPOSING -->
-      <div>
-        <div class="col-head">
-          <div class="col-bar opp"></div>
-          <span class="col-lbl opp">Opposing Health</span>
-        </div>
-
-        <div class="pcard-policy opp">
-          <div class="pc-meta"><span class="pc-date">MAY 2026</span></div>
-          <h4 class="pc-h4"><a href="https://www.washingtonpost.com/health/2026/05/05/fda-approves-flavored-vapes/" target="_blank" rel="noopener">FDA Approves First Fruit-Flavored Vapes After Trump Pressed Commissioner Makary</a></h4>
-          <p class="pc-p">On May 5, the FDA authorized the first-ever fruit-flavored e-cigarettes (mango, blueberry, and two menthol varieties from Los Angeles brand Glas) for adults 21 and over. The Wall Street Journal reported hours before the announcement that Trump had personally pressed FDA Commissioner Marty Makary to approve flavored vapes, fulfilling a 2024 campaign pledge made after Trump met privately with a vaping lobbyist; on Truth Social during the campaign, Trump wrote that he 'saved Flavored Vaping in 2019' and would 'save Vaping again.' The decision reverses years of FDA work to restrict flavored e-cigarettes: the agency had previously turned away more than 1 million fruit, candy, and dessert flavors on youth-protection grounds, and the Supreme Court unanimously backed those rejections in April 2025. The FDA's release cited new 'device access restriction' technology (Bluetooth pairing and government-ID verification) as the youth-protection mitigation. The Campaign for Tobacco-Free Kids called the move a backward step; its CEO Yolonda C. Richardson said it 'puts at risk the progress our nation has made in reducing youth e-cigarette use' and 'conflicts with overwhelming scientific evidence and the FDA's own repeated conclusions that flavors pose a substantial risk to young people.' Flavored vapes are documented as a primary driver of youth nicotine addiction, directly contradicting MAHA's stated mission of reducing chronic disease in children and curbing the targeting of young people by addictive industries.</p>
-          <div class="pc-foot">
-            <span class="badge sr"><span class="badge-dot" style="background:#d99898"></span>Trump Admin (R)</span>
-            <span class="badge pr">FDA Reversal</span>
+      <!-- RESULTS -->
+      <div class="ix-results">
+        <div class="ix-bar">
+          <p class="ix-count" id="ix-count" role="status" aria-live="polite"></p>
+          <span class="ix-spacer"></span>
+          <div class="ix-views" role="group" aria-label="View style">
+            <button class="ix-view" data-view="list" aria-pressed="true">List</button>
+            <button class="ix-view" data-view="timeline" aria-pressed="false">Timeline</button>
           </div>
         </div>
-
-        <div class="pcard-policy opp">
-          <div class="pc-meta"><span class="pc-date">APR 2026</span></div>
-          <h4 class="pc-h4"><a href="https://www.msn.com/en-us/politics/government/us-house-passes-farm-bill-after-scrapping-pesticide-language-opposed-by-maha/ar-AA227lcZ" target="_blank" rel="noopener">2026 Farm Bill Leaves $187B in SNAP Cuts Intact</a></h4>
-          <p class="pc-p">The 2026 farm bill, which passed the House 224–200 on April 30, declined to reverse the roughly $187 billion in SNAP cuts enacted through the prior year's tax-and-spending reconciliation package (the "One Big Beautiful Bill"). SNAP is the federal nutrition program through which more than 40 million low-income Americans purchase food; cuts of this scale directly undermine MAHA's stated mission of expanding access to healthier food, especially for children. Anti-hunger groups criticized the farm bill for failing to undo the cuts. The bill's separate Luna Amendment win on pesticide liability does not offset its silence on food access for the lowest-income Americans, and the new SNAP candy/soda restrictions rolling out across 22 states (covered separately on this site's timeline) further narrow what shrunken SNAP benefits can buy.</p>
-          <div class="pc-foot">
-            <span class="badge sr"><span class="badge-dot" style="background:#d99898"></span>Trump-Era Reconciliation</span>
-            <span class="badge pr">Maintained by Farm Bill</span>
-          </div>
-        </div>
-
-        <div class="pcard-policy opp">
-          <div class="pc-meta"><span class="pc-date">FEB 2026</span></div>
-          <h4 class="pc-h4"><a href="https://www.nbcnews.com/science/environment/epa-eases-limits-coal-plant-emissions-mercury-toxins-trump-rcna259955" target="_blank" rel="noopener">Mercury &amp; Air Toxics Standards (MATS) Rollback</a></h4>
-          <p class="pc-p">Trump EPA reversed Biden-era tightening of the Mercury and Air Toxics Standards, the rule governing emissions from coal-fired power plants and the largest human source of mercury pollution. Coal plant mercury enters the food chain through fish and other food sources. Mercury is a neurotoxin that impairs brain development in young children and contributes to heart attacks in adults. EPA cited "hundreds of millions in savings" for utility operators. Announced at a coal plant on the Ohio River in Louisville, Kentucky.</p>
-          <div class="pc-foot">
-            <span class="badge sr"><span class="badge-dot" style="background:#d99898"></span>Trump Admin (R)</span>
-            <span class="badge pr">Party-Line</span>
-          </div>
-        </div>
-
-        <div class="pcard-policy opp">
-          <div class="pc-meta"><span class="pc-date">FEB 2026</span></div>
-          <h4 class="pc-h4"><a href="https://biologicaldiversity.org/w/news/press-releases/epa-reapproves-dangerous-drift-prone-pesticide-dicamba-2026-02-06/" target="_blank" rel="noopener">EPA Reapproves Dicamba With Weakened Restrictions</a></h4>
-          <p class="pc-p">EPA reapproved dicamba (described by experts as causing "the worst drift of any herbicide in the history of U.S. agriculture") with fewer protections than previous versions. Eliminated seasonal cutoff dates and temperature-based spray restrictions that had limited its spread. Since 2016, dicamba drift has damaged millions of acres of crops, orchards, vegetable farms, and wildlife refuges. Threatens monarch butterflies and rusty patched bumblebees. Federal courts had struck down two prior EPA approvals (2020, 2024) before this third approval.</p>
-          <div class="pc-foot">
-            <span class="badge sr"><span class="badge-dot" style="background:#d99898"></span>Trump Admin (R)</span>
-            <span class="badge pr">Executive Action</span>
-            <span class="vote-tally">Courts struck down twice before</span>
-          </div>
-        </div>
-
-        <div class="pcard-policy opp">
-          <div class="pc-meta"><span class="pc-date">NOV 2025</span></div>
-          <h4 class="pc-h4"><a href="https://biologicaldiversity.org/w/news/press-releases/trump-epa-approves-its-second-forever-chemical-pesticide-in-two-weeks-2025-11-20/" target="_blank" rel="noopener">EPA Approves Isocycloseram — A PFAS Pesticide</a></h4>
-          <p class="pc-p">Trump EPA approved isocycloseram for use on food crops (oranges, tomatoes, almonds, peas, oats), golf courses, and lawns, despite being a PFAS "forever chemical" that breaks down into 40 additional PFAS compounds. Linked to reduced sperm count, smaller testicle size, and liver toxicity. The approval omitted a child-safety buffer despite children's heightened sensitivity. Bees near treated fields may be exposed to 1,500 times the lethal dose. The second PFAS pesticide approved by this EPA within two weeks.</p>
-          <div class="pc-foot">
-            <span class="badge sr"><span class="badge-dot" style="background:#d99898"></span>Trump Admin (R)</span>
-            <span class="badge pr">Executive Action</span>
-            <span class="vote-tally">Industry-aligned</span>
-          </div>
-        </div>
-
-        <div class="pcard-policy opp">
-          <div class="pc-meta"><span class="pc-date">AUG 2025</span></div>
-          <h4 class="pc-h4"><a href="https://www.epa.gov/ingredients-used-pesticide-products/glyphosate" target="_blank" rel="noopener">EPA Glyphosate Registration Review</a></h4>
-          <p class="pc-p">EPA renewed glyphosate's pesticide registration for 15 years despite ~181,000 pending cancer lawsuits (non-Hodgkin's lymphoma), a $2.1 billion Georgia jury verdict, and the Trump DOJ filing a brief urging the Supreme Court to side with Bayer and strip cancer victims of their right to sue under state law. MAHA supporters had previously blocked a glyphosate liability shield from an appropriations rider; the administration then did the opposite. <em>Cross-partisan response: Rep. Thomas Massie's No Immunity for Glyphosate Act, co-sponsored by Pingree, Boebert, Mace, and Khanna, would restore victims' right to sue, but has not advanced to a floor vote.</em></p>
-          <div class="pc-foot">
-            <span class="badge sr"><span class="badge-dot" style="background:#d99898"></span>Trump Admin (R)</span>
-            <span class="vote-tally">Industry-aligned</span>
-          </div>
-        </div>
-
-        <div class="pcard-policy opp">
-          <div class="pc-meta"><span class="pc-date">APR 2025</span></div>
-          <h4 class="pc-h4"><a href="https://www.epa.gov/newsreleases/trump-epa-announces-next-steps-regulatory-pfoa-and-pfos-cleanup-efforts-provides" target="_blank" rel="noopener">PFAS Drinking Water Rule Rollback</a></h4>
-          <p class="pc-p">Trump EPA initiated formal review to weaken or suspend Biden's PFAS drinking water standards, potentially stripping protections for the 100+ million Americans in communities with PFAS-contaminated water systems.</p>
-          <div class="pc-foot">
-            <span class="badge sr"><span class="badge-dot" style="background:#d99898"></span>Trump Admin (R)</span>
-            <span class="badge pr">Party-Line</span>
-          </div>
-        </div>
-
-        <div class="pcard-policy opp">
-          <div class="pc-meta"><span class="pc-date">MAR 2025</span></div>
-          <h4 class="pc-h4"><a href="https://www.epa.gov/wotus" target="_blank" rel="noopener">WOTUS Rule Elimination</a></h4>
-          <p class="pc-p">Eliminated Biden-era Waters of the United States rule, removing federal protections for an estimated 51% of the nation's wetlands and many seasonal streams, the waters that filter drinking supplies for millions of Americans.</p>
-          <div class="pc-foot">
-            <span class="badge sr"><span class="badge-dot" style="background:#d99898"></span>Trump Admin (R)</span>
-            <span class="badge pr">Party-Line</span>
-            <span class="vote-tally"><span class="r">R-only</span></span>
-          </div>
-        </div>
-
-        <div class="pcard-policy opp">
-          <div class="pc-meta"><span class="pc-date">FEB 2025</span></div>
-          <h4 class="pc-h4"><a href="https://www.epa.gov/npdes/animal-feeding-operations-regulations-guidance-and-studies" target="_blank" rel="noopener">EPA CAFO Effluent Guideline Withdrawal</a></h4>
-          <p class="pc-p">Trump EPA withdrew proposed rules that would have required factory farms to reduce discharge of ammonia, pathogens, and pharmaceuticals into waterways, eliminating water quality protections for communities near industrial livestock operations.</p>
-          <div class="pc-foot">
-            <span class="badge sr"><span class="badge-dot" style="background:#d99898"></span>Trump Admin (R)</span>
-            <span class="badge pr">Executive Action</span>
-          </div>
-        </div>
-
-        <div class="pcard-policy opp">
-          <div class="pc-meta"><span class="pc-date">DEC 2024</span></div>
-          <h4 class="pc-h4"><a href="https://www.nyu.edu/about/news-publications/news/2024/august/legal-loophole-unsafe-ingredients.html" target="_blank" rel="noopener">FDA Takes No Action on GRAS Loophole Throughout Biden Term</a></h4>
-          <p class="pc-p">Under current FDA rules, food companies can self-certify new food additives as "Generally Recognized as Safe" (GRAS) without notifying or seeking approval from the agency. Thousands of chemicals have entered the U.S. food supply through this pathway without independent government safety review. The Biden FDA acknowledged the problem but took no action to reform the process. At a December 2024 Senate hearing, FDA Commissioner Robert Califf defended inaction, citing legal risk and limited staff. Scientists and legal experts at Harvard characterized the GRAS system as "a laissez-faire approach to monitoring ingredient safety" that poses a direct threat to public health.</p>
-          <div class="pc-foot">
-            <span class="badge sd"><span class="badge-dot" style="background:#8ab5de"></span>Biden Administration</span>
-          </div>
-        </div>
-
-        <div class="pcard-policy opp">
-          <div class="pc-meta"><span class="pc-date">2024</span></div>
-          <h4 class="pc-h4"><a href="https://time.com/7336883/epa-pfas-pesticides-health-risks/" target="_blank" rel="noopener">Biden EPA Continued Registering PFAS-Containing Pesticides</a></h4>
-          <p class="pc-p">A 2024 analysis identified 66 active pesticide ingredients registered with the EPA between 1972 and 2021 that meet the OECD definition of PFAS, "forever chemicals" that do not break down in the environment. California agricultural fields alone are sprayed with an average of 2.5 million pounds of PFAS pesticides per year. Many of these ingredients break down into trifluoroacetic acid (TFA), which is increasingly detected in groundwater and linked to liver toxicity. Throughout the Biden term, the EPA continued approving these compounds without assessing cumulative TFA contamination risks or treating PFAS pesticides as a class.</p>
-          <div class="pc-foot">
-            <span class="badge sd"><span class="badge-dot" style="background:#8ab5de"></span>Biden Administration</span>
-          </div>
-        </div>
-
-        <div class="pcard-policy opp">
-          <div class="pc-meta"><span class="pc-date">NOV 2023</span></div>
-          <h4 class="pc-h4"><a href="https://www.npr.org/2023/07/11/1185499996/congress-tackles-food-stamp-changes-in-the-farm-bill" target="_blank" rel="noopener">Farm Bill SNAP Eligibility Restrictions</a></h4>
-          <p class="pc-p">Republican-negotiated Farm Bill provisions tightened SNAP work requirements and eligibility, reducing food access for an estimated 750,000 households, disproportionately in rural food deserts and among formerly incarcerated individuals.</p>
-          <div class="pc-foot">
-            <span class="badge sr"><span class="badge-dot" style="background:#d99898"></span>Republican Provision</span>
-            <span class="vote-tally"><span class="d">12D</span> <span class="r">185R</span> Yes</span>
-          </div>
-        </div>
-
-        <div class="pcard-policy opp">
-          <div class="pc-meta"><span class="pc-date">MAR 2023</span></div>
-          <h4 class="pc-h4"><a href="https://www.npr.org/2023/03/13/1163075377/willow-drilling-project-alaska-approved-biden" target="_blank" rel="noopener">Biden Administration Approves Willow Project Oil Drilling in Alaska's Arctic</a></h4>
-          <p class="pc-p">The Biden administration approved ConocoPhillips' Willow Project, a 30-year, $8 billion oil drilling operation in Alaska's National Petroleum Reserve, despite more than 3 million petition signatures in opposition and Biden's own 2020 pledge to end new drilling on federal lands. The scaled-down approval authorizes three drill pads and up to 150 oil wells, projected to produce 180,000 barrels per day at peak and generate approximately 260 million metric tons of carbon emissions over the project's lifetime. The decision drew immediate legal challenges from environmental groups and illustrated the gap between the administration's climate commitments and its energy policy decisions.</p>
-          <div class="pc-foot">
-            <span class="badge sd"><span class="badge-dot" style="background:#8ab5de"></span>Biden Administration</span>
-          </div>
-        </div>
-
-        <div class="pcard-policy opp">
-          <div class="pc-meta"><span class="pc-date">JAN 2023</span></div>
-          <h4 class="pc-h4"><a href="https://www.dlapiper.com/en-us/insights/publications/2023/01/epa-delays-setting-pfas-effluent-limitations-asks-states-to-fill-the-temporary-gap" target="_blank" rel="noopener">Biden EPA Delays PFAS Industrial Discharge Limits</a></h4>
-          <p class="pc-p">In January 2023, the Biden EPA announced it would postpone setting Effluent Limitation Guidelines, rules that cap how much PFAS industry can discharge into rivers, lakes, and waterways. The delay left a primary source of PFAS contamination unregulated, with no binding restrictions on industrial discharge. Environmental groups had documented PFAS entering drinking water sources downstream of manufacturing facilities. The guidelines were never finalized during the Biden term, leaving the gap in place when the administration ended.</p>
-          <div class="pc-foot">
-            <span class="badge sd"><span class="badge-dot" style="background:#8ab5de"></span>Biden Administration</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ╔══════════════════════════════╗ -->
-<!-- ║        STATE LAWS           ║ -->
-<!-- ╚══════════════════════════════╝ -->
-<section id="states">
-  <div class="inner">
-    <p class="eyebrow teal">Across the country</p>
-    <h2 class="section-h2">State Policy Tracker</h2>
-    <p class="section-lead">Enacted state-level laws on food safety and environmental health. Filter by category, governor's party, or state.</p>
-
-    <div class="filters">
-      <button class="fbtn on" data-f="all">All</button>
-      <button class="fbtn" data-f="adv">Advancing Health</button>
-      <button class="fbtn" data-f="opp">Opposing Health</button>
-      <button class="fbtn" data-f="gd">Dem Governor</button>
-      <button class="fbtn" data-f="gr">Rep Governor</button>
-      <label for="state-sel" class="sr-only">Filter by state</label>
-      <select class="fselect" id="state-sel" aria-label="Filter by state">
-        <option value="all">All States</option>
-        <option value="ca">California</option>
-        <option value="co">Colorado</option>
-        <option value="ct">Connecticut</option>
-        <option value="fl">Florida</option>
-        <option value="ga">Georgia</option>
-        <option value="ia">Iowa</option>
-        <option value="il">Illinois</option>
-        <option value="me">Maine</option>
-        <option value="mn">Minnesota</option>
-        <option value="ny">New York</option>
-        <option value="tx">Texas</option>
-        <option value="va">Virginia</option>
-        <option value="vt">Vermont</option>
-        <option value="wa">Washington</option>
-        <option value="wv">West Virginia</option>
-      </select>
-    </div>
-
-    <div class="two-col reveal" id="state-grid">
-      <!-- ADVANCING -->
-      <div id="col-adv">
-        <div class="col-head">
-          <div class="col-bar adv"></div>
-          <span class="col-lbl adv">Advancing Health</span>
-        </div>
-
-        <div class="pcard-policy adv sc" data-st="vt" data-ty="adv" data-gov="gr">
-          <div class="pc-meta">
-            <span class="pc-date">MAY 2026</span>
-            <span class="badge st">Vermont</span>
-          </div>
-          <h4 class="pc-h4"><a href="https://legislature.vermont.gov/bill/status/2026/H.739" target="_blank" rel="noopener">H. 739 — First U.S. Ban on Paraquat</a></h4>
-          <p class="pc-p">Vermont's Democratic-controlled legislature passed H. 739, becoming the first U.S. state to ban paraquat, an herbicide that more than 70 countries — including the EU and China — have already prohibited. Exposure to paraquat doubles the risk of Parkinson's disease compared to other pesticides; research also links it to non-Hodgkin lymphoma and childhood leukemia. Syngenta, the primary manufacturer, announced it would cease production in March 2026. The bill awaits signature from Republican Gov. Phil Scott and phases in a full ban by December 2030. <a href="https://www.thenewlede.org/2026/05/vermont-bans-paraquat-linked-to-parkinsons/" target="_blank" rel="noopener">The New Lede</a> covered the passage with background on Syngenta's decades-long effort to suppress independent research on the herbicide's harms.</p>
-          <div class="pc-foot">
-            <span class="badge gr">Gov. Scott (R)</span>
-            <span class="badge bi">Bipartisan / Awaiting Signature</span>
-          </div>
-        </div>
-
-        <div class="pcard-policy adv sc" data-st="la" data-ty="adv" data-gov="gr">
-          <div class="pc-meta">
-            <span class="pc-date">JUN 2025</span>
-            <span class="badge st">Louisiana</span>
-          </div>
-          <h4 class="pc-h4"><a href="https://nationalaglawcenter.org/maha-movement-new-texas-and-louisiana-laws/" target="_blank" rel="noopener">SB 14 / Act 463 — School Food Additive Ban & Labeling</a></h4>
-          <p class="pc-p">Signed by Gov. Jeff Landry (R), SB 14 bans 15 food additives, including synthetic dyes and preservatives, from school meals starting the 2028–29 school year. The law also requires physicians and nurse practitioners to complete continuing education in nutrition and metabolic health, and mandates that food manufacturers attach a QR code to products containing any of 44 listed ingredients, giving consumers direct access to ingredient safety information at the point of purchase.</p>
-          <div class="pc-foot">
-            <span class="badge gr">Gov. Landry (R)</span>
-            <span class="badge bi">MAHA-aligned</span>
-          </div>
-        </div>
-
-        <div class="pcard-policy adv sc" data-st="tx" data-ty="adv" data-gov="gr">
-          <div class="pc-meta">
-            <span class="pc-date">MAY 2025</span>
-            <span class="badge st">Texas</span>
-          </div>
-          <h4 class="pc-h4"><a href="https://www.usnews.com/news/health-news/articles/2025-06-24/new-texas-law-could-change-how-food-additives-are-labeled-nationwide" target="_blank" rel="noopener">SB 314 — School Food Ban & First-in-Nation Additive Warning Labels</a></h4>
-          <p class="pc-p">Signed by Gov. Greg Abbott (R), SB 314 bans 17 food additives from school lunches starting the 2026–27 school year and establishes a statewide Nutrition Advisory Committee. A companion labeling law, the first of its kind in the U.S., requires warning labels on any food product sold in Texas that contains ingredients banned or restricted in Australia, Canada, the EU, or the UK. Companies must either add the warning, reformulate, or stop selling affected products in Texas. The labeling requirement is expected to create national pressure on manufacturers to reformulate.</p>
-          <div class="pc-foot">
-            <span class="badge gr">Gov. Abbott (R)</span>
-            <span class="badge bi">MAHA-aligned</span>
-          </div>
-        </div>
-
-
-        <div class="pcard-policy adv sc" data-st="wv" data-ty="adv" data-gov="gr">
-          <div class="pc-meta">
-            <span class="pc-date">MAR 2025</span>
-            <span class="badge st">West Virginia</span>
-          </div>
-          <h4 class="pc-h4"><a href="https://governor.wv.gov/article/governor-patrick-morrisey-signs-food-dye-legislation-law" target="_blank" rel="noopener">HB 2354 — School Food Dye Restrictions</a></h4>
-          <p class="pc-p">Banned synthetic food dyes including Red 40, Yellow 5 &amp; 6, Blue 1 &amp; 2 from all West Virginia public school meals starting August 2025, a Republican-led state taking concrete action on a MAHA priority, with near-unanimous bipartisan support.</p>
-          <div class="pc-foot">
-            <span class="badge gr">Gov. Morrisey (R)</span>
-            <span class="badge bi">Near-Unanimous</span>
-          </div>
-        </div>
-
-
-        <div class="pcard-policy adv sc" data-st="ca" data-ty="adv" data-gov="gd">
-          <div class="pc-meta">
-            <span class="pc-date">SEP 2024</span>
-            <span class="badge st">California</span>
-          </div>
-          <h4 class="pc-h4"><a href="https://www.nbcnews.com/news/us-news/california-governor-signs-legislation-prohibiting-six-artificial-dyes-rcna173232" target="_blank" rel="noopener">AB 2316 — California School Food Safety Act</a></h4>
-          <p class="pc-p">Banned six synthetic food dyes (Red 40, Yellow 5, Yellow 6, Blue 1, Blue 2, and Green 3) from all meals, drinks, and snacks served at California public schools statewide. First state-level school food dye ban in the U.S. Manufacturers required to reformulate products with natural alternatives by December 2027.</p>
-          <div class="pc-foot">
-            <span class="badge gd">Gov. Newsom (D)</span>
-            <span class="badge pd">Dem-Led</span>
-          </div>
-        </div>
-
-        <div class="pcard-policy adv sc" data-st="wa" data-ty="adv" data-gov="gd">
-          <div class="pc-meta">
-            <span class="pc-date">JUN 2024</span>
-            <span class="badge st">Washington</span>
-          </div>
-          <h4 class="pc-h4"><a href="https://ecology.wa.gov/waste-toxics/reducing-toxic-chemicals/washingtons-toxics-in-products-laws/pfas-in-food-packaging" target="_blank" rel="noopener">PFAS Food Packaging Restriction Act</a></h4>
-          <p class="pc-p">Banned PFAS in food packaging, food service ware, and cookware sold in Washington, among the strongest state PFAS restrictions in the country, with phased implementation for different product categories.</p>
-          <div class="pc-foot">
-            <span class="badge gd">Gov. Ferguson (D)</span>
-            <span class="badge bi">Bipartisan</span>
-          </div>
-        </div>
-
-
-        <div class="pcard-policy adv sc" data-st="ny" data-ty="adv" data-gov="gd">
-          <div class="pc-meta">
-            <span class="pc-date">DEC 2023</span>
-            <span class="badge st">New York</span>
-          </div>
-          <h4 class="pc-h4"><a href="https://www.governor.ny.gov/news/governor-hochul-signs-birds-and-bees-act-nation-leading-legislation-protect-new-yorkers-and" target="_blank" rel="noopener">S.1856-A — Birds and Bees Protection Act</a></h4>
-          <p class="pc-p">Banned neonicotinoid-treated corn, soybean, and wheat seeds, plus neonicotinoid use on outdoor ornamental plants and turf. Targets imidacloprid, thiamethoxam, and acetamiprid, the chemicals the EPA identified as driving "more than 200 species toward extinction." Called "nation-leading" by Hochul; Vermont and other states moving to follow.</p>
-          <div class="pc-foot">
-            <span class="badge gd">Gov. Hochul (D)</span>
-            <span class="badge pd">Dem-Led</span>
-          </div>
-        </div>
-
-        <div class="pcard-policy adv sc" data-st="ca" data-ty="adv" data-gov="gd">
-          <div class="pc-meta">
-            <span class="pc-date">OCT 2023</span>
-            <span class="badge st">California</span>
-          </div>
-          <h4 class="pc-h4"><a href="https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB418" target="_blank" rel="noopener">AB 418 — California Food Safety Act</a></h4>
-          <p class="pc-p">Banned four harmful food additives (Red Dye No. 3, Titanium Dioxide, Potassium Bromate, and Brominated Vegetable Oil) from food sold in California. The strongest state food additive law in U.S. history, affecting product formulations nationwide.</p>
-          <div class="pc-foot">
-            <span class="badge gd">Gov. Newsom (D)</span>
-            <span class="badge bi">Bipartisan</span>
-            <span class="vote-tally">D-led legislature</span>
-          </div>
-        </div>
-
-        <div class="pcard-policy adv sc" data-st="ct" data-ty="adv" data-gov="gd">
-          <div class="pc-meta">
-            <span class="pc-date">JUL 2023</span>
-            <span class="badge st">Connecticut</span>
-          </div>
-          <h4 class="pc-h4"><a href="https://nlihc.org/resource/new-tenant-protections-go-effect-connecticut-including-limits-late-charges-and-application" target="_blank" rel="noopener">SB 998 — Tenant Protections &amp; Habitability Act</a></h4>
-          <p class="pc-p">Strengthened housing habitability enforcement, making landlords liable for unsafe conditions including mold, faulty smoke detectors, and substandard ventilation. Added mandatory pre-move walk-through inspections to document health hazards before occupancy. Mold exposure is associated with respiratory illness, asthma, and immune dysfunction, disproportionately affecting low-income renters.</p>
-          <div class="pc-foot">
-            <span class="badge gd">Gov. Lamont (D)</span>
-            <span class="badge bi">Bipartisan</span>
-          </div>
-        </div>
-
-        <div class="pcard-policy adv sc" data-st="me" data-ty="adv" data-gov="gd">
-          <div class="pc-meta">
-            <span class="pc-date">MAY 2022</span>
-            <span class="badge st">Maine</span>
-          </div>
-          <h4 class="pc-h4"><a href="https://www.iatp.org/documents/first-nation-forever-chemical-policies-become-law-maine" target="_blank" rel="noopener">LD 2013 &amp; LD 1911 — PFAS Agricultural Laws</a></h4>
-          <p class="pc-p">First state to ban spreading municipal sludge (a major source of PFAS) on farmland and to phase out PFAS in pesticides and adjuvants by 2030. Created a $60 million farmer assistance fund for health monitoring, income replacement, and buyouts for irreparably contaminated farms. No other state had done either before Maine.</p>
-          <div class="pc-foot">
-            <span class="badge gd">Gov. Mills (D)</span>
-            <span class="badge bi">Bipartisan</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- OPPOSING -->
-      <div id="col-opp">
-        <div class="col-head">
-          <div class="col-bar opp"></div>
-          <span class="col-lbl opp">Opposing Health</span>
-        </div>
-
-        <div class="pcard-policy opp sc" data-st="ga" data-ty="opp" data-gov="gr">
-          <div class="pc-meta">
-            <span class="pc-date">MAY 2025</span>
-            <span class="badge st">Georgia</span>
-          </div>
-          <h4 class="pc-h4"><a href="https://www.bostonherald.com/2025/05/12/pesticides-liability-protection-georgia/" target="_blank" rel="noopener">Pesticide Liability Protection Act (Glyphosate Shield)</a></h4>
-          <p class="pc-p">Shields pesticide manufacturers from failure-to-warn lawsuits as long as federal label requirements are met, effectively protecting Bayer's Roundup from state court liability. Georgia becomes the second state to pass such a law, following North Dakota. A Georgia jury had awarded a cancer plaintiff $2.1 billion in March 2025, just before the law's passage. Bayer faces ~181,000 glyphosate-cancer claims nationally.</p>
-          <div class="pc-foot">
-            <span class="badge gr">Gov. Kemp (R)</span>
-            <span class="badge pr">Party-Line R</span>
-            <span class="vote-tally">Industry-backed</span>
-          </div>
-        </div>
-
-        <div class="pcard-policy opp sc" data-st="fl" data-ty="opp" data-gov="gr">
-          <div class="pc-meta">
-            <span class="pc-date">MAY 2024</span>
-            <span class="badge st">Florida</span>
-          </div>
-          <h4 class="pc-h4"><a href="https://www.flsenate.gov/Session/Bill/2024/1084" target="_blank" rel="noopener">SB 1084 — Pesticide Preemption Provision</a></h4>
-          <p class="pc-p">Included provisions preempting local government authority to restrict pesticide use beyond state minimums, eliminating local organic zones, pesticide-free parks, and school buffer restrictions. Backed heavily by the agricultural chemical industry.</p>
-          <div class="pc-foot">
-            <span class="badge gr">Gov. DeSantis (R)</span>
-            <span class="badge pr">Party-Line R</span>
-          </div>
-        </div>
-
-        <div class="pcard-policy opp sc" data-st="ia" data-ty="opp" data-gov="gr">
-          <div class="pc-meta">
-            <span class="pc-date">MAY 2024</span>
-            <span class="badge st">Iowa</span>
-          </div>
-          <h4 class="pc-h4"><a href="https://www.legis.iowa.gov/legislation/BillBook?ga=90&ba=SF2370" target="_blank" rel="noopener">SF 2370 — CAFO Rulemaking Preemption</a></h4>
-          <p class="pc-p">Codified Gov. Reynolds' executive order prohibiting the Iowa DNR from strengthening CAFO regulations, permanently blocking tighter rules on factory farm siting, particularly in environmentally sensitive karst terrain where contamination of groundwater is most severe. Passed 91-3 in the House.</p>
-          <div class="pc-foot">
-            <span class="badge gr">Gov. Reynolds (R)</span>
-            <span class="badge pr">Party-Line R</span>
-          </div>
-        </div>
-
-
-
-
+        <div class="ix-chips" id="ix-chips"></div>
+        <div id="ix-out"></div>
       </div>
     </div>
   </div>
@@ -1708,28 +1390,6 @@
 </section>
 
 <!-- ╔══════════════════════════════╗ -->
-<!-- ║          TIMELINE           ║ -->
-<!-- ╚══════════════════════════════╝ -->
-<section id="timeline">
-  <div class="inner">
-    <p class="eyebrow teal">May 2022 &ndash; November 2026</p>
-    <h2 class="section-h2">MAHA Timeline</h2>
-    <p class="section-lead">Key events in food &amp; environmental health policy. Click any event to expand.</p>
-
-
-    <div id="tl-cat-filters" class="tl-filters"></div>
-
-    <div class="tl-count" id="tl-count-bar"></div>
-
-    <div class="tl-wrap">
-      <div class="tl-spine"></div>
-      <div id="tl-list"></div>
-      <div class="tl-empty" id="tl-empty">No events match your filters</div>
-    </div>
-  </div>
-</section>
-
-<!-- ╔══════════════════════════════╗ -->
 <!-- ║          FOOTER             ║ -->
 <!-- ╚══════════════════════════════╝ -->
 <footer>
@@ -1739,314 +1399,419 @@
 </footer>
 
 <script>
+/* ═══════════════════════════════════════════════
+   SITE CHROME — counters, scorecard, reveal, bars
+   ═══════════════════════════════════════════════ */
+(function () {
+  'use strict';
+
+  var reduceMotion = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   // ── COUNTERS ──────────────────────────────────────────────
-  const countTo = (id, target, color) => {
-    const el = document.getElementById(id);
+  function countTo(id, target) {
+    var el = document.getElementById(id);
     if (!el) return;
-    let v = 0;
-    const step = target / 40;
-    const t = setInterval(() => {
+    if (reduceMotion) { el.textContent = target; return; }
+    var v = 0, step = target / 40;
+    var t = setInterval(function () {
       v = Math.min(v + step, target);
       el.textContent = Math.round(v);
       if (v >= target) clearInterval(t);
     }, 20);
-  };
+  }
 
-  // ── SCORECARD (auto-computed from DOM) ────────────────────
-  const buildScorecard = () => {
-    const fedAdv = [...document.querySelectorAll('.pcard-policy.adv:not(.sc)')];
-    const fedOpp = [...document.querySelectorAll('.pcard-policy.opp:not(.sc)')];
-    const stAdv  = [...document.querySelectorAll('.pcard-policy.adv.sc')];
-    const stOpp  = [...document.querySelectorAll('.pcard-policy.opp.sc')];
-
-    const hasR  = c => !!c.querySelector('.badge.sr');
-    const hasD  = c => !!c.querySelector('.badge.sd');
-    const isBip = c => (hasR(c) && hasD(c)) ||
-      [...c.querySelectorAll('.badge.bi')].some(b => /bipartisan/i.test(b.textContent));
-    const isD = c => hasD(c) && !hasR(c) && !isBip(c);
-    const isR = c => hasR(c) && !hasD(c) && !isBip(c);
-    const isB = c => isBip(c);
-
-    const fAdvD = fedAdv.filter(isD).length;
-    const fAdvR = fedAdv.filter(isR).length;
-    const fAdvB = fedAdv.filter(isB).length;
-    const fOppR = fedOpp.filter(isR).length;
-    const fOppD = fedOpp.filter(isD).length;
-
-    const sAdvD = stAdv.filter(c => c.dataset.gov === 'gd').length;
-    const sAdvR = stAdv.filter(c => c.dataset.gov === 'gr').length;
-    const sOppR = stOpp.filter(c => c.dataset.gov === 'gr').length;
-    const sOppD = stOpp.filter(c => c.dataset.gov === 'gd').length;
-
-    const totalAdv = fedAdv.length + stAdv.length;
-    const totalOpp = fedOpp.length + stOpp.length;
-    const totalBip = [...document.querySelectorAll('.pcard-policy')].filter(isBip).length;
-
-    countTo('st-adv', totalAdv);
-    countTo('st-opp', totalOpp);
-    countTo('st-bip', totalBip);
-
-    const bar = (label, cls, count, total) => {
-      if (!count) return '';
-      const pct = Math.round(count / total * 100);
-      const unit = count === 1 ? 'action' : 'actions';
-      return `<div class="bar-wrap">
-        <div class="bar-lbl">
-          <span class="bar-name ${cls}">${label}</span>
-          <span class="bar-count">${count} ${unit}</span>
-        </div>
-        <div class="bar-track"><div class="bar-fill ${cls}" data-w="${pct}%" style="width:0"></div></div>
-      </div>`;
-    };
-
-    const sep = '<p class="bar-level-lbl" style="margin-top:1.2rem">State</p>';
-
-    document.getElementById('bars-adv').innerHTML =
-      '<p class="bar-level-lbl">Federal</p>' +
-      bar('Democratic Administration', 'd', fAdvD, fedAdv.length) +
-      bar('Republican Administration', 'r', fAdvR, fedAdv.length) +
-      (fAdvB ? bar('Bipartisan / Transition', 'b', fAdvB, fedAdv.length) : '') +
-      sep +
-      bar('Democratic Governor', 'd', sAdvD, stAdv.length) +
-      bar('Republican Governor',  'r', sAdvR, stAdv.length);
-
-    document.getElementById('bars-opp').innerHTML =
-      '<p class="bar-level-lbl">Federal</p>' +
-      bar('Republican Administration', 'r', fOppR, fedOpp.length) +
-      bar('Democratic Administration', 'd', fOppD, fedOpp.length) +
-      sep +
-      bar('Republican Governor', 'r', sOppR, stOpp.length) +
-      (sOppD ? bar('Democratic Governor', 'd', sOppD, stOpp.length) : '');
-
-    requestAnimationFrame(() => animateBars());
-  };
-
-  window.addEventListener('load', () => {
-    // stagger hero elements
-    const heroEls = [
-      '.hero-eyebrow', '.hero-h1', '.hero-sub', '.hero-note', '.hero-visual'
-    ].map(s => document.querySelector(s)).filter(Boolean);
-
-    heroEls.forEach((el, i) => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(18px)';
-      el.style.transition = `opacity 0.7s ease ${i * 0.13}s, transform 0.7s ease ${i * 0.13}s`;
-      requestAnimationFrame(() => {
-        setTimeout(() => {
-          el.style.opacity = '1';
-          el.style.transform = 'translateY(0)';
-        }, 80);
-      });
+  // ── BAR ANIMATION ─────────────────────────────────────────
+  function animateBars() {
+    document.querySelectorAll('.bar-fill[data-w]').forEach(function (bar) {
+      bar.style.width = bar.dataset.w;
     });
+  }
 
-    setTimeout(() => buildScorecard(), 600);
+  // ── SCORECARD (computed from the record set) ──────────────
+  function buildScorecard(entries) {
+    var scored = entries.filter(function (e) { return e.enacted; });
+    var policy = scored.filter(function (e) { return e.level === 'federal' || e.level === 'state'; });
+    var pick = function (lvl, stance) {
+      return scored.filter(function (e) { return e.level === lvl && e.stance === stance; });
+    };
+    var fedAdv = pick('federal', 'advancing'), fedOpp = pick('federal', 'opposing');
+    var stAdv  = pick('state',   'advancing'), stOpp  = pick('state',   'opposing');
+
+    var isB = function (e) { return !!e.bipartisan; };
+    var isD = function (e) { return e.actorD && !e.actorR && !isB(e); };
+    var isR = function (e) { return e.actorR && !e.actorD && !isB(e); };
+    var n   = function (arr, fn) { return arr.filter(fn).length; };
+    var gov = function (arr, p) { return arr.filter(function (e) { return e.govParty === p; }).length; };
+
+    var fAdvD = n(fedAdv, isD), fAdvR = n(fedAdv, isR), fAdvB = n(fedAdv, isB);
+    var fOppR = n(fedOpp, isR), fOppD = n(fedOpp, isD);
+    var sAdvD = gov(stAdv, 'D'), sAdvR = gov(stAdv, 'R');
+    var sOppR = gov(stOpp, 'R'), sOppD = gov(stOpp, 'D');
+
+    countTo('st-adv', fedAdv.length + stAdv.length);
+    countTo('st-opp', fedOpp.length + stOpp.length);
+    countTo('st-bip', n(policy, isB));
+
+    function bar(label, cls, count, total) {
+      if (!count || !total) return '';
+      var pct = Math.round(count / total * 100);
+      return '<div class="bar-wrap">' +
+               '<div class="bar-lbl">' +
+                 '<span class="bar-name ' + cls + '">' + label + '</span>' +
+                 '<span class="bar-count">' + count + ' ' + (count === 1 ? 'action' : 'actions') + '</span>' +
+               '</div>' +
+               '<div class="bar-track"><div class="bar-fill ' + cls + '" data-w="' + pct + '%" style="width:0"></div></div>' +
+             '</div>';
+    }
+
+    var sep = '<p class="bar-level-lbl" style="margin-top:1.2rem">State</p>';
+    var adv = document.getElementById('bars-adv');
+    var opp = document.getElementById('bars-opp');
+    if (adv) {
+      adv.innerHTML = '<p class="bar-level-lbl">Federal</p>' +
+        bar('Democratic Administration', 'd', fAdvD, fedAdv.length) +
+        bar('Republican Administration', 'r', fAdvR, fedAdv.length) +
+        bar('Bipartisan / Transition',   'b', fAdvB, fedAdv.length) +
+        sep +
+        bar('Democratic Governor', 'd', sAdvD, stAdv.length) +
+        bar('Republican Governor', 'r', sAdvR, stAdv.length);
+    }
+    if (opp) {
+      opp.innerHTML = '<p class="bar-level-lbl">Federal</p>' +
+        bar('Republican Administration', 'r', fOppR, fedOpp.length) +
+        bar('Democratic Administration', 'd', fOppD, fedOpp.length) +
+        sep +
+        bar('Republican Governor', 'r', sOppR, stOpp.length) +
+        bar('Democratic Governor', 'd', sOppD, stOpp.length);
+    }
+    requestAnimationFrame(animateBars);
+  }
+
+  // ── HERO STAGGER ──────────────────────────────────────────
+  window.addEventListener('load', function () {
+    if (reduceMotion) return;
+    ['.hero-eyebrow', '.hero-h1', '.hero-sub', '.hero-note', '.hero-visual']
+      .map(function (s) { return document.querySelector(s); })
+      .filter(Boolean)
+      .forEach(function (el, i) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(18px)';
+        el.style.transition = 'opacity .7s ease ' + (i * 0.13) + 's, transform .7s ease ' + (i * 0.13) + 's';
+        requestAnimationFrame(function () {
+          setTimeout(function () { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }, 80);
+        });
+      });
   });
 
-
   // ── SCROLL REVEAL ─────────────────────────────────────────
-  const revealObs = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
+  var revealObs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e, i) {
       if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('in'), i * 80);
+        setTimeout(function () { e.target.classList.add('in'); }, i * 80);
         revealObs.unobserve(e.target);
       }
     });
   }, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach(function (el) { revealObs.observe(el); });
 
-  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
-
-  // ── BAR ANIMATION ─────────────────────────────────────────
-  const animateBars = () => {
-    document.querySelectorAll('.bar-fill[data-w]').forEach(bar => {
-      bar.style.width = bar.dataset.w;
-    });
-  };
-
-  const scoreObs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
+  // ── ANIMATE BARS WHEN SCORECARD SCROLLS IN ────────────────
+  var scoreObs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
       if (e.isIntersecting) { setTimeout(animateBars, 250); scoreObs.unobserve(e.target); }
     });
   }, { threshold: 0.15 });
-
-  const sc = document.getElementById('scorecard');
+  var sc = document.getElementById('scorecard');
   if (sc) scoreObs.observe(sc);
 
-  // ── STATE FILTERING ───────────────────────────────────────
-  let activeF = 'all';
-  let activeSt = 'all';
+  window.MT = { buildScorecard: buildScorecard, animateBars: animateBars };
+})();
+</script>
 
-  const applyFilter = () => {
-    document.querySelectorAll('.sc').forEach(card => {
-      const ty  = card.dataset.ty;
-      const gov = card.dataset.gov;
-      const st  = card.dataset.st;
+<script>
+/* ═══════════════════════════════════════════════
+   THE INDEX — one record set, many views
+   ═══════════════════════════════════════════════ */
+(function () {
+  'use strict';
 
-      let show = true;
-      if (activeF === 'adv' && ty !== 'adv') show = false;
-      if (activeF === 'opp' && ty !== 'opp') show = false;
-      if (activeF === 'gd'  && gov !== 'gd') show = false;
-      if (activeF === 'gr'  && gov !== 'gr') show = false;
-      if (activeSt !== 'all' && st !== activeSt) show = false;
-
-      card.style.display = show ? 'block' : 'none';
-    });
+  var LABEL = {
+    stance:   { advancing: 'Advancing health', opposing: 'Opposing health', neutral: 'Neutral / contested' },
+    level:    { federal: 'Federal policy', state: 'State policy', movement: 'Movement & media' },
+    category: { policy: 'Policy', politics: 'Politics', media: 'Media', event: 'Event' },
+    themes:   {
+      pesticides: 'Pesticides & herbicides', toxics: 'Toxic chemicals & pollution',
+      food: 'Food, nutrition & additives', foodaccess: 'Food access & assistance',
+      healthcare: 'Healthcare access & funding', medication: 'Medication & mental health',
+      vaccines: 'Vaccines', vectors: 'Ticks & vector-borne illness',
+      illness: 'Chronic disease & cancer'
+    }
+  };
+  var MARK  = { advancing: '▲', opposing: '▼', neutral: '■' };
+  var ORDER = {
+    stance:   ['advancing', 'opposing', 'neutral'],
+    level:    ['federal', 'state', 'movement'],
+    category: ['policy', 'politics', 'media', 'event'],
+    themes:   ['pesticides', 'toxics', 'food', 'foodaccess', 'healthcare', 'medication',
+               'vaccines', 'vectors', 'illness']
   };
 
-  document.querySelectorAll('.fbtn').forEach(btn => {
-    btn.setAttribute('aria-pressed', btn.classList.contains('on') ? 'true' : 'false');
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.fbtn').forEach(b => { b.classList.remove('on'); b.setAttribute('aria-pressed', 'false'); });
-      btn.classList.add('on');
-      btn.setAttribute('aria-pressed', 'true');
-      activeF = btn.dataset.f;
-      applyFilter();
-    });
-  });
+  var all = [], view = 'list', groupBy = 'year', query = '', stateFilter = '';
+  var active = { stance: [], level: [], category: [], themes: [] };
 
-  document.getElementById('state-sel').addEventListener('change', e => {
-    activeSt = e.target.value;
-    applyFilter();
-  });
+  var $ = function (s) { return document.querySelector(s); };
+  function esc(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+  function label(facet, v) { return (LABEL[facet] && LABEL[facet][v]) || v; }
 
-  // ── TIMELINE ──────────────────────────────────────────────
-  const TL_CAT = {
-    event:    { hex: '#e8a0b0', label: 'Event'    },
-    politics: { hex: '#e8a820', label: 'Politics' },
-    policy:   { hex: '#00c9b1', label: 'Policy'   },
-    media:    { hex: '#c084fc', label: 'Media'    },
-    history:  { hex: '#9ca3af', label: 'History'  },
-  };
-  const TL_TYPE = {
-    win:     { badge: '#10b981', bg: 'rgba(16,185,129,0.06)',  border: '#10b981', label: 'WIN'   },
-    loss:    { badge: '#ef4444', bg: 'rgba(239,68,68,0.06)',   border: '#ef4444', label: 'LOSS'  },
-    neutral: { badge: '#e8a820', bg: 'rgba(232,168,32,0.06)',  border: '#e8a820', label: 'EVENT' },
-  };
+  /* ---------- filtering ---------- */
+  function matches(e) {
+    for (var f in active) {
+      if (!active[f].length) continue;
+      var v = e[f];
+      if (Object.prototype.toString.call(v) === '[object Array]') {
+        var hit = false;
+        for (var j = 0; j < active[f].length; j++) {
+          if (v.indexOf(active[f][j]) !== -1) { hit = true; break; }
+        }
+        if (!hit) return false;
+      } else if (active[f].indexOf(v) === -1) return false;
+    }
+    if (stateFilter && e.state !== stateFilter) return false;
+    if (query) {
+      var hay = (e.title + ' ' + e.description + ' ' + (e.state || '') + ' ' +
+                 (e.tags || []).join(' ') + ' ' + e.dateLabel).toLowerCase();
+      var terms = query.toLowerCase().split(/\s+/).filter(Boolean);
+      for (var i = 0; i < terms.length; i++) if (hay.indexOf(terms[i]) === -1) return false;
+    }
+    return true;
+  }
 
-  let tlEvents = [];
-  let tlActiveCat     = 'all';
-  let tlActiveOutcome = 'all';
+  /* ---------- grouping ---------- */
+  function keyOf(e) {
+    if (groupBy === 'none')  return '';
+    if (groupBy === 'year')  return (e.date || '').slice(0, 4) || 'Undated';
+    return e[groupBy];
+  }
+  function groupLabel(k) {
+    if (groupBy === 'year' || groupBy === 'none') return k;
+    return label(groupBy, k);
+  }
+  function sortKeys(keys) {
+    if (groupBy === 'year') return keys.sort().reverse();
+    var ord = ORDER[groupBy];
+    if (ord) return keys.sort(function (a, b) { return ord.indexOf(a) - ord.indexOf(b); });
+    return keys.sort();
+  }
 
-  async function tlInit() {
-    try {
-      const res = await fetch('events.json?v=' + Date.now());
-      if (!res.ok) throw new Error(res.status);
-      tlEvents = (await res.json()).reverse();
-    } catch (e) {
-      const el = document.getElementById('tl-empty');
-      if (el) { el.textContent = 'Could not load events. Please try refreshing.'; el.classList.add('show'); }
+  /* ---------- rendering ---------- */
+  function recordHTML(e) {
+    var tags = '<span class="ix-tag stance ' + e.stance + '">' +
+                 MARK[e.stance] + ' ' + esc(label('stance', e.stance)) + '</span>' +
+               '<span class="ix-tag lvl">' + esc(label('level', e.level)) + '</span>' +
+               '<span class="ix-tag">' + esc(label('category', e.category)) + '</span>' +
+               (e.state ? '<span class="ix-tag">' + esc(e.state) +
+                 (e.govParty ? ' · Gov. ' + esc(e.govParty) : '') + '</span>' : '') +
+               (e.themes || []).map(function (t) {
+                 return '<span class="ix-tag theme">' + esc(label('themes', t)) + '</span>'; }).join('') +
+
+               (e.tags || []).map(function (t) { return '<span class="ix-tag">' + esc(t) + '</span>'; }).join('');
+
+    return '<details class="ix-rec" data-stance="' + e.stance + '" id="' + e.id + '">' +
+             '<summary>' +
+               '<span class="ix-rail-bar" aria-hidden="true"></span>' +
+               '<span class="ix-date">' + esc(e.dateLabel) + '</span>' +
+               '<span class="ix-main">' +
+                 '<span class="ix-title">' + esc(e.title) + '</span>' +
+                 '<span class="ix-meta">' + tags + '</span>' +
+               '</span>' +
+               '<span class="ix-chev" aria-hidden="true">❯</span>' +
+             '</summary>' +
+             '<div class="ix-body">' +
+               '<p>' + esc(e.description) + '</p>' +
+               (e.sources && e.sources.length
+                 ? '<p class="ix-sources"><span>Sources</span> ' + e.sources.map(function (s) {
+                     return (s && s.url)
+                       ? '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.label || 'Source') + '</a>'
+                       : esc(s);
+                   }).join(' · ') + '</p>' : '') +
+               (e.link ? '<a class="ix-src" href="' + esc(e.link) + '" target="_blank" rel="noopener">Source ↗</a>' : '') +
+             '</div>' +
+           '</details>';
+  }
+
+  function render() {
+    var rows = all.filter(matches);
+    var out = $('#ix-out');
+
+    $('#ix-count').innerHTML = rows.length === all.length
+      ? '<b>' + all.length + '</b> records'
+      : '<b>' + rows.length + '</b> of ' + all.length + ' records';
+
+    renderChips();
+
+    if (!rows.length) {
+      out.innerHTML = '<div class="ix-empty"><strong>No records match.</strong>' +
+        'Try removing a filter or searching for a different term.</div>';
       return;
     }
-    tlBuildFilters();
-    tlRender();
+
+    var html = '', wrap = view === 'timeline' ? ' ix-tl' : '';
+
+    if (groupBy === 'none') {
+      html = '<div class="ix-recs">' + rows.map(recordHTML).join('') + '</div>';
+    } else {
+      var buckets = {};
+      rows.forEach(function (e) {
+        var k = keyOf(e);
+        (buckets[k] = buckets[k] || []).push(e);
+      });
+      sortKeys(Object.keys(buckets)).forEach(function (k) {
+        var n = buckets[k].length;
+        html += '<div class="ix-gh"><h3>' + esc(groupLabel(k)) + '</h3>' +
+                '<span class="ix-gn">' + n + ' record' + (n === 1 ? '' : 's') + '</span></div>' +
+                '<div class="ix-recs">' + buckets[k].map(recordHTML).join('') + '</div>';
+      });
+    }
+    out.className = wrap;
+    out.innerHTML = html;
   }
 
-  function tlBuildFilters() {
-    const catWrap = document.getElementById('tl-cat-filters');
-    if (!catWrap) return;
-    catWrap.innerHTML = ['all', ...Object.keys(TL_CAT)].map(c => {
-      const label = c === 'all' ? 'All' : TL_CAT[c].label;
-      const hex   = c === 'all' ? null : TL_CAT[c].hex;
-      const style = hex ? ` style="--pill-hex:${hex}"` : '';
-      return `<button class="tl-filter-btn${c === tlActiveCat ? ' active' : ''}" data-tlval="${c}"${style}>${label}</button>`;
-    }).join('');
-
-    catWrap.querySelectorAll('.tl-filter-btn').forEach(btn => {
-      btn.setAttribute('aria-pressed', btn.classList.contains('active') ? 'true' : 'false');
-      btn.addEventListener('click', () => {
-        tlActiveCat = btn.dataset.tlval;
-        catWrap.querySelectorAll('.tl-filter-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
-        btn.classList.add('active');
-        btn.setAttribute('aria-pressed', 'true');
-        tlRender();
+  function renderChips() {
+    var chips = [];
+    ['stance', 'level', 'category', 'themes'].forEach(function (f) {
+      active[f].forEach(function (v) {
+        chips.push('<span class="ix-chip">' + esc(label(f, v)) +
+          '<button type="button" data-rm-facet="' + f + '" data-rm-val="' + esc(v) +
+          '" aria-label="Remove filter ' + esc(label(f, v)) + '">×</button></span>');
       });
     });
+    if (stateFilter) {
+      chips.push('<span class="ix-chip">' + esc(stateFilter) +
+        '<button type="button" data-rm-state="1" aria-label="Remove state filter">×</button></span>');
+    }
+    if (query) {
+      chips.push('<span class="ix-chip">“' + esc(query) + '”' +
+        '<button type="button" data-rm-q="1" aria-label="Clear search">×</button></span>');
+    }
+    if (chips.length > 1) {
+      chips.push('<button class="ix-clear" type="button" id="ix-clearall">Clear all</button>');
+    }
+    $('#ix-chips').innerHTML = chips.join('');
   }
 
-  function tlSetCat(cat) {
-    tlActiveCat = cat;
-    document.querySelectorAll('#tl-cat-filters .tl-filter-btn').forEach(b => {
-      b.classList.toggle('active', b.dataset.tlval === cat);
-    });
-    tlRender();
-    document.getElementById('timeline').scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
+  /* ---------- facet construction ---------- */
+  function buildFacets() {
+    document.querySelectorAll('.ix-opts').forEach(function (box) {
+      var facet = box.dataset.facet;
+      var counts = {};
+      all.forEach(function (e) {
+        var v = e[facet];
+        (Object.prototype.toString.call(v) === '[object Array]' ? v : [v]).forEach(function (k) {
+          if (k) counts[k] = (counts[k] || 0) + 1;
+        });
+      });
+      var keys = ORDER[facet] || Object.keys(counts).sort();
 
-  function tlRender() {
-    const list  = document.getElementById('tl-list');
-    const empty = document.getElementById('tl-empty');
-    const count = document.getElementById('tl-count-bar');
-    if (!list) return;
-
-    // Normalise category to always be an array
-    const tlCats = ev => Array.isArray(ev.category) ? ev.category : [ev.category];
-    const tlMatch = ev => tlActiveCat === 'all' || tlCats(ev).includes(tlActiveCat);
-
-    // Filter by category; when a category is active show oldest→newest (chronological)
-    let filtered = tlActiveCat === 'all'
-      ? tlEvents.filter(ev => !tlCats(ev).includes('history'))
-      : tlEvents.filter(tlMatch).reverse();
-
-    count.textContent = tlActiveCat === 'all'
-      ? `${filtered.length} events`
-      : `${filtered.length} ${TL_CAT[tlActiveCat]?.label || tlActiveCat} events`;
-
-    empty.classList.remove('show');
-
-    list.innerHTML = filtered.map((ev, i) => {
-      const cats = tlCats(ev);
-      const primaryCat = TL_CAT[cats[0]] || { hex: '#e8a0b0' };
-      const pillsHtml = cats.map(c => {
-        const info = TL_CAT[c] || { hex: '#e8a0b0', label: c };
-        return `<span class="tl-cat-pill" style="color:${info.hex}; background:${info.hex}15; border-color:${info.hex}40; cursor:pointer;" onclick="event.stopPropagation(); tlSetCat('${c}')">${info.label}</span>`;
+      box.innerHTML = keys.filter(function (k) { return counts[k]; }).map(function (k) {
+        var mark = facet === 'stance'
+          ? '<span class="ix-mark ' + k + '" aria-hidden="true">' + MARK[k] + '</span>' : '';
+        return '<button type="button" class="ix-opt" data-facet="' + facet + '" data-val="' + esc(k) + '" aria-pressed="false">' +
+                 '<span class="ix-box" aria-hidden="true"></span>' + mark +
+                 '<span>' + esc(label(facet, k)) + '</span>' +
+                 '<span class="ix-n">' + counts[k] + '</span>' +
+               '</button>';
       }).join('');
-      const id = `tlcard-${i}`;
-      return `
-        <div class="tl-item">
-          <div class="tl-node">
-            <div class="tl-dot" style="background:${primaryCat.hex}; border:2px solid rgba(250,248,244,0.9);"></div>
-          </div>
-          <div class="tl-card"
-               data-tlid="${id}"
-               data-tlaccent="${primaryCat.hex}"
-               onclick="tlToggle(this)">
-            <div class="tl-card-top">
-              <div class="tl-card-meta">
-                <div class="tl-card-pills">
-                  ${pillsHtml}
-                </div>
-                <div class="tl-card-date">${ev.date}</div>
-                <h3 class="tl-card-title">${ev.title}</h3>
-              </div>
-              <div class="tl-card-chev" id="tlchev-${id}">&#9662;</div>
-            </div>
-            <div class="tl-card-body" id="tlbody-${id}">
-              <div class="tl-card-body-inner">
-                <p class="tl-card-desc">${ev.description}</p>
-                ${ev.link ? (() => {
-                  const links = Array.isArray(ev.link) ? ev.link : [ev.link];
-                  return links.map((s, i) => {
-                    const url = typeof s === 'string' ? s : s.url;
-                    const label = typeof s === 'string' ? (links.length > 1 ? `Source ${i+1}` : 'View Source') : s.label;
-                    return `<a class="tl-card-src" href="${url}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" style="color:#e8a820; border-color:#e8a82044;">&rarr; ${label}</a>`;
-                  }).join('');
-                })() : ''}
-              </div>
-            </div>
-          </div>
-        </div>`;
-    }).join('');
+    });
+
+    var states = {};
+    all.forEach(function (e) { if (e.state) states[e.state] = (states[e.state] || 0) + 1; });
+    var sel = $('#ix-state');
+    Object.keys(states).sort().forEach(function (s) {
+      var o = document.createElement('option');
+      o.value = s; o.textContent = s + ' (' + states[s] + ')';
+      sel.appendChild(o);
+    });
   }
 
-  function tlToggle(card) {
-    const id   = card.dataset.tlid;
-    const body = document.getElementById(`tlbody-${id}`);
-    const chev = document.getElementById(`tlchev-${id}`);
-    const open = body.classList.toggle('open');
-    chev.classList.toggle('open', open);
-    card.style.boxShadow = open ? `0 4px 28px ${card.dataset.tlaccent}22` : 'none';
+  /* ---------- events ---------- */
+  function wire() {
+    document.addEventListener('click', function (ev) {
+      var opt = ev.target.closest('.ix-opt');
+      if (opt) {
+        var f = opt.dataset.facet, v = opt.dataset.val, i = active[f].indexOf(v);
+        if (i === -1) active[f].push(v); else active[f].splice(i, 1);
+        opt.setAttribute('aria-pressed', i === -1 ? 'true' : 'false');
+        return render();
+      }
+      var vbtn = ev.target.closest('.ix-view');
+      if (vbtn) {
+        view = vbtn.dataset.view;
+        document.querySelectorAll('.ix-view').forEach(function (b) {
+          b.setAttribute('aria-pressed', String(b === vbtn));
+        });
+        return render();
+      }
+      var rm = ev.target.closest('[data-rm-facet]');
+      if (rm) {
+        var ff = rm.dataset.rmFacet, vv = rm.dataset.rmVal;
+        active[ff] = active[ff].filter(function (x) { return x !== vv; });
+        syncOpts();
+        return render();
+      }
+      if (ev.target.closest('[data-rm-state]')) { stateFilter = ''; $('#ix-state').value = ''; return render(); }
+      if (ev.target.closest('[data-rm-q]'))     { query = ''; $('#ix-search').value = '';   return render(); }
+      if (ev.target.closest('#ix-clearall')) {
+        active = { stance: [], level: [], category: [], themes: [] };
+        query = ''; stateFilter = '';
+        $('#ix-search').value = ''; $('#ix-state').value = '';
+        syncOpts();
+        return render();
+      }
+      var tog = ev.target.closest('#ix-filtoggle');
+      if (tog) {
+        var open = $('#ix-railbox').classList.toggle('open');
+        tog.setAttribute('aria-expanded', String(open));
+      }
+    });
+
+    var t;
+    $('#ix-search').addEventListener('input', function (e) {
+      clearTimeout(t);
+      var val = e.target.value;
+      t = setTimeout(function () { query = val.trim(); render(); }, 160);
+    });
+    $('#ix-state').addEventListener('change', function (e) { stateFilter = e.target.value; render(); });
+    $('#ix-groupby').addEventListener('change', function (e) { groupBy = e.target.value; render(); });
   }
 
-  tlInit();
+  function syncOpts() {
+    document.querySelectorAll('.ix-opt').forEach(function (o) {
+      o.setAttribute('aria-pressed', String(active[o.dataset.facet].indexOf(o.dataset.val) !== -1));
+    });
+  }
+
+  /* ---------- boot ---------- */
+  fetch('entries.json?v=' + Date.now())
+    .then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
+    .then(function (data) {
+      all = data;
+      buildFacets();
+      wire();
+      render();
+      if (window.MT && window.MT.buildScorecard) window.MT.buildScorecard(all);
+    })
+    .catch(function (err) {
+      $('#ix-out').innerHTML = '<div class="ix-empty"><strong>The index could not be loaded.</strong>' +
+        'Please refresh the page. (' + esc(err.message) + ')</div>';
+    });
+})();
 </script>
 </body>
 </html>
