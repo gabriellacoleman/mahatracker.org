@@ -1827,7 +1827,7 @@
     "date": "October 7, 2026",
     "title": "Democrats Court the MAHA Voter, Taking the Food Agenda and Leaving the Vaccines",
     "category": "politics",
-    "description": "STAT's Daniel Payne reported that party leaders had been meeting MAHA activists and working through the openings with consultants, while candidates rolled out food and environmental platforms meant to draw those voters across. What separates the version Democrats are offering from Kennedy's is as much what it omits as what it contains: they take up food and toxic exposure and leave his signature preoccupation with vaccine injury alone, a concern pollsters regard as fringe. Payne's framing carried a caution for the strategy too, that food and chemicals may weigh less with these voters than another health question entirely, the cost of care. Most of the article sits behind STAT's paywall.",
+    "description": "STAT's Daniel Payne reported that party leaders had been meeting MAHA activists and working through the openings with consultants, while candidates rolled out food and environmental platforms meant to draw those voters across. What separates the version Democrats are offering from Kennedy's is as much what it omits as what it contains: they take up food and toxic exposure and leave his signature preoccupation with vaccine injury alone, a concern pollsters regard as fringe. Payne's framing carried a caution for the strategy too, that food and chemicals may weigh less with these voters than another health question entirely, the cost of care.",
     "link": "https://www.statnews.com/2026/10/07/democrats-focus-on-food-toxins-win-maha-voters-midterm-elections/",
     "type": "neutral"
   },
@@ -1937,6 +1937,10 @@
       {
         "label": "CAP press release",
         "url": "https://www.americanprogress.org/press/release-cap-unveils-bold-new-agenda-to-make-food-safer-and-healthier-and-to-ban-harmful-chemicals/"
+      },
+      {
+        "label": "CAP: the full policy plan",
+        "url": "https://www.americanprogress.org/article/a-plan-to-provide-americans-with-healthy-and-safe-food-drinking-water-and-consumer-products/"
       }
     ],
     "type": "neutral"
