@@ -1602,7 +1602,14 @@
   function label(facet, v) { return (LABEL[facet] && LABEL[facet][v]) || v; }
 
   /* ---------- filtering ---------- */
+  /* Enacted government policy, as opposed to the movement's own record.
+     Written out rather than testing `e.stance`, which happens to divide the
+     same way today but is a presentation field and could drift. */
+  function isGovPolicy(e) {
+    return e.category === 'policy' && (e.level === 'federal' || e.level === 'state');
+  }
   function matches(e) {
+    if (view === 'timeline' && isGovPolicy(e)) return false;
     for (var f in active) {
       if (!active[f].length) continue;
       var v = e[f];
@@ -1740,6 +1747,13 @@
     if (chips.length > 1) {
       chips.push('<button class="ix-clear" type="button" id="ix-clearall">Clear all</button>');
     }
+    /* The view is not a filter you can clear, so it is announced ahead of the
+       filter chips and excluded from the Clear all count above. Its button
+       returns to the full list rather than removing a facet. */
+    if (view === 'timeline') {
+      chips.unshift('<span class="ix-chip">Movement record only \u2014 federal and state policy hidden' +
+        '<button type="button" data-show-all="1" aria-label="Show all records">\u00d7</button></span>');
+    }
     $('#ix-chips').innerHTML = chips.join('');
   }
 
@@ -1800,6 +1814,13 @@
         var ff = rm.dataset.rmFacet, vv = rm.dataset.rmVal;
         active[ff] = active[ff].filter(function (x) { return x !== vv; });
         syncOpts();
+        return render();
+      }
+      if (ev.target.closest('[data-show-all]')) {
+        view = 'list';
+        document.querySelectorAll('.ix-view').forEach(function (b) {
+          b.setAttribute('aria-pressed', String(b.dataset.view === 'list'));
+        });
         return render();
       }
       if (ev.target.closest('[data-rm-state]')) { stateFilter = ''; $('#ix-state').value = ''; return render(); }
