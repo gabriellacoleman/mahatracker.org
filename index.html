@@ -775,8 +775,12 @@
     .ix-layout { display: grid; grid-template-columns: 258px 1fr; gap: 44px; align-items: start; margin-top: 34px; }
 
     /* ---- top-level views: the Index gets a screen of its own ---- */
-    [data-screen] { display: none; }
-    [data-screen].view-on { display: block; }
+    /* !important is load-bearing: #hero carries `display: flex` on an ID selector,
+       which outranks any attribute or class rule, so without it the hero stayed on
+       screen in the Index view. Expressed as :not(.view-on) rather than a hide/show
+       pair so a visible section keeps its own display mode - the hero stays flex,
+       the others fall back to block. */
+    [data-screen]:not(.view-on) { display: none !important; }
     .nav-links a.active { color: var(--teal); }
 
     /* ---- filter rail ---- */
