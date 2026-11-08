@@ -1898,48 +1898,44 @@
   },
   {
     "date": "November 3, 2026",
-    "title": "Rob Sand Flips the Iowa Governorship on Cancer and Water Quality",
+    "title": "Democrats Win on Health: Sand Flips Iowa, El-Sayed Takes Michigan, Andrews Breaks South Carolina",
     "category": [
       "politics",
       "policy"
     ],
-    "description": "Rob Sand, the state auditor, beat Zach Lahn to become the first Democrat elected governor of Iowa in roughly two decades, in a race where the state's climbing cancer rate and farm pollution were the dominant issues. Sand had campaigned on them since the spring, behind a plan built around a cancer task force inside the state's health department, restored water quality monitoring, alerts when nitrate in drinking water passes the federal limit, wider radon testing and a refusal to shield pesticide manufacturers from lawsuits: \"We shouldn't be doing immunity for chemical companies that are sickening Iowans.\" He paired that with reversing Medicaid privatization on his first day in office, curbing pharmacy benefit managers and widening telehealth coverage, and described cancer as the issue most on Iowans' minds. Both nominees had criticised the Supreme Court's Roundup decision, which left the country's most closely watched agricultural race a contest over which of them would be harder on the chemical industry.",
+    "description": "Three Democrats took major races on explicitly health-centred campaigns, in a cycle that otherwise punished MAHA-aligned Republicans. Rob Sand, Iowa's state auditor, beat Zach Lahn for the governorship, the first Democrat to win it in roughly two decades, in a race dominated by the state's climbing cancer rate and farm pollution; he had run since the spring on a cancer task force inside the state health department, restored water quality monitoring, nitrate alerts for drinking water, wider radon testing and a refusal to shield pesticide manufacturers from lawsuits — \"We shouldn't be doing immunity for chemical companies that are sickening Iowans.\" Abdul El-Sayed, a physician and former Detroit health commissioner, took Michigan's Senate seat from Mike Rogers, 52.5 percent to 45.5, and becomes the first Muslim elected to the chamber; he campaigned on Medicare for All as the way to save rural hospitals left exposed by the Republican-led One Big Beautiful Bill Act, working a call and response with crowds — \"Money in your …\" \"Pocket!\" \"Money out of …\" \"Politics!\" \"Medicare for …\" \"All!\" And Annie Andrews, a pediatrician, flipped South Carolina's seat against Darline Graham, whom Trump had appointed after her brother Lindsey Graham died in July. Andrews ran straight at the health secretary, promising to \"lead the charge to impeach and remove\" Kennedy, and built the case on vaccines: she holds his decades in the anti-vaccine movement responsible for pushing communities below the herd immunity threshold, and campaigned on South Carolina's measles outbreak, close to a thousand documented cases, with her campaign posting a measles FAQ for parents. She also ran on drug prices, private equity in health care, Medicaid cuts and funding for the CDC and NIH. No Democrat had won a Senate seat in the state since Fritz Hollings in 1998, and Trump carried it by eighteen points in 2024; Andrews is also the first woman South Carolina has sent to the Senate. She dates the candidacy to Kennedy's appointment: \"The day that RFK Jr. was nominated to lead HHS was the day that I really seriously started considering running for this seat,\" she told The New Republic in July, adding that \"RFK Jr. has been my professional archnemesis for decades, and there are thousands of pediatricians across the country who would say the same thing.\"",
     "link": [
       {
-        "label": "NBC News",
+        "label": "NBC News (Iowa)",
         "url": "https://www.nbcnews.com/politics/2026-election/rob-sand-democrat-iowa-governor-win-election-flip-zach-lahn-republican-rcna603365"
       },
       {
-        "label": "Iowa Public Radio",
+        "label": "Iowa Public Radio (Sand's plan)",
         "url": "https://www.iowapublicradio.org/political-news/2026-04-30/rob-sand-announces-water-quality-and-health-plan-with-emphasis-on-farmer-support"
       },
-      {
-        "label": "Mother Jones (via The Guardian)",
-        "url": "https://www.motherjones.com/environment/2026/08/cancer-rates-iowa-maha-pesticides-herbicides-glyphosate-farming-agriculture-midterm-elections-issues/"
-      }
-    ],
-    "type": "win"
-  },
-  {
-    "date": "November 3, 2026",
-    "title": "Abdul El-Sayed Wins Michigan's Senate Seat Running on Medicare for All",
-    "category": [
-      "politics",
-      "policy"
-    ],
-    "description": "Abdul El-Sayed, a physician and former Detroit health commissioner, beat Republican Mike Rogers for Michigan's Senate seat, 52.5 percent to 45.5, and becomes the first Muslim elected to the chamber. He campaigned on Medicare for All, pitching it as the way to save rural hospitals left exposed by the Republican-led One Big Beautiful Bill Act, and alongside it on erasing medical debt and taxing billionaire wealth. The Guardian recorded the call and response he ran with crowds: \"Money in your …\" \"Pocket!\" \"Money out of …\" \"Politics!\" \"Medicare for …\" \"All!\" The seat was part of the Democratic takeover of the Senate. In a cycle that went badly for MAHA-aligned Republicans, El-Sayed is among the few to win on explicitly health terms, and STAT has pointed to him and Iowa's Rob Sand as evidence that the energy behind the food and chemical agenda has shifted to the Democrats.",
-    "link": [
       {
         "label": "The Guardian",
         "url": "https://www.theguardian.com/us-news/2026/nov/05/midterms-science-doctors-maha"
       },
       {
-        "label": "Detroit News",
+        "label": "Detroit News (Michigan)",
         "url": "https://www.detroitnews.com/story/news/politics/elections/2026/11/03/michigan-senate-election-results-abdul-el-sayed-mike-rogers/92466965007/"
       },
       {
-        "label": "Axios",
-        "url": "https://www.axios.com/2026/11/04/michigan-senate-results-el-sayed-rogers"
+        "label": "CBS News (South Carolina)",
+        "url": "https://www.cbsnews.com/news/south-carolina-2026-senate-annie-andrews-darline-graham/"
+      },
+      {
+        "label": "The New Republic",
+        "url": "https://newrepublic.com/post/213024/annie-andrews-south-carolina-senate-lindsey-graham-rfk"
+      },
+      {
+        "label": "The 19th (measles and her run)",
+        "url": "https://19thnews.org/2026/02/annie-andrews-south-carolina-measles-pediatrician-senate/"
+      },
+      {
+        "label": "Daily Beast",
+        "url": "https://www.thedailybeast.com/rfk-jr-and-maha-suffer-brutal-election-night-wipeout"
       }
     ],
     "type": "win"
@@ -1948,7 +1944,7 @@
     "date": "November 3, 2026",
     "title": "Midterms: MAHA Candidates Routed, and the Agenda's Winners Are Democrats",
     "category": "politics",
-    "description": "MAHA's first real electoral test went badly. In Iowa, where Kennedy had called the governor's race \"the most important election going on in this country,\" Zach Lahn lost by double digits to Rob Sand despite Trump's post-primary endorsement and more than $1.5 million from MAHA-aligned PACs, and conceded saying he would keep pressing on cancer and water quality. The rest of the state went the same way: Reps. Mariannette Miller-Meeks and Zach Nunn, for both of whom Kennedy had campaigned, lost re-election, and Joe Mitchell lost Ashley Hinson's open seat to Democrat Lindsay James. Nationally the picture was no better. Kansas Sen. Roger Marshall, a physician who chairs the congressional MAHA Caucus, was beaten by Adam Hamilton, an unusual Republican loss of a Kansas Senate seat. In South Carolina, Darline Graham, whom Trump appointed to the seat after the death of her brother Lindsey Graham in July, lost to Annie Andrews, a pediatrician who had told The New Republic that \"RFK Jr. has been my professional archnemesis for decades.\" STAT counted at least eleven MAHA-aligned candidates defeated in all, Ken Paxton and Gov. Greg Abbott of Texas among them, while Democrats took the Senate and dozens of House seats. The candidates who won on something close to the agenda were Democrats: Sand, and Abdul El-Sayed, who took Michigan's Senate seat on Medicare for All. Ocasio-Cortez's House Democratic working group has produced a section titled \"Reclaiming MAHA and Protecting American Families,\" and Booker, who spoke in April at a rally against pesticide liability shields, framed the shift this way: \"A movement called MAHA caught fire in the vacuum we left behind.\" Whether that transfer holds is unsettled. MAHA's grassroots remain loyal to Kennedy and angry at Democrats over his treatment, with Zen Honeycutt calling the push to impeach him a \"colossal mistake.\"",
+    "description": "MAHA's first real electoral test went badly. In Iowa, where Kennedy had called the governor's race \"the most important election going on in this country,\" Zach Lahn lost by double digits to Rob Sand despite Trump's post-primary endorsement and more than $1.5 million from MAHA-aligned PACs, and conceded saying he would keep pressing on cancer and water quality. The rest of the state went the same way: Reps. Mariannette Miller-Meeks and Zach Nunn, for both of whom Kennedy had campaigned, lost re-election, and Joe Mitchell lost Ashley Hinson's open seat to Democrat Lindsay James. Nationally the picture was no better. Kansas Sen. Roger Marshall, a physician who chairs the congressional MAHA Caucus, was beaten by Adam Hamilton, an unusual Republican loss of a Kansas Senate seat. South Carolina's seat went to the Democrats too, Trump's appointee Darline Graham losing a state he had carried by eighteen points. STAT counted at least eleven MAHA-aligned candidates defeated in all, Ken Paxton and Gov. Greg Abbott of Texas among them, while Democrats took the Senate and dozens of House seats. The candidates who won on something close to the agenda were Democrats — Sand, El-Sayed and Annie Andrews — recorded separately on this timeline. Ocasio-Cortez's House Democratic working group has produced a section titled \"Reclaiming MAHA and Protecting American Families,\" and Booker, who spoke in April at a rally against pesticide liability shields, framed the shift this way: \"A movement called MAHA caught fire in the vacuum we left behind.\" Whether that transfer holds is unsettled. MAHA's grassroots remain loyal to Kennedy and angry at Democrats over his treatment, with Zen Honeycutt calling the push to impeach him a \"colossal mistake.\"",
     "link": [
       {
         "label": "NBC News",
