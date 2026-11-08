@@ -1308,9 +1308,10 @@
           <select id="ix-state" class="ix-barsel"><option value="">All states</option></select>
           <label class="sr-only" for="ix-year">Year</label>
           <select id="ix-year" class="ix-barsel"><option value="">All years</option></select>
-          <div class="ix-views" role="group" aria-label="View style">
+          <div class="ix-views" role="group" aria-label="Which records to show">
             <button class="ix-view" data-view="list" aria-pressed="true">List</button>
-            <button class="ix-view" data-view="timeline" aria-pressed="false">Timeline</button>
+            <button class="ix-view" data-view="policy" aria-pressed="false">Federal &amp; state policy</button>
+            <button class="ix-view" data-view="movement" aria-pressed="false">Movement timeline</button>
           </div>
         </div>
         <div class="ix-chips" id="ix-chips"></div>
@@ -1626,7 +1627,8 @@
     return e.category === 'policy' && (e.level === 'federal' || e.level === 'state');
   }
   function matches(e) {
-    if (view === 'timeline' && isGovPolicy(e)) return false;
+    if (view === 'movement' && isGovPolicy(e)) return false;
+    if (view === 'policy' && !isGovPolicy(e)) return false;
     for (var f in active) {
       if (!active[f].length) continue;
       var v = e[f];
@@ -1724,7 +1726,7 @@
       return;
     }
 
-    var html = '', wrap = view === 'timeline' ? ' ix-tl' : '';
+    var html = '', wrap = view === 'movement' ? ' ix-tl' : '';
 
     if (groupBy === 'none') {
       html = '<div class="ix-recs">' + rows.map(recordHTML).join('') + '</div>';
@@ -1772,8 +1774,11 @@
     /* The view is not a filter you can clear, so it is announced ahead of the
        filter chips and excluded from the Clear all count above. Its button
        returns to the full list rather than removing a facet. */
-    if (view === 'timeline') {
-      chips.unshift('<span class="ix-chip">Movement record only \u2014 federal and state policy hidden' +
+    if (view !== 'list') {
+      chips.unshift('<span class="ix-chip">' +
+        (view === 'policy'
+          ? 'Enacted federal and state policy only'
+          : 'Movement record only \u2014 policy hidden') +
         '<button type="button" data-show-all="1" aria-label="Show all records">\u00d7</button></span>');
     }
     $('#ix-chips').innerHTML = chips.join('');
