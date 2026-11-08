@@ -803,6 +803,23 @@
       color: var(--text-mid); margin: 0 0 9px; font-weight: 500; }
     .ix-opts { display: flex; flex-direction: column; gap: 2px; }
 
+    /* Collapsed facets: the rail used to stand taller than a laptop window,
+       so the last group sat below the fold. Closed by default it is about
+       300px and never needs its own scrollbar. The count badge is what makes
+       a closed group honest - you can see it is filtering without opening it. */
+    .ix-fgroup > summary { cursor: pointer; list-style: none; display: flex; align-items: center;
+      gap: 8px; margin: 0; padding: 7px 0; user-select: none; }
+    .ix-fgroup > summary::-webkit-details-marker { display: none; }
+    .ix-fgroup > summary::after { content: '\25be'; margin-left: auto; color: #9a9a8c;
+      font-size: .8rem; transition: transform .18s; }
+    .ix-fgroup[open] > summary::after { transform: rotate(180deg); }
+    .ix-fgroup > summary:hover { color: var(--forest); }
+    .ix-fgroup > summary:focus-visible { outline: 3px solid var(--teal-dark); outline-offset: 2px; }
+    .ix-fgroup[open] > .ix-opts { margin-top: 6px; }
+    .ix-fcount { font-family: 'DM Mono', monospace; font-size: .6rem; background: var(--forest-light);
+      color: #fff; border-radius: 9px; padding: 1px 6px; letter-spacing: 0; }
+    .ix-fcount:empty { display: none; }
+
     .ix-opt { display: flex; align-items: center; gap: 9px; width: 100%; text-align: left; cursor: pointer;
       font-family: 'Source Serif 4', serif; font-size: .9rem; color: var(--text-dark); background: none;
       border: 0; border-radius: 3px; padding: 6px 8px; line-height: 1.3; transition: background .13s; }
@@ -1260,25 +1277,25 @@
           <label class="sr-only" for="ix-search">Search records</label>
           <input type="search" id="ix-search" class="ix-search" placeholder="Search records…" autocomplete="off">
 
-          <div class="ix-group">
-            <p class="ix-glabel" id="ix-lbl-stance">Position on health</p>
+          <details class="ix-group ix-fgroup">
+            <summary class="ix-glabel" id="ix-lbl-stance">Position on health<span class="ix-fcount" data-count-for="stance"></span></summary>
             <div class="ix-opts" role="group" aria-labelledby="ix-lbl-stance" data-facet="stance"></div>
-          </div>
+          </details>
 
-          <div class="ix-group">
-            <p class="ix-glabel" id="ix-lbl-level">Arena</p>
+          <details class="ix-group ix-fgroup">
+            <summary class="ix-glabel" id="ix-lbl-level">Arena<span class="ix-fcount" data-count-for="level"></span></summary>
             <div class="ix-opts" role="group" aria-labelledby="ix-lbl-level" data-facet="level"></div>
-          </div>
+          </details>
 
-          <div class="ix-group">
-            <p class="ix-glabel" id="ix-lbl-category">Record type</p>
+          <details class="ix-group ix-fgroup">
+            <summary class="ix-glabel" id="ix-lbl-category">Record type<span class="ix-fcount" data-count-for="category"></span></summary>
             <div class="ix-opts" role="group" aria-labelledby="ix-lbl-category" data-facet="category"></div>
-          </div>
+          </details>
 
-          <div class="ix-group">
-            <p class="ix-glabel" id="ix-lbl-themes">Theme</p>
+          <details class="ix-group ix-fgroup">
+            <summary class="ix-glabel" id="ix-lbl-themes">Theme<span class="ix-fcount" data-count-for="themes"></span></summary>
             <div class="ix-opts ix-opts-scroll" role="group" aria-labelledby="ix-lbl-themes" data-facet="themes"></div>
-          </div>
+          </details>
         </div>
       </div>
 
@@ -1867,6 +1884,10 @@
   function syncOpts() {
     document.querySelectorAll('.ix-opt').forEach(function (o) {
       o.setAttribute('aria-pressed', String(active[o.dataset.facet].indexOf(o.dataset.val) !== -1));
+    });
+    document.querySelectorAll('.ix-fcount').forEach(function (c) {
+      var n = (active[c.dataset.countFor] || []).length;
+      c.textContent = n ? String(n) : '';
     });
   }
 
