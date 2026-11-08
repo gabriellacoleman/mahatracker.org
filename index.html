@@ -1632,19 +1632,25 @@
   }
   function groupLabel(k) {
     if (groupBy === 'year' || groupBy === 'none') return k;
+    if (groupBy === 'stance' && !k) return 'No position \u2014 not policy';
     return label(groupBy, k);
   }
   function sortKeys(keys) {
     if (groupBy === 'year') return keys.sort().reverse();
     var ord = ORDER[groupBy];
-    if (ord) return keys.sort(function (a, b) { return ord.indexOf(a) - ord.indexOf(b); });
+    if (ord) return keys.sort(function (a, b) {
+      var ia = ord.indexOf(a), ib = ord.indexOf(b);
+      return (ia < 0 ? ord.length : ia) - (ib < 0 ? ord.length : ib);
+    });
     return keys.sort();
   }
 
   /* ---------- rendering ---------- */
   function recordHTML(e) {
-    var tags = '<span class="ix-tag stance ' + e.stance + '">' +
-                 MARK[e.stance] + ' ' + esc(label('stance', e.stance)) + '</span>' +
+    var tags = (e.stance
+                 ? '<span class="ix-tag stance ' + e.stance + '">' +
+                     MARK[e.stance] + ' ' + esc(label('stance', e.stance)) + '</span>'
+                 : '') +
                '<span class="ix-tag lvl">' + esc(label('level', e.level)) + '</span>' +
                '<span class="ix-tag">' + esc(label('category', e.category)) + '</span>' +
                (e.state ? '<span class="ix-tag">' + esc(e.state) +
