@@ -31,6 +31,7 @@ sub is_gov { my $e = shift;
   ($e->{category}//'') eq 'policy' && (($e->{level}//'') eq 'federal' || ($e->{level}//'') eq 'state') }
 
 my (%seen_id, %by_norm, $gov, $mov);
+my ($unlinked, $unlinked_entries) = (0, 0);
 sub norm { my $s = lc($_[0] // ''); $s =~ s/[^a-z0-9 ]/ /g; $s =~ s/\s+/ /g; $s =~ s/^ | $//g; $s }
 
 for my $e (@$d) {
@@ -72,6 +73,16 @@ for my $e (@$d) {
     err("$id: a source has a label but no url") if $s->{label} && !$s->{url};
   }
   warn_("$id: no link and no sources") unless ($e->{link}//'') ne '' || @{ $e->{sources} || [] };
+
+  # A source named as a plain string carries no url, so it renders as text a
+  # reader cannot follow. Tolerable when the entry has a `link` to go to;
+  # a dead end when it has not, which is what this check surfaces.
+  my @named = grep { ref $_ ne 'HASH' } @{ $e->{sources} || [] };
+  $unlinked += @named;
+  $unlinked_entries++ if @named;
+  if (@named && ($e->{link} // '') eq '') {
+    warn_("$id: sources named but unreachable, and no link: " . join(", ", @named));
+  }
   push @{ $by_norm{ norm(substr($e->{title}//'', 0, 46)) } }, $id;
 }
 
@@ -90,6 +101,7 @@ for my $e (@$d) {
 }
 
 printf "%s: %d entries \x{2014} %d policy, %d movement\n", $file, scalar @$d, $gov // 0, $mov // 0;
+printf "  %d source names carry no url, across %d entries\n", $unlinked, $unlinked_entries if $unlinked;
 print "\n" . scalar(@err) . " error(s)\n";
 print "  \x{2717} $_\n" for @err;
 print "\n" . scalar(@warn) . " warning(s)\n";

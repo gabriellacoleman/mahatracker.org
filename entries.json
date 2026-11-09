@@ -313,9 +313,12 @@
       "govParty" : "",
       "id" : "e001",
       "level" : "federal",
-      "link" : "",
+      "link" : "https://www.concordmonitor.com/2026/10/16/rfk-allocates-rural-health-funding/",
       "sources" : [
-         "Concord Monitor"
+         {
+            "label" : "Concord Monitor",
+            "url" : "https://www.concordmonitor.com/2026/10/16/rfk-allocates-rural-health-funding/"
+         }
       ],
       "stance" : "neutral",
       "state" : "New Hampshire",
@@ -337,9 +340,12 @@
       "govParty" : "",
       "id" : "e002",
       "level" : "movement",
-      "link" : "",
+      "link" : "https://newrepublic.com/article/216613/rural-hospital-birth-closures-maternity-care-deserts",
       "sources" : [
-         "The New Republic"
+         {
+            "label" : "The New Republic",
+            "url" : "https://newrepublic.com/article/216613/rural-hospital-birth-closures-maternity-care-deserts"
+         }
       ],
       "stance" : "",
       "state" : "",
@@ -769,10 +775,16 @@
       "govParty" : "",
       "id" : "e019",
       "level" : "movement",
-      "link" : "",
+      "link" : "https://www.dailysignal.com/2026/08/09/rfk-jr-midterms-role-maha/",
       "sources" : [
-         "Daily Signal",
-         "Washington Examiner"
+         {
+            "label" : "Daily Signal",
+            "url" : "https://www.dailysignal.com/2026/08/09/rfk-jr-midterms-role-maha/"
+         },
+         {
+            "label" : "Washington Examiner",
+            "url" : "https://www.washingtonexaminer.com/?p=4708688"
+         }
       ],
       "stance" : "",
       "state" : "",
@@ -839,9 +851,12 @@
       "govParty" : "",
       "id" : "e022",
       "level" : "federal",
-      "link" : "",
+      "link" : "https://www.washingtonexaminer.com/?p=4648894",
       "sources" : [
-         "Washington Examiner"
+         {
+            "label" : "Washington Examiner",
+            "url" : "https://www.washingtonexaminer.com/?p=4648894"
+         }
       ],
       "stance" : "",
       "state" : "",
@@ -1004,10 +1019,16 @@
       "govParty" : "R",
       "id" : "e028",
       "level" : "state",
-      "link" : "",
+      "link" : "https://www.hhs.gov/maha/state-policies/index.html",
       "sources" : [
-         "HHS MAHA page",
-         "GAO-27-108853"
+         {
+            "label" : "HHS MAHA page",
+            "url" : "https://www.hhs.gov/maha/state-policies/index.html"
+         },
+         {
+            "label" : "GAO-27-108853",
+            "url" : "https://www.gao.gov/products/gao-27-108853"
+         }
       ],
       "stance" : "neutral",
       "state" : "Iowa",
@@ -1085,10 +1106,16 @@
       "govParty" : "R",
       "id" : "e033",
       "level" : "state",
-      "link" : "",
+      "link" : "https://www.hhs.gov/maha/state-policies/index.html",
       "sources" : [
-         "HHS MAHA page",
-         "GAO-27-108853"
+         {
+            "label" : "HHS MAHA page",
+            "url" : "https://www.hhs.gov/maha/state-policies/index.html"
+         },
+         {
+            "label" : "GAO-27-108853",
+            "url" : "https://www.gao.gov/products/gao-27-108853"
+         }
       ],
       "stance" : "neutral",
       "state" : "Montana",
