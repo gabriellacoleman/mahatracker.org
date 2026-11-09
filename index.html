@@ -774,6 +774,18 @@
 
     .ix-layout { display: grid; grid-template-columns: 258px 1fr; gap: 44px; align-items: start; margin-top: 34px; }
 
+    .ix-divider { margin: 3.2rem 0 0; padding-top: 2.4rem; border-top: 1px solid rgba(255,255,255,0.14); }
+    .section-h3 { font-family: 'Fraunces', Georgia, serif; font-size: 1.9rem; font-weight: 600;
+      line-height: 1.15; margin: .3rem 0 .9rem; }
+    .section-lead.light { color: rgba(255,255,255,0.74); }
+    /* The summary is a disclosure, but nothing said so. This does. */
+    .ix-howto { font-family: 'DM Mono', monospace; font-size: .72rem; letter-spacing: .04em;
+      color: var(--text-mid); margin: 0 0 14px; }
+    .ix-more { display: block; font-family: 'DM Mono', monospace; font-size: .66rem;
+      letter-spacing: .07em; text-transform: uppercase; color: var(--teal-dark); margin-top: 7px; }
+    .ix-rec[open] .ix-more { display: none; }
+    .ix-rec > summary:hover .ix-title { text-decoration: underline; text-underline-offset: 3px; }
+
     /* ---- top-level views: the Index gets a screen of its own ---- */
     /* !important is load-bearing: #hero carries `display: flex` on an ID selector,
        which outranks any attribute or class rule, so without it the hero stayed on
@@ -853,11 +865,6 @@
       padding: 7px 9px; border: 1px solid var(--cream-dark); border-radius: 3px; background: #fff;
       color: var(--text-mid); cursor: pointer; max-width: 170px; }
     .ix-barsel:focus-visible { outline: 3px solid var(--teal-dark); outline-offset: 1px; }
-    .ix-views { display: flex; border: 1px solid var(--cream-dark); border-radius: 3px; overflow: hidden; background: #fff; }
-    .ix-view { font-family: 'DM Mono', monospace; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase;
-      padding: 7px 13px; border: 0; background: none; cursor: pointer; color: var(--text-mid); }
-    .ix-view[aria-pressed="true"] { background: var(--forest); color: var(--cream); }
-    .ix-view:focus-visible { outline: 3px solid var(--teal-dark); outline-offset: -3px; }
 
     .ix-chips { display: flex; flex-wrap: wrap; gap: 7px; margin: 14px 0 0; min-height: 1px; }
     .ix-chip { display: inline-flex; align-items: center; gap: 7px; font-family: 'DM Mono', monospace; font-size: .7rem;
@@ -998,8 +1005,8 @@
   </button>
   <ul class="nav-links" id="nav-links">
     <li><a href="#primer">Primer</a></li>
-    <li><a href="#scorecard">Scorecard</a></li>
-    <li><a href="#index">The Index</a></li>
+    <li><a href="#scorecard">Policy &amp; Scorecard</a></li>
+    <li><a href="#index">Movement Timeline</a></li>
     <li><a href="#alternative">Alt. Path</a></li>
   </ul>
 </nav>
@@ -1007,13 +1014,14 @@
   /* The Index is a view, not a section you scroll past: the filter rail needs the
      full height of the window, which it cannot have with the scorecard above it.
      Hash-driven, so existing links and bookmarks still land where they did. */
-  var VIEW_OF = { primer: 'overview', scorecard: 'overview', alternative: 'overview', index: 'records' };
+  var VIEW_OF = { primer: 'overview', alternative: 'overview', scorecard: 'scorecard', index: 'movement' };
   function setView(view, scrollTo) {
     document.querySelectorAll('[data-screen]').forEach(function (s) {
       s.classList.toggle('view-on', s.getAttribute('data-screen') === view);
     });
     document.querySelectorAll('#nav-links a').forEach(function (a) {
-      a.classList.toggle('active', view === 'records' && a.getAttribute('href') === '#index');
+      var t = (a.getAttribute('href') || '').slice(1);
+      a.classList.toggle('active', view !== 'overview' && VIEW_OF[t] === view);
     });
     if (scrollTo) {
       var el = document.getElementById(scrollTo);
@@ -1213,7 +1221,7 @@
 <!-- ╔══════════════════════════════╗ -->
 <!-- ║        SCORECARD            ║ -->
 <!-- ╚══════════════════════════════╝ -->
-<section id="scorecard" data-screen="overview" class="view-on">
+<section id="scorecard" data-screen="scorecard">
   <div class="inner">
     <p class="eyebrow teal-dim">By the numbers</p>
     <h2 class="section-h2 light">Partisan Scorecard</h2>
@@ -1256,44 +1264,39 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ╔══════════════════════════════╗ -->
-<!-- ║          THE INDEX          ║ -->
-<!-- ╚══════════════════════════════╝ -->
-<section id="index" data-screen="records">
-  <div class="inner">
-    <p class="eyebrow teal">One record set, many views</p>
-    <h2 class="section-h2">The Index</h2>
-    <p class="section-lead">Every tracked item in one place: enacted federal and state policy alongside the movement’s political and media record. Search it, filter it, group it, or switch to <strong>Timeline</strong> to read the movement record on its own, without the policy. A position on health — <strong>advancing</strong>, <strong>opposing</strong> or <strong>neutral</strong> — is given only to enacted policy; a rally or an investigation is recorded, not scored. Every record links to its sources.</p>
+    <div class="ix-divider">
+      <p class="eyebrow teal-dim">The record behind the scorecard</p>
+      <h3 class="section-h3">Federal &amp; State Policy</h3>
+      <p class="section-lead light">Every enacted federal and state action counted above, searchable and filterable. Each is marked <strong>advancing</strong>, <strong>opposing</strong> or <strong>neutral</strong> on health.</p>
+    </div>
 
-    <div class="ix-layout">
+    <div class="ix-layout" id="policy-index">
       <!-- FILTER RAIL -->
       <div class="ix-rail">
-        <button class="ix-filtoggle" id="ix-filtoggle" aria-expanded="false" aria-controls="ix-railbox">Filters &amp; search</button>
-        <div class="ix-railbox" id="ix-railbox">
-          <label class="sr-only" for="ix-search">Search records</label>
-          <input type="search" id="ix-search" class="ix-search" placeholder="Search records…" autocomplete="off">
+        <button class="ix-filtoggle" aria-expanded="false" aria-controls="pol-railbox">Filters &amp; search</button>
+        <div class="ix-railbox" id="pol-railbox">
+          <label class="sr-only" for="pol-search">Search records</label>
+          <input type="search" id="pol-search" class="ix-search" placeholder="Search policy records…" autocomplete="off">
 
           <details class="ix-group ix-fgroup">
-            <summary class="ix-glabel" id="ix-lbl-themes">Theme<span class="ix-fcount" data-count-for="themes"></span></summary>
-            <div class="ix-opts" role="group" aria-labelledby="ix-lbl-themes" data-facet="themes"></div>
+            <summary class="ix-glabel" id="pol-lbl-themes">Theme<span class="ix-fcount" data-count-for="themes"></span></summary>
+            <div class="ix-opts" role="group" aria-labelledby="pol-lbl-themes" data-facet="themes"></div>
           </details>
 
           <details class="ix-group ix-fgroup">
-            <summary class="ix-glabel" id="ix-lbl-stance">Position on health<span class="ix-fcount" data-count-for="stance"></span></summary>
-            <div class="ix-opts" role="group" aria-labelledby="ix-lbl-stance" data-facet="stance"></div>
+            <summary class="ix-glabel" id="pol-lbl-stance">Position on health<span class="ix-fcount" data-count-for="stance"></span></summary>
+            <div class="ix-opts" role="group" aria-labelledby="pol-lbl-stance" data-facet="stance"></div>
           </details>
 
           <details class="ix-group ix-fgroup">
-            <summary class="ix-glabel" id="ix-lbl-level">Arena<span class="ix-fcount" data-count-for="level"></span></summary>
-            <div class="ix-opts" role="group" aria-labelledby="ix-lbl-level" data-facet="level"></div>
+            <summary class="ix-glabel" id="pol-lbl-level">Arena<span class="ix-fcount" data-count-for="level"></span></summary>
+            <div class="ix-opts" role="group" aria-labelledby="pol-lbl-level" data-facet="level"></div>
           </details>
 
           <details class="ix-group ix-fgroup">
-            <summary class="ix-glabel" id="ix-lbl-category">Record type<span class="ix-fcount" data-count-for="category"></span></summary>
-            <div class="ix-opts" role="group" aria-labelledby="ix-lbl-category" data-facet="category"></div>
+            <summary class="ix-glabel" id="pol-lbl-category">Record type<span class="ix-fcount" data-count-for="category"></span></summary>
+            <div class="ix-opts" role="group" aria-labelledby="pol-lbl-category" data-facet="category"></div>
           </details>
         </div>
       </div>
@@ -1301,20 +1304,65 @@
       <!-- RESULTS -->
       <div class="ix-results">
         <div class="ix-bar">
-          <p class="ix-count" id="ix-count" role="status" aria-live="polite"></p>
+          <p class="ix-count" role="status" aria-live="polite"></p>
           <span class="ix-spacer"></span>
-          <label class="sr-only" for="ix-state">State</label>
-          <select id="ix-state" class="ix-barsel"><option value="">All states</option></select>
-          <label class="sr-only" for="ix-year">Year</label>
-          <select id="ix-year" class="ix-barsel"><option value="">All years</option></select>
-          <div class="ix-views" role="group" aria-label="Which records to show">
-            <button class="ix-view" data-view="list" aria-pressed="true">List</button>
-            <button class="ix-view" data-view="policy" aria-pressed="false">Federal &amp; state policy</button>
-            <button class="ix-view" data-view="movement" aria-pressed="false">Movement timeline</button>
-          </div>
+          <label class="sr-only" for="pol-state">State</label>
+          <select id="pol-state" class="ix-barsel ix-state"><option value="">All states</option></select>
+          <label class="sr-only" for="pol-year">Year</label>
+          <select id="pol-year" class="ix-barsel ix-year"><option value="">All years</option></select>
         </div>
-        <div class="ix-chips" id="ix-chips"></div>
-        <div id="ix-out"></div>
+        <div class="ix-chips"></div>
+        <div class="ix-out"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════╗ -->
+<!-- ║          THE INDEX          ║ -->
+<!-- ╚══════════════════════════════╝ -->
+<section id="index" data-screen="movement">
+  <div class="inner">
+    <p class="eyebrow teal">The movement's own record</p>
+    <h2 class="section-h2">Movement Timeline</h2>
+    <p class="section-lead">Everything the movement did and had written about it — rallies, appointments, resignations, investigations, podcasts and the political fights around them — in date order, newest first. Enacted federal and state policy is tracked separately, under <a href="#scorecard">the Scorecard</a>. Nothing here carries a position on health: a rally or an investigation is recorded, not scored.</p>
+
+    <div class="ix-layout" id="movement-index">
+      <!-- FILTER RAIL -->
+      <div class="ix-rail">
+        <button class="ix-filtoggle" aria-expanded="false" aria-controls="mov-railbox">Filters &amp; search</button>
+        <div class="ix-railbox" id="mov-railbox">
+          <label class="sr-only" for="mov-search">Search records</label>
+          <input type="search" id="mov-search" class="ix-search" placeholder="Search the movement record…" autocomplete="off">
+
+          <details class="ix-group ix-fgroup">
+            <summary class="ix-glabel" id="mov-lbl-themes">Theme<span class="ix-fcount" data-count-for="themes"></span></summary>
+            <div class="ix-opts" role="group" aria-labelledby="mov-lbl-themes" data-facet="themes"></div>
+          </details>
+
+          <details class="ix-group ix-fgroup">
+            <summary class="ix-glabel" id="mov-lbl-level">Arena<span class="ix-fcount" data-count-for="level"></span></summary>
+            <div class="ix-opts" role="group" aria-labelledby="mov-lbl-level" data-facet="level"></div>
+          </details>
+
+          <details class="ix-group ix-fgroup">
+            <summary class="ix-glabel" id="mov-lbl-category">Record type<span class="ix-fcount" data-count-for="category"></span></summary>
+            <div class="ix-opts" role="group" aria-labelledby="mov-lbl-category" data-facet="category"></div>
+          </details>
+        </div>
+      </div>
+
+      <!-- RESULTS -->
+      <div class="ix-results">
+        <div class="ix-bar">
+          <p class="ix-count" role="status" aria-live="polite"></p>
+          <span class="ix-spacer"></span>
+          <label class="sr-only" for="mov-year">Year</label>
+          <select id="mov-year" class="ix-barsel ix-year"><option value="">All years</option></select>
+        </div>
+        <div class="ix-chips"></div>
+        <p class="ix-howto">Every entry opens. Click a title to read the summary and its sources.</p>
+        <div class="ix-out"></div>
       </div>
     </div>
   </div>
@@ -1603,14 +1651,6 @@
                'vaccines', 'vectors', 'illness']
   };
 
-  var all = [], view = 'list', query = '', stateFilter = '', yearFilter = '';
-  /* Grouping is fixed: the other keys duplicated the sidebar facets, which
-     filter the same fields more usefully. Year is the one cut the rail has no
-     control for, so the bar offers it as a filter instead. */
-  var groupBy = 'year';
-  var active = { stance: [], level: [], category: [], themes: [] };
-
-  var $ = function (s) { return document.querySelector(s); };
   function esc(s) {
     return String(s == null ? '' : s)
       .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
@@ -1618,299 +1658,288 @@
   }
   function label(facet, v) { return (LABEL[facet] && LABEL[facet][v]) || v; }
 
-  /* ---------- filtering ---------- */
   /* Enacted government policy, as opposed to the movement's own record.
      Written out rather than testing `e.stance`, which happens to divide the
      same way today but is a presentation field and could drift. */
   function isGovPolicy(e) {
     return e.category === 'policy' && (e.level === 'federal' || e.level === 'state');
   }
-  function matches(e) {
-    if (view === 'movement' && isGovPolicy(e)) return false;
-    if (view === 'policy' && !isGovPolicy(e)) return false;
-    for (var f in active) {
-      if (!active[f].length) continue;
-      var v = e[f];
-      if (Object.prototype.toString.call(v) === '[object Array]') {
-        var hit = false;
-        for (var j = 0; j < active[f].length; j++) {
-          if (v.indexOf(active[f][j]) !== -1) { hit = true; break; }
-        }
-        if (!hit) return false;
-      } else if (active[f].indexOf(v) === -1) return false;
-    }
-    if (stateFilter && e.state !== stateFilter) return false;
-    if (yearFilter && (e.date || '').slice(0, 4) !== yearFilter) return false;
-    if (query) {
-      var hay = (e.title + ' ' + e.description + ' ' + (e.state || '') + ' ' +
-                 (e.tags || []).join(' ') + ' ' + e.dateLabel).toLowerCase();
-      var terms = query.toLowerCase().split(/\s+/).filter(Boolean);
-      for (var i = 0; i < terms.length; i++) if (hay.indexOf(terms[i]) === -1) return false;
-    }
-    return true;
-  }
 
-  /* ---------- grouping ---------- */
-  function keyOf(e) {
-    if (groupBy === 'none')  return '';
-    if (groupBy === 'year')  return (e.date || '').slice(0, 4) || 'Undated';
-    return e[groupBy];
-  }
-  function groupLabel(k) {
-    if (groupBy === 'year' || groupBy === 'none') return k;
-    if (groupBy === 'stance' && !k) return 'No position \u2014 not policy';
-    return label(groupBy, k);
-  }
-  function sortKeys(keys) {
-    if (groupBy === 'year') return keys.sort().reverse();
-    var ord = ORDER[groupBy];
-    if (ord) return keys.sort(function (a, b) {
-      var ia = ord.indexOf(a), ib = ord.indexOf(b);
-      return (ia < 0 ? ord.length : ia) - (ib < 0 ? ord.length : ib);
-    });
-    return keys.sort();
-  }
+  /* ═══ one index per screen ═══
+     Two live on this page - enacted policy under the scorecard, the movement
+     record on its own - so state, selectors and handlers are all scoped to a
+     root element rather than to the document. Each gets the half of the data
+     its scope names, and never sees the other half. */
+  function createIndex(root, opts) {
+    if (!root) return { load: function () {}, fail: function () {} };
 
-  /* ---------- rendering ---------- */
-  function recordHTML(e) {
-    var tags = (e.stance
-                 ? '<span class="ix-tag stance ' + e.stance + '">' +
-                     MARK[e.stance] + ' ' + esc(label('stance', e.stance)) + '</span>'
-                 : '') +
-               '<span class="ix-tag lvl">' + esc(label('level', e.level)) + '</span>' +
-               '<span class="ix-tag">' + esc(label('category', e.category)) + '</span>' +
-               (e.state ? '<span class="ix-tag">' + esc(e.state) +
-                 (e.govParty ? ' · Gov. ' + esc(e.govParty) : '') + '</span>' : '') +
-               (e.themes || []).map(function (t) {
-                 return '<span class="ix-tag theme">' + esc(label('themes', t)) + '</span>'; }).join('') +
+    var all = [], scoped = [];
+    var query = '', stateFilter = '', yearFilter = '';
+    var groupBy = 'year';
+    var active = { stance: [], level: [], category: [], themes: [] };
 
-               (e.tags || []).map(function (t) { return '<span class="ix-tag">' + esc(t) + '</span>'; }).join('');
+    var $  = function (s) { return root.querySelector(s); };
+    var $$ = function (s) { return root.querySelectorAll(s); };
 
-    return '<details class="ix-rec" data-stance="' + e.stance + '" id="' + e.id + '">' +
-             '<summary>' +
-               '<span class="ix-rail-bar" aria-hidden="true"></span>' +
-               '<span class="ix-date">' + esc(e.dateLabel) + '</span>' +
-               '<span class="ix-main">' +
-                 '<span class="ix-title">' + esc(e.title) + '</span>' +
-                 '<span class="ix-meta">' + tags + '</span>' +
-               '</span>' +
-               '<span class="ix-chev" aria-hidden="true">❯</span>' +
-             '</summary>' +
-             '<div class="ix-body">' +
-               '<p>' + esc(e.description) + '</p>' +
-               (e.sources && e.sources.length
-                 ? '<p class="ix-sources"><span>Sources</span> ' + e.sources.map(function (s) {
-                     return (s && s.url)
-                       ? '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.label || 'Source') + '</a>'
-                       : esc(s);
-                   }).join(' · ') + '</p>' : '') +
-               (e.link ? '<a class="ix-src" href="' + esc(e.link) + '" target="_blank" rel="noopener">Source ↗</a>' : '') +
-             '</div>' +
-           '</details>';
-  }
+    function inScope(e) { return opts.scope === 'policy' ? isGovPolicy(e) : !isGovPolicy(e); }
 
-  function render() {
-    var rows = all.filter(matches);
-    var out = $('#ix-out');
-
-    $('#ix-count').innerHTML = rows.length === all.length
-      ? '<b>' + all.length + '</b> records'
-      : '<b>' + rows.length + '</b> of ' + all.length + ' records';
-
-    renderChips();
-
-    if (!rows.length) {
-      out.innerHTML = '<div class="ix-empty"><strong>No records match.</strong>' +
-        'Try removing a filter or searching for a different term.</div>';
-      return;
+    /* ---------- filtering ---------- */
+    function matches(e) {
+      for (var f in active) {
+        if (!active[f].length) continue;
+        var v = e[f];
+        if (Object.prototype.toString.call(v) === '[object Array]') {
+          var hit = false;
+          for (var j = 0; j < active[f].length; j++) {
+            if (v.indexOf(active[f][j]) !== -1) { hit = true; break; }
+          }
+          if (!hit) return false;
+        } else if (active[f].indexOf(v) === -1) return false;
+      }
+      if (opts.state && stateFilter && e.state !== stateFilter) return false;
+      if (yearFilter && (e.date || '').slice(0, 4) !== yearFilter) return false;
+      if (query) {
+        var hay = (e.title + ' ' + e.description + ' ' + (e.state || '') + ' ' +
+                   (e.tags || []).join(' ') + ' ' + e.dateLabel).toLowerCase();
+        var terms = query.toLowerCase().split(/\s+/).filter(Boolean);
+        for (var i = 0; i < terms.length; i++) if (hay.indexOf(terms[i]) === -1) return false;
+      }
+      return true;
     }
 
-    var html = '', wrap = view === 'movement' ? ' ix-tl' : '';
+    /* ---------- grouping ---------- */
+    function keyOf(e)      { return (e.date || '').slice(0, 4) || 'Undated'; }
+    function groupLabel(k) { return k; }
+    function sortKeys(ks)  { return ks.sort().reverse(); }
 
-    if (groupBy === 'none') {
-      html = '<div class="ix-recs">' + rows.map(recordHTML).join('') + '</div>';
-    } else {
-      var buckets = {};
-      rows.forEach(function (e) {
-        var k = keyOf(e);
-        (buckets[k] = buckets[k] || []).push(e);
-      });
+    /* ---------- rendering ---------- */
+    function recordHTML(e) {
+      var tags = (e.stance
+                   ? '<span class="ix-tag stance ' + e.stance + '">' +
+                       MARK[e.stance] + ' ' + esc(label('stance', e.stance)) + '</span>'
+                   : '') +
+                 '<span class="ix-tag lvl">' + esc(label('level', e.level)) + '</span>' +
+                 '<span class="ix-tag">' + esc(label('category', e.category)) + '</span>' +
+                 (e.state ? '<span class="ix-tag">' + esc(e.state) +
+                   (e.govParty ? ' · Gov. ' + esc(e.govParty) : '') + '</span>' : '') +
+                 (e.themes || []).map(function (t) {
+                   return '<span class="ix-tag theme">' + esc(label('themes', t)) + '</span>'; }).join('') +
+                 (e.tags || []).map(function (t) { return '<span class="ix-tag">' + esc(t) + '</span>'; }).join('');
+
+      return '<details class="ix-rec" data-stance="' + esc(e.stance) + '" id="' + esc(e.id) + '">' +
+               '<summary>' +
+                 '<span class="ix-rail-bar" aria-hidden="true"></span>' +
+                 '<span class="ix-date">' + esc(e.dateLabel) + '</span>' +
+                 '<span class="ix-main">' +
+                   '<span class="ix-title">' + esc(e.title) + '</span>' +
+                   '<span class="ix-meta">' + tags + '</span>' +
+                   '<span class="ix-more">Read summary and sources</span>' +
+                 '</span>' +
+                 '<span class="ix-chev" aria-hidden="true">❯</span>' +
+               '</summary>' +
+               '<div class="ix-body">' +
+                 '<p>' + esc(e.description) + '</p>' +
+                 (e.sources && e.sources.length
+                   ? '<p class="ix-sources"><span>Sources</span> ' + e.sources.map(function (s) {
+                       return (s && s.url)
+                         ? '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.label || 'Source') + '</a>'
+                         : esc(s);
+                     }).join(' · ') + '</p>' : '') +
+                 (e.link ? '<a class="ix-src" href="' + esc(e.link) + '" target="_blank" rel="noopener">Source ↗</a>' : '') +
+               '</div>' +
+             '</details>';
+    }
+
+    function render() {
+      var rows = scoped.filter(matches);
+      var out  = $('.ix-out');
+
+      $('.ix-count').innerHTML = rows.length === scoped.length
+        ? '<b>' + scoped.length + '</b> records'
+        : '<b>' + rows.length + '</b> of ' + scoped.length + ' records';
+
+      renderChips();
+
+      if (!rows.length) {
+        out.className = 'ix-out';
+        out.innerHTML = '<div class="ix-empty"><strong>No records match.</strong>' +
+          'Try removing a filter or searching for a different term.</div>';
+        return;
+      }
+
+      var buckets = {}, html = '';
+      rows.forEach(function (e) { var k = keyOf(e); (buckets[k] = buckets[k] || []).push(e); });
       sortKeys(Object.keys(buckets)).forEach(function (k) {
         var n = buckets[k].length;
         html += '<div class="ix-gh"><h3>' + esc(groupLabel(k)) + '</h3>' +
                 '<span class="ix-gn">' + n + ' record' + (n === 1 ? '' : 's') + '</span></div>' +
                 '<div class="ix-recs">' + buckets[k].map(recordHTML).join('') + '</div>';
       });
+      out.className = 'ix-out' + (opts.rail ? ' ix-tl' : '');
+      out.innerHTML = html;
     }
-    out.className = wrap;
-    out.innerHTML = html;
-  }
 
-  function renderChips() {
-    var chips = [];
-    ['stance', 'level', 'category', 'themes'].forEach(function (f) {
-      active[f].forEach(function (v) {
-        chips.push('<span class="ix-chip">' + esc(label(f, v)) +
-          '<button type="button" data-rm-facet="' + f + '" data-rm-val="' + esc(v) +
-          '" aria-label="Remove filter ' + esc(label(f, v)) + '">×</button></span>');
-      });
-    });
-    if (stateFilter) {
-      chips.push('<span class="ix-chip">' + esc(stateFilter) +
-        '<button type="button" data-rm-state="1" aria-label="Remove state filter">×</button></span>');
-    }
-    if (yearFilter) {
-      chips.push('<span class="ix-chip">' + esc(yearFilter) +
-        '<button type="button" data-rm-year="1" aria-label="Remove year filter">×</button></span>');
-    }
-    if (query) {
-      chips.push('<span class="ix-chip">“' + esc(query) + '”' +
-        '<button type="button" data-rm-q="1" aria-label="Clear search">×</button></span>');
-    }
-    if (chips.length > 1) {
-      chips.push('<button class="ix-clear" type="button" id="ix-clearall">Clear all</button>');
-    }
-    /* The view is not a filter you can clear, so it is announced ahead of the
-       filter chips and excluded from the Clear all count above. Its button
-       returns to the full list rather than removing a facet. */
-    if (view !== 'list') {
-      chips.unshift('<span class="ix-chip">' +
-        (view === 'policy'
-          ? 'Enacted federal and state policy only'
-          : 'Movement record only \u2014 policy hidden') +
-        '<button type="button" data-show-all="1" aria-label="Show all records">\u00d7</button></span>');
-    }
-    $('#ix-chips').innerHTML = chips.join('');
-  }
-
-  /* ---------- facet construction ---------- */
-  function buildFacets() {
-    document.querySelectorAll('.ix-opts').forEach(function (box) {
-      var facet = box.dataset.facet;
-      var counts = {};
-      all.forEach(function (e) {
-        var v = e[facet];
-        (Object.prototype.toString.call(v) === '[object Array]' ? v : [v]).forEach(function (k) {
-          if (k) counts[k] = (counts[k] || 0) + 1;
+    function renderChips() {
+      var chips = [];
+      ['stance', 'level', 'category', 'themes'].forEach(function (f) {
+        active[f].forEach(function (v) {
+          chips.push('<span class="ix-chip">' + esc(label(f, v)) +
+            '<button type="button" data-rm-facet="' + f + '" data-rm-val="' + esc(v) +
+            '" aria-label="Remove filter ' + esc(label(f, v)) + '">×</button></span>');
         });
       });
-      var keys = ORDER[facet] || Object.keys(counts).sort();
-
-      box.innerHTML = keys.filter(function (k) { return counts[k]; }).map(function (k) {
-        var mark = facet === 'stance'
-          ? '<span class="ix-mark ' + k + '" aria-hidden="true">' + MARK[k] + '</span>' : '';
-        return '<button type="button" class="ix-opt" data-facet="' + facet + '" data-val="' + esc(k) + '" aria-pressed="false">' +
-                 '<span class="ix-box" aria-hidden="true"></span>' + mark +
-                 '<span>' + esc(label(facet, k)) + '</span>' +
-                 '<span class="ix-n">' + counts[k] + '</span>' +
-               '</button>';
-      }).join('');
-    });
-
-    var states = {};
-    all.forEach(function (e) { if (e.state) states[e.state] = (states[e.state] || 0) + 1; });
-    var sel = $('#ix-state');
-    Object.keys(states).sort().forEach(function (s) {
-      var o = document.createElement('option');
-      o.value = s; o.textContent = s + ' (' + states[s] + ')';
-      sel.appendChild(o);
-    });
-
-    var years = {};
-    all.forEach(function (e) { var y = (e.date || '').slice(0, 4); if (y) years[y] = (years[y] || 0) + 1; });
-    var ysel = $('#ix-year');
-    Object.keys(years).sort().reverse().forEach(function (y) {
-      var o = document.createElement('option');
-      o.value = y; o.textContent = y + ' (' + years[y] + ')';
-      ysel.appendChild(o);
-    });
-  }
-
-  /* ---------- events ---------- */
-  function wire() {
-    document.addEventListener('click', function (ev) {
-      var opt = ev.target.closest('.ix-opt');
-      if (opt) {
-        var f = opt.dataset.facet, v = opt.dataset.val, i = active[f].indexOf(v);
-        if (i === -1) active[f].push(v); else active[f].splice(i, 1);
-        opt.setAttribute('aria-pressed', i === -1 ? 'true' : 'false');
-        return render();
+      if (opts.state && stateFilter) {
+        chips.push('<span class="ix-chip">' + esc(stateFilter) +
+          '<button type="button" data-rm-state="1" aria-label="Remove state filter">×</button></span>');
       }
-      var vbtn = ev.target.closest('.ix-view');
-      if (vbtn) {
-        view = vbtn.dataset.view;
-        document.querySelectorAll('.ix-view').forEach(function (b) {
-          b.setAttribute('aria-pressed', String(b === vbtn));
+      if (yearFilter) {
+        chips.push('<span class="ix-chip">' + esc(yearFilter) +
+          '<button type="button" data-rm-year="1" aria-label="Remove year filter">×</button></span>');
+      }
+      if (query) {
+        chips.push('<span class="ix-chip">“' + esc(query) + '”' +
+          '<button type="button" data-rm-q="1" aria-label="Clear search">×</button></span>');
+      }
+      if (chips.length > 1) {
+        chips.push('<button class="ix-clear ix-clearall" type="button">Clear all</button>');
+      }
+      $('.ix-chips').innerHTML = chips.join('');
+    }
+
+    /* ---------- facets ---------- */
+    function buildFacets() {
+      $$('.ix-opts').forEach(function (box) {
+        var facet = box.dataset.facet, counts = {};
+        scoped.forEach(function (e) {
+          var v = e[facet];
+          (Object.prototype.toString.call(v) === '[object Array]' ? v : [v]).forEach(function (k) {
+            if (k) counts[k] = (counts[k] || 0) + 1;
+          });
         });
-        return render();
-      }
-      var rm = ev.target.closest('[data-rm-facet]');
-      if (rm) {
-        var ff = rm.dataset.rmFacet, vv = rm.dataset.rmVal;
-        active[ff] = active[ff].filter(function (x) { return x !== vv; });
-        syncOpts();
-        return render();
-      }
-      if (ev.target.closest('[data-show-all]')) {
-        view = 'list';
-        document.querySelectorAll('.ix-view').forEach(function (b) {
-          b.setAttribute('aria-pressed', String(b.dataset.view === 'list'));
+        var keys = (ORDER[facet] || Object.keys(counts).sort()).filter(function (k) { return counts[k]; });
+        box.innerHTML = keys.map(function (k) {
+          var mark = facet === 'stance'
+            ? '<span class="ix-mark ' + k + '" aria-hidden="true">' + MARK[k] + '</span>' : '';
+          return '<button type="button" class="ix-opt" data-facet="' + facet + '" data-val="' + esc(k) + '" aria-pressed="false">' +
+                   '<span class="ix-box" aria-hidden="true"></span>' + mark +
+                   '<span>' + esc(label(facet, k)) + '</span>' +
+                   '<span class="ix-n">' + counts[k] + '</span>' +
+                 '</button>';
+        }).join('');
+        /* A facet with nothing in it is noise. The movement half has no
+           positions on health at all, so that group simply does not appear. */
+        var grp = box.closest('.ix-group');
+        if (grp) grp.hidden = !keys.length;
+      });
+
+      if (opts.state) {
+        var states = {}, sel = $('.ix-state');
+        scoped.forEach(function (e) { if (e.state) states[e.state] = (states[e.state] || 0) + 1; });
+        Object.keys(states).sort().forEach(function (s) {
+          var o = document.createElement('option');
+          o.value = s; o.textContent = s + ' (' + states[s] + ')';
+          sel.appendChild(o);
         });
-        return render();
       }
-      if (ev.target.closest('[data-rm-state]')) { stateFilter = ''; $('#ix-state').value = ''; return render(); }
-      if (ev.target.closest('[data-rm-year]'))  { yearFilter = '';  $('#ix-year').value  = ''; return render(); }
-      if (ev.target.closest('[data-rm-q]'))     { query = ''; $('#ix-search').value = '';   return render(); }
-      if (ev.target.closest('#ix-clearall')) {
-        active = { stance: [], level: [], category: [], themes: [] };
-        query = ''; stateFilter = ''; yearFilter = '';
-        $('#ix-search').value = ''; $('#ix-state').value = ''; $('#ix-year').value = '';
-        syncOpts();
-        return render();
-      }
-      var tog = ev.target.closest('#ix-filtoggle');
-      if (tog) {
-        var open = $('#ix-railbox').classList.toggle('open');
-        tog.setAttribute('aria-expanded', String(open));
-      }
-    });
 
-    var t;
-    $('#ix-search').addEventListener('input', function (e) {
-      clearTimeout(t);
-      var val = e.target.value;
-      t = setTimeout(function () { query = val.trim(); render(); }, 160);
-    });
-    $('#ix-state').addEventListener('change', function (e) { stateFilter = e.target.value; render(); });
-    $('#ix-year').addEventListener('change', function (e) { yearFilter = e.target.value; render(); });
+      var years = {}, ysel = $('.ix-year');
+      scoped.forEach(function (e) { var y = (e.date || '').slice(0, 4); if (y) years[y] = (years[y] || 0) + 1; });
+      Object.keys(years).sort().reverse().forEach(function (y) {
+        var o = document.createElement('option');
+        o.value = y; o.textContent = y + ' (' + years[y] + ')';
+        ysel.appendChild(o);
+      });
+    }
+
+    /* ---------- events ---------- */
+    function wire() {
+      root.addEventListener('click', function (ev) {
+        var opt = ev.target.closest('.ix-opt');
+        if (opt) {
+          var f = opt.dataset.facet, v = opt.dataset.val, i = active[f].indexOf(v);
+          if (i === -1) active[f].push(v); else active[f].splice(i, 1);
+          opt.setAttribute('aria-pressed', i === -1 ? 'true' : 'false');
+          syncOpts();
+          return render();
+        }
+        var rm = ev.target.closest('[data-rm-facet]');
+        if (rm) {
+          var ff = rm.dataset.rmFacet, vv = rm.dataset.rmVal;
+          active[ff] = active[ff].filter(function (x) { return x !== vv; });
+          syncOpts();
+          return render();
+        }
+        if (ev.target.closest('[data-rm-state]') && opts.state) {
+          stateFilter = ''; $('.ix-state').value = ''; return render();
+        }
+        if (ev.target.closest('[data-rm-year]')) { yearFilter = ''; $('.ix-year').value = ''; return render(); }
+        if (ev.target.closest('[data-rm-q]'))    { query = ''; $('.ix-search').value = '';   return render(); }
+        if (ev.target.closest('.ix-clearall')) {
+          active = { stance: [], level: [], category: [], themes: [] };
+          query = ''; yearFilter = '';
+          $('.ix-search').value = ''; $('.ix-year').value = '';
+          if (opts.state) { stateFilter = ''; $('.ix-state').value = ''; }
+          syncOpts();
+          return render();
+        }
+        var tog = ev.target.closest('.ix-filtoggle');
+        if (tog) {
+          var open = $('.ix-railbox').classList.toggle('open');
+          tog.setAttribute('aria-expanded', String(open));
+        }
+      });
+
+      var t;
+      $('.ix-search').addEventListener('input', function (e) {
+        clearTimeout(t);
+        var val = e.target.value;
+        t = setTimeout(function () { query = val.trim(); render(); }, 160);
+      });
+      if (opts.state) {
+        $('.ix-state').addEventListener('change', function (e) { stateFilter = e.target.value; render(); });
+      }
+      $('.ix-year').addEventListener('change', function (e) { yearFilter = e.target.value; render(); });
+    }
+
+    function syncOpts() {
+      $$('.ix-opt').forEach(function (o) {
+        o.setAttribute('aria-pressed', String(active[o.dataset.facet].indexOf(o.dataset.val) !== -1));
+      });
+      $$('.ix-fcount').forEach(function (c) {
+        var n = (active[c.dataset.countFor] || []).length;
+        c.textContent = n ? String(n) : '';
+      });
+    }
+
+    return {
+      load: function (data) {
+        all = data; scoped = data.filter(inScope);
+        buildFacets(); wire(); render();
+      },
+      fail: function (msg) {
+        var out = $('.ix-out');
+        if (out) out.innerHTML = '<div class="ix-empty"><strong>The index could not be loaded.</strong>' +
+          'Please refresh the page. (' + esc(msg) + ')</div>';
+      }
+    };
   }
 
-  function syncOpts() {
-    document.querySelectorAll('.ix-opt').forEach(function (o) {
-      o.setAttribute('aria-pressed', String(active[o.dataset.facet].indexOf(o.dataset.val) !== -1));
-    });
-    document.querySelectorAll('.ix-fcount').forEach(function (c) {
-      var n = (active[c.dataset.countFor] || []).length;
-      c.textContent = n ? String(n) : '';
-    });
-  }
+  var policyIx   = createIndex(document.getElementById('policy-index'),   { scope: 'policy',   state: true,  rail: false });
+  var movementIx = createIndex(document.getElementById('movement-index'), { scope: 'movement', state: false, rail: true  });
 
-  /* ---------- boot ---------- */
   fetch('entries.json?v=' + Date.now())
     .then(function (r) {
       if (!r.ok) throw new Error('HTTP ' + r.status);
       return r.json();
     })
     .then(function (data) {
-      all = data;
-      buildFacets();
-      wire();
-      render();
-      if (window.MT && window.MT.buildScorecard) window.MT.buildScorecard(all);
+      policyIx.load(data);
+      movementIx.load(data);
+      if (window.MT && window.MT.buildScorecard) window.MT.buildScorecard(data);
     })
     .catch(function (err) {
-      $('#ix-out').innerHTML = '<div class="ix-empty"><strong>The index could not be loaded.</strong>' +
-        'Please refresh the page. (' + esc(err.message) + ')</div>';
+      policyIx.fail(err.message);
+      movementIx.fail(err.message);
     });
 })();
 </script>
