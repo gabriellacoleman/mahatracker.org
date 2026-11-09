@@ -769,15 +769,12 @@
     /* ═══════════════════════════════════════════════
        THE INDEX — unified record database
        ═══════════════════════════════════════════════ */
-    #index { background: var(--warm-white); padding: 90px 0 110px; }
-    #index .inner { max-width: 1180px; }
+    #index, #policy { background: var(--warm-white); color: var(--text-dark);
+      padding: 90px 0 110px; }
+    #index .inner, #policy .inner { max-width: 1180px; }
 
     .ix-layout { display: grid; grid-template-columns: 258px 1fr; gap: 44px; align-items: start; margin-top: 34px; }
 
-    .ix-divider { margin: 3.2rem 0 0; padding-top: 2.4rem; border-top: 1px solid rgba(255,255,255,0.14); }
-    .section-h3 { font-family: 'Fraunces', Georgia, serif; font-size: 1.9rem; font-weight: 600;
-      line-height: 1.15; margin: .3rem 0 .9rem; }
-    .section-lead.light { color: rgba(255,255,255,0.74); }
     /* The summary is a disclosure, but nothing said so. This does. */
     .ix-howto { font-family: 'DM Mono', monospace; font-size: .72rem; letter-spacing: .04em;
       color: var(--text-mid); margin: 0 0 14px; }
@@ -1265,11 +1262,17 @@
       </div>
     </div>
 
-    <div class="ix-divider">
-      <p class="eyebrow teal-dim">The record behind the scorecard</p>
-      <h3 class="section-h3">Federal &amp; State Policy</h3>
-      <p class="section-lead light">Every enacted federal and state action counted above, searchable and filterable. Each is marked <strong>advancing</strong>, <strong>opposing</strong> or <strong>neutral</strong> on health.</p>
-    </div>
+  </div>
+</section>
+
+<!-- ╔═════════════╗ -->
+<!-- ║  FEDERAL & STATE POLICY  ║ -->
+<!-- ╚═════════════╝ -->
+<section id="policy" data-screen="scorecard">
+  <div class="inner">
+    <p class="eyebrow teal">The record behind the scorecard</p>
+    <h2 class="section-h2">Federal &amp; State Policy</h2>
+    <p class="section-lead">Every enacted federal and state action counted in the scorecard above, searchable and filterable. Each is marked <strong>advancing</strong>, <strong>opposing</strong> or <strong>neutral</strong> on health.</p>
 
     <div class="ix-layout" id="policy-index">
       <!-- FILTER RAIL -->
