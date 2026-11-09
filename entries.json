@@ -966,7 +966,7 @@
       "category" : "politics",
       "date" : "2026-06-02",
       "dateLabel" : "June 2, 2026",
-      "description" : "Zach Lahn, a businessman and farmer who was unknown in Iowa politics before entering the race in November, won the Republican nomination for governor over Rep. Randy Feenstra, whom Trump had endorsed and called \"MAGA all the way\" the week before the vote. Lahn ran at the agrichemical industry from the right. He wants pesticide manufacturers stripped of their liability shields, backs regenerative farming, and promised to \"take on the big ag cartels. I will break up their monopolies, and I will get Iowa farmers a fair deal.\" He put the state's cancer rate at the center of the campaign, asserting that Iowa has \"the fastest growing cancer rate in the world,\" a claim the Associated Press reported without corroborating. He dismissed water treatment upgrades as a Band-Aid, arguing the aim should be cutting the nitrate load before it reaches the system. MAHA PAC, run by Kennedy's publisher Tony Lyons, endorsed him, as did Turning Point Action; STAT later put spending on his behalf by MAHA-aligned PACs at more than $1.5 million. On the Supreme Court's Roundup decision he was blunt: \"This will not go on when I'm governor.\" Trump endorsed Lahn once the primary was settled and went to Iowa to campaign for him.",
+      "description" : "Zach Lahn, a businessman and farmer who was unknown in Iowa politics before entering the race in November, won the Republican nomination for governor over Rep. Randy Feenstra, whom Trump had endorsed and called \"MAGA all the way\" the week before the vote. Lahn ran at the agrichemical industry from the right. He wants pesticide manufacturers stripped of their liability shields, backs regenerative farming, and promised to \"take on the big ag cartels. I will break up their monopolies, and I will get Iowa farmers a fair deal.\" He put the state's cancer rate at the center of the campaign, asserting that Iowa has \"the fastest growing cancer rate in the world,\" a claim the Associated Press reported without corroborating. He dismissed water treatment upgrades as a Band-Aid, arguing the aim should be cutting the nitrate load before it reaches the system. MAHA PAC, run by Kennedy's publisher Tony Lyons, endorsed him, as did Turning Point Action; STAT later put spending on his behalf by MAHA-aligned PACs at more than $1.5 million, part of which Lyons had announced himself: opening his podcast on September 16 he said MAHA Action PAC was giving Lahn's campaign $1 million that week, \"because we believe that regenerative farming, freedom and family values are the way to restore our nation's health.\" On the Supreme Court's Roundup decision he was blunt: \"This will not go on when I'm governor.\" Trump endorsed Lahn once the primary was settled and went to Iowa to campaign for him.",
       "govParty" : "",
       "id" : "e155",
       "level" : "state",
@@ -979,6 +979,10 @@
          {
             "label" : "Mother Jones (via The Guardian)",
             "url" : "https://www.motherjones.com/environment/2026/08/cancer-rates-iowa-maha-pesticides-herbicides-glyphosate-farming-agriculture-midterm-elections-issues/"
+         },
+         {
+            "label" : "Tony Lyons, MAHA Media Hub (Sept 16)",
+            "url" : "https://www.themahareport.com/p/tony-lyons-the-midterms-are-an-opportunity"
          }
       ],
       "stance" : "",
