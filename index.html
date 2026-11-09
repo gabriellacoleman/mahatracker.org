@@ -907,7 +907,9 @@
     .ix-chev { position: absolute; right: 10px; top: 17px; color: #9a9a8c; font-size: .8rem; transition: transform .18s; }
     .ix-rec[open] .ix-chev { transform: rotate(90deg); }
     .ix-body { padding: 0 44px 20px 112px; }
-    .ix-body p { font-family: 'Source Serif 4', serif; font-size: .95rem; line-height: 1.68; color: var(--text-dark); margin: 0 0 12px; }
+    .ix-body p, .ix-desc { font-family: 'Source Serif 4', serif; font-size: .95rem; line-height: 1.68; color: var(--text-dark); margin: 0 0 12px; }
+    .ix-desc a { color: var(--teal-dark); }
+    .ix-desc iframe { display: block; border: 0; }
     .ix-src { font-family: 'DM Mono', monospace; font-size: .72rem; color: var(--teal-dark); text-decoration: none;
       border-bottom: 1px solid currentColor; }
     .ix-src:hover { color: var(--forest); }
@@ -1657,6 +1659,28 @@
   }
   function label(facet, v) { return (LABEL[facet] && LABEL[facet][v]) || v; }
 
+  /* Descriptions carry curated markup - inline source links and Vimeo embeds -
+     so they go in as HTML rather than escaped text. Everything else on a card
+     is still escaped. Parsed with DOMParser, which builds an inert document:
+     no script runs and no resource loads while we are cleaning it. Anything
+     that could execute comes out, and an iframe is kept only if it points at
+     a player we actually use. */
+  var EMBED_OK = /^https:\/\/player\.vimeo\.com\/|^https:\/\/www\.youtube(-nocookie)?\.com\/embed\//;
+  function safeHTML(s) {
+    var doc = new DOMParser().parseFromString(String(s == null ? '' : s), 'text/html');
+    doc.body.querySelectorAll('script, style, object, embed, form').forEach(function (n) { n.remove(); });
+    doc.body.querySelectorAll('*').forEach(function (n) {
+      Array.prototype.slice.call(n.attributes).forEach(function (a) {
+        var nm = a.name.toLowerCase(), val = String(a.value || '').trim();
+        if (nm.indexOf('on') === 0) n.removeAttribute(a.name);
+        else if ((nm === 'href' || nm === 'src') && /^(javascript|data):/i.test(val)) n.removeAttribute(a.name);
+      });
+      if (n.tagName === 'IFRAME' && !EMBED_OK.test(n.getAttribute('src') || '')) n.remove();
+      if (n.tagName === 'A' && n.getAttribute('target') === '_blank') n.setAttribute('rel', 'noopener');
+    });
+    return doc.body.innerHTML;
+  }
+
   /* Enacted government policy, as opposed to the movement's own record.
      Written out rather than testing `e.stance`, which happens to divide the
      same way today but is a presentation field and could drift. */
@@ -1737,7 +1761,7 @@
                  '<span class="ix-chev" aria-hidden="true">❯</span>' +
                '</summary>' +
                '<div class="ix-body">' +
-                 '<p>' + esc(e.description) + '</p>' +
+                 '<div class="ix-desc">' + safeHTML(e.description) + '</div>' +
                  (e.sources && e.sources.length
                    ? '<p class="ix-sources"><span>Sources</span> ' + e.sources.map(function (s) {
                        return (s && s.url)
