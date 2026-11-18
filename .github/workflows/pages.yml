@@ -1,0 +1,44 @@
+# Builds the site from Typst on every push and pull request, and publishes
+# it to GitHub Pages from main. A build that fails (a bad field in an entry,
+# say) never reaches the live site.
+#
+# Needs Settings → Pages → Source set to "GitHub Actions".
+
+name: Build and publish
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v31
+      - run: nix build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: result
+
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

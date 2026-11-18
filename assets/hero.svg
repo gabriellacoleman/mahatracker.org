@@ -1,0 +1,87 @@
+<svg class="hero-svg" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="rg1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00c9b1" stop-opacity="0.13"/>
+      <stop offset="100%" stop-color="#00c9b1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="rg2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e8a820" stop-opacity="0.09"/>
+      <stop offset="100%" stop-color="#e8a820" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ambient glow -->
+  <ellipse cx="240" cy="200" rx="210" ry="190" fill="url(#rg1)"/>
+  <ellipse cx="200" cy="320" rx="160" ry="130" fill="url(#rg2)"/>
+
+  <!-- field dot rows: teal=advancing, red=opposing -->
+  <!-- row 1 -->
+  <circle cx="72"  cy="95"  r="4.5" fill="#10b981" opacity="0.75"/>
+  <circle cx="100" cy="84"  r="4.5" fill="#10b981" opacity="0.75"/>
+  <circle cx="128" cy="94"  r="4.5" fill="#10b981" opacity="0.75"/>
+  <circle cx="156" cy="82"  r="4.5" fill="#ef4444" opacity="0.65"/>
+  <circle cx="184" cy="93"  r="4.5" fill="#10b981" opacity="0.75"/>
+  <circle cx="212" cy="83"  r="4.5" fill="#10b981" opacity="0.75"/>
+  <circle cx="240" cy="95"  r="4.5" fill="#10b981" opacity="0.75"/>
+  <circle cx="268" cy="82"  r="4.5" fill="#ef4444" opacity="0.65"/>
+  <circle cx="296" cy="93"  r="4.5" fill="#10b981" opacity="0.75"/>
+  <circle cx="324" cy="83"  r="4.5" fill="#10b981" opacity="0.75"/>
+  <circle cx="352" cy="93"  r="4.5" fill="#10b981" opacity="0.75"/>
+  <circle cx="380" cy="83"  r="4.5" fill="#ef4444" opacity="0.65"/>
+  <circle cx="408" cy="93"  r="4.5" fill="#10b981" opacity="0.75"/>
+
+  <!-- row 2 -->
+  <circle cx="58"  cy="128" r="4"   fill="#10b981" opacity="0.65"/>
+  <circle cx="86"  cy="117" r="4"   fill="#ef4444" opacity="0.55"/>
+  <circle cx="114" cy="128" r="4"   fill="#10b981" opacity="0.65"/>
+  <circle cx="142" cy="116" r="4"   fill="#10b981" opacity="0.65"/>
+  <circle cx="170" cy="127" r="4"   fill="#10b981" opacity="0.65"/>
+  <circle cx="198" cy="116" r="4"   fill="#ef4444" opacity="0.55"/>
+  <circle cx="226" cy="128" r="4"   fill="#10b981" opacity="0.65"/>
+  <circle cx="254" cy="116" r="4"   fill="#10b981" opacity="0.65"/>
+  <circle cx="282" cy="127" r="4"   fill="#10b981" opacity="0.65"/>
+  <circle cx="310" cy="116" r="4"   fill="#ef4444" opacity="0.55"/>
+  <circle cx="338" cy="128" r="4"   fill="#10b981" opacity="0.65"/>
+  <circle cx="366" cy="116" r="4"   fill="#10b981" opacity="0.65"/>
+  <circle cx="394" cy="127" r="4"   fill="#10b981" opacity="0.65"/>
+  <circle cx="422" cy="116" r="4"   fill="#10b981" opacity="0.65"/>
+
+  <!-- network lines -->
+  <line x1="240" y1="185" x2="170" y2="255" stroke="#00c9b1" stroke-width="0.6" opacity="0.25"/>
+  <line x1="240" y1="185" x2="310" y2="255" stroke="#00c9b1" stroke-width="0.6" opacity="0.25"/>
+  <line x1="170" y1="255" x2="310" y2="255" stroke="#00c9b1" stroke-width="0.6" opacity="0.2"/>
+  <line x1="110" y1="320" x2="170" y2="255" stroke="#00c9b1" stroke-width="0.6" opacity="0.16"/>
+  <line x1="370" y1="320" x2="310" y2="255" stroke="#00c9b1" stroke-width="0.6" opacity="0.16"/>
+  <line x1="110" y1="320" x2="240" y2="375" stroke="#e8a820" stroke-width="0.6" opacity="0.18"/>
+  <line x1="370" y1="320" x2="240" y2="375" stroke="#e8a820" stroke-width="0.6" opacity="0.18"/>
+
+  <!-- central nodes -->
+  <circle cx="240" cy="185" r="16" fill="none" stroke="#00c9b1" stroke-width="1.2" opacity="0.5"/>
+  <circle cx="240" cy="185" r="9"  fill="#00c9b1" opacity="0.7"/>
+  <text x="254" y="190" fill="#00c9b1" font-family="monospace" font-size="7.5" opacity="0.8">FEDERAL</text>
+
+  <circle cx="170" cy="255" r="12" fill="none" stroke="#e8a820" stroke-width="1" opacity="0.45"/>
+  <circle cx="170" cy="255" r="7"  fill="#e8a820" opacity="0.6"/>
+  <text x="184" y="259" fill="#e8a820" font-family="monospace" font-size="6.5" opacity="0.7">STATE</text>
+
+  <circle cx="310" cy="255" r="12" fill="none" stroke="#10b981" stroke-width="1" opacity="0.45"/>
+  <circle cx="310" cy="255" r="7"  fill="#10b981" opacity="0.6"/>
+  <text x="324" y="259" fill="#10b981" font-family="monospace" font-size="6.5" opacity="0.7">STATE</text>
+
+  <circle cx="110" cy="320" r="9" fill="none" stroke="#00c9b1" stroke-width="1" opacity="0.35"/>
+  <circle cx="110" cy="320" r="5" fill="#00c9b1" opacity="0.45"/>
+
+  <circle cx="370" cy="320" r="9" fill="none" stroke="#00c9b1" stroke-width="1" opacity="0.35"/>
+  <circle cx="370" cy="320" r="5" fill="#00c9b1" opacity="0.45"/>
+
+  <circle cx="240" cy="375" r="14" fill="none" stroke="#e8a820" stroke-width="1" opacity="0.35"/>
+  <circle cx="240" cy="375" r="8"  fill="#e8a820" opacity="0.45"/>
+  <text x="254" y="379" fill="#e8a820" font-family="monospace" font-size="6.5" opacity="0.6">ENACTED</text>
+
+  <!-- scatter -->
+  <circle cx="75"  cy="370" r="3" fill="#10b981" opacity="0.35"/>
+  <circle cx="98"  cy="390" r="3" fill="#10b981" opacity="0.35"/>
+  <circle cx="395" cy="365" r="3" fill="#ef4444" opacity="0.35"/>
+  <circle cx="418" cy="385" r="3" fill="#10b981" opacity="0.35"/>
+  <circle cx="440" cy="365" r="3" fill="#10b981" opacity="0.35"/>
+</svg>
